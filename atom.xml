@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>niuoo</title>
+  <subtitle>Develop with pleasure!</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://niuoo.github.io/"/>
+  <updated>2016-07-20T16:34:26.000Z</updated>
+  <id>http://niuoo.github.io/</id>
+  
+  <author>
+    <name>niuoo</name>
+    <email>niuooo@yeah.net</email>
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>LeetCode 61 Rotate List</title>
+    <link href="http://niuoo.github.io/2016/07/18/My-New-Post/"/>
+    <id>http://niuoo.github.io/2016/07/18/My-New-Post/</id>
+    <published>2016-07-18T14:08:17.000Z</published>
+    <updated>2016-07-20T16:34:26.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>Given a list, rotate the list to the right by k places, where k is non-negative.<br>For example:<br>Given 1-&gt;2-&gt;3-&gt;4-&gt;5-&gt;NULL and k = 2,<br>return 4-&gt;5-&gt;1-&gt;2-&gt;3-&gt;NULL.</p>
+<p>题意：给定列表 和一个整数 k ，旋转列表最后 k 个元素至列表最前面。<br>思路：</p>
+<ol>
+<li>先找到最后元素 lastOne ，并计算链表长度，同时最后一个元素指向头节点，形成一个环。</li>
+<li>从head节点开始，往后走到第 len - k % len，即走到了旋转后列表新的最后元素 newLastOne，新的环链表在newLastOne之后断开。</li>
+<li>断开的链表即是反转后的新链表。</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> ListNode <span class="title">rotateRight</span><span class="params">(ListNode head,<span class="keyword">int</span> k)</span> </span>&#123;</div><div class="line">  <span class="keyword">if</span> (head == <span class="keyword">null</span> || k == <span class="number">0</span>) <span class="keyword">return</span> head;</div><div class="line">  ListNode p = head;</div><div class="line">  <span class="keyword">int</span> len = <span class="number">1</span>;</div><div class="line">  <span class="keyword">while</span> (p.next != <span class="keyword">null</span>) &#123;</div><div class="line">    len++;</div><div class="line">	  p = p.next;</div><div class="line">  &#125;</div><div class="line">  p.next = head;<span class="comment">//form a circle </span></div><div class="line">  <span class="keyword">for</span> (k = len - k % len; k &gt; <span class="number">0</span>; k--) p = p.next;</div><div class="line">  head = p.next;<span class="comment">//break the circle at the(len - k % len)th ListNode </span></div><div class="line">  p.next = <span class="keyword">null</span>;</div><div class="line">  <span class="keyword">return</span> head;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Given a list, rotate the list to the right by k places, where k is non-negative.&lt;br&gt;For example:&lt;br&gt;Given 1-&amp;gt;2-&amp;gt;3-&amp;gt;4-&amp;gt;5-&amp;gt;N
+    
+    </summary>
+    
+    
+      <category term="leetcode" scheme="http://niuoo.github.io/tags/leetcode/"/>
+    
+  </entry>
+  
+</feed>
