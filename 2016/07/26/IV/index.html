@@ -68,10 +68,12 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="leetcode," />
+  <meta name="keywords" content="LeetCode 377 Combination Sum IV," />
 
 
 
+
+  
 
 
   <link rel="alternate" href="/atom.xml" title="niuoo" type="application/atom+xml" />
@@ -86,19 +88,19 @@
 
 
 
-<meta name="description" content="Given a list, rotate the list to the right by k places, where k is non-negative.For example:Given 1-&amp;gt;2-&amp;gt;3-&amp;gt;4-&amp;gt;5-&amp;gt;NULL and k = 2,return 4-&amp;gt;5-&amp;gt;1-&amp;gt;2-&amp;gt;3-&amp;gt;NULL.
-题意：给定列表 和一个整数">
+<meta name="description" content="Given an integer array with all positive numbers and no duplicates, find thenumber of possible combinations that add up to a positive integer target.Example:nums = [1, 2, 3]target = 4
+The possible com">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode 61 Rotate List">
-<meta property="og:url" content="http://niuoo.github.io/2016/07/18/My-New-Post/index.html">
+<meta property="og:title" content="LeetCode 377 Combination Sum IV">
+<meta property="og:url" content="http://niuoo.github.io/2016/07/26/IV/index.html">
 <meta property="og:site_name" content="niuoo">
-<meta property="og:description" content="Given a list, rotate the list to the right by k places, where k is non-negative.For example:Given 1-&amp;gt;2-&amp;gt;3-&amp;gt;4-&amp;gt;5-&amp;gt;NULL and k = 2,return 4-&amp;gt;5-&amp;gt;1-&amp;gt;2-&amp;gt;3-&amp;gt;NULL.
-题意：给定列表 和一个整数">
-<meta property="og:updated_time" content="2016-07-20T16:34:26.000Z">
+<meta property="og:description" content="Given an integer array with all positive numbers and no duplicates, find thenumber of possible combinations that add up to a positive integer target.Example:nums = [1, 2, 3]target = 4
+The possible com">
+<meta property="og:updated_time" content="2016-07-26T07:56:24.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LeetCode 61 Rotate List">
-<meta name="twitter:description" content="Given a list, rotate the list to the right by k places, where k is non-negative.For example:Given 1-&amp;gt;2-&amp;gt;3-&amp;gt;4-&amp;gt;5-&amp;gt;NULL and k = 2,return 4-&amp;gt;5-&amp;gt;1-&amp;gt;2-&amp;gt;3-&amp;gt;NULL.
-题意：给定列表 和一个整数">
+<meta name="twitter:title" content="LeetCode 377 Combination Sum IV">
+<meta name="twitter:description" content="Given an integer array with all positive numbers and no duplicates, find thenumber of possible combinations that add up to a positive integer target.Example:nums = [1, 2, 3]target = 4
+The possible com">
 
 
 
@@ -119,9 +121,9 @@
 
 
 
-  <link rel="canonical" href="http://niuoo.github.io/2016/07/18/My-New-Post/"/>
+  <link rel="canonical" href="http://niuoo.github.io/2016/07/26/IV/"/>
 
-  <title> LeetCode 61 Rotate List | niuoo </title>
+  <title> LeetCode 377 Combination Sum IV | niuoo </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -241,7 +243,7 @@
             
             
               
-                LeetCode 61 Rotate List
+                LeetCode 377 Combination Sum IV
               
             
           </h1>
@@ -253,8 +255,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-07-18T22:08:17+08:00" content="Jul 18 2016">
-              Jul 18 2016
+            <time itemprop="dateCreated" datetime="2016-07-26T14:55:15+08:00" content="Jul 26 2016">
+              Jul 26 2016
             </time>
           </span>
 
@@ -281,14 +283,13 @@
       
 
       
-        <p>Given a list, rotate the list to the right by k places, where k is non-negative.<br>For example:<br>Given 1-&gt;2-&gt;3-&gt;4-&gt;5-&gt;NULL and k = 2,<br>return 4-&gt;5-&gt;1-&gt;2-&gt;3-&gt;NULL.</p>
-<p>题意：给定列表 和一个整数 k ，旋转列表最后 k 个元素至列表最前面。<br>思路：</p>
-<ol>
-<li>先找到最后元素 lastOne ，并计算链表长度，同时最后一个元素指向头节点，形成一个环。</li>
-<li>从head节点开始，往后走到第 len - k % len，即走到了旋转后列表新的最后元素 newLastOne，新的环链表在newLastOne之后断开。</li>
-<li>断开的链表即是反转后的新链表。</li>
-</ol>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> ListNode <span class="title">rotateRight</span><span class="params">(ListNode head,<span class="keyword">int</span> k)</span> </span>&#123;</div><div class="line">  <span class="keyword">if</span> (head == <span class="keyword">null</span> || k == <span class="number">0</span>) <span class="keyword">return</span> head;</div><div class="line">  ListNode p = head;</div><div class="line">  <span class="keyword">int</span> len = <span class="number">1</span>;</div><div class="line">  <span class="keyword">while</span> (p.next != <span class="keyword">null</span>) &#123;</div><div class="line">    len++;</div><div class="line">	  p = p.next;</div><div class="line">  &#125;</div><div class="line">  p.next = head;<span class="comment">//form a circle </span></div><div class="line">  <span class="keyword">for</span> (k = len - k % len; k &gt; <span class="number">0</span>; k--) p = p.next;</div><div class="line">  head = p.next;<span class="comment">//break the circle at the(len - k % len)th ListNode </span></div><div class="line">  p.next = <span class="keyword">null</span>;</div><div class="line">  <span class="keyword">return</span> head;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+        <p>Given an integer array with all positive numbers and no duplicates, find the<br>number of possible combinations that add up to a positive integer target.<br>Example:<br>nums = [1, 2, 3]<br>target = 4</p>
+<p>The possible combination ways are:<br>(1, 1, 1, 1)<br>(1, 1, 2)<br>(1, 2, 1)<br>(1, 3)<br>(2, 1, 1)<br>(2, 2)<br>(3, 1)</p>
+<p>Note that different sequences are counted as different combinations.<br>Therefore the output is 7.</p>
+<p>刚开始写了个递归，就去提交了。Time Limit Exceeded.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/***这是错误的代码！***/</span></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">combinationSum4</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target)</span> </span>&#123;</div><div class="line">		<span class="keyword">int</span> len = nums.length;</div><div class="line">		Arrays.sort(nums);</div><div class="line">		<span class="keyword">int</span> sum = <span class="number">0</span>;</div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len; i++) &#123;</div><div class="line">			<span class="keyword">if</span> (target - nums[i] == <span class="number">0</span>) sum += <span class="number">1</span>;</div><div class="line">			<span class="keyword">if</span> (target - nums[i] &gt; <span class="number">0</span>) sum += combinationSum4(nums, target - nums[i]);</div><div class="line">			<span class="keyword">if</span> (target - nums[i] &lt; <span class="number">0</span>) <span class="keyword">break</span>;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">return</span> sum;</div><div class="line">	&#125;</div></pre></td></tr></table></figure>
+<p>以上解法，毫无疑问，Time Limit Exceeded了，因为很多步骤都是重复的，如 [1,50]的nums，targe<br>为200，所以根据这错的方法我们就会重复多计算比200小的target，导致超时，所以，我们要提前把小于<br>target的数，都先计算出来，防止递归的时候，重复计算，导致超时。<br>正确的解法：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">combinationSum4</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target)</span> </span>&#123;</div><div class="line">	Arrays.sort(nums);</div><div class="line">	<span class="keyword">int</span>[] sum = <span class="keyword">new</span> <span class="keyword">int</span>[target + <span class="number">1</span>];</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= target; i++) &#123;<span class="comment">//提前计算出所有小的target有几种组合数</span></div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> num : nums) &#123;</div><div class="line">			<span class="keyword">if</span> (i == num) sum[i] += <span class="number">1</span>;</div><div class="line">			<span class="keyword">if</span> (i &gt; num) sum[i] += sum[i - num];</div><div class="line">			<span class="keyword">if</span> (i &lt; num) <span class="keyword">break</span>;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> sum[target];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -311,7 +312,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/leetcode/" rel="tag">#leetcode</a>
+            <a href="/tags/LeetCode-377-Combination-Sum-IV/" rel="tag">#LeetCode 377 Combination Sum IV</a>
           
         </div>
       
@@ -320,13 +321,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2016/07/23/Number/" rel="next" title="LeetCode 179 Largest Number">
+                <i class="fa fa-chevron-left"></i> LeetCode 179 Largest Number
+              </a>
+            
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/07/22/Array/" rel="prev" title="LeetCode 215 Kth Largest Element in an Array">
-                LeetCode 215 Kth Largest Element in an Array <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
