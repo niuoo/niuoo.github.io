@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://niuoo.github.io/"/>
-  <updated>2016-07-26T07:56:24.000Z</updated>
+  <updated>2017-01-22T12:36:05.000Z</updated>
   <id>http://niuoo.github.io/</id>
   
   <author>
@@ -16,11 +16,34 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>LeetCode 40 Combination Sum II</title>
+    <link href="http://niuoo.github.io/2017/01/22/LeetCode-40-Combination-Sum-II/"/>
+    <id>http://niuoo.github.io/2017/01/22/LeetCode-40-Combination-Sum-II/</id>
+    <published>2017-01-22T12:35:06.000Z</published>
+    <updated>2017-01-22T12:36:05.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>Given a collection of candidate numbers (C) and a target number (T), find all unique combinations in C where the candidate numbers sums to T.</p>
+<p>Each number in C may only be used once in the combination.</p>
+<p>Note:<br>All numbers (including target) will be positive integers.<br>The solution set must not contain duplicate combinations.<br>For example, given candidate set [10, 1, 2, 7, 6, 1, 5] and target 8,<br>A solution set is:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">[</div><div class="line">  [1, 7],</div><div class="line">  [1, 2, 5],</div><div class="line">  [2, 6],</div><div class="line">  [1, 1, 6]</div><div class="line">]</div></pre></td></tr></table></figure></p>
+<p><strong>Runtime: 17 ms runtime beats 94.63% of java submissions.</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">public List&lt;List&lt;Integer&gt;&gt; combinationSum2(int[] candidates, int target) &#123;</div><div class="line">	Arrays.sort(candidates);</div><div class="line">	List&lt;List&lt;Integer&gt;&gt; result = new LinkedList&lt;List&lt;Integer&gt;&gt;();</div><div class="line">	List&lt;Integer&gt; tmp = new ArrayList&lt;Integer&gt;();</div><div class="line">	dfs(0, candidates, target, tmp, result);</div><div class="line">	return result;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">private void dfs(int begin, int[] candidates, int rest, List&lt;Integer&gt; tmp,</div><div class="line">				 List&lt;List&lt;Integer&gt;&gt; result) &#123;</div><div class="line">	if (rest == 0)</div><div class="line">		result.add(new ArrayList&lt;Integer&gt;(tmp));//tmp是变动的,所以此处需要new一个</div><div class="line">	/*分别从candidates[i]开始往下深搜*/</div><div class="line">	for (int i = begin; i &lt; candidates.length &amp;&amp; candidates[i] &lt;= rest; i++) &#123;</div><div class="line">		if (i &gt; begin &amp;&amp; candidates[i] == candidates[i - 1]) continue;</div><div class="line">		tmp.add(candidates[i]);</div><div class="line">		dfs(i + 1, candidates, rest - candidates[i], tmp, result);//搜索下个数字</div><div class="line">		tmp.remove(tmp.size() - 1);//回溯</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Given a collection of candidate numbers (C) and a target number (T), find all unique combinations in C where the candidate numbers sums t
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>LeetCode 377 Combination Sum IV</title>
     <link href="http://niuoo.github.io/2016/07/26/IV/"/>
     <id>http://niuoo.github.io/2016/07/26/IV/</id>
     <published>2016-07-26T06:55:15.000Z</published>
-    <updated>2016-07-26T07:56:24.000Z</updated>
+    <updated>2016-07-26T11:08:11.000Z</updated>
     
     <content type="html"><![CDATA[<p>Given an integer array with all positive numbers and no duplicates, find the<br>number of possible combinations that add up to a positive integer target.<br>Example:<br>nums = [1, 2, 3]<br>target = 4</p>
 <p>The possible combination ways are:<br>(1, 1, 1, 1)<br>(1, 1, 2)<br>(1, 2, 1)<br>(1, 3)<br>(2, 1, 1)<br>(2, 2)<br>(3, 1)</p>

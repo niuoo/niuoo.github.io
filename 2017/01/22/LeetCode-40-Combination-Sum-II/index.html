@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="leetcode," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -86,19 +86,19 @@
 
 
 
-<meta name="description" content="Given a list, rotate the list to the right by k places, where k is non-negative.For example:Given 1-&amp;gt;2-&amp;gt;3-&amp;gt;4-&amp;gt;5-&amp;gt;NULL and k = 2,return 4-&amp;gt;5-&amp;gt;1-&amp;gt;2-&amp;gt;3-&amp;gt;NULL.
-题意：给定列表 和一个整数">
+<meta name="description" content="Given a collection of candidate numbers (C) and a target number (T), find all unique combinations in C where the candidate numbers sums to T.
+Each number in C may only be used once in the combination.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode 61 Rotate List">
-<meta property="og:url" content="http://niuoo.github.io/2016/07/18/My-New-Post/index.html">
+<meta property="og:title" content="LeetCode 40 Combination Sum II">
+<meta property="og:url" content="http://niuoo.github.io/2017/01/22/LeetCode-40-Combination-Sum-II/index.html">
 <meta property="og:site_name" content="niuoo">
-<meta property="og:description" content="Given a list, rotate the list to the right by k places, where k is non-negative.For example:Given 1-&amp;gt;2-&amp;gt;3-&amp;gt;4-&amp;gt;5-&amp;gt;NULL and k = 2,return 4-&amp;gt;5-&amp;gt;1-&amp;gt;2-&amp;gt;3-&amp;gt;NULL.
-题意：给定列表 和一个整数">
-<meta property="og:updated_time" content="2016-07-20T16:34:26.000Z">
+<meta property="og:description" content="Given a collection of candidate numbers (C) and a target number (T), find all unique combinations in C where the candidate numbers sums to T.
+Each number in C may only be used once in the combination.">
+<meta property="og:updated_time" content="2017-01-22T12:36:05.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LeetCode 61 Rotate List">
-<meta name="twitter:description" content="Given a list, rotate the list to the right by k places, where k is non-negative.For example:Given 1-&amp;gt;2-&amp;gt;3-&amp;gt;4-&amp;gt;5-&amp;gt;NULL and k = 2,return 4-&amp;gt;5-&amp;gt;1-&amp;gt;2-&amp;gt;3-&amp;gt;NULL.
-题意：给定列表 和一个整数">
+<meta name="twitter:title" content="LeetCode 40 Combination Sum II">
+<meta name="twitter:description" content="Given a collection of candidate numbers (C) and a target number (T), find all unique combinations in C where the candidate numbers sums to T.
+Each number in C may only be used once in the combination.">
 
 
 
@@ -119,9 +119,9 @@
 
 
 
-  <link rel="canonical" href="http://niuoo.github.io/2016/07/18/My-New-Post/"/>
+  <link rel="canonical" href="http://niuoo.github.io/2017/01/22/LeetCode-40-Combination-Sum-II/"/>
 
-  <title> LeetCode 61 Rotate List | niuoo </title>
+  <title> LeetCode 40 Combination Sum II | niuoo </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -241,7 +241,7 @@
             
             
               
-                LeetCode 61 Rotate List
+                LeetCode 40 Combination Sum II
               
             
           </h1>
@@ -253,8 +253,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-07-18T22:08:17+08:00" content="Jul 18 2016">
-              Jul 18 2016
+            <time itemprop="dateCreated" datetime="2017-01-22T20:35:06+08:00" content="Jan 22 2017">
+              Jan 22 2017
             </time>
           </span>
 
@@ -281,14 +281,11 @@
       
 
       
-        <p>Given a list, rotate the list to the right by k places, where k is non-negative.<br>For example:<br>Given 1-&gt;2-&gt;3-&gt;4-&gt;5-&gt;NULL and k = 2,<br>return 4-&gt;5-&gt;1-&gt;2-&gt;3-&gt;NULL.</p>
-<p>题意：给定列表 和一个整数 k ，旋转列表最后 k 个元素至列表最前面。<br>思路：</p>
-<ol>
-<li>先找到最后元素 lastOne ，并计算链表长度，同时最后一个元素指向头节点，形成一个环。</li>
-<li>从head节点开始，往后走到第 len - k % len，即走到了旋转后列表新的最后元素 newLastOne，新的环链表在newLastOne之后断开。</li>
-<li>断开的链表即是反转后的新链表。</li>
-</ol>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> ListNode <span class="title">rotateRight</span><span class="params">(ListNode head,<span class="keyword">int</span> k)</span> </span>&#123;</div><div class="line">  <span class="keyword">if</span> (head == <span class="keyword">null</span> || k == <span class="number">0</span>) <span class="keyword">return</span> head;</div><div class="line">  ListNode p = head;</div><div class="line">  <span class="keyword">int</span> len = <span class="number">1</span>;</div><div class="line">  <span class="keyword">while</span> (p.next != <span class="keyword">null</span>) &#123;</div><div class="line">    len++;</div><div class="line">	  p = p.next;</div><div class="line">  &#125;</div><div class="line">  p.next = head;<span class="comment">//form a circle </span></div><div class="line">  <span class="keyword">for</span> (k = len - k % len; k &gt; <span class="number">0</span>; k--) p = p.next;</div><div class="line">  head = p.next;<span class="comment">//break the circle at the(len - k % len)th ListNode </span></div><div class="line">  p.next = <span class="keyword">null</span>;</div><div class="line">  <span class="keyword">return</span> head;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+        <p>Given a collection of candidate numbers (C) and a target number (T), find all unique combinations in C where the candidate numbers sums to T.</p>
+<p>Each number in C may only be used once in the combination.</p>
+<p>Note:<br>All numbers (including target) will be positive integers.<br>The solution set must not contain duplicate combinations.<br>For example, given candidate set [10, 1, 2, 7, 6, 1, 5] and target 8,<br>A solution set is:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">[</div><div class="line">  [1, 7],</div><div class="line">  [1, 2, 5],</div><div class="line">  [2, 6],</div><div class="line">  [1, 1, 6]</div><div class="line">]</div></pre></td></tr></table></figure></p>
+<p><strong>Runtime: 17 ms runtime beats 94.63% of java submissions.</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">public List&lt;List&lt;Integer&gt;&gt; combinationSum2(int[] candidates, int target) &#123;</div><div class="line">	Arrays.sort(candidates);</div><div class="line">	List&lt;List&lt;Integer&gt;&gt; result = new LinkedList&lt;List&lt;Integer&gt;&gt;();</div><div class="line">	List&lt;Integer&gt; tmp = new ArrayList&lt;Integer&gt;();</div><div class="line">	dfs(0, candidates, target, tmp, result);</div><div class="line">	return result;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">private void dfs(int begin, int[] candidates, int rest, List&lt;Integer&gt; tmp,</div><div class="line">				 List&lt;List&lt;Integer&gt;&gt; result) &#123;</div><div class="line">	if (rest == 0)</div><div class="line">		result.add(new ArrayList&lt;Integer&gt;(tmp));//tmp是变动的,所以此处需要new一个</div><div class="line">	/*分别从candidates[i]开始往下深搜*/</div><div class="line">	for (int i = begin; i &lt; candidates.length &amp;&amp; candidates[i] &lt;= rest; i++) &#123;</div><div class="line">		if (i &gt; begin &amp;&amp; candidates[i] == candidates[i - 1]) continue;</div><div class="line">		tmp.add(candidates[i]);</div><div class="line">		dfs(i + 1, candidates, rest - candidates[i], tmp, result);//搜索下个数字</div><div class="line">		tmp.remove(tmp.size() - 1);//回溯</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -309,24 +306,18 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/leetcode/" rel="tag">#leetcode</a>
-          
-        </div>
-      
 
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2016/07/26/IV/" rel="next" title="LeetCode 377 Combination Sum IV">
+                <i class="fa fa-chevron-left"></i> LeetCode 377 Combination Sum IV
+              </a>
+            
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/07/22/Array/" rel="prev" title="LeetCode 215 Kth Largest Element in an Array">
-                LeetCode 215 Kth Largest Element in an Array <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
