@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="leetcode," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -86,19 +86,25 @@
 
 
 
-<meta name="description" content="Given a list, rotate the list to the right by k places, where k is non-negative.For example:Given 1-&amp;gt;2-&amp;gt;3-&amp;gt;4-&amp;gt;5-&amp;gt;NULL and k = 2,return 4-&amp;gt;5-&amp;gt;1-&amp;gt;2-&amp;gt;3-&amp;gt;NULL.
-题意：给定列表 和一个整数">
+<meta name="description" content="Given a non-empty array containing only positive integers, find if the array can be partitioned into two subsets such that the sum of elements in both subsets is equal.
+Note:
+
+Each of the array elemen">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode 61 Rotate List">
-<meta property="og:url" content="http://niuoo.github.io/2016/07/18/My-New-Post/index.html">
+<meta property="og:title" content="LeetCode 416 Partition Equal Subset Sum">
+<meta property="og:url" content="http://niuoo.github.io/2017/01/22/LeetCode-416-Partition-Equal-Subset-Sum/index.html">
 <meta property="og:site_name" content="niuoo">
-<meta property="og:description" content="Given a list, rotate the list to the right by k places, where k is non-negative.For example:Given 1-&amp;gt;2-&amp;gt;3-&amp;gt;4-&amp;gt;5-&amp;gt;NULL and k = 2,return 4-&amp;gt;5-&amp;gt;1-&amp;gt;2-&amp;gt;3-&amp;gt;NULL.
-题意：给定列表 和一个整数">
-<meta property="og:updated_time" content="2016-07-20T16:34:26.000Z">
+<meta property="og:description" content="Given a non-empty array containing only positive integers, find if the array can be partitioned into two subsets such that the sum of elements in both subsets is equal.
+Note:
+
+Each of the array elemen">
+<meta property="og:updated_time" content="2017-01-22T12:47:08.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LeetCode 61 Rotate List">
-<meta name="twitter:description" content="Given a list, rotate the list to the right by k places, where k is non-negative.For example:Given 1-&amp;gt;2-&amp;gt;3-&amp;gt;4-&amp;gt;5-&amp;gt;NULL and k = 2,return 4-&amp;gt;5-&amp;gt;1-&amp;gt;2-&amp;gt;3-&amp;gt;NULL.
-题意：给定列表 和一个整数">
+<meta name="twitter:title" content="LeetCode 416 Partition Equal Subset Sum">
+<meta name="twitter:description" content="Given a non-empty array containing only positive integers, find if the array can be partitioned into two subsets such that the sum of elements in both subsets is equal.
+Note:
+
+Each of the array elemen">
 
 
 
@@ -119,9 +125,9 @@
 
 
 
-  <link rel="canonical" href="http://niuoo.github.io/2016/07/18/My-New-Post/"/>
+  <link rel="canonical" href="http://niuoo.github.io/2017/01/22/LeetCode-416-Partition-Equal-Subset-Sum/"/>
 
-  <title> LeetCode 61 Rotate List | niuoo </title>
+  <title> LeetCode 416 Partition Equal Subset Sum | niuoo </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -241,7 +247,7 @@
             
             
               
-                LeetCode 61 Rotate List
+                LeetCode 416 Partition Equal Subset Sum
               
             
           </h1>
@@ -253,8 +259,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-07-18T22:08:17+08:00" content="Jul 18 2016">
-              Jul 18 2016
+            <time itemprop="dateCreated" datetime="2017-01-22T20:40:07+08:00" content="Jan 22 2017">
+              Jan 22 2017
             </time>
           </span>
 
@@ -281,14 +287,21 @@
       
 
       
-        <p>Given a list, rotate the list to the right by k places, where k is non-negative.<br>For example:<br>Given 1-&gt;2-&gt;3-&gt;4-&gt;5-&gt;NULL and k = 2,<br>return 4-&gt;5-&gt;1-&gt;2-&gt;3-&gt;NULL.</p>
-<p>题意：给定列表 和一个整数 k ，旋转列表最后 k 个元素至列表最前面。<br>思路：</p>
+        <p>Given a non-empty array containing only positive integers, find if the array can be partitioned into two subsets such that the sum of elements in both subsets is equal.</p>
+<p>Note:</p>
 <ol>
-<li>先找到最后元素 lastOne ，并计算链表长度，同时最后一个元素指向头节点，形成一个环。</li>
-<li>从head节点开始，往后走到第 len - k % len，即走到了旋转后列表新的最后元素 newLastOne，新的环链表在newLastOne之后断开。</li>
-<li>断开的链表即是反转后的新链表。</li>
+<li>Each of the array element will not exceed 100.</li>
+<li>The array size will not exceed 200.<br>Example 1:</li>
 </ol>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> ListNode <span class="title">rotateRight</span><span class="params">(ListNode head,<span class="keyword">int</span> k)</span> </span>&#123;</div><div class="line">  <span class="keyword">if</span> (head == <span class="keyword">null</span> || k == <span class="number">0</span>) <span class="keyword">return</span> head;</div><div class="line">  ListNode p = head;</div><div class="line">  <span class="keyword">int</span> len = <span class="number">1</span>;</div><div class="line">  <span class="keyword">while</span> (p.next != <span class="keyword">null</span>) &#123;</div><div class="line">    len++;</div><div class="line">	  p = p.next;</div><div class="line">  &#125;</div><div class="line">  p.next = head;<span class="comment">//form a circle </span></div><div class="line">  <span class="keyword">for</span> (k = len - k % len; k &gt; <span class="number">0</span>; k--) p = p.next;</div><div class="line">  head = p.next;<span class="comment">//break the circle at the(len - k % len)th ListNode </span></div><div class="line">  p.next = <span class="keyword">null</span>;</div><div class="line">  <span class="keyword">return</span> head;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>Input: [1, 5, 11, 5]</p>
+<p>Output: true</p>
+<p>Explanation: The array can be partitioned as [1, 5, 5] and [11].<br>Example 2:</p>
+<p>Input: [1, 2, 3, 5]</p>
+<p>Output: false</p>
+<p>Explanation: The array cannot be partitioned into equal sum subsets.</p>
+<p><strong>这个题目的思路是先算出数组的总和，然后取总和的一半，如果数组存在总和等于sum/2的子序列，那么数组就可以被分成两组总和和相等的子序列。<br>主要问题是如何确定数组是否存在总和等于sum/2的子序列，就是做深搜了。<br>关于求数组子序列总和等于target的所有子序列集合，可以看向这里<a href="http://niuoo.me/2017/01/22/LeetCode-40-Combination-Sum-II/" target="_blank" rel="external">LeetCode 40 Combination Sum II</a></strong></p>
+<p><strong>Runtime: 17 ms runtime beats 94.63% of java submissions.</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">canPartition</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</div><div class="line">	<span class="keyword">int</span> sum = <span class="number">0</span>;</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> num : nums) &#123;</div><div class="line">		sum += num;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">if</span> (sum % <span class="number">2</span> != <span class="number">0</span>) <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">	sum = sum / <span class="number">2</span>;</div><div class="line">	Arrays.sort(nums);</div><div class="line">	<span class="keyword">return</span> dfsPartition(<span class="number">0</span>, nums, sum);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">boolean</span> <span class="title">dfsPartition</span><span class="params">(<span class="keyword">int</span> begin, <span class="keyword">int</span>[] nums, <span class="keyword">int</span> rest)</span> </span>&#123;</div><div class="line">	<span class="keyword">if</span> (rest == <span class="number">0</span>) <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">	<span class="comment">/**分别从nums[i]开始往下深搜*/</span></div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = begin; i &lt; nums.length &amp;&amp; nums[i] &lt;= rest; i++) &#123;</div><div class="line">		<span class="keyword">if</span> (i &gt; begin &amp;&amp; nums[i] == nums[i - <span class="number">1</span>]) <span class="keyword">continue</span>;</div><div class="line">		<span class="keyword">if</span> (dfsPartition(i + <span class="number">1</span>, nums, rest - nums[i])) <span class="keyword">return</span> <span class="keyword">true</span>;<span class="comment">//搜索下个数字</span></div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -309,24 +322,18 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/leetcode/" rel="tag">#leetcode</a>
-          
-        </div>
-      
 
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2017/01/22/LeetCode-40-Combination-Sum-II/" rel="next" title="LeetCode 40 Combination Sum II">
+                <i class="fa fa-chevron-left"></i> LeetCode 40 Combination Sum II
+              </a>
+            
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/07/22/Array/" rel="prev" title="LeetCode 215 Kth Largest Element in an Array">
-                LeetCode 215 Kth Largest Element in an Array <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
