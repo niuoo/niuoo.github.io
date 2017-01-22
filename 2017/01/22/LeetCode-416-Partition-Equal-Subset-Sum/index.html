@@ -73,6 +73,8 @@
 
 
 
+  
+
 
   <link rel="alternate" href="/atom.xml" title="niuoo" type="application/atom+xml" />
 
@@ -98,7 +100,7 @@ Each of the array elemen">
 Note:
 
 Each of the array elemen">
-<meta property="og:updated_time" content="2017-01-22T12:47:08.000Z">
+<meta property="og:updated_time" content="2017-01-22T12:49:18.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="LeetCode 416 Partition Equal Subset Sum">
 <meta name="twitter:description" content="Given a non-empty array containing only positive integers, find if the array can be partitioned into two subsets such that the sum of elements in both subsets is equal.
@@ -300,7 +302,7 @@ Each of the array elemen">
 <p>Output: false</p>
 <p>Explanation: The array cannot be partitioned into equal sum subsets.</p>
 <p><strong>这个题目的思路是先算出数组的总和，然后取总和的一半，如果数组存在总和等于sum/2的子序列，那么数组就可以被分成两组总和和相等的子序列。<br>主要问题是如何确定数组是否存在总和等于sum/2的子序列，就是做深搜了。<br>关于求数组子序列总和等于target的所有子序列集合，可以看向这里<a href="http://niuoo.me/2017/01/22/LeetCode-40-Combination-Sum-II/" target="_blank" rel="external">LeetCode 40 Combination Sum II</a></strong></p>
-<p><strong>Runtime: 17 ms runtime beats 94.63% of java submissions.</strong></p>
+<p><strong>Runtime: 11 ms runtime beats 99.63% of java submissions.</strong></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">canPartition</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</div><div class="line">	<span class="keyword">int</span> sum = <span class="number">0</span>;</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> num : nums) &#123;</div><div class="line">		sum += num;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">if</span> (sum % <span class="number">2</span> != <span class="number">0</span>) <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">	sum = sum / <span class="number">2</span>;</div><div class="line">	Arrays.sort(nums);</div><div class="line">	<span class="keyword">return</span> dfsPartition(<span class="number">0</span>, nums, sum);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">boolean</span> <span class="title">dfsPartition</span><span class="params">(<span class="keyword">int</span> begin, <span class="keyword">int</span>[] nums, <span class="keyword">int</span> rest)</span> </span>&#123;</div><div class="line">	<span class="keyword">if</span> (rest == <span class="number">0</span>) <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">	<span class="comment">/**分别从nums[i]开始往下深搜*/</span></div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = begin; i &lt; nums.length &amp;&amp; nums[i] &lt;= rest; i++) &#123;</div><div class="line">		<span class="keyword">if</span> (i &gt; begin &amp;&amp; nums[i] == nums[i - <span class="number">1</span>]) <span class="keyword">continue</span>;</div><div class="line">		<span class="keyword">if</span> (dfsPartition(i + <span class="number">1</span>, nums, rest - nums[i])) <span class="keyword">return</span> <span class="keyword">true</span>;<span class="comment">//搜索下个数字</span></div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
       
