@@ -240,6 +240,100 @@
             
               
                 
+                <a class="post-title-link" href="/2017/05/02/线性回归和逻辑回归/" itemprop="url">
+                  线性回归和逻辑回归
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2017-05-02T15:25:46+08:00" content="May 2 2017">
+              May 2 2017
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><img src="media/14937102125819.png" alt=""></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2017/05/02/机器学习可以做什么/" itemprop="url">
                   关于机器学习
                 </a>
@@ -286,16 +380,18 @@
           
             <h2 id="先开个玩笑"><a href="#先开个玩笑" class="headerlink" title="先开个玩笑"></a>先开个玩笑</h2><p><img src="media/14937047197716.jpg" alt=""></p>
 <p>以上这个图片只是开个玩笑啦！哈哈哈<br>我目前做的事情呢，比较偏向于倒数第三张图片，目前，我是个观望的门外汉。<br>最后一整图片，scikit-learn封装了大部分机器学习算法的Python库。通常ML都在调用现有算法库，然后调参数。有一句话说，你以为我是科学家，其实我是调包侠。那么接下来呢，我不会告诉大家怎么来正确调包，我只是想分享一下关于机器学习，我了解到的都有什么知识。<br>另外，我讲解的所有东西，来源是吴恩达Andrew Ng教授的机器学习课程，或者网络知乎回答等。全部内容皆非原创。<br><a href="https://www.coursera.org/learn/machine-learning/" target="_blank" rel="external">Andrew Ng机器学习课程</a></p>
-<h2 id="监督式学习–Supervised-Learning"><a href="#监督式学习–Supervised-Learning" class="headerlink" title="监督式学习–Supervised Learning"></a>监督式学习–Supervised Learning</h2><p>监督式学习可以分为”回归regression”和”分类classification”问题。输入数据集a data set(features)，和每条数据对应的正确输出(label)，并且数据集和输出之间有一定的关系(map or function)。在回归问题中，我们尝试找到一个连续函数，可以最好的映射输入输出，然后通过这个continuous function来进行后续的预测。而分类问题也差不多如此，只不过，输出都是离散的值。</p>
-<ol>
+<h2 id="机器学习可以做什么"><a href="#机器学习可以做什么" class="headerlink" title="机器学习可以做什么"></a>机器学习可以做什么</h2><ol>
+<li>数据挖掘。房价预测之类。</li>
+<li>不能通过精确编程完成的应用。如手写数字的识别，自然语言解析，计算机视觉等。</li>
+<li>亚马逊和Netflix的产品推荐。<h2 id="监督式学习–Supervised-Learning"><a href="#监督式学习–Supervised-Learning" class="headerlink" title="监督式学习–Supervised Learning"></a>监督式学习–Supervised Learning</h2>监督式学习可以分为”回归regression”和”分类classification”问题。输入数据集a data set(features)，和每条数据对应的正确输出(label)，并且数据集和输出之间有一定的关系(map or function)。在回归问题中，我们尝试找到一个连续函数，可以最好的映射输入输出，然后通过这个continuous function来进行后续的预测。而分类问题也差不多如此，只不过，输出都是离散的值。</li>
 <li>根据房屋大小，预测房子价格。这是个线性回归的问题。(这很像数据挖掘或者统计学的问题:p)</li>
 <li>给一张人物照片，预测这个人的年龄。线性回归问题。</li>
 <li>给定一个病人的肿瘤数据，预测肿瘤是良性的还是恶性的。分类问题。</li>
-<li>手写数字的识别、区分是否垃圾邮件。分类问题。</li>
+<li>手写数字的识别、区分是否垃圾邮件、是否金融欺诈。分类问题。</li>
 </ol>
 <h2 id="无监督式学习–Unsupervised-Learning"><a href="#无监督式学习–Unsupervised-Learning" class="headerlink" title="无监督式学习–Unsupervised Learning"></a>无监督式学习–Unsupervised Learning</h2><p>在未加标签的数据中，试图找到隐藏的结构。</p>
 <ol>
-<li>聚类。把有特征向量但没标签的数据分成一个个组合，如新闻的分类。(k-means)。</li>
+<li>聚类。给定数据集，分类成一个个组合，如新闻的分类等。组织大型计算机集群，并试图找出那些机器趋向于协同工作，如果把这些机器放在一起，就可以让数据中心更高效工作。社交网络里面也有，区分哪些用户之间是很亲密，哪些用户之间仅仅是认识。根据商业系统中的数据，细分市场，然后把客户再分到不同的细分市场中。(k-means)</li>
 <li>信号分离。使用特征提取的技术降维。鸡尾酒会，说话声音和音乐声音分离。</li>
 </ol>
 <h2 id="强化学习–Reinforcement-Learning"><a href="#强化学习–Reinforcement-Learning" class="headerlink" title="强化学习–Reinforcement Learning"></a>强化学习–Reinforcement Learning</h2><p>强化学习是agent(与环境有交互的对象)自己去学习，并且得到反馈reward，以便RL进行迭代，学习到策略链，是个决策模型，而监督学习是跟着programmer的idea在收敛。<br><a href="https://zhuanlan.zhihu.com/p/25319023" target="_blank" rel="external">强化学习的知识整理</a></p>
@@ -977,7 +1073,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">7</span>
+              <span class="site-state-item-count">8</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
