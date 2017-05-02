@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://niuoo.github.io/"/>
-  <updated>2017-05-02T05:58:42.000Z</updated>
+  <updated>2017-05-02T06:11:07.000Z</updated>
   <id>http://niuoo.github.io/</id>
   
   <author>
@@ -20,10 +20,10 @@
     <link href="http://niuoo.github.io/2017/05/02/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%8F%AF%E4%BB%A5%E5%81%9A%E4%BB%80%E4%B9%88/"/>
     <id>http://niuoo.github.io/2017/05/02/机器学习可以做什么/</id>
     <published>2017-05-02T02:26:03.000Z</published>
-    <updated>2017-05-02T05:58:42.000Z</updated>
+    <updated>2017-05-02T06:11:07.000Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="先开个玩笑"><a href="#先开个玩笑" class="headerlink" title="先开个玩笑"></a>先开个玩笑</h2><p><img src="https://pic1.zhimg.com/f6736d27c4dc0256f1c9dbfb61c2c5dc_b.png" alt=""><br><img src="media/14937047197716.jpg" alt=""></p>
-<p>以上这个图片只是开个玩笑啦！哈哈哈<br>我目前做的事情呢，比较偏向于倒数第三张图片，目前，我是个观望的门外汉。<br>最后一整图片，scikit-learn封装了大部分机器学习算法的Python库。通常ML都在调用现有算法库，然后调参数。有一句话说，你以为我是科学家，其实我是调包侠。那么接下来呢，我不会告诉大家怎么来正确调包，我只是想分享一下关于机器学习，我了解到的都有什么知识。<br>我也不想解释机器学习是什么，不过我会讲一下机器学习都可以做什么。<br>另外，我讲解的所有东西，来源是吴恩达Andrew Ng教授的机器学习课程，或者网络知乎回答等。全部内容皆非原创。<br><a href="https://www.coursera.org/learn/machine-learning/" target="_blank" rel="external">Andrew Ng机器学习课程</a></p>
+    <content type="html"><![CDATA[<h2 id="先开个玩笑"><a href="#先开个玩笑" class="headerlink" title="先开个玩笑"></a>先开个玩笑</h2><p><img src="media/14937047197716.jpg" alt=""></p>
+<p>以上这个图片只是开个玩笑啦！哈哈哈<br>我目前做的事情呢，比较偏向于倒数第三张图片，目前，我是个观望的门外汉。<br>最后一整图片，scikit-learn封装了大部分机器学习算法的Python库。通常ML都在调用现有算法库，然后调参数。有一句话说，你以为我是科学家，其实我是调包侠。那么接下来呢，我不会告诉大家怎么来正确调包，我只是想分享一下关于机器学习，我了解到的都有什么知识。<br>另外，我讲解的所有东西，来源是吴恩达Andrew Ng教授的机器学习课程，或者网络知乎回答等。全部内容皆非原创。<br><a href="https://www.coursera.org/learn/machine-learning/" target="_blank" rel="external">Andrew Ng机器学习课程</a></p>
 <h2 id="监督式学习–Supervised-Learning"><a href="#监督式学习–Supervised-Learning" class="headerlink" title="监督式学习–Supervised Learning"></a>监督式学习–Supervised Learning</h2><p>监督式学习可以分为”回归regression”和”分类classification”问题。输入数据集a data set(features)，和每条数据对应的正确输出(label)，并且数据集和输出之间有一定的关系(map or function)。在回归问题中，我们尝试找到一个连续函数，可以最好的映射输入输出，然后通过这个continuous function来进行后续的预测。而分类问题也差不多如此，只不过，输出都是离散的值。</p>
 <ol>
 <li>根据房屋大小，预测房子价格。这是个线性回归的问题。</li>
@@ -34,14 +34,16 @@
 <h2 id="无监督式学习–Unsupervised-Learning"><a href="#无监督式学习–Unsupervised-Learning" class="headerlink" title="无监督式学习–Unsupervised Learning"></a>无监督式学习–Unsupervised Learning</h2><p>在未加标签的数据中，试图找到隐藏的结构。</p>
 <ol>
 <li>聚类。把有特征向量但没标签的数据分成一个个组合，如新闻的分类。(k-means)。</li>
-<li>信号分离。使用特征提取的技术降维。声音分离。<h2 id="强化学习–Reinforcement-Learning"><a href="#强化学习–Reinforcement-Learning" class="headerlink" title="强化学习–Reinforcement Learning"></a>强化学习–Reinforcement Learning</h2>强化学习是agent(与环境有交互的对象)自己去学习，并且得到反馈reward，以便RL进行迭代，学习到策略链，是个决策模型，而监督学习是跟着programmer的idea在收敛。<br><a href="https://zhuanlan.zhihu.com/p/25319023" target="_blank" rel="external">强化学习的知识整理</a></li>
+<li>信号分离。使用特征提取的技术降维。鸡尾酒会，说话声音和音乐声音分离。</li>
 </ol>
-<p>以上虽然</p>
+<h2 id="强化学习–Reinforcement-Learning"><a href="#强化学习–Reinforcement-Learning" class="headerlink" title="强化学习–Reinforcement Learning"></a>强化学习–Reinforcement Learning</h2><p>强化学习是agent(与环境有交互的对象)自己去学习，并且得到反馈reward，以便RL进行迭代，学习到策略链，是个决策模型，而监督学习是跟着programmer的idea在收敛。<br><a href="https://zhuanlan.zhihu.com/p/25319023" target="_blank" rel="external">强化学习的知识整理</a></p>
+<p>对于强化学习，我几乎没有任何了解。接下来的文章，我会讲解一下机器学习中，比较基础简单的算法。<br>:p</p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;h2 id=&quot;先开个玩笑&quot;&gt;&lt;a href=&quot;#先开个玩笑&quot; class=&quot;headerlink&quot; title=&quot;先开个玩笑&quot;&gt;&lt;/a&gt;先开个玩笑&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;https://pic1.zhimg.com/f6736d27c4dc0256f1c9dbfb6
+      &lt;h2 id=&quot;先开个玩笑&quot;&gt;&lt;a href=&quot;#先开个玩笑&quot; class=&quot;headerlink&quot; title=&quot;先开个玩笑&quot;&gt;&lt;/a&gt;先开个玩笑&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;media/14937047197716.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;以上这个图片只
     
     </summary>
     
