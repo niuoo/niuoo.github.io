@@ -78,11 +78,11 @@
     <link href="http://niuoo.github.io/2017/05/02/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%8F%AF%E4%BB%A5%E5%81%9A%E4%BB%80%E4%B9%88/"/>
     <id>http://niuoo.github.io/2017/05/02/机器学习可以做什么/</id>
     <published>2017-05-02T02:26:03.000Z</published>
-    <updated>2017-05-03T15:01:04.000Z</updated>
+    <updated>2017-05-03T15:50:40.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="先开个玩笑">先开个玩笑</h2>
 <div class="figure">
-<img src="media/14937047197716.jpg">
+<img src="/media/14938266335179.jpg">
 
 </div>
 <p>以上这个图片只是开个玩笑啦！哈哈哈<br>我目前做的事情呢，比较偏向于倒数第三张图片，目前，我是个观望的门外汉。<br>最后一整图片，scikit-learn封装了大部分机器学习算法的Python库。通常ML都在调用现有算法库，然后调参数。有一句话说，你以为我是科学家，其实我是调包侠。那么接下来呢，我不会告诉大家怎么来正确调包，我只是想分享一下关于机器学习，我了解到的都有什么知识。<br>另外，我讲解的所有东西，来源是吴恩达Andrew Ng教授的机器学习课程，或者网络知乎回答等。全部内容皆非原创。<br><a href="https://www.coursera.org/learn/machine-learning/" target="_blank" rel="external">Andrew Ng机器学习课程</a></p>
@@ -115,10 +115,10 @@
     
       &lt;h2 id=&quot;先开个玩笑&quot;&gt;先开个玩笑&lt;/h2&gt;
 &lt;div class=&quot;figure&quot;&gt;
-&lt;img src=&quot;media/14937047197716.jpg&quot;&gt;
+&lt;img src=&quot;/media/14938266335179.jpg&quot;&gt;
 
 &lt;/div&gt;
-&lt;p&gt;以上这个图片只是开个玩笑啦！哈哈哈&lt;br&gt;我目前做的事情呢，比较偏向于倒数第三张图片，目前
+&lt;p&gt;以上这个图片只是开个玩笑啦！哈哈哈&lt;br&gt;我目前做的事情呢，比较偏向于倒数第三张图片，目
     
     </summary>
     
