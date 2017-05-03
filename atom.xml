@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://niuoo.github.io/"/>
-  <updated>2017-05-03T14:16:42.000Z</updated>
+  <updated>2017-05-03T14:27:31.000Z</updated>
   <id>http://niuoo.github.io/</id>
   
   <author>
@@ -20,16 +20,15 @@
     <link href="http://niuoo.github.io/2017/05/02/%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92%E5%92%8C%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92/"/>
     <id>http://niuoo.github.io/2017/05/02/线性回归和逻辑回归/</id>
     <published>2017-05-02T07:25:46.000Z</published>
-    <updated>2017-05-03T14:16:42.000Z</updated>
+    <updated>2017-05-03T14:27:31.000Z</updated>
     
     <content type="html"><![CDATA[<p>回归一词指的是我们根据之前的数据，预测出一个准确的输出值。 <img src="media/14937102125819.png"></p>
 <h1 id="线性回归">线性回归</h1>
 <p>线性回归是统计学领域的方法，特征和结果的关系满足线性，即不大于1次方，如<span class="math">\(θ\_1x\_1+θ\_2x\_{2}+θ\_3x\_{3}=y\)</span>。都使用向量vector表示，<span class="math">\(θ^T =[θ_1,θ_2,θ_3],X^T= [x_1,x_2,x_3]\)</span>，假设函数为<span class="math">\(h_\theta(x)=θ^TX\)</span>。我们的目的是为了求出最恰当的θ，即<span class="math">\(θ_1,θ_2,θ_3\)</span>三者的值，使得损失函数<span class="math">\(J(θ)=\frac{1}{2m}\sum_{i=1}^{m}(h_θ(x^{(i)})−y^{(i)})^2\)</span>的值最小。</p>
 <h3 id="梯度下降算法gradient-descent">梯度下降算法(Gradient descent)</h3>
-<p>我们得到的一般是个局部最优解。如果是个碗状或者叫做倒钟型的函数，那局部最优也是全局最优解。 The gradient descent algorithm is: repeat until convergence: <span class="math">\(θ_j:=θ_j−α\frac∂{∂θ_j}J(θ_1,θ_2,θ_3)\)</span> where j=1,2,3represents the feature index number. <a href="https://d3c33hcgiwev3.cloudfront.net/_ec21cea314b2ac7d9e627706501b5baa_Lecture2.pdf?Expires=1493856000&amp;Signature=GSAbIM5AmG64UdFqdjCCWIn5hN~JZ8IheTVb6mliIEMdfhHgTrecl9toRVElelfaWZGY3vPkI33K7uOHicFc52EldArFxSunmfh4Mr4yjiEpZBbSF8-Tl9cWVTy2pAixsdpkmlL37Lku8VGax-LoenwwvR0i055g8j2wKJCGOrQ_&amp;Key-Pair-Id=APKAJLTNE6QMUY6HBC5A" target="_blank" rel="external">斯坦福课程线性回归教案拉到三分之二处看</a> <a href="http://m.blog.csdn.net/article/details?id=51188876" target="_blank" rel="external">几种梯度下降方法</a> <a href="http://blog.csdn.net/qq_34206952/article/details/54316285" target="_blank" rel="external">求导公式证明</a></p>
-<p>α我们称之为learning rate步长，如果太大，那么损失函数不能收敛，如果太小，会收敛过慢。</p>
-<p>另外需要注意特征缩放(feature scaling)，确保不同特征的取值在相近的范围内，这样梯度下降法就能更快的收敛。因为如果不做这个，J(θ)在θ1和θ2轴上的投影将会非常的瘦长，收敛的过程需要走很多步，才能到达最小值，做特征缩放，就是为了让偏移没那么严重，投影看起来更圆一些。进行特征缩放时，将特征的取值约束到−1≤x(i)≤1或者−0.5≤x(i)≤0.5。 <span class="math">\(x_i:=\frac{x_i−μ_i}{s_i}\)</span> μi表示feature(i)的平均值，si是feature(i)值的范围(max - min),或者是标准差。 For example, if xi represents housing prices with a range of 100 to 2000 and a mean value of 1000, then, <span class="math">\(xi:=\frac{price−1000}{1900}\)</span>.</p>
-<p>说句题外话，这个也很像将一般的正态分布转化成标准正态分布的过程:p 另外还有对应线性回归的，还有多项式回归(曲线回归)。有时候，线性函数无法合适的进行数据的拟合，这时候也许多项式进行拟合效果更好（曲线曲面等）。</p>
+<p>我们得到的一般是个局部最优解。如果是个碗状或者叫做倒钟型的函数，那局部最优也是全局最优解。 The gradient descent algorithm is: repeat until convergence: <span class="math">\(θ_j:=θ_j−α\frac∂{∂θ_j}J(θ_1,θ_2,θ_3)\)</span> where j=1,2,3represents the feature index number. <a href="https://d3c33hcgiwev3.cloudfront.net/_ec21cea314b2ac7d9e627706501b5baa_Lecture2.pdf?Expires=1493856000&amp;Signature=GSAbIM5AmG64UdFqdjCCWIn5hN~JZ8IheTVb6mliIEMdfhHgTrecl9toRVElelfaWZGY3vPkI33K7uOHicFc52EldArFxSunmfh4Mr4yjiEpZBbSF8-Tl9cWVTy2pAixsdpkmlL37Lku8VGax-LoenwwvR0i055g8j2wKJCGOrQ_&amp;Key-Pair-Id=APKAJLTNE6QMUY6HBC5A" target="_blank" rel="external">斯坦福课程线性回归教案拉到三分之二处看</a> <a href="http://m.blog.csdn.net/article/details?id=51188876" target="_blank" rel="external">几种梯度下降方法</a> <a href="http://blog.csdn.net/qq_34206952/article/details/54316285" target="_blank" rel="external">求导公式证明</a><br>α我们称之为learning rate步长，如果太大，那么损失函数不能收敛，如果太小，会收敛过慢。</p>
+<p>另外需要注意特征缩放(feature scaling)，确保不同特征的取值在相近的范围内，这样梯度下降法就能更快的收敛。因为如果不做这个，J(θ)在θ1和θ2轴上的投影将会非常的瘦长，收敛的过程需要走很多步，才能到达最小值，做特征缩放，就是为了让偏移没那么严重，投影看起来更圆一些。进行特征缩放时，将特征的取值约束到−1≤x(i)≤1或者−0.5≤x(i)≤0.5。 <span class="math">\(x_i:=\frac{x_i−μ_i}{s_i}\)</span> μi表示feature(i)的平均值，si是feature(i)值的范围(max - min),或者是标准差。<br>For example, if xi represents housing prices with a range of 100 to 2000 and a mean value of 1000, then, <span class="math">\(xi:=\frac{price−1000}{1900}\)</span>.<br>说句题外话，这个特征缩放也很像将一般的正态分布转化成标准正态分布的过程:p</p>
+<p>另外还有对应线性回归的，多项式回归(曲线回归)。有时候，线性函数无法合适的进行数据的拟合，这时候也许多项式进行拟合效果更好（曲线曲面等）。</p>
 <h3 id="正规方程法normal-equation">正规方程法(Normal Equation)</h3>
 <p>此乃最小二乘法，<span class="math">\(θ = (X^TX)^{-1}X^Ty\)</span>,不需要进行特征的缩放，不需要选择α，不需要迭代，但梯度下降法在很多特征变量的情况下，也能运行地相当好，即使有上百万的特征变量，通常很有效，时间复杂度为<span class="math">\(O(kn^2)\)</span>;而正规方程法，为了求解参数θ，需要求解<span class="math">\((X^TX)^{-1}\)</span>，其中<span class="math">\(X^TX\)</span>这是个n*n的矩阵，然后求逆矩阵的计算量，大概是矩阵纬度的三次方,<span class="math">\(O(n^3)\)</span>，因此当n很大时，这个方法会非常慢的。n&gt;1W就考虑梯度下降吧。只要特征数目不是很大，用正规方程法是非常好的，对于线性回归的模型。</p>
 <table>
@@ -58,9 +57,9 @@
 </tr>
 </tbody>
 </table>
-<p>如果<span class="math">\(X^TX\)</span>是不可逆(不可逆的矩阵为奇异或退化矩阵)的时候呢？如果存在两个特征值有线性相关的时候，矩阵不可逆，或者特征向量太多的时候(e.g. m ≤ n)，矩阵或许也不可逆，这种情况就删除重复特征的一个，无须同时保留。一般情况下，算法库也会给我们一个伪逆矩阵或者是逆矩阵的解。 注:设A是数域上的一个n阶方阵，若在相同数域上存在另一个n阶矩阵B，使得：AB=BA=E。则我们称B是A的逆矩阵，而A则被称为可逆矩阵。</p>
+<p>如果<span class="math">\(X^TX\)</span>是不可逆(不可逆的矩阵为奇异或退化矩阵)的时候呢？如果存在两个特征值有线性相关的时候，矩阵不可逆，或者特征向量太多的时候(e.g. m ≤ n)，矩阵或许也不可逆，这种情况就删除重复特征的一个，无须同时保留。一般情况下，算法库也会给我们一个伪逆矩阵或者是逆矩阵的解。<br>注:设A是数域上的一个n阶方阵，若在相同数域上存在另一个n阶矩阵B，使得：AB=BA=E。则我们称B是A的逆矩阵，而A则被称为可逆矩阵。</p>
 <h1 id="逻辑回归logistic-regression">逻辑回归(Logistic Regression)</h1>
-<p>逻辑回归的模型 是一个非线性模型，但是它本质上又是一个线性回归模型，因为除去sigmoid映射函数关系，其他的步骤，算法都是线性回归的。可以说，逻辑回归，是以线性回归为理论支持的，只有在feature和target是线性关系时，才能用Logistic Regression（不像SVM那样可以应对非线性问题）。Logistic Regression 就是一个被logistic方程归一化后的线性回归，仅此而已。只不过，线性模型，无法做到sigmoid的非线性形式，sigmoid可以轻松处理0/1分类问题。 sigmoid函数，又称逻辑回归函数，用来进行归一化处理(促使<span class="math">\(y^{(i)}∈(0,1)\)</span>)。</p>
+<p>逻辑回归的模型 是一个非线性模型，但是它本质上又是一个线性回归模型，因为除去sigmoid映射函数关系，其他的步骤，算法都是线性回归的。可以说，逻辑回归，是以线性回归为理论支持的，只有在feature和target是线性关系时，才能用Logistic Regression（不像SVM那样可以应对非线性问题）。Logistic Regression 就是一个被logistic方程归一化后的线性回归，仅此而已。只不过，线性模型，无法做到sigmoid的非线性形式，sigmoid可以轻松处理0/1分类问题。<br>sigmoid函数，又称逻辑回归函数，用来进行归一化处理(促使<span class="math">\(y^{(i)}∈(0,1)\)</span>)。</p>
 ]]></content>
     
     <summary type="html">
@@ -81,30 +80,27 @@
     <published>2017-05-02T02:26:03.000Z</published>
     <updated>2017-05-03T08:10:47.000Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="先开个玩笑"><a href="#先开个玩笑" class="headerlink" title="先开个玩笑"></a>先开个玩笑</h2><p><img src="media/14937047197716.jpg" alt=""></p>
-<p>以上这个图片只是开个玩笑啦！哈哈哈<br>我目前做的事情呢，比较偏向于倒数第三张图片，目前，我是个观望的门外汉。<br>最后一整图片，scikit-learn封装了大部分机器学习算法的Python库。通常ML都在调用现有算法库，然后调参数。有一句话说，你以为我是科学家，其实我是调包侠。那么接下来呢，我不会告诉大家怎么来正确调包，我只是想分享一下关于机器学习，我了解到的都有什么知识。<br>另外，我讲解的所有东西，来源是吴恩达Andrew Ng教授的机器学习课程，或者网络知乎回答等。全部内容皆非原创。<br><a href="https://www.coursera.org/learn/machine-learning/" target="_blank" rel="external">Andrew Ng机器学习课程</a></p>
-<h2 id="机器学习可以做什么"><a href="#机器学习可以做什么" class="headerlink" title="机器学习可以做什么"></a>机器学习可以做什么</h2><ol>
-<li>数据挖掘。房价预测之类。</li>
-<li>不能通过精确编程完成的应用。如手写数字的识别，自然语言解析，计算机视觉等。</li>
-<li>推荐系统。亚马逊和Netflix的产品推荐。<br><a href="https://vimeo.com/57513893" target="_blank" rel="external">用机器学习做过什么有趣的事情</a><h2 id="监督式学习–Supervised-Learning"><a href="#监督式学习–Supervised-Learning" class="headerlink" title="监督式学习–Supervised Learning"></a>监督式学习–Supervised Learning</h2>监督式学习可以分为”回归regression”和”分类classification”问题。输入数据集a data set(features)，和每条数据对应的正确输出(label)，并且数据集和输出之间有一定的关系(map or function)。在回归问题中，我们尝试找到一个连续函数，可以最好的映射输入输出，然后通过这个continuous function来进行后续的预测。而分类问题也差不多如此，只不过，输出都是离散的值。</li>
-<li>根据房屋大小，预测房子价格。这是个线性回归的问题。(这很像数据挖掘或者统计学的问题:p)</li>
-<li>给一张人物照片，预测这个人的年龄。线性回归问题。</li>
-<li>给定一个病人的肿瘤数据，预测肿瘤是良性的还是恶性的。分类问题。</li>
-<li>手写数字的识别、区分是否垃圾邮件、是否金融欺诈。分类问题。</li>
-</ol>
-<h2 id="无监督式学习–Unsupervised-Learning"><a href="#无监督式学习–Unsupervised-Learning" class="headerlink" title="无监督式学习–Unsupervised Learning"></a>无监督式学习–Unsupervised Learning</h2><p>在未加标签的数据中，试图找到隐藏的结构。</p>
-<ol>
-<li>聚类。给定数据集，分类成一个个组合，如新闻的分类等。组织大型计算机集群，并试图找出那些机器趋向于协同工作，如果把这些机器放在一起，就可以让数据中心更高效工作。社交网络里面也有，区分哪些用户之间是很亲密，哪些用户之间仅仅是认识。根据商业系统中的数据，细分市场，然后把客户再分到不同的细分市场中。(k-means)</li>
-<li>信号分离。使用特征提取的技术降维。鸡尾酒会，说话声音和音乐声音分离。(PCA)</li>
-</ol>
-<h2 id="强化学习–Reinforcement-Learning"><a href="#强化学习–Reinforcement-Learning" class="headerlink" title="强化学习–Reinforcement Learning"></a>强化学习–Reinforcement Learning</h2><p>强化学习是agent(与环境有交互的对象)自己去学习，并且得到反馈reward，以便RL进行迭代，学习到策略链，是个决策模型，而监督学习是跟着programmer的idea在收敛。<br><a href="https://zhuanlan.zhihu.com/p/25319023" target="_blank" rel="external">强化学习的知识整理</a></p>
-<p>对于强化学习，我几乎没有任何了解。接下来的文章，我会讲解一下机器学习中，比较基础简单的算法。<br>:p</p>
+    <content type="html"><![CDATA[<h2 id="先开个玩笑">先开个玩笑</h2>
+<div class="figure">
+<img src="media/14937047197716.jpg">
+
+</div>
+<p>以上这个图片只是开个玩笑啦！哈哈哈 我目前做的事情呢，比较偏向于倒数第三张图片，目前，我是个观望的门外汉。 最后一整图片，scikit-learn封装了大部分机器学习算法的Python库。通常ML都在调用现有算法库，然后调参数。有一句话说，你以为我是科学家，其实我是调包侠。那么接下来呢，我不会告诉大家怎么来正确调包，我只是想分享一下关于机器学习，我了解到的都有什么知识。 另外，我讲解的所有东西，来源是吴恩达Andrew Ng教授的机器学习课程，或者网络知乎回答等。全部内容皆非原创。 <a href="https://www.coursera.org/learn/machine-learning/" target="_blank" rel="external">Andrew Ng机器学习课程</a> ## 机器学习可以做什么 1. 数据挖掘。房价预测之类。 2. 不能通过精确编程完成的应用。如手写数字的识别，自然语言解析，计算机视觉等。 3. 推荐系统。亚马逊和Netflix的产品推荐。 <a href="https://vimeo.com/57513893" target="_blank" rel="external">用机器学习做过什么有趣的事情</a> ## 监督式学习–Supervised Learning 监督式学习可以分为“回归regression”和“分类classification”问题。输入数据集a data set(features)，和每条数据对应的正确输出(label)，并且数据集和输出之间有一定的关系(map or function)。在回归问题中，我们尝试找到一个连续函数，可以最好的映射输入输出，然后通过这个continuous function来进行后续的预测。而分类问题也差不多如此，只不过，输出都是离散的值。 1. 根据房屋大小，预测房子价格。这是个线性回归的问题。(这很像数据挖掘或者统计学的问题:p) 2. 给一张人物照片，预测这个人的年龄。线性回归问题。 3. 给定一个病人的肿瘤数据，预测肿瘤是良性的还是恶性的。分类问题。 4. 手写数字的识别、区分是否垃圾邮件、是否金融欺诈。分类问题。</p>
+<h2 id="无监督式学习unsupervised-learning">无监督式学习–Unsupervised Learning</h2>
+<p>在未加标签的数据中，试图找到隐藏的结构。 1. 聚类。给定数据集，分类成一个个组合，如新闻的分类等。组织大型计算机集群，并试图找出那些机器趋向于协同工作，如果把这些机器放在一起，就可以让数据中心更高效工作。社交网络里面也有，区分哪些用户之间是很亲密，哪些用户之间仅仅是认识。根据商业系统中的数据，细分市场，然后把客户再分到不同的细分市场中。(k-means) 2. 信号分离。使用特征提取的技术降维。鸡尾酒会，说话声音和音乐声音分离。(PCA)</p>
+<h2 id="强化学习reinforcement-learning">强化学习–Reinforcement Learning</h2>
+<p>强化学习是agent(与环境有交互的对象)自己去学习，并且得到反馈reward，以便RL进行迭代，学习到策略链，是个决策模型，而监督学习是跟着programmer的idea在收敛。 <a href="https://zhuanlan.zhihu.com/p/25319023" target="_blank" rel="external">强化学习的知识整理</a></p>
+<p>对于强化学习，我几乎没有任何了解。接下来的文章，我会讲解一下机器学习中，比较基础简单的算法。 :p</p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;h2 id=&quot;先开个玩笑&quot;&gt;&lt;a href=&quot;#先开个玩笑&quot; class=&quot;headerlink&quot; title=&quot;先开个玩笑&quot;&gt;&lt;/a&gt;先开个玩笑&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;media/14937047197716.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;以上这个图片只
+      &lt;h2 id=&quot;先开个玩笑&quot;&gt;先开个玩笑&lt;/h2&gt;
+&lt;div class=&quot;figure&quot;&gt;
+&lt;img src=&quot;media/14937047197716.jpg&quot;&gt;
+
+&lt;/div&gt;
+&lt;p&gt;以上这个图片只是开个玩笑啦！哈哈哈 我目前做的事情呢，比较偏向于倒数第三张图片，目前，我是
     
     </summary>
     
@@ -119,18 +115,14 @@
     <updated>2017-01-22T12:49:18.000Z</updated>
     
     <content type="html"><![CDATA[<p>Given a non-empty array containing only positive integers, find if the array can be partitioned into two subsets such that the sum of elements in both subsets is equal.</p>
-<p>Note:</p>
-<ol>
-<li>Each of the array element will not exceed 100.</li>
-<li>The array size will not exceed 200.<br>Example 1:</li>
-</ol>
+<p>Note: 1. Each of the array element will not exceed 100. 2. The array size will not exceed 200. Example 1:</p>
 <p>Input: [1, 5, 11, 5]</p>
 <p>Output: true</p>
-<p>Explanation: The array can be partitioned as [1, 5, 5] and [11].<br>Example 2:</p>
+<p>Explanation: The array can be partitioned as [1, 5, 5] and [11]. Example 2:</p>
 <p>Input: [1, 2, 3, 5]</p>
 <p>Output: false</p>
 <p>Explanation: The array cannot be partitioned into equal sum subsets.</p>
-<p><strong>这个题目的思路是先算出数组的总和，然后取总和的一半，如果数组存在总和等于sum/2的子序列，那么数组就可以被分成两组总和和相等的子序列。<br>主要问题是如何确定数组是否存在总和等于sum/2的子序列，就是做深搜了。<br>关于求数组子序列总和等于target的所有子序列集合，可以看向这里<a href="http://niuoo.me/2017/01/22/LeetCode-40-Combination-Sum-II/" target="_blank" rel="external">LeetCode 40 Combination Sum II</a></strong></p>
+<p><strong>这个题目的思路是先算出数组的总和，然后取总和的一半，如果数组存在总和等于sum/2的子序列，那么数组就可以被分成两组总和和相等的子序列。 主要问题是如何确定数组是否存在总和等于sum/2的子序列，就是做深搜了。 关于求数组子序列总和等于target的所有子序列集合，可以看向这里<a href="http://niuoo.me/2017/01/22/LeetCode-40-Combination-Sum-II/" target="_blank" rel="external">LeetCode 40 Combination Sum II</a></strong></p>
 <p><strong>Runtime: 11 ms runtime beats 99.63% of java submissions.</strong></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">canPartition</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</div><div class="line">	<span class="keyword">int</span> sum = <span class="number">0</span>;</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> num : nums) &#123;</div><div class="line">		sum += num;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">if</span> (sum % <span class="number">2</span> != <span class="number">0</span>) <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">	sum = sum / <span class="number">2</span>;</div><div class="line">	Arrays.sort(nums);</div><div class="line">	<span class="keyword">return</span> dfsPartition(<span class="number">0</span>, nums, sum);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">boolean</span> <span class="title">dfsPartition</span><span class="params">(<span class="keyword">int</span> begin, <span class="keyword">int</span>[] nums, <span class="keyword">int</span> rest)</span> </span>&#123;</div><div class="line">	<span class="keyword">if</span> (rest == <span class="number">0</span>) <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">	<span class="comment">/**分别从nums[i]开始往下深搜*/</span></div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = begin; i &lt; nums.length &amp;&amp; nums[i] &lt;= rest; i++) &#123;</div><div class="line">		<span class="keyword">if</span> (i &gt; begin &amp;&amp; nums[i] == nums[i - <span class="number">1</span>]) <span class="keyword">continue</span>;</div><div class="line">		<span class="keyword">if</span> (dfsPartition(i + <span class="number">1</span>, nums, rest - nums[i])) <span class="keyword">return</span> <span class="keyword">true</span>;<span class="comment">//搜索下个数字</span></div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 ]]></content>
@@ -153,7 +145,7 @@
     
     <content type="html"><![CDATA[<p>Given a collection of candidate numbers (C) and a target number (T), find all unique combinations in C where the candidate numbers sums to T.</p>
 <p>Each number in C may only be used once in the combination.</p>
-<p>Note:<br>All numbers (including target) will be positive integers.<br>The solution set must not contain duplicate combinations.<br>For example, given candidate set [10, 1, 2, 7, 6, 1, 5] and target 8,<br>A solution set is:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">[</div><div class="line">  [1, 7],</div><div class="line">  [1, 2, 5],</div><div class="line">  [2, 6],</div><div class="line">  [1, 1, 6]</div><div class="line">]</div></pre></td></tr></table></figure></p>
+<p>Note: All numbers (including target) will be positive integers. The solution set must not contain duplicate combinations. For example, given candidate set [10, 1, 2, 7, 6, 1, 5] and target 8, A solution set is: <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">[</div><div class="line">  [1, 7],</div><div class="line">  [1, 2, 5],</div><div class="line">  [2, 6],</div><div class="line">  [1, 1, 6]</div><div class="line">]</div></pre></td></tr></table></figure></p>
 <p><strong>Runtime: 17 ms runtime beats 94.63% of java submissions.</strong></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> List&lt;List&lt;Integer&gt;&gt; combinationSum2(<span class="keyword">int</span>[] candidates, <span class="keyword">int</span> target) &#123;</div><div class="line">	Arrays.sort(candidates);</div><div class="line">	List&lt;List&lt;Integer&gt;&gt; result = <span class="keyword">new</span> LinkedList&lt;List&lt;Integer&gt;&gt;();</div><div class="line">	List&lt;Integer&gt; tmp = <span class="keyword">new</span> ArrayList&lt;Integer&gt;();</div><div class="line">	dfs(<span class="number">0</span>, candidates, target, tmp, result);</div><div class="line">	<span class="keyword">return</span> result;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> begin, <span class="keyword">int</span>[] candidates, <span class="keyword">int</span> rest, List&lt;Integer&gt; tmp,</span></span></div><div class="line">				 List&lt;List&lt;Integer&gt;&gt; result) &#123;</div><div class="line">	<span class="keyword">if</span> (rest == <span class="number">0</span>)</div><div class="line">		result.add(<span class="keyword">new</span> ArrayList&lt;Integer&gt;(tmp));<span class="comment">//tmp是变动的,所以此处需要new一个</span></div><div class="line">	<span class="comment">/*分别从candidates[i]开始往下深搜*/</span></div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = begin; i &lt; candidates.length &amp;&amp; candidates[i] &lt;= rest; i++) &#123;</div><div class="line">		<span class="keyword">if</span> (i &gt; begin &amp;&amp; candidates[i] == candidates[i - <span class="number">1</span>]) <span class="keyword">continue</span>;</div><div class="line">		tmp.add(candidates[i]);</div><div class="line">		dfs(i + <span class="number">1</span>, candidates, rest - candidates[i], tmp, result);<span class="comment">//搜索下个数字</span></div><div class="line">		tmp.remove(tmp.size() - <span class="number">1</span>);<span class="comment">//回溯</span></div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 ]]></content>
@@ -174,18 +166,18 @@
     <published>2016-07-26T06:55:15.000Z</published>
     <updated>2016-07-26T11:08:11.000Z</updated>
     
-    <content type="html"><![CDATA[<p>Given an integer array with all positive numbers and no duplicates, find the<br>number of possible combinations that add up to a positive integer target.<br>Example:<br>nums = [1, 2, 3]<br>target = 4</p>
-<p>The possible combination ways are:<br>(1, 1, 1, 1)<br>(1, 1, 2)<br>(1, 2, 1)<br>(1, 3)<br>(2, 1, 1)<br>(2, 2)<br>(3, 1)</p>
-<p>Note that different sequences are counted as different combinations.<br>Therefore the output is 7.</p>
+    <content type="html"><![CDATA[<p>Given an integer array with all positive numbers and no duplicates, find the number of possible combinations that add up to a positive integer target. Example: nums = [1, 2, 3] target = 4</p>
+<p>The possible combination ways are: (1, 1, 1, 1) (1, 1, 2) (1, 2, 1) (1, 3) (2, 1, 1) (2, 2) (3, 1)</p>
+<p>Note that different sequences are counted as different combinations. Therefore the output is 7.</p>
 <p>刚开始写了个递归，就去提交了。Time Limit Exceeded.</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/***这是错误的代码！***/</span></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">combinationSum4</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target)</span> </span>&#123;</div><div class="line">		<span class="keyword">int</span> len = nums.length;</div><div class="line">		Arrays.sort(nums);</div><div class="line">		<span class="keyword">int</span> sum = <span class="number">0</span>;</div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len; i++) &#123;</div><div class="line">			<span class="keyword">if</span> (target - nums[i] == <span class="number">0</span>) sum += <span class="number">1</span>;</div><div class="line">			<span class="keyword">if</span> (target - nums[i] &gt; <span class="number">0</span>) sum += combinationSum4(nums, target - nums[i]);</div><div class="line">			<span class="keyword">if</span> (target - nums[i] &lt; <span class="number">0</span>) <span class="keyword">break</span>;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">return</span> sum;</div><div class="line">	&#125;</div></pre></td></tr></table></figure>
-<p>以上解法，毫无疑问，Time Limit Exceeded了，因为很多步骤都是重复的，如 [1,50]的nums，targe<br>为200，所以根据这错的方法我们就会重复多计算比200小的target，导致超时，所以，我们要提前把小于<br>target的数，都先计算出来，防止递归的时候，重复计算，导致超时。<br>正确的解法：</p>
+<p>以上解法，毫无疑问，Time Limit Exceeded了，因为很多步骤都是重复的，如 [1,50]的nums，targe 为200，所以根据这错的方法我们就会重复多计算比200小的target，导致超时，所以，我们要提前把小于 target的数，都先计算出来，防止递归的时候，重复计算，导致超时。 正确的解法：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">combinationSum4</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target)</span> </span>&#123;</div><div class="line">	Arrays.sort(nums);</div><div class="line">	<span class="keyword">int</span>[] sum = <span class="keyword">new</span> <span class="keyword">int</span>[target + <span class="number">1</span>];</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= target; i++) &#123;<span class="comment">//提前计算出所有小的target有几种组合数</span></div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> num : nums) &#123;</div><div class="line">			<span class="keyword">if</span> (i == num) sum[i] += <span class="number">1</span>;</div><div class="line">			<span class="keyword">if</span> (i &gt; num) sum[i] += sum[i - num];</div><div class="line">			<span class="keyword">if</span> (i &lt; num) <span class="keyword">break</span>;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> sum[target];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 ]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;Given an integer array with all positive numbers and no duplicates, find the&lt;br&gt;number of possible combinations that add up to a positive
+      &lt;p&gt;Given an integer array with all positive numbers and no duplicates, find the number of possible combinations that add up to a positive in
     
     </summary>
     
@@ -201,15 +193,15 @@
     <published>2016-07-23T03:42:52.000Z</published>
     <updated>2016-07-23T03:54:34.000Z</updated>
     
-    <content type="html"><![CDATA[<p>Given a list of non negative integers, arrange them such that they form the<br>largest number.<br>For example, given [3, 30, 34, 5, 9], the largest formed number is 9534330.<br>Note: The result may be very large, so you need to return a string instead of an<br>integer.<br>思路：比较两个数连接后的大小进行排序。<br>Runtime: 125 ms  beats 88.37%</p>
+    <content type="html"><![CDATA[<p>Given a list of non negative integers, arrange them such that they form the largest number. For example, given [3, 30, 34, 5, 9], the largest formed number is 9534330. Note: The result may be very large, so you need to return a string instead of an integer. 思路：比较两个数连接后的大小进行排序。 Runtime: 125 ms  beats 88.37%</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">largestNumber</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</div><div class="line">	String[] s = <span class="keyword">new</span> String[nums.length];</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length; i++) s[i] = String.valueOf(nums[i]);</div><div class="line">	Arrays.sort(s, (b, a) -&gt; (a.concat(b).compareTo(b.concat(a))));</div><div class="line">	StringBuffer result = <span class="keyword">new</span> StringBuffer(<span class="string">""</span>);</div><div class="line">	<span class="keyword">for</span> (String num : s) result.append(num);</div><div class="line">	<span class="keyword">return</span> result.substring(<span class="number">0</span>, <span class="number">1</span>).equals(<span class="string">"0"</span>) ? <span class="string">"0"</span> : result.toString();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>使用java8的特性：<br>Runtime: 153 ms beats 10.23%</p>
+<p>使用java8的特性： Runtime: 153 ms beats 10.23%</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> String <span class="title">largestNumber2</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</div><div class="line">	String result = Arrays</div><div class="line">			.stream(nums)</div><div class="line">			.mapToObj(Integer::toString)</div><div class="line">			.sorted((b, a) -&gt; (a.concat(b).compareTo(b.concat(a))))</div><div class="line">			.collect(Collectors.joining());</div><div class="line">	<span class="keyword">return</span> result.charAt(<span class="number">0</span>) == <span class="string">'0'</span> ? <span class="string">"0"</span> : result;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 ]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;Given a list of non negative integers, arrange them such that they form the&lt;br&gt;largest number.&lt;br&gt;For example, given [3, 30, 34, 5, 9], t
+      &lt;p&gt;Given a list of non negative integers, arrange them such that they form the largest number. For example, given [3, 30, 34, 5, 9], the lar
     
     </summary>
     
@@ -223,8 +215,8 @@
     <published>2016-07-22T14:08:48.000Z</published>
     <updated>2016-07-22T14:32:09.000Z</updated>
     
-    <content type="html"><![CDATA[<p>Find the kth largest element in an unsorted array. Note that it is the kth largest element in the sorted order, not the kth distinct element.<br>For example,<br>Given [3,2,1,5,6,4] and k = 2, return 5.<br>Note:<br>You may assume k is always valid, 1 ≤ k ≤ array’s length.<br>思路：</p>
-<ol>
+    <content type="html"><![CDATA[<p>Find the kth largest element in an unsorted array. Note that it is the kth largest element in the sorted order, not the kth distinct element. For example, Given [3,2,1,5,6,4] and k = 2, return 5. Note:  You may assume k is always valid, 1 ≤ k ≤ array’s length. 思路：</p>
+<ol style="list-style-type: decimal">
 <li>选取数组合适的element作为pivot （提高效率）</li>
 <li>使用partition，elements&lt;=pivot的放到pivot前，elements&gt;=pivot的elements放到pivot后，pivot就放到了正确位置position。</li>
 <li>缩小下次partition查找的范围。如果pivot的position比target大，那么扔掉pivot之后的elements，继续在pivot之前的elements里面找。反之，pivot的position小于target，扔掉pivot之前的elements，再pivot之后的elements里继续partition。这样不断缩小，一直到不能再缩小。</li>
@@ -232,13 +224,13 @@
 </ol>
 <p>1ms Java solution beats 99.1%.</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">findKthLargest</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> k)</span> </span>&#123;</div><div class="line">	<span class="keyword">int</span> n = nums.length, target = n - k;</div><div class="line">	quicksort(nums, <span class="number">0</span>, n - <span class="number">1</span>, target);</div><div class="line">	<span class="keyword">return</span> nums[n - k]; <span class="comment">//nums[n - k]就是the kth largest element</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">quicksort</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> start, <span class="keyword">int</span> end, <span class="keyword">int</span> target)</span> </span>&#123;</div><div class="line">	<span class="keyword">if</span> (start &gt;= end) <span class="keyword">return</span>;</div><div class="line">	<span class="keyword">int</span> mid = start + (end - start) / <span class="number">2</span>;</div><div class="line">	<span class="keyword">int</span> pivot = choosePivot(nums[mid], nums[start], nums[end]);</div><div class="line">	<span class="keyword">int</span> i = start, j = end;</div><div class="line">	<span class="keyword">while</span> (i &lt;= j) &#123;</div><div class="line">		<span class="keyword">while</span> (nums[i] &lt; pivot) i++;</div><div class="line">		<span class="keyword">while</span> (nums[j] &gt; pivot) j--;</div><div class="line">		<span class="keyword">if</span> (i &lt;= j) &#123;</div><div class="line">			<span class="keyword">if</span> (nums[i] != nums[j]) swap(nums, i, j);</div><div class="line">			i++;</div><div class="line">			j--;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">if</span> (target &lt;= i - <span class="number">1</span>) quicksort(nums, start, i - <span class="number">1</span>, target);</div><div class="line">	<span class="keyword">else</span> quicksort(nums, i, end, target);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">/**选取a,b,c三者的中位数*/</span></div><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">int</span> <span class="title">choosePivot</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b, <span class="keyword">int</span> c)</span> </span>&#123;</div><div class="line">	<span class="keyword">int</span> min = Math.min(a, Math.min(b, c));</div><div class="line">	<span class="keyword">int</span> max = Math.max(a, Math.max(b, c));</div><div class="line">	<span class="keyword">return</span> a - max + b - min + c;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> i, <span class="keyword">int</span> j)</span> </span>&#123;</div><div class="line">	<span class="keyword">int</span> tmp = nums[i];</div><div class="line">	nums[i] = nums[j];</div><div class="line">	nums[j] = tmp;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>思路：<br>使用优先队列，维护size为k的小顶堆，堆顶的元素就是第k大的元素，而其余元素都比这个元素大。<br>9ms Java solution beats 66.46%.</p>
+<p>思路： 使用优先队列，维护size为k的小顶堆，堆顶的元素就是第k大的元素，而其余元素都比这个元素大。 9ms Java solution beats 66.46%.</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">findKthLargest2</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> k)</span> </span>&#123;</div><div class="line">	PriorityQueue&lt;Integer&gt; pq = <span class="keyword">new</span> PriorityQueue&lt;Integer&gt;(k);</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length; i++) &#123;</div><div class="line">		<span class="keyword">if</span> (pq.size() &lt; k) pq.offer(nums[i]);</div><div class="line">		<span class="keyword">else</span> <span class="keyword">if</span> (nums[i] &gt; pq.peek()) &#123;</div><div class="line">			pq.poll();</div><div class="line">			pq.offer(nums[i]);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> pq.peek();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 ]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;Find the kth largest element in an unsorted array. Note that it is the kth largest element in the sorted order, not the kth distinct elem
+      &lt;p&gt;Find the kth largest element in an unsorted array. Note that it is the kth largest element in the sorted order, not the kth distinct elem
     
     </summary>
     
@@ -254,9 +246,9 @@
     <published>2016-07-18T14:08:17.000Z</published>
     <updated>2016-07-20T16:34:26.000Z</updated>
     
-    <content type="html"><![CDATA[<p>Given a list, rotate the list to the right by k places, where k is non-negative.<br>For example:<br>Given 1-&gt;2-&gt;3-&gt;4-&gt;5-&gt;NULL and k = 2,<br>return 4-&gt;5-&gt;1-&gt;2-&gt;3-&gt;NULL.</p>
-<p>题意：给定列表 和一个整数 k ，旋转列表最后 k 个元素至列表最前面。<br>思路：</p>
-<ol>
+    <content type="html"><![CDATA[<p>Given a list, rotate the list to the right by k places, where k is non-negative. For example: Given 1-&gt;2-&gt;3-&gt;4-&gt;5-&gt;NULL and k = 2, return 4-&gt;5-&gt;1-&gt;2-&gt;3-&gt;NULL.</p>
+<p>题意：给定列表 和一个整数 k ，旋转列表最后 k 个元素至列表最前面。 思路：</p>
+<ol style="list-style-type: decimal">
 <li>先找到最后元素 lastOne ，并计算链表长度，同时最后一个元素指向头节点，形成一个环。</li>
 <li>从head节点开始，往后走到第 len - k % len，即走到了旋转后列表新的最后元素 newLastOne，新的环链表在newLastOne之后断开。</li>
 <li>断开的链表即是反转后的新链表。</li>
@@ -266,7 +258,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;Given a list, rotate the list to the right by k places, where k is non-negative.&lt;br&gt;For example:&lt;br&gt;Given 1-&amp;gt;2-&amp;gt;3-&amp;gt;4-&amp;gt;5-&amp;gt;N
+      &lt;p&gt;Given a list, rotate the list to the right by k places, where k is non-negative. For example: Given 1-&amp;gt;2-&amp;gt;3-&amp;gt;4-&amp;gt;5-&amp;gt;NULL an
     
     </summary>
     
