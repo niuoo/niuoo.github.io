@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://niuoo.github.io/"/>
-  <updated>2017-05-04T03:43:56.000Z</updated>
+  <updated>2017-05-04T09:33:44.000Z</updated>
   <id>http://niuoo.github.io/</id>
   
   <author>
@@ -14,6 +14,38 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>神经网络初探</title>
+    <link href="http://niuoo.github.io/2017/05/04/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%88%9D%E6%8E%A2/"/>
+    <id>http://niuoo.github.io/2017/05/04/神经网络初探/</id>
+    <published>2017-05-04T06:14:20.000Z</published>
+    <updated>2017-05-04T09:33:44.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>神经网络是当今最强大的学习算法之一，我们以下讲述，神经网络在分类问题中的应用，在给定训练集下，为神经网络拟合参数的学习方法。<br><span class="math">\(\begin{align*} a_1^{(2)} = g(\Theta_{10}^{(1)}x_0 + \Theta_{11}^{(1)}x_1 + \Theta_{12}^{(1)}x_2 + \Theta_{13}^{(1)}x_3) \newline a_2^{(2)} = g(\Theta_{20}^{(1)}x_0 + \Theta_{21}^{(1)}x_1 + \Theta_{22}^{(1)}x_2 + \Theta_{23}^{(1)}x_3) \newline a_3^{(2)} = g(\Theta_{30}^{(1)}x_0 + \Theta_{31}^{(1)}x_1 + \Theta_{32}^{(1)}x_2 + \Theta_{33}^{(1)}x_3) \newline h_\Theta(x) = a_1^{(3)} = g(\Theta_{10}^{(2)}a_0^{(2)} + \Theta_{11}^{(2)}a_1^{(2)} + \Theta_{12}^{(2)}a_2^{(2)} + \Theta_{13}^{(2)}a_3^{(2)}) \newline \end{align*}\)</span> # 神经网络的损失函数<br>其中逻辑回归的损失函数为：<br><span class="math">\(J(\theta) = - \frac{1}{m} \sum_{i=1}^m [ y^{(i)}\ \log (h_\theta (x^{(i)})) + (1 - y^{(i)})\ \log (1 - h_\theta(x^{(i)}))] + \frac{\lambda}{2m}\sum_{j=1}^n \theta_j^2\)</span><br>神经网络的损失函数比起逻辑回归的稍微复杂了一点儿：<br><span class="math">\(\begin{gather*} J(\Theta) = - \frac{1}{m} \sum_{i=1}^m \sum_{k=1}^K \left[y^{(i)}_k \log ((h_\Theta (x^{(i)}))_k) + (1 - y^{(i)}_k)\log (1 - (h_\Theta(x^{(i)}))_k)\right] + \frac{\lambda}{2m}\sum_{l=1}^{L-1} \sum_{i=1}^{s_l} \sum_{j=1}^{s_{l+1}} ( \Theta_{j,i}^{(l)})^2\end{gather*}\)</span></p>
+<ul>
+<li>L = 神经网络的层数。<br></li>
+<li><span class="math">\(s_l\)</span> = 在第l层，神经单元的个数(不包括偏移量单元)</li>
+<li>K = 神经网络输出层的单元个数。就是分类的类别总数。数字识别的话就是10.</li>
+</ul>
+<p>在Θ矩阵中，列代表当前层的单元个数，包括偏移单元；行代表下一层的神经元个数，不包含偏移单元。</p>
+<p>注意：</p>
+<ul>
+<li>双和嵌套，只是简单的把输出层每个分类的逻辑回归损失加在一起了。m代表训练集的个数。</li>
+<li>三个和嵌套的，是把神经网络里面，所有Θ矩阵的元素平方加在一起了。</li>
+<li>i在三和嵌套中，代表的不是训练样本个数，而是代表当前层的神经元个数。</li>
+</ul>
+<h1 id="反向传播算法-backpropagation-algorithm">反向传播算法 Backpropagation Algorithm</h1>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;神经网络是当今最强大的学习算法之一，我们以下讲述，神经网络在分类问题中的应用，在给定训练集下，为神经网络拟合参数的学习方法。&lt;br&gt;&lt;span class=&quot;math&quot;&gt;\(\begin{align*} a_1^{(2)} = g(\Theta_{10}^{(1)}x_0 
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>线性回归和逻辑回归</title>
@@ -88,7 +120,7 @@
     <link href="http://niuoo.github.io/2017/05/02/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%8F%AF%E4%BB%A5%E5%81%9A%E4%BB%80%E4%B9%88/"/>
     <id>http://niuoo.github.io/2017/05/02/机器学习可以做什么/</id>
     <published>2017-05-02T02:26:03.000Z</published>
-    <updated>2017-05-03T15:50:40.000Z</updated>
+    <updated>2017-05-04T05:19:55.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="先开个玩笑">先开个玩笑</h2>
 <div class="figure">

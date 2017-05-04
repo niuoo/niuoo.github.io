@@ -86,15 +86,16 @@
 
 
 
-<meta name="description" content="It is my Blog!">
-<meta property="og:type" content="website">
-<meta property="og:title" content="niuoo">
-<meta property="og:url" content="http://niuoo.github.io/tags/LeetCode/index.html">
+<meta name="description" content="神经网络是当今最强大的学习算法之一，我们以下讲述，神经网络在分类问题中的应用，在给定训练集下，为神经网络拟合参数的学习方法。\(\begin{align*} a_1^{(2)} = g(\Theta_{10}^{(1)}x_0 + \Theta_{11}^{(1)}x_1 + \Theta_{12}^{(1)}x_2 + \Theta_{13}^{(1)}x_3) \newline a_2^{(2">
+<meta property="og:type" content="article">
+<meta property="og:title" content="神经网络初探">
+<meta property="og:url" content="http://niuoo.github.io/2017/05/04/神经网络初探/index.html">
 <meta property="og:site_name" content="niuoo">
-<meta property="og:description" content="It is my Blog!">
+<meta property="og:description" content="神经网络是当今最强大的学习算法之一，我们以下讲述，神经网络在分类问题中的应用，在给定训练集下，为神经网络拟合参数的学习方法。\(\begin{align*} a_1^{(2)} = g(\Theta_{10}^{(1)}x_0 + \Theta_{11}^{(1)}x_1 + \Theta_{12}^{(1)}x_2 + \Theta_{13}^{(1)}x_3) \newline a_2^{(2">
+<meta property="og:updated_time" content="2017-05-04T09:33:44.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="niuoo">
-<meta name="twitter:description" content="It is my Blog!">
+<meta name="twitter:title" content="神经网络初探">
+<meta name="twitter:description" content="神经网络是当今最强大的学习算法之一，我们以下讲述，神经网络在分类问题中的应用，在给定训练集下，为神经网络拟合参数的学习方法。\(\begin{align*} a_1^{(2)} = g(\Theta_{10}^{(1)}x_0 + \Theta_{11}^{(1)}x_1 + \Theta_{12}^{(1)}x_2 + \Theta_{13}^{(1)}x_3) \newline a_2^{(2">
 
 
 
@@ -115,9 +116,9 @@
 
 
 
-  <link rel="canonical" href="http://niuoo.github.io/tags/LeetCode/"/>
+  <link rel="canonical" href="http://niuoo.github.io/2017/05/04/神经网络初探/"/>
 
-  <title> Tag: LeetCode | niuoo </title>
+  <title> 神经网络初探 | niuoo </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -138,7 +139,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -216,46 +217,129 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-collapse">
-    <div class="collection-title">
-      <h2 >
-        LeetCode
-        <small>Tag</small>
-      </h2>
-    </div>
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
 
     
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                神经网络初探
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2017-05-04T14:14:20+08:00" content="May 4 2017">
+              May 4 2017
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
       
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+      
+        <p>神经网络是当今最强大的学习算法之一，我们以下讲述，神经网络在分类问题中的应用，在给定训练集下，为神经网络拟合参数的学习方法。<br><span class="math">\(\begin{align*} a_1^{(2)} = g(\Theta_{10}^{(1)}x_0 + \Theta_{11}^{(1)}x_1 + \Theta_{12}^{(1)}x_2 + \Theta_{13}^{(1)}x_3) \newline a_2^{(2)} = g(\Theta_{20}^{(1)}x_0 + \Theta_{21}^{(1)}x_1 + \Theta_{22}^{(1)}x_2 + \Theta_{23}^{(1)}x_3) \newline a_3^{(2)} = g(\Theta_{30}^{(1)}x_0 + \Theta_{31}^{(1)}x_1 + \Theta_{32}^{(1)}x_2 + \Theta_{33}^{(1)}x_3) \newline h_\Theta(x) = a_1^{(3)} = g(\Theta_{10}^{(2)}a_0^{(2)} + \Theta_{11}^{(2)}a_1^{(2)} + \Theta_{12}^{(2)}a_2^{(2)} + \Theta_{13}^{(2)}a_3^{(2)}) \newline \end{align*}\)</span> # 神经网络的损失函数<br>其中逻辑回归的损失函数为：<br><span class="math">\(J(\theta) = - \frac{1}{m} \sum_{i=1}^m [ y^{(i)}\ \log (h_\theta (x^{(i)})) + (1 - y^{(i)})\ \log (1 - h_\theta(x^{(i)}))] + \frac{\lambda}{2m}\sum_{j=1}^n \theta_j^2\)</span><br>神经网络的损失函数比起逻辑回归的稍微复杂了一点儿：<br><span class="math">\(\begin{gather*} J(\Theta) = - \frac{1}{m} \sum_{i=1}^m \sum_{k=1}^K \left[y^{(i)}_k \log ((h_\Theta (x^{(i)}))_k) + (1 - y^{(i)}_k)\log (1 - (h_\Theta(x^{(i)}))_k)\right] + \frac{\lambda}{2m}\sum_{l=1}^{L-1} \sum_{i=1}^{s_l} \sum_{j=1}^{s_{l+1}} ( \Theta_{j,i}^{(l)})^2\end{gather*}\)</span></p>
+<ul>
+<li>L = 神经网络的层数。<br></li>
+<li><span class="math">\(s_l\)</span> = 在第l层，神经单元的个数(不包括偏移量单元)</li>
+<li>K = 神经网络输出层的单元个数。就是分类的类别总数。数字识别的话就是10.</li>
+</ul>
+<p>在Θ矩阵中，列代表当前层的单元个数，包括偏移单元；行代表下一层的神经元个数，不包含偏移单元。</p>
+<p>注意：</p>
+<ul>
+<li>双和嵌套，只是简单的把输出层每个分类的逻辑回归损失加在一起了。m代表训练集的个数。</li>
+<li>三个和嵌套的，是把神经网络里面，所有Θ矩阵的元素平方加在一起了。</li>
+<li>i在三和嵌套中，代表的不是训练样本个数，而是代表当前层的神经元个数。</li>
+</ul>
+<h1 id="反向传播算法-backpropagation-algorithm">反向传播算法 Backpropagation Algorithm</h1>
 
-      <h1 class="post-title">
+      
+    </div>
+
+    <div>
+      
         
-            <a class="post-title-link" href="/2016/07/22/Array/" itemprop="url">
-              
-                <span itemprop="name">LeetCode 215 Kth Largest Element in an Array</span>
-              
-            </a>
+
+      
+    </div>
+
+    <div>
+      
         
-      </h1>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-07-22T22:08:48+08:00"
-              content="Jul 22 2016" >
-          07-22
-        </time>
-      </div>
+      
+    </div>
 
-    </header>
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/05/02/线性回归和逻辑回归/" rel="next" title="线性回归和逻辑回归">
+                <i class="fa fa-chevron-left"></i> 线性回归和逻辑回归
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </article>
 
 
-    
-  </div>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -263,6 +347,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -282,8 +370,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -333,6 +430,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#反向传播算法-backpropagation-algorithm"><span class="nav-number">1.</span> <span class="nav-text">反向传播算法 Backpropagation Algorithm</span></a></li></ol></div>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -429,6 +537,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
 
   
 
