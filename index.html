@@ -308,13 +308,11 @@
 <h2 id="反向传播算法的使用过程">反向传播算法的使用过程：</h2>
 <ol style="list-style-type: decimal">
 <li>Set <span class="math">\(a^{(1)} := x^{(t)}\)</span></li>
-<li>正向计算每层的每个节点的<span class="math">\(a^{(l)}\)</span>for l=2,3,…,L</li>
-</ol>
+<li><p>正向计算每层的每个节点的<span class="math">\(a^{(l)}\)</span>for l=2,3,…,L</p>
 <div class="figure">
 <img src="/media/14939747131225.jpg">
 
-</div>
-<ol start="3" style="list-style-type: decimal">
+</div></li>
 <li>使用<span class="math">\(y^{(t)}，计算出\delta^{(L)} = a^{(L)} - y^{(t)}\)</span>，最后输出层的错误率。</li>
 <li>使用<span class="math">\(\delta^{(l)} = ((\Theta^{(l)})^T \delta^{(l+1)})\ .*\ a^{(l)}\ .*\ (1 - a^{(l)})\)</span>，计算出<span class="math">\(\delta^{(L-1)}, \delta^{(L-2)},\dots,\delta^{(2)}\)</span>。<br> 其中<span class="math">\(g&#39;(z^{(l)}) = a^{(l)}\ .*\ (1 - a^{(l)})；\delta_j^{(l)} = \dfrac{\partial}{\partial z_j^{(l)}} cost(t)\)</span>，</li>
 <li><span class="math">\(\Delta^{(l)}_{i,j} := \Delta^{(l)}_{i,j} + a_j^{(l)} \delta_i^{(l+1)}，或者向量化一下，\Delta^{(l)} := \Delta^{(l)} + \delta^{(l+1)}(a^{(l)})^T\)</span>(Δ的初始化为0)<br> 至此，我们更新的权值累加器矩阵的为new Δ matrix，其中<span class="math">\(\frac \partial {\partial \Theta_{ij}^{(l)}} J(\Theta)=D_{ij}^{(l)}\)</span>
