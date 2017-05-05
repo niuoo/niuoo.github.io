@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://niuoo.github.io/"/>
-  <updated>2017-05-05T10:26:14.000Z</updated>
+  <updated>2017-05-05T14:49:22.000Z</updated>
   <id>http://niuoo.github.io/</id>
   
   <author>
@@ -20,9 +20,9 @@
     <link href="http://niuoo.github.io/2017/05/04/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%88%9D%E6%8E%A2/"/>
     <id>http://niuoo.github.io/2017/05/04/神经网络初探/</id>
     <published>2017-05-04T06:14:20.000Z</published>
-    <updated>2017-05-05T10:26:14.000Z</updated>
+    <updated>2017-05-05T14:49:22.000Z</updated>
     
-    <content type="html"><![CDATA[<p>神经网络是当今最强大的学习算法之一，我们以下讲述，神经网络在分类问题中的应用，在给定训练集下，为神经网络拟合参数的学习方法。<br><span class="math">\(\begin{align*} a_1^{(2)} = g(\Theta_{10}^{(1)}x_0 + \Theta_{11}^{(1)}x_1 + \Theta_{12}^{(1)}x_2 + \Theta_{13}^{(1)}x_3) \newline a_2^{(2)} = g(\Theta_{20}^{(1)}x_0 + \Theta_{21}^{(1)}x_1 + \Theta_{22}^{(1)}x_2 + \Theta_{23}^{(1)}x_3) \newline a_3^{(2)} = g(\Theta_{30}^{(1)}x_0 + \Theta_{31}^{(1)}x_1 + \Theta_{32}^{(1)}x_2 + \Theta_{33}^{(1)}x_3) \newline h_\Theta(x) = a_1^{(3)} = g(\Theta_{10}^{(2)}a_0^{(2)} + \Theta_{11}^{(2)}a_1^{(2)} + \Theta_{12}^{(2)}a_2^{(2)} + \Theta_{13}^{(2)}a_3^{(2)}) \newline \end{align*}\)</span></p>
+    <content type="html"><![CDATA[<p>神经网络是当今最强大的学习算法之一，自动驾驶对周围景物的识别，也用到了神经网络。<br>我们以下讲述，神经网络在分类问题中的应用，在给定训练集下，为神经网络拟合参数的学习方法。<br><span class="math">\(\begin{align*} a_1^{(2)} = g(\Theta_{10}^{(1)}x_0 + \Theta_{11}^{(1)}x_1 + \Theta_{12}^{(1)}x_2 + \Theta_{13}^{(1)}x_3) \newline a_2^{(2)} = g(\Theta_{20}^{(1)}x_0 + \Theta_{21}^{(1)}x_1 + \Theta_{22}^{(1)}x_2 + \Theta_{23}^{(1)}x_3) \newline a_3^{(2)} = g(\Theta_{30}^{(1)}x_0 + \Theta_{31}^{(1)}x_1 + \Theta_{32}^{(1)}x_2 + \Theta_{33}^{(1)}x_3) \newline h_\Theta(x) = a_1^{(3)} = g(\Theta_{10}^{(2)}a_0^{(2)} + \Theta_{11}^{(2)}a_1^{(2)} + \Theta_{12}^{(2)}a_2^{(2)} + \Theta_{13}^{(2)}a_3^{(2)}) \newline \end{align*}\)</span><br>在整个神经网络算法过程中，我们的最终目标是找到最佳的Θ矩阵中的权值。</p>
 <h1 id="神经网络的损失函数">神经网络的损失函数</h1>
 <p>其中逻辑回归的损失函数为：<br><span class="math">\(J(\theta) = - \frac{1}{m} \sum_{i=1}^m [ y^{(i)}\ \log (h_\theta (x^{(i)})) + (1 - y^{(i)})\ \log (1 - h_\theta(x^{(i)}))] + \frac{\lambda}{2m}\sum_{j=1}^n \theta_j^2\)</span><br>神经网络的损失函数在逻辑回归的基础上，稍微复杂了一点儿：<br><span class="math">\(\begin{gather*} J(\Theta) = - \frac{1}{m} \sum_{i=1}^m \sum_{k=1}^K \left[y^{(i)}_k \log ((h_\Theta (x^{(i)}))_k) + (1 - y^{(i)}_k)\log (1 - (h_\Theta(x^{(i)}))_k)\right] + \frac{\lambda}{2m}\sum_{l=1}^{L-1} \sum_{i=1}^{s_l} \sum_{j=1}^{s_{l+1}} ( \Theta_{j,i}^{(l)})^2\end{gather*}\)</span></p>
 <ul>
@@ -38,7 +38,7 @@
 <li>i在三和嵌套中，代表的不是训练样本个数，而是代表当前层的神经元个数。</li>
 </ul>
 <h1 id="反向传播算法-backpropagation-algorithm">反向传播算法 Backpropagation Algorithm</h1>
-<p>Back propagation的本质就是复合函数求导（following the chain rule）链式法则，本可以对这个网络里的每一个参数分别求偏导，但何苦呢，因为计算过程中的很多项都是重复的。为了不重复运算把把后层算好的导数传回前层，因为前层一定用得到。<br>关于反向传播算法，这里有个<a href="https://www.zhihu.com/question/27239198?rf=24827633" target="_blank" rel="external">浅显易懂的描述</a>。这里请看<a href="http://www.cnblogs.com/dengdan890730/p/5537451.html" target="_blank" rel="external">反向传播算法的推导过程</a>和<a href="http://blog.csdn.net/u014403897/article/details/46347351" target="_blank" rel="external">这里最后一层的求导</a>,这几个地方写的都不错。Andrew Ng老师的公开课对反向传播算法没有做过多的介绍，讲的也不够清晰。<br>先贴个图片留作记号，便于下面Δ计算的理解</p>
+<p>Back propagation的本质就是复合函数求导（following the chain rule）链式法则，本可以对这个网络里的每一个参数分别求偏导，但何苦呢，因为计算过程中的很多项都是重复的。为了不重复运算把把后层算好的导数传回前层，因为前层一定用得到。<br>关于反向传播算法，这里有个<a href="https://www.zhihu.com/question/27239198?rf=24827633" target="_blank" rel="external">浅显易懂的描述</a>。这里请看<a href="http://www.cnblogs.com/dengdan890730/p/5537451.html" target="_blank" rel="external">反向传播算法的推导过程</a>和<a href="http://blog.csdn.net/u014403897/article/details/46347351" target="_blank" rel="external">这里最后一层的求导</a>,这几个地方写的都不错。Andrew Ng老师的公开课对反向传播算法没有做过多的介绍，讲的也不够清晰。反向传播算法，就是为了计算损失函数的倒数。<br>先贴个图片留作记号，便于下面Δ计算的理解</p>
 <div class="figure">
 <img src="/media/14939758124978.jpg">
 
@@ -59,11 +59,13 @@
 <li><span class="math">\(D^{(l)}_{i,j} := \dfrac{1}{m}\Delta^{(l)}_{i,j}\)</span></li>
 </ul></li>
 </ol>
+<h3 id="梯度检验">梯度检验</h3>
+<p>在神经网络中使用反向传播算法的时候，因为有很多细节，会导致各种各样小bug，即使J看起来每次都是下降的，但是，最终结果的误差却很大。因此梯度检验也是需要的过程，它减少这种错误的概率。在其他比较复杂的模型中使用梯度算法的时候，进行这种检查也是有意义的，这么做，将会对模型更加自信，确信模型是100%正确。<br><span class="math">\(\dfrac{\partial}{\partial\Theta_j}J(\Theta) \approx \dfrac{J(\Theta_1, \dots, \Theta_j + \epsilon, \dots, \Theta_n) - J(\Theta_1, \dots, \Theta_j - \epsilon, \dots, \Theta_n)}{2\epsilon}\)</span><br>在确定算法无误后，真正执行学习算法前，一定要关掉梯度检验，否则会很慢的哟。 ### Θ的初始化 Θ初始化在逻辑回归的时候是可以为0的，但是在神经网络中不可以全部为0的。因为都为0的时候，隐藏层的结果都是一样的，这样做，隐藏层就完全是冗余的，神经网络就没作用了，完全就是个逻辑回归。所以我们需要打破对称，随机初始化。</p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;神经网络是当今最强大的学习算法之一，我们以下讲述，神经网络在分类问题中的应用，在给定训练集下，为神经网络拟合参数的学习方法。&lt;br&gt;&lt;span class=&quot;math&quot;&gt;\(\begin{align*} a_1^{(2)} = g(\Theta_{10}^{(1)}x_0 
+      &lt;p&gt;神经网络是当今最强大的学习算法之一，自动驾驶对周围景物的识别，也用到了神经网络。&lt;br&gt;我们以下讲述，神经网络在分类问题中的应用，在给定训练集下，为神经网络拟合参数的学习方法。&lt;br&gt;&lt;span class=&quot;math&quot;&gt;\(\begin{align*} a_1^{(2)}
     
     </summary>
     
