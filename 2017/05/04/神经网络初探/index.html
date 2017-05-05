@@ -73,6 +73,8 @@
 
 
 
+  
+
 
   <link rel="alternate" href="/atom.xml" title="niuoo" type="application/atom+xml" />
 
@@ -94,7 +96,7 @@
 <meta property="og:description" content="神经网络是当今最强大的学习算法之一，自动驾驶对周围景物的识别，也用到了神经网络。我们以下讲述，神经网络在分类问题中的应用，在给定训练集下，为神经网络拟合参数的学习方法。\(\begin{align*} a_1^{(2)} = g(\Theta_{10}^{(1)}x_0 + \Theta_{11}^{(1)}x_1 + \Theta_{12}^{(1)}x_2 + \Theta_{13}^{(1)">
 <meta property="og:image" content="http://niuoo.github.io/media/14939758124978.jpg">
 <meta property="og:image" content="http://niuoo.github.io/media/14939747131225.jpg">
-<meta property="og:updated_time" content="2017-05-05T14:49:22.000Z">
+<meta property="og:updated_time" content="2017-05-05T14:54:19.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="神经网络初探">
 <meta name="twitter:description" content="神经网络是当今最强大的学习算法之一，自动驾驶对周围景物的识别，也用到了神经网络。我们以下讲述，神经网络在分类问题中的应用，在给定训练集下，为神经网络拟合参数的学习方法。\(\begin{align*} a_1^{(2)} = g(\Theta_{10}^{(1)}x_0 + \Theta_{11}^{(1)}x_1 + \Theta_{12}^{(1)}x_2 + \Theta_{13}^{(1)">
@@ -319,7 +321,10 @@
 </ul></li>
 </ol>
 <h3 id="梯度检验">梯度检验</h3>
-<p>在神经网络中使用反向传播算法的时候，因为有很多细节，会导致各种各样小bug，即使J看起来每次都是下降的，但是，最终结果的误差却很大。因此梯度检验也是需要的过程，它减少这种错误的概率。在其他比较复杂的模型中使用梯度算法的时候，进行这种检查也是有意义的，这么做，将会对模型更加自信，确信模型是100%正确。<br><span class="math">\(\dfrac{\partial}{\partial\Theta_j}J(\Theta) \approx \dfrac{J(\Theta_1, \dots, \Theta_j + \epsilon, \dots, \Theta_n) - J(\Theta_1, \dots, \Theta_j - \epsilon, \dots, \Theta_n)}{2\epsilon}\)</span><br>在确定算法无误后，真正执行学习算法前，一定要关掉梯度检验，否则会很慢的哟。 ### Θ的初始化 Θ初始化在逻辑回归的时候是可以为0的，但是在神经网络中不可以全部为0的。因为都为0的时候，隐藏层的结果都是一样的，这样做，隐藏层就完全是冗余的，神经网络就没作用了，完全就是个逻辑回归。所以我们需要打破对称，随机初始化。</p>
+<p>在神经网络中使用反向传播算法的时候，因为有很多细节，会导致各种各样小bug，即使J看起来每次都是下降的，但是，最终结果的误差却很大。因此梯度检验也是需要的过程，它减少这种错误的概率。在其他比较复杂的模型中使用梯度算法的时候，进行这种检查也是有意义的，这么做，将会对模型更加自信，确信模型是100%正确。<br><span class="math">\(\dfrac{\partial}{\partial\Theta_j}J(\Theta) \approx \dfrac{J(\Theta_1, \dots, \Theta_j + \epsilon, \dots, \Theta_n) - J(\Theta_1, \dots, \Theta_j - \epsilon, \dots, \Theta_n)}{2\epsilon}\)</span></p>
+<p>在确定算法无误后，真正执行学习算法前，一定要关掉梯度检验，否则会很慢的哟。</p>
+<h3 id="θ的初始化">Θ的初始化</h3>
+<p>Θ初始化在逻辑回归的时候是可以为0的，但是在神经网络中不可以全部为0的。因为都为0的时候，隐藏层的结果都是一样的，这样做，隐藏层就完全是冗余的，神经网络就没作用了，完全就是个逻辑回归。所以我们需要打破对称，随机初始化。</p>
 
       
     </div>
@@ -465,7 +470,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#神经网络的损失函数"><span class="nav-number">1.</span> <span class="nav-text">神经网络的损失函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#反向传播算法-backpropagation-algorithm"><span class="nav-number">2.</span> <span class="nav-text">反向传播算法 Backpropagation Algorithm</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#反向传播算法的使用过程"><span class="nav-number">2.1.</span> <span class="nav-text">反向传播算法的使用过程：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#梯度检验"><span class="nav-number">2.1.1.</span> <span class="nav-text">梯度检验</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#神经网络的损失函数"><span class="nav-number">1.</span> <span class="nav-text">神经网络的损失函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#反向传播算法-backpropagation-algorithm"><span class="nav-number">2.</span> <span class="nav-text">反向传播算法 Backpropagation Algorithm</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#反向传播算法的使用过程"><span class="nav-number">2.1.</span> <span class="nav-text">反向传播算法的使用过程：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#梯度检验"><span class="nav-number">2.1.1.</span> <span class="nav-text">梯度检验</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#θ的初始化"><span class="nav-number">2.1.2.</span> <span class="nav-text">Θ的初始化</span></a></li></ol></li></ol></li></ol></div>
             
           </div>
         </section>
