@@ -73,6 +73,8 @@
 
 
 
+  
+
 
   <link rel="alternate" href="/atom.xml" title="niuoo" type="application/atom+xml" />
 
@@ -94,7 +96,7 @@
 <meta property="og:description" content="神经网络是当今最强大的学习算法之一，我们以下讲述，神经网络在分类问题中的应用，在给定训练集下，为神经网络拟合参数的学习方法。\(\begin{align*} a_1^{(2)} = g(\Theta_{10}^{(1)}x_0 + \Theta_{11}^{(1)}x_1 + \Theta_{12}^{(1)}x_2 + \Theta_{13}^{(1)}x_3) \newline a_2^{(2">
 <meta property="og:image" content="http://niuoo.github.io/media/14939758124978.jpg">
 <meta property="og:image" content="http://niuoo.github.io/media/14939747131225.jpg">
-<meta property="og:updated_time" content="2017-05-05T09:42:07.000Z">
+<meta property="og:updated_time" content="2017-05-05T09:47:12.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="神经网络初探">
 <meta name="twitter:description" content="神经网络是当今最强大的学习算法之一，我们以下讲述，神经网络在分类问题中的应用，在给定训练集下，为神经网络拟合参数的学习方法。\(\begin{align*} a_1^{(2)} = g(\Theta_{10}^{(1)}x_0 + \Theta_{11}^{(1)}x_1 + \Theta_{12}^{(1)}x_2 + \Theta_{13}^{(1)}x_3) \newline a_2^{(2">
@@ -307,7 +309,19 @@
 <li>Set <span class="math">\(a^{(1)} := x^{(t)}\)</span></li>
 <li>正向计算每层的每个节点的<span class="math">\(a^{(l)}\)</span>for l=2,3,…,L</li>
 </ol>
-<p><img src="/media/14939747131225.jpg"> 3. 使用<span class="math">\(y^{(t)}，计算出\delta^{(L)} = a^{(L)} - y^{(t)}\)</span>，最后输出层的错误率。 4. 使用<span class="math">\(\delta^{(l)} = ((\Theta^{(l)})^T \delta^{(l+1)})\ .*\ a^{(l)}\ .*\ (1 - a^{(l)})\)</span>，计算出<span class="math">\(\delta^{(L-1)}, \delta^{(L-2)},\dots,\delta^{(2)}\)</span>。<br> 其中<span class="math">\(g&#39;(z^{(l)}) = a^{(l)}\ .*\ (1 - a^{(l)})；\delta_j^{(l)} = \dfrac{\partial}{\partial z_j^{(l)}} cost(t)\)</span>， 5. <span class="math">\(\Delta^{(l)}_{i,j} := \Delta^{(l)}_{i,j} + a_j^{(l)} \delta_i^{(l+1)}，或者向量化一下，\Delta^{(l)} := \Delta^{(l)} + \delta^{(l+1)}(a^{(l)})^T\)</span>(Δ的初始化为0)<br> 至此，我们更新的权值累加器矩阵的为new Δ matrix，其中<span class="math">\(\frac \partial {\partial \Theta_{ij}^{(l)}} J(\Theta)=D_{ij}^{(l)}\)</span> * <span class="math">\(D^{(l)}_{i,j} := \dfrac{1}{m}\left(\Delta^{(l)}_{i,j} + \lambda\Theta^{(l)}_{i,j}\right)\)</span> * <span class="math">\(D^{(l)}_{i,j} := \dfrac{1}{m}\Delta^{(l)}_{i,j}\)</span></p>
+<div class="figure">
+<img src="/media/14939747131225.jpg">
+
+</div>
+<ol start="3" style="list-style-type: decimal">
+<li>使用<span class="math">\(y^{(t)}，计算出\delta^{(L)} = a^{(L)} - y^{(t)}\)</span>，最后输出层的错误率。</li>
+<li>使用<span class="math">\(\delta^{(l)} = ((\Theta^{(l)})^T \delta^{(l+1)})\ .*\ a^{(l)}\ .*\ (1 - a^{(l)})\)</span>，计算出<span class="math">\(\delta^{(L-1)}, \delta^{(L-2)},\dots,\delta^{(2)}\)</span>。<br> 其中<span class="math">\(g&#39;(z^{(l)}) = a^{(l)}\ .*\ (1 - a^{(l)})；\delta_j^{(l)} = \dfrac{\partial}{\partial z_j^{(l)}} cost(t)\)</span>，</li>
+<li><span class="math">\(\Delta^{(l)}_{i,j} := \Delta^{(l)}_{i,j} + a_j^{(l)} \delta_i^{(l+1)}，或者向量化一下，\Delta^{(l)} := \Delta^{(l)} + \delta^{(l+1)}(a^{(l)})^T\)</span>(Δ的初始化为0)<br> 至此，我们更新的权值累加器矩阵的为new Δ matrix，其中<span class="math">\(\frac \partial {\partial \Theta_{ij}^{(l)}} J(\Theta)=D_{ij}^{(l)}\)</span>
+<ul>
+<li><span class="math">\(D^{(l)}_{i,j} := \dfrac{1}{m}\left(\Delta^{(l)}_{i,j} + \lambda\Theta^{(l)}_{i,j}\right)\)</span></li>
+<li><span class="math">\(D^{(l)}_{i,j} := \dfrac{1}{m}\Delta^{(l)}_{i,j}\)</span></li>
+</ul></li>
+</ol>
 
       
     </div>
