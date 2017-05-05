@@ -300,6 +300,7 @@
 <li>i在三和嵌套中，代表的不是训练样本个数，而是代表当前层的神经元个数。</li>
 </ul>
 <h1 id="反向传播算法-backpropagation-algorithm">反向传播算法 Backpropagation Algorithm</h1>
+<p>关于反向传播算法，这里有个<a href="https://www.zhihu.com/question/27239198?rf=24827633" target="_blank" rel="external">浅显易懂的描述</a>.不过我们还是在这里推导一下证明过程吧。其实证明过程不需要推导，知道算法的话，我们直接用就可以了。 Back propagation的本质就是复合函数求导（following the chain rule），本可以对这个网络里的每一个参数分别求偏导，但何苦呢，因为计算过程中的很多项都是重复的。为了不重复运算把把后层算好的导数传回前层，因为前层一定用得到。</p>
 
           
         
