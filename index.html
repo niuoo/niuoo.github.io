@@ -300,7 +300,17 @@
 <li>i在三和嵌套中，代表的不是训练样本个数，而是代表当前层的神经元个数。</li>
 </ul>
 <h1 id="反向传播算法-backpropagation-algorithm">反向传播算法 Backpropagation Algorithm</h1>
-<p>关于反向传播算法，这里有个<a href="https://www.zhihu.com/question/27239198?rf=24827633" target="_blank" rel="external">浅显易懂的描述</a>。这里请看<a href="http://www.cnblogs.com/dengdan890730/p/5537451.html" target="_blank" rel="external">反向传播算法的推导过程</a>和<a href="http://www.cnblogs.com/happylion/p/4193527.html" target="_blank" rel="external">这里</a>和<a href="http://blog.csdn.net/u014403897/article/details/46347351" target="_blank" rel="external">这里</a>,这几个地方写的都不错。<br>Back propagation的本质就是复合函数求导（following the chain rule）链式法则，本可以对这个网络里的每一个参数分别求偏导，但何苦呢，因为计算过程中的很多项都是重复的。为了不重复运算把把后层算好的导数传回前层，因为前层一定用得到。</p>
+<p>Back propagation的本质就是复合函数求导（following the chain rule）链式法则，本可以对这个网络里的每一个参数分别求偏导，但何苦呢，因为计算过程中的很多项都是重复的。为了不重复运算把把后层算好的导数传回前层，因为前层一定用得到。<br>关于反向传播算法，这里有个<a href="https://www.zhihu.com/question/27239198?rf=24827633" target="_blank" rel="external">浅显易懂的描述</a>。这里请看<a href="http://www.cnblogs.com/dengdan890730/p/5537451.html" target="_blank" rel="external">反向传播算法的推导过程</a>和<a href="http://blog.csdn.net/u014403897/article/details/46347351" target="_blank" rel="external">这里最后一层的求导</a>,这几个地方写的都不错。Andrew Ng老师的公开课对反向传播算法没有做过多的介绍，讲的也不够清晰。<br>先贴个图片留作记号，便于下面Δ计算的理解</p>
+<div class="figure">
+<img src="/media/14939758124978.jpg">
+
+</div>
+<h2 id="反向传播算法的使用过程">反向传播算法的使用过程：</h2>
+<ol style="list-style-type: decimal">
+<li>Set <span class="math">\(a^{(1)} := x^{(t)}\)</span></li>
+<li>正向计算每层的每个节点的<span class="math">\(a^{(l)}\)</span>for l=2,3,…,L</li>
+</ol>
+<p><img src="/media/14939747131225.jpg"> 3. 使用<span class="math">\(y^{(t)}，计算出\delta^{(L)} = a^{(L)} - y^{(t)}\)</span>，最后输出层的错误率。 4. 使用<span class="math">\(\delta^{(l)} = ((\Theta^{(l)})^T \delta^{(l+1)})\ .*\ a^{(l)}\ .*\ (1 - a^{(l)})\)</span>，计算出<span class="math">\(\delta^{(L-1)}, \delta^{(L-2)},\dots,\delta^{(2)}\)</span>。<br> 其中<span class="math">\(g&#39;(z^{(l)}) = a^{(l)}\ .*\ (1 - a^{(l)})；\delta_j^{(l)} = \dfrac{\partial}{\partial z_j^{(l)}} cost(t)\)</span>， 5. <span class="math">\(\Delta^{(l)}_{i,j} := \Delta^{(l)}_{i,j} + a_j^{(l)} \delta_i^{(l+1)}，或者向量化一下，\Delta^{(l)} := \Delta^{(l)} + \delta^{(l+1)}(a^{(l)})^T\)</span>(Δ的初始化为0)<br> 至此，我们更新的权值累加器矩阵的为new Δ matrix，其中<span class="math">\(\frac \partial {\partial \Theta_{ij}^{(l)}} J(\Theta)=D_{ij}^{(l)}\)</span> * <span class="math">\(D^{(l)}_{i,j} := \dfrac{1}{m}\left(\Delta^{(l)}_{i,j} + \lambda\Theta^{(l)}_{i,j}\right)\)</span> * <span class="math">\(D^{(l)}_{i,j} := \dfrac{1}{m}\Delta^{(l)}_{i,j}\)</span></p>
 
           
         
@@ -657,7 +667,11 @@
       
         
           
-            <p>Given a non-empty array containing only positive integers, find if the array can be partitioned into two subsets such that the sum of elements in both subsets is equal.</p>
+            <div class="figure">
+<img src="/media/14939711433257.jpg">
+
+</div>
+<p>Given a non-empty array containing only positive integers, find if the array can be partitioned into two subsets such that the sum of elements in both subsets is equal.</p>
 <p>Note: 1. Each of the array element will not exceed 100. 2. The array size will not exceed 200. Example 1:</p>
 <p>Input: [1, 5, 11, 5]</p>
 <p>Output: true</p>
