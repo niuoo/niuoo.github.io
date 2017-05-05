@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://niuoo.github.io/"/>
-  <updated>2017-05-05T02:21:19.000Z</updated>
+  <updated>2017-05-05T06:31:46.000Z</updated>
   <id>http://niuoo.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://niuoo.github.io/2017/05/04/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%88%9D%E6%8E%A2/"/>
     <id>http://niuoo.github.io/2017/05/04/神经网络初探/</id>
     <published>2017-05-04T06:14:20.000Z</published>
-    <updated>2017-05-05T02:21:19.000Z</updated>
+    <updated>2017-05-05T06:31:46.000Z</updated>
     
     <content type="html"><![CDATA[<p>神经网络是当今最强大的学习算法之一，我们以下讲述，神经网络在分类问题中的应用，在给定训练集下，为神经网络拟合参数的学习方法。<br><span class="math">\(\begin{align*} a_1^{(2)} = g(\Theta_{10}^{(1)}x_0 + \Theta_{11}^{(1)}x_1 + \Theta_{12}^{(1)}x_2 + \Theta_{13}^{(1)}x_3) \newline a_2^{(2)} = g(\Theta_{20}^{(1)}x_0 + \Theta_{21}^{(1)}x_1 + \Theta_{22}^{(1)}x_2 + \Theta_{23}^{(1)}x_3) \newline a_3^{(2)} = g(\Theta_{30}^{(1)}x_0 + \Theta_{31}^{(1)}x_1 + \Theta_{32}^{(1)}x_2 + \Theta_{33}^{(1)}x_3) \newline h_\Theta(x) = a_1^{(3)} = g(\Theta_{10}^{(2)}a_0^{(2)} + \Theta_{11}^{(2)}a_1^{(2)} + \Theta_{12}^{(2)}a_2^{(2)} + \Theta_{13}^{(2)}a_3^{(2)}) \newline \end{align*}\)</span></p>
 <h1 id="神经网络的损失函数">神经网络的损失函数</h1>
@@ -38,7 +38,7 @@
 <li>i在三和嵌套中，代表的不是训练样本个数，而是代表当前层的神经元个数。</li>
 </ul>
 <h1 id="反向传播算法-backpropagation-algorithm">反向传播算法 Backpropagation Algorithm</h1>
-<p>关于反向传播算法，这里有个<a href="https://www.zhihu.com/question/27239198?rf=24827633" target="_blank" rel="external">浅显易懂的描述</a>.不过我们还是在这里推导一下证明过程吧。其实证明过程不需要推导，知道算法的话，我们直接用就可以了。 Back propagation的本质就是复合函数求导（following the chain rule），本可以对这个网络里的每一个参数分别求偏导，但何苦呢，因为计算过程中的很多项都是重复的。为了不重复运算把把后层算好的导数传回前层，因为前层一定用得到。</p>
+<p>关于反向传播算法，这里有个<a href="https://www.zhihu.com/question/27239198?rf=24827633" target="_blank" rel="external">浅显易懂的描述</a>。这里请看<a href="http://www.cnblogs.com/dengdan890730/p/5537451.html" target="_blank" rel="external">反向传播算法的推导过程</a>和<a href="http://www.cnblogs.com/happylion/p/4193527.html" target="_blank" rel="external">这里</a>和<a href="http://blog.csdn.net/u014403897/article/details/46347351" target="_blank" rel="external">这里</a>,这几个地方写的都不错。<br>Back propagation的本质就是复合函数求导（following the chain rule）链式法则，本可以对这个网络里的每一个参数分别求偏导，但何苦呢，因为计算过程中的很多项都是重复的。为了不重复运算把把后层算好的导数传回前层，因为前层一定用得到。</p>
 ]]></content>
     
     <summary type="html">
