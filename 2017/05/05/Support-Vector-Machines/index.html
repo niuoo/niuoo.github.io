@@ -92,7 +92,7 @@
 <meta property="og:url" content="http://niuoo.github.io/2017/05/05/Support-Vector-Machines/index.html">
 <meta property="og:site_name" content="niuoo">
 <meta property="og:description" content="关于支持向量机，这里有一个比较有意思的讲解，还有这里一个小视频。SVM是数据挖掘里面很重要的算法，我们有时会把SVM看做是一个大间距分类器Large Magin Intuition。SVM Decision Boundary具有鲁棒性，因为它努力用一个最大间距，来分离样本。有个小的知识点，向量内积以及证明# Kernels 构造非线性复杂的分类器，我们用“Kernels函数”来达到此目的。Kern">
-<meta property="og:updated_time" content="2017-05-08T14:32:54.000Z">
+<meta property="og:updated_time" content="2017-05-08T14:34:15.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Support Vector Machines">
 <meta name="twitter:description" content="关于支持向量机，这里有一个比较有意思的讲解，还有这里一个小视频。SVM是数据挖掘里面很重要的算法，我们有时会把SVM看做是一个大间距分类器Large Magin Intuition。SVM Decision Boundary具有鲁棒性，因为它努力用一个最大间距，来分离样本。有个小的知识点，向量内积以及证明# Kernels 构造非线性复杂的分类器，我们用“Kernels函数”来达到此目的。Kern">
@@ -282,8 +282,9 @@
 <ol style="list-style-type: decimal">
 <li>如果特征向量的个数大于训练数据的记录数时，我们通常使用逻辑回归，或者使用SVM线性核函数。因为没有足够的数据来拟合非常复杂的非线性函数。<br></li>
 <li>如果特征向量很小，而训练数据量是中等大小，那么核函数表现就可以很好。<br></li>
-<li>如果如果特征向量很小，而训练数据量巨大，那么高斯核函数就会运行很慢，这种情况下，可以尝试手动建立更多的特征变量，然后使用逻辑回归或者SVM线性核函数。<br>以上，第2种情况下，特征向量为1000左右，训练集是10,000的情况下，高斯函数的支持向量机会表现的非常突出。另外第1种和第3种情况，其实使用逻辑回归和SVM线性核函数效果都差不多。 SVM是凸优化的，所以局部最优，就是全局最优了。</li>
+<li>如果如果特征向量很小，而训练数据量巨大，那么高斯核函数就会运行很慢，这种情况下，可以尝试手动建立更多的特征变量，然后使用逻辑回归或者SVM线性核函数。</li>
 </ol>
+<p>以上，第2种情况下，特征向量为1000左右，训练集是10,000的情况下，高斯函数的支持向量机会表现的非常突出。另外第1种和第3种情况，其实使用逻辑回归和SVM线性核函数效果都差不多。 SVM是凸优化的，所以局部最优，就是全局最优了。</p>
 <p>垃圾邮件分类器，采用SVM。</p>
 
       
