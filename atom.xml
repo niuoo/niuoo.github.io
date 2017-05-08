@@ -60,7 +60,7 @@
     <link href="http://niuoo.github.io/2017/05/05/Support-Vector-Machines/"/>
     <id>http://niuoo.github.io/2017/05/05/Support-Vector-Machines/</id>
     <published>2017-05-05T15:02:21.000Z</published>
-    <updated>2017-05-08T14:34:15.000Z</updated>
+    <updated>2017-05-08T14:35:02.000Z</updated>
     
     <content type="html"><![CDATA[<p>关于支持向量机，这里有<a href="https://www.zhihu.com/question/21094489" target="_blank" rel="external">一个比较有意思的讲解</a>，还有这里<a href="https://www.youtube.com/watch?v=3liCbRZPrZA" target="_blank" rel="external">一个小视频</a>。<br>SVM是数据挖掘里面很重要的算法，我们有时会把SVM看做是一个大间距分类器Large Magin Intuition。SVM Decision Boundary具有鲁棒性，因为它努力用一个最大间距，来分离样本。<br>有个小的知识点，向量内积以及<a href="http://www.cnblogs.com/vive/p/4563803.html" target="_blank" rel="external">证明</a><br># Kernels 构造非线性复杂的分类器，我们用“Kernels函数”来达到此目的。<br>Kernels核函数有很多，我们用的最多的是高斯核函数Gaussian kernel。</p>
 <ol style="list-style-type: decimal">
