@@ -86,16 +86,33 @@
 
 
 
-<meta name="description" content="关于支持向量机，这里有一个比较有意思的讲解，还有这里一个小视频。SVM是数据挖掘里面很重要的算法，我们有时会把SVM看做是一个大间距分类器Large Magin Intuition。SVM Decision Boundary具有鲁棒性，因为它努力用一个最大间距，来分离样本。有个小的知识点，向量内积以及证明# Kernels 构造非线性复杂的分类器，我们用“Kernels函数”来达到此目的。Kern">
+<meta name="description" content="关于支持向量机，这里有一个比较有意思的讲解，还有这里一个小视频。SVM是数据挖掘里面很重要的算法，我们有时会把SVM看做是一个大间距分类器Large Magin Intuition。SVM Decision Boundary具有鲁棒性，因为它努力用一个最大间距，来分离样本。有个小的知识点，向量内积以及证明
+线性核函数
+SVM线性核函数，就是SVM不使用核函数。其实是在逻辑回归的基础上进行稍微变化而">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Support Vector Machines">
 <meta property="og:url" content="http://niuoo.github.io/2017/05/05/Support-Vector-Machines/index.html">
 <meta property="og:site_name" content="niuoo">
-<meta property="og:description" content="关于支持向量机，这里有一个比较有意思的讲解，还有这里一个小视频。SVM是数据挖掘里面很重要的算法，我们有时会把SVM看做是一个大间距分类器Large Magin Intuition。SVM Decision Boundary具有鲁棒性，因为它努力用一个最大间距，来分离样本。有个小的知识点，向量内积以及证明# Kernels 构造非线性复杂的分类器，我们用“Kernels函数”来达到此目的。Kern">
-<meta property="og:updated_time" content="2017-05-08T14:35:02.000Z">
+<meta property="og:description" content="关于支持向量机，这里有一个比较有意思的讲解，还有这里一个小视频。SVM是数据挖掘里面很重要的算法，我们有时会把SVM看做是一个大间距分类器Large Magin Intuition。SVM Decision Boundary具有鲁棒性，因为它努力用一个最大间距，来分离样本。有个小的知识点，向量内积以及证明
+线性核函数
+SVM线性核函数，就是SVM不使用核函数。其实是在逻辑回归的基础上进行稍微变化而">
+<meta property="og:image" content="http://niuoo.github.io/media/14943143749438.jpg">
+<meta property="og:image" content="http://niuoo.github.io/media/14943142227688.jpg">
+<meta property="og:image" content="http://niuoo.github.io/media/14943156955239.jpg">
+<meta property="og:image" content="http://niuoo.github.io/media/14943147936462.jpg">
+<meta property="og:image" content="http://niuoo.github.io/media/14943184201359.jpg">
+<meta property="og:image" content="http://niuoo.github.io/media/14943195312828.jpg">
+<meta property="og:image" content="http://niuoo.github.io/media/14943198501799.jpg">
+<meta property="og:image" content="http://niuoo.github.io/media/14943200907676.jpg">
+<meta property="og:image" content="http://niuoo.github.io/media/14943202565702.jpg">
+<meta property="og:image" content="http://niuoo.github.io/media/14943205457069.jpg">
+<meta property="og:updated_time" content="2017-05-09T09:24:52.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Support Vector Machines">
-<meta name="twitter:description" content="关于支持向量机，这里有一个比较有意思的讲解，还有这里一个小视频。SVM是数据挖掘里面很重要的算法，我们有时会把SVM看做是一个大间距分类器Large Magin Intuition。SVM Decision Boundary具有鲁棒性，因为它努力用一个最大间距，来分离样本。有个小的知识点，向量内积以及证明# Kernels 构造非线性复杂的分类器，我们用“Kernels函数”来达到此目的。Kern">
+<meta name="twitter:description" content="关于支持向量机，这里有一个比较有意思的讲解，还有这里一个小视频。SVM是数据挖掘里面很重要的算法，我们有时会把SVM看做是一个大间距分类器Large Magin Intuition。SVM Decision Boundary具有鲁棒性，因为它努力用一个最大间距，来分离样本。有个小的知识点，向量内积以及证明
+线性核函数
+SVM线性核函数，就是SVM不使用核函数。其实是在逻辑回归的基础上进行稍微变化而">
+<meta name="twitter:image" content="http://niuoo.github.io/media/14943143749438.jpg">
 
 
 
@@ -278,14 +295,32 @@
       
 
       
-        <p>关于支持向量机，这里有<a href="https://www.zhihu.com/question/21094489" target="_blank" rel="external">一个比较有意思的讲解</a>，还有这里<a href="https://www.youtube.com/watch?v=3liCbRZPrZA" target="_blank" rel="external">一个小视频</a>。<br>SVM是数据挖掘里面很重要的算法，我们有时会把SVM看做是一个大间距分类器Large Magin Intuition。SVM Decision Boundary具有鲁棒性，因为它努力用一个最大间距，来分离样本。<br>有个小的知识点，向量内积以及<a href="http://www.cnblogs.com/vive/p/4563803.html" target="_blank" rel="external">证明</a><br># Kernels 构造非线性复杂的分类器，我们用“Kernels函数”来达到此目的。<br>Kernels核函数有很多，我们用的最多的是高斯核函数Gaussian kernel。</p>
+        <p>关于支持向量机，这里有<a href="https://www.zhihu.com/question/21094489" target="_blank" rel="external">一个比较有意思的讲解</a>，还有这里<a href="https://www.youtube.com/watch?v=3liCbRZPrZA" target="_blank" rel="external">一个小视频</a>。<br>SVM是数据挖掘里面很重要的算法，我们有时会把SVM看做是一个大间距分类器Large Magin Intuition。SVM Decision Boundary具有鲁棒性，因为它努力用一个最大间距，来分离样本。<br>有个小的知识点，向量内积以及<a href="http://www.cnblogs.com/vive/p/4563803.html" target="_blank" rel="external">证明</a></p>
+<h1 id="线性核函数">线性核函数</h1>
+<p>SVM线性核函数，就是SVM不使用核函数。其实是在逻辑回归的基础上进行稍微变化而成的。<br><img src="/media/14943143749438.jpg"></p>
+<p>使用SVM软件包来确定参数θ的时候，我们需要指定常数C，C值如果太大，那么就会过拟合，效果不好。如以下示图，注意看左下角那个红叉叉，如果C太大的时候，决策边界就会是斜着的那条很线，这样并不好: <img src="/media/14943142227688.jpg"></p>
+<h1 id="kernels">Kernels</h1>
+<p>构造非线性复杂的分类器，我们用“Kernels函数”来达到此目的。<br>先来看一张图，如果决策分界是曲线的时候，那么就会有多项式特征变量的出现，如果不进行变化，就直接去求解，那么运算量是非常大的，有太多的高阶项需要被计算，所以我们需要通过其他方式来构造特征变量，来嵌入到假设函数中：<br><img src="/media/14943156955239.jpg"></p>
+<p>Kernels核函数有很多，我们用的最多的是高斯核函数(Gaussian kernel)，$ f_i=exp{ }$ 其中 <span class="math">\(l^(i) =x^(i)\)</span> ，x^(i)表示m个训练数据的第i个样本，高斯核函数描述了某个样本和其他样本的距离程度。 <img src="/media/14943147936462.jpg"></p>
+<p>看下面这张图，可以更加理解高斯核函数的作用，注意看图中的红色大圈，如果<span class="math">\(f_1≈1,f_2≈0,f_3≈0\)</span>，那么证明这个点离<span class="math">\(l^(1)\)</span>很近，离其他两个点比较远，y=1。图中训练出的θ值，表明了红圈内是预测y=1，红圈外是y=0,即离点<span class="math">\(l^(1),l^(2)\)</span>都很远。这就是我们如何通过标记点以及核函数，来训练出非常复杂的非线性决策边界的方法。</p>
+<p><img src="/media/14943184201359.jpg"> 高斯核函数的损失函数如下图所示，不过这些我们自己平时直接使用优化好的SVM包，并不需要关心这些细节，这些都是内部优化好的，不需要来定义。 <img src="/media/14943195312828.jpg"></p>
+<p>在使用高斯核函数的时候，我们需要选择<span class="math">\(σ^2\)</span>，如果<span class="math">\(σ^2\)</span>偏大我们就会得到一个较大误差较低方差的分类器，高斯核函数返回的是(0,1)区间的实数。另外，在使用核函数的时候，进行数据归一化也是很必要的，因为如果不进行归一化，那么值比较大的特征向量会占据很大的地位，弱化其他特征向量的影响，这是不公平的。 <img src="/media/14943198501799.jpg"></p>
+<p>支持向量机算法的核函数必须满足莫塞尔定理“Mercer’s Theorem”。对于其他的核函数，此处不做过多介绍。这里有个<a href="http://www.cnblogs.com/jerrylead/archive/2011/03/18/1988406.html" target="_blank" rel="external">核函数的介绍</a></p>
+<h1 id="如何选择使用何种算法呢">如何选择使用何种算法呢</h1>
 <ol style="list-style-type: decimal">
-<li>如果特征向量的个数大于训练数据的记录数时，我们通常使用逻辑回归，或者使用SVM线性核函数。因为没有足够的数据来拟合非常复杂的非线性函数。<br></li>
+<li>如果特征向量的个数很大,而训练集很小时，我们通常使用逻辑回归，或者使用SVM线性核函数。因为没有足够的数据来拟合非常复杂的非线性函数。</li>
 <li>如果特征向量很小，而训练数据量是中等大小，那么核函数表现就可以很好。<br></li>
 <li>如果如果特征向量很小，而训练数据量巨大，那么高斯核函数就会运行很慢，这种情况下，可以尝试手动建立更多的特征变量，然后使用逻辑回归或者SVM线性核函数。</li>
 </ol>
-<p>以上，第2种情况下，特征向量为1000左右，训练集是10,000的情况下，高斯函数的支持向量机会表现的非常突出。另外第1种和第3种情况，其实使用逻辑回归和SVM线性核函数效果都差不多。 SVM是凸优化的，所以局部最优，就是全局最优了。</p>
-<p>垃圾邮件分类器，采用SVM。</p>
+<div class="figure">
+<img src="/media/14943200907676.jpg">
+
+</div>
+<p>以上，第2种，例如，特征向量为1000左右，训练集是10,000的情况下，高斯函数的支持向量机会表现的非常突出。另外第1种和第3种情况，其实使用逻辑回归和SVM线性核函数效果都差不多。<br>SVM是凸优化的，所以局部最优，就是全局最优了。</p>
+<p>在使用SVM软件包的时候，需要我们自己按照需求，配置以下参数：<br><img src="/media/14943202565702.jpg"></p>
+<p>多种分类时：<br><img src="/media/14943205457069.jpg"></p>
+<p>其实呢这课，我没怎么看懂，向量内积怎么使用我也不知道，SVM算法怎么使用倒是有个模糊的印象，但是具体内部的算法原理，没搞太明白，不知道最后的决策边界怎么产生的最大边距。这篇SVM我写的好吃力啊，重新刷斯坦福视频的时候居然看不懂了，真是……，不过还好最后看的自己觉得明白了，就先记录下来。吃力。</p>
+<p>练习题中，垃圾邮件分类器，采用SVM线性核函数。通过训练集，训练出字典表中每个单词的权重(就是θ参数)。进行垃圾邮件分类时，是需要对邮件内容进行预处理的，比如网址啊，钱啊，之类的，都会用一个单词或者符号代替，出现的哪些单词(当然最后都向量化数字处理了，类似于x = [ 0 0 0 0 1 0 0 0 … 0 0 0 0 1 … 0 0 0 1 0 ..]，x的长度是字典长度，数据1表示出现了这个单词)，最后带入我们的式子<span class="math">\(θ^TX\)</span>里面，可进行是否垃圾邮件的预测，如果大于等于0，就是垃圾邮件，小于0，是正常邮件。</p>
 
       
     </div>
@@ -435,7 +470,7 @@
               
             
             
-              <p class="post-toc-empty">This post does not have a Table of Contents</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#线性核函数"><span class="nav-number">1.</span> <span class="nav-text">线性核函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#kernels"><span class="nav-number">2.</span> <span class="nav-text">Kernels</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#如何选择使用何种算法呢"><span class="nav-number">3.</span> <span class="nav-text">如何选择使用何种算法呢</span></a></li></ol></div>
             
           </div>
         </section>
