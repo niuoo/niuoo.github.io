@@ -625,11 +625,14 @@
 
 </div></li>
 <li>使用<span class="math">\(y^{(t)}，计算出\delta^{(L)} = a^{(L)} - y^{(t)}\)</span>，最后输出层的错误率。</li>
-<li>使用<span class="math">\(\delta^{(l)} = ((\Theta^{(l)})^T \delta^{(l+1)})\ .*\ a^{(l)}\ .*\ (1 - a^{(l)})\)</span>，计算出<span class="math">\(\delta^{(L-1)}, \delta^{(L-2)},\dots,\delta^{(2)}\)</span>。<br> 其中<span class="math">\(g&#39;(z^{(l)}) = a^{(l)}\ .*\ (1 - a^{(l)})；\delta_j^{(l)} = \dfrac{\partial}{\partial z_j^{(l)}} cost(t)\)</span>，</li>
+<li><p>使用<span class="math">\(\delta^{(l)} = ((\Theta^{(l)})^T \delta^{(l+1)})\ .*\ a^{(l)}\ .*\ (1 - a^{(l)})\)</span>，计算出<span class="math">\(\delta^{(L-1)}, \delta^{(L-2)},\dots,\delta^{(2)}\)</span>。<br> 其中$g’(z^{(l)}) = a^{(l)} .* (1 - a^{(l)})；_j^{(l)} =  cost(t)； $</p></li>
+</ol>
+<p><span class="math">\(cost(t) =y^{(t)} \ \log (h_\Theta (x^{(t)})) + (1 - y^{(t)})\ \log (1 - h_\Theta(x^{(t)}))\)</span></p>
+<ol start="5" style="list-style-type: decimal">
 <li><span class="math">\(\Delta^{(l)}_{i,j} := \Delta^{(l)}_{i,j} + a_j^{(l)} \delta_i^{(l+1)}，或者向量化一下，\Delta^{(l)} := \Delta^{(l)} + \delta^{(l+1)}(a^{(l)})^T\)</span>(Δ的初始化为0)<br> 至此，我们更新的权值累加器矩阵的为new Δ matrix，其中<span class="math">\(\frac \partial {\partial \Theta_{ij}^{(l)}} J(\Theta)=D_{ij}^{(l)}\)</span>
 <ul>
-<li><span class="math">\(D^{(l)}_{i,j} := \dfrac{1}{m}\left(\Delta^{(l)}_{i,j} + \lambda\Theta^{(l)}_{i,j}\right)\)</span></li>
-<li><span class="math">\(D^{(l)}_{i,j} := \dfrac{1}{m}\Delta^{(l)}_{i,j}\)</span></li>
+<li><p><span class="math">\(D^{(l)}_{i,j} := \dfrac{1}{m}\left(\Delta^{(l)}_{i,j} + \lambda\Theta^{(l)}_{i,j}\right)\)</span> if j≠0.</p></li>
+<li><p><span class="math">\(D^{(l)}_{i,j} := \dfrac{1}{m}\Delta^{(l)}_{i,j}\)</span> If j=0</p></li>
 </ul></li>
 </ol>
 <h3 id="梯度检验">梯度检验</h3>

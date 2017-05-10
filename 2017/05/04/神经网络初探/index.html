@@ -95,7 +95,7 @@
 <meta property="og:image" content="http://niuoo.github.io/media/14943440970717.jpg">
 <meta property="og:image" content="http://niuoo.github.io/media/14939758124978.jpg">
 <meta property="og:image" content="http://niuoo.github.io/media/14939747131225.jpg">
-<meta property="og:updated_time" content="2017-05-10T02:01:32.000Z">
+<meta property="og:updated_time" content="2017-05-10T07:10:33.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="神经网络初探">
 <meta name="twitter:description" content="神经网络是当今最强大的学习算法之一，自动驾驶对周围景物的识别，就用到了神经网络。我们以下讲述，神经网络在分类问题中的应用，在给定训练集下，为神经网络拟合参数的学习方法。\(\begin{align*} a_1^{(2)} = g(\Theta_{10}^{(1)}x_0 + \Theta_{11}^{(1)}x_1 + \Theta_{12}^{(1)}x_2 + \Theta_{13}^{(1)">
@@ -312,11 +312,14 @@
 
 </div></li>
 <li>使用<span class="math">\(y^{(t)}，计算出\delta^{(L)} = a^{(L)} - y^{(t)}\)</span>，最后输出层的错误率。</li>
-<li>使用<span class="math">\(\delta^{(l)} = ((\Theta^{(l)})^T \delta^{(l+1)})\ .*\ a^{(l)}\ .*\ (1 - a^{(l)})\)</span>，计算出<span class="math">\(\delta^{(L-1)}, \delta^{(L-2)},\dots,\delta^{(2)}\)</span>。<br> 其中<span class="math">\(g&#39;(z^{(l)}) = a^{(l)}\ .*\ (1 - a^{(l)})；\delta_j^{(l)} = \dfrac{\partial}{\partial z_j^{(l)}} cost(t)\)</span>，</li>
+<li><p>使用<span class="math">\(\delta^{(l)} = ((\Theta^{(l)})^T \delta^{(l+1)})\ .*\ a^{(l)}\ .*\ (1 - a^{(l)})\)</span>，计算出<span class="math">\(\delta^{(L-1)}, \delta^{(L-2)},\dots,\delta^{(2)}\)</span>。<br> 其中$g’(z^{(l)}) = a^{(l)} .* (1 - a^{(l)})；_j^{(l)} =  cost(t)； $</p></li>
+</ol>
+<p><span class="math">\(cost(t) =y^{(t)} \ \log (h_\Theta (x^{(t)})) + (1 - y^{(t)})\ \log (1 - h_\Theta(x^{(t)}))\)</span></p>
+<ol start="5" style="list-style-type: decimal">
 <li><span class="math">\(\Delta^{(l)}_{i,j} := \Delta^{(l)}_{i,j} + a_j^{(l)} \delta_i^{(l+1)}，或者向量化一下，\Delta^{(l)} := \Delta^{(l)} + \delta^{(l+1)}(a^{(l)})^T\)</span>(Δ的初始化为0)<br> 至此，我们更新的权值累加器矩阵的为new Δ matrix，其中<span class="math">\(\frac \partial {\partial \Theta_{ij}^{(l)}} J(\Theta)=D_{ij}^{(l)}\)</span>
 <ul>
-<li><span class="math">\(D^{(l)}_{i,j} := \dfrac{1}{m}\left(\Delta^{(l)}_{i,j} + \lambda\Theta^{(l)}_{i,j}\right)\)</span></li>
-<li><span class="math">\(D^{(l)}_{i,j} := \dfrac{1}{m}\Delta^{(l)}_{i,j}\)</span></li>
+<li><p><span class="math">\(D^{(l)}_{i,j} := \dfrac{1}{m}\left(\Delta^{(l)}_{i,j} + \lambda\Theta^{(l)}_{i,j}\right)\)</span> if j≠0.</p></li>
+<li><p><span class="math">\(D^{(l)}_{i,j} := \dfrac{1}{m}\Delta^{(l)}_{i,j}\)</span> If j=0</p></li>
 </ul></li>
 </ol>
 <h3 id="梯度检验">梯度检验</h3>
