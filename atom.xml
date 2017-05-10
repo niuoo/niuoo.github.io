@@ -108,7 +108,7 @@
     <link href="http://niuoo.github.io/2017/05/04/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%88%9D%E6%8E%A2/"/>
     <id>http://niuoo.github.io/2017/05/04/神经网络初探/</id>
     <published>2017-05-04T06:14:20.000Z</published>
-    <updated>2017-05-10T07:24:58.000Z</updated>
+    <updated>2017-05-10T10:03:40.000Z</updated>
     
     <content type="html"><![CDATA[<p>神经网络是当今最强大的学习算法之一，自动驾驶对周围景物的识别，就用到了神经网络。<br>我们以下讲述，神经网络在分类问题中的应用，在给定训练集下，为神经网络拟合参数的学习方法。<br><span class="math">\(\begin{align*} a_1^{(2)} = g(\Theta_{10}^{(1)}x_0 + \Theta_{11}^{(1)}x_1 + \Theta_{12}^{(1)}x_2 + \Theta_{13}^{(1)}x_3) \newline a_2^{(2)} = g(\Theta_{20}^{(1)}x_0 + \Theta_{21}^{(1)}x_1 + \Theta_{22}^{(1)}x_2 + \Theta_{23}^{(1)}x_3) \newline a_3^{(2)} = g(\Theta_{30}^{(1)}x_0 + \Theta_{31}^{(1)}x_1 + \Theta_{32}^{(1)}x_2 + \Theta_{33}^{(1)}x_3) \newline h_\Theta(x) = a_1^{(3)} = g(\Theta_{10}^{(2)}a_0^{(2)} + \Theta_{11}^{(2)}a_1^{(2)} + \Theta_{12}^{(2)}a_2^{(2)} + \Theta_{13}^{(2)}a_3^{(2)}) \newline \end{align*}\)</span><br>在整个神经网络算法过程中，我们的最终目标是找到最佳的Θ矩阵中的权值。<br><img src="/media/14943440970717.jpg"></p>
 <h1 id="神经网络的损失函数">神经网络的损失函数</h1>
@@ -171,7 +171,7 @@
     <link href="http://niuoo.github.io/2017/05/02/%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92%E5%92%8C%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92/"/>
     <id>http://niuoo.github.io/2017/05/02/线性回归和逻辑回归/</id>
     <published>2017-05-02T07:25:46.000Z</published>
-    <updated>2017-05-10T07:24:44.000Z</updated>
+    <updated>2017-05-10T10:08:18.000Z</updated>
     
     <content type="html"><![CDATA[<p>回归一词指的是我们根据之前的数据，预测出一个准确的输出值。 <img src="/media/14938262502932.jpg"></p>
 <h1 id="线性回归">线性回归</h1>
@@ -212,7 +212,7 @@
 </table>
 <p>如果<span class="math">\(X^TX\)</span>是不可逆(不可逆的矩阵为奇异或退化矩阵)的时候呢？如果存在两个特征值有线性相关的时候，矩阵不可逆，或者特征向量太多的时候(e.g. m ≤ n)，矩阵或许也不可逆，这种情况就删除重复特征的一个，无须同时保留。一般情况下，算法库也会给我们一个伪逆矩阵或者是逆矩阵的解。<br>注:设A是数域上的一个n阶方阵，若在相同数域上存在另一个n阶矩阵B，使得：AB=BA=E。则我们称B是A的逆矩阵，而A则被称为可逆矩阵。</p>
 <h1 id="逻辑回归logistic-regression">逻辑回归(Logistic Regression)</h1>
-<p>sigmoid可以轻松处理0/1分类问题sigmoid函数，又称逻辑函数Logistic Function，用来进行归一化处理(促使<span class="math">\(y^{(i)}∈(0,1)\)</span>)。 <span class="math">\(\begin{align*}&amp; h_\theta (x) = g ( \theta^T x ) \newline \newline&amp; z = \theta^T x \newline&amp; g(z) = \dfrac{1}{1 + e^{-z}}\end{align*}\)</span></p>
+<p>sigmoid可以轻松处理0/1分类问题sigmoid函数，又称逻辑函数Logistic Function，用来进行归一化处理(促使<span class="math">\(y^{(i)}∈(0,1)\)</span>)。逻辑回归的主体还是回归操作：回归对象是sigmoid函数，它将输入映射为处于0到1之间的小数，得到这个小数之后人为将其解读成概率，然后根据事先设定的阈值进行分类。 <span class="math">\(\begin{align*}&amp; h_\theta (x) = g ( \theta^T x ) \newline \newline&amp; z = \theta^T x \newline&amp; g(z) = \dfrac{1}{1 + e^{-z}}\end{align*}\)</span></p>
 <p>sigmoid函数图像如下 <img src="/media/14938277151973.jpg"> <span class="math">\(h_θ(x)\)</span>代表了输出是1的概率为多少。如<span class="math">\(h_θ(x)\)</span>=0.7表示结果有70%的可能性是1。<br><span class="math">\(\begin{align*}&amp; h_\theta(x) = P(y=1 | x ; \theta) = 1 - P(y=0 | x ; \theta) \newline&amp; P(y = 0 | x;\theta) + P(y = 1 | x ; \theta) = 1\end{align*}\)</span><br>因为结果都是离散数值，0或者1，所以当结果大于等于0.5的时候，就认为是1，反之为0.<br><span class="math">\(\begin{align*}&amp; h_\theta(x) \geq 0.5 \rightarrow y = 1 \newline&amp; h_\theta(x) &lt; 0.5 \rightarrow y = 0 \newline\end{align*}\)</span><br>等价于<br><span class="math">\(\begin{align*}&amp; \theta^T x \geq 0 \Rightarrow y = 1 \newline&amp; \theta^T x &lt; 0 \Rightarrow y = 0 \newline\end{align*}\)</span><br>另外<span class="math">\(z = \theta^T x\)</span> 函数也不一定是线性的，例<span class="math">\(z =θ_0+θ_1x^2_1+θ_2x^2_2\)</span>也可以是个圆，或者其他的形状，只要拟合数据就OK。<br>逻辑回归的损失函数如下：<br><span class="math">\(\begin{align*}&amp; J(\theta) = \dfrac{1}{m} \sum_{i=1}^m \mathrm{Cost}(h_\theta(x^{(i)}),y^{(i)}) \newline &amp; \mathrm{Cost}(h_\theta(x),y) = -\log(h_\theta(x)) \; &amp; \text{if y = 1} \newline &amp; \mathrm{Cost}(h_\theta(x),y) = -\log(1-h_\theta(x)) \; &amp; \text{if y = 0}\end{align*}\)</span><br>当y = 1的时候，关于J(θ)和$ h_θ(x)<span class="math">\(的函数\)</span>Cost(h_(x),y) = -(h_(x))$图像如下: <img src="/media/14938660514848.jpg"></p>
 <p><span class="math">\(\begin{align*}&amp; \mathrm{Cost}(h_\theta(x),y) = 0 \text{ if } h_\theta(x) = y \newline &amp; \mathrm{Cost}(h_\theta(x),y) \rightarrow \infty \text{ if } y = 0 \; \mathrm{and} \; h_\theta(x) \rightarrow 1 \newline \end{align*}\)</span></p>
 <p>当y = 0的时候，关于J(θ)和$ h_θ(x)<span class="math">\(的函数\)</span>Cost(h_(x),y) = -(1-h_(x))$图像如下: <img src="/media/14938664062585.jpg"> <span class="math">\(\begin{align*}&amp; \mathrm{Cost}(h_\theta(x),y) = 0 \text{ if } h_\theta(x) = y\newline &amp; \mathrm{Cost}(h_\theta(x),y) \rightarrow \infty \text{ if } y = 1 \; \mathrm{and} \; h_\theta(x) \rightarrow 0 \newline \end{align*}\)</span></p>
