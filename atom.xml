@@ -60,7 +60,7 @@
     <link href="http://niuoo.github.io/2017/05/05/Support-Vector-Machines/"/>
     <id>http://niuoo.github.io/2017/05/05/Support-Vector-Machines/</id>
     <published>2017-05-05T15:02:21.000Z</published>
-    <updated>2017-05-09T09:40:41.000Z</updated>
+    <updated>2017-05-09T09:42:14.000Z</updated>
     
     <content type="html"><![CDATA[<p>关于支持向量机，这里有<a href="https://www.zhihu.com/question/21094489" target="_blank" rel="external">一个比较有意思的讲解</a>，还有这里<a href="https://www.youtube.com/watch?v=3liCbRZPrZA" target="_blank" rel="external">一个小视频</a>。<br>SVM是数据挖掘里面很重要的算法，我们有时会把SVM看做是一个大间距分类器Large Magin Intuition。SVM Decision Boundary具有鲁棒性，因为它努力用一个最大间距，来分离样本。<br>有个小的知识点，向量内积以及<a href="http://www.cnblogs.com/vive/p/4563803.html" target="_blank" rel="external">证明</a></p>
 <h1 id="线性核函数">线性核函数</h1>
@@ -108,9 +108,9 @@
     <link href="http://niuoo.github.io/2017/05/04/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%88%9D%E6%8E%A2/"/>
     <id>http://niuoo.github.io/2017/05/04/神经网络初探/</id>
     <published>2017-05-04T06:14:20.000Z</published>
-    <updated>2017-05-05T14:57:04.000Z</updated>
+    <updated>2017-05-10T02:01:32.000Z</updated>
     
-    <content type="html"><![CDATA[<p>神经网络是当今最强大的学习算法之一，自动驾驶对周围景物的识别，就用到了神经网络。<br>我们以下讲述，神经网络在分类问题中的应用，在给定训练集下，为神经网络拟合参数的学习方法。<br><span class="math">\(\begin{align*} a_1^{(2)} = g(\Theta_{10}^{(1)}x_0 + \Theta_{11}^{(1)}x_1 + \Theta_{12}^{(1)}x_2 + \Theta_{13}^{(1)}x_3) \newline a_2^{(2)} = g(\Theta_{20}^{(1)}x_0 + \Theta_{21}^{(1)}x_1 + \Theta_{22}^{(1)}x_2 + \Theta_{23}^{(1)}x_3) \newline a_3^{(2)} = g(\Theta_{30}^{(1)}x_0 + \Theta_{31}^{(1)}x_1 + \Theta_{32}^{(1)}x_2 + \Theta_{33}^{(1)}x_3) \newline h_\Theta(x) = a_1^{(3)} = g(\Theta_{10}^{(2)}a_0^{(2)} + \Theta_{11}^{(2)}a_1^{(2)} + \Theta_{12}^{(2)}a_2^{(2)} + \Theta_{13}^{(2)}a_3^{(2)}) \newline \end{align*}\)</span><br>在整个神经网络算法过程中，我们的最终目标是找到最佳的Θ矩阵中的权值。</p>
+    <content type="html"><![CDATA[<p>神经网络是当今最强大的学习算法之一，自动驾驶对周围景物的识别，就用到了神经网络。<br>我们以下讲述，神经网络在分类问题中的应用，在给定训练集下，为神经网络拟合参数的学习方法。<br><span class="math">\(\begin{align*} a_1^{(2)} = g(\Theta_{10}^{(1)}x_0 + \Theta_{11}^{(1)}x_1 + \Theta_{12}^{(1)}x_2 + \Theta_{13}^{(1)}x_3) \newline a_2^{(2)} = g(\Theta_{20}^{(1)}x_0 + \Theta_{21}^{(1)}x_1 + \Theta_{22}^{(1)}x_2 + \Theta_{23}^{(1)}x_3) \newline a_3^{(2)} = g(\Theta_{30}^{(1)}x_0 + \Theta_{31}^{(1)}x_1 + \Theta_{32}^{(1)}x_2 + \Theta_{33}^{(1)}x_3) \newline h_\Theta(x) = a_1^{(3)} = g(\Theta_{10}^{(2)}a_0^{(2)} + \Theta_{11}^{(2)}a_1^{(2)} + \Theta_{12}^{(2)}a_2^{(2)} + \Theta_{13}^{(2)}a_3^{(2)}) \newline \end{align*}\)</span><br>在整个神经网络算法过程中，我们的最终目标是找到最佳的Θ矩阵中的权值。<br><img src="/media/14943440970717.jpg"></p>
 <h1 id="神经网络的损失函数">神经网络的损失函数</h1>
 <p>其中逻辑回归的损失函数为：<br><span class="math">\(J(\theta) = - \frac{1}{m} \sum_{i=1}^m [ y^{(i)}\ \log (h_\theta (x^{(i)})) + (1 - y^{(i)})\ \log (1 - h_\theta(x^{(i)}))] + \frac{\lambda}{2m}\sum_{j=1}^n \theta_j^2\)</span><br>神经网络的损失函数在逻辑回归的基础上，稍微复杂了一点儿：<br><span class="math">\(\begin{gather*} J(\Theta) = - \frac{1}{m} \sum_{i=1}^m \sum_{k=1}^K \left[y^{(i)}_k \log ((h_\Theta (x^{(i)}))_k) + (1 - y^{(i)}_k)\log (1 - (h_\Theta(x^{(i)}))_k)\right] + \frac{\lambda}{2m}\sum_{l=1}^{L-1} \sum_{i=1}^{s_l} \sum_{j=1}^{s_{l+1}} ( \Theta_{j,i}^{(l)})^2\end{gather*}\)</span></p>
 <ul>
