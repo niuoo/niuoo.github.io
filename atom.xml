@@ -36,11 +36,11 @@
   </entry>
   
   <entry>
-    <title>无监督式学习</title>
+    <title>无监督式学习之K-means</title>
     <link href="http://niuoo.github.io/2017/05/05/%E6%97%A0%E7%9B%91%E7%9D%A3%E5%BC%8F%E5%AD%A6%E4%B9%A0/"/>
     <id>http://niuoo.github.io/2017/05/05/无监督式学习/</id>
     <published>2017-05-05T15:03:18.000Z</published>
-    <updated>2017-05-11T08:55:55.000Z</updated>
+    <updated>2017-05-11T09:06:39.000Z</updated>
     
     <content type="html"><![CDATA[<p>无监督学习算法，就是从未标记的数据中进行学习。 <img src="/media/14944286743216.jpg"></p>
 <ul>
