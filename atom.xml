@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://niuoo.github.io/"/>
-  <updated>2017-05-13T18:45:23.000Z</updated>
+  <updated>2017-05-13T18:50:13.000Z</updated>
   <id>http://niuoo.github.io/</id>
   
   <author>
@@ -16,11 +16,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Dimensionality-Reduction-维度约减-PCA</title>
+    <title>Dimensionality Reduction 维度约减-PCA</title>
     <link href="http://niuoo.github.io/2017/05/14/Dimensionality-Reduction-%E7%BB%B4%E5%BA%A6%E7%BA%A6%E5%87%8F/"/>
     <id>http://niuoo.github.io/2017/05/14/Dimensionality-Reduction-维度约减/</id>
     <published>2017-05-13T16:30:13.000Z</published>
-    <updated>2017-05-13T18:45:23.000Z</updated>
+    <updated>2017-05-13T18:50:13.000Z</updated>
     
     <content type="html"><![CDATA[<p>使用Dimensionality Reduction-维数约减，一般是为了数据压缩，减少内存和硬盘空间存储，并且提高算法速度。</p>
 <p>在实际应用中，我们会得到很多特征向量，有的特征向量之间是有关系的，比如预测房价的时候，得到的房子长度inches英寸和cm厘米，它们两个是线性相关的，所以有一个是冗余的，就可以去掉一个。又如下图所示，数据集中在一个平面Z附近，所以就可以把3D的数据降维成2D。 <img src="/media/14945865066705.jpg"></p>
