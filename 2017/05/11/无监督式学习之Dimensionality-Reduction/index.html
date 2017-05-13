@@ -73,8 +73,6 @@
 
 
 
-  
-
 
   <link rel="alternate" href="/atom.xml" title="niuoo" type="application/atom+xml" />
 
@@ -88,13 +86,34 @@
 
 
 
+<meta name="description" content="使用Dimensionality Reduction-维数约减，一般是为了数据压缩，减少内存和硬盘空间存储，并且提高算法速度。
+
+在实际应用中，我们会得到很多特征向量，有的特征向量之间是有关系的，比如预测房价的时候，得到的房子长度inches英寸和cm厘米，它们两个是线性相关的，所以有一个是冗余的，就可以去掉一个。又如下图所示，数据集中在一个平面Z附近，所以就可以把3D的数据降维成2D。 
+
+主成">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Anomaly Detection 反常检测">
-<meta property="og:url" content="http://niuoo.github.io/2017/05/05/Anomaly-Detection-反常检测/index.html">
+<meta property="og:title" content="无监督式学习之Dimensionality-Reduction">
+<meta property="og:url" content="http://niuoo.github.io/2017/05/11/无监督式学习之Dimensionality-Reduction/index.html">
 <meta property="og:site_name" content="niuoo">
-<meta property="og:updated_time" content="2017-05-05T15:03:49.000Z">
+<meta property="og:description" content="使用Dimensionality Reduction-维数约减，一般是为了数据压缩，减少内存和硬盘空间存储，并且提高算法速度。
+
+在实际应用中，我们会得到很多特征向量，有的特征向量之间是有关系的，比如预测房价的时候，得到的房子长度inches英寸和cm厘米，它们两个是线性相关的，所以有一个是冗余的，就可以去掉一个。又如下图所示，数据集中在一个平面Z附近，所以就可以把3D的数据降维成2D。 
+
+主成">
+<meta property="og:image" content="http://niuoo.github.io/media/14945865066705.jpg">
+<meta property="og:image" content="http://niuoo.github.io/media/14946121526774.jpg">
+<meta property="og:image" content="http://niuoo.github.io/media/14946125078718.jpg">
+<meta property="og:image" content="http://niuoo.github.io/media/14946138068434.jpg">
+<meta property="og:image" content="http://niuoo.github.io/media/14946151502195.jpg">
+<meta property="og:updated_time" content="2017-05-13T16:13:20.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Anomaly Detection 反常检测">
+<meta name="twitter:title" content="无监督式学习之Dimensionality-Reduction">
+<meta name="twitter:description" content="使用Dimensionality Reduction-维数约减，一般是为了数据压缩，减少内存和硬盘空间存储，并且提高算法速度。
+
+在实际应用中，我们会得到很多特征向量，有的特征向量之间是有关系的，比如预测房价的时候，得到的房子长度inches英寸和cm厘米，它们两个是线性相关的，所以有一个是冗余的，就可以去掉一个。又如下图所示，数据集中在一个平面Z附近，所以就可以把3D的数据降维成2D。 
+
+主成">
+<meta name="twitter:image" content="http://niuoo.github.io/media/14945865066705.jpg">
 
 
 
@@ -115,9 +134,9 @@
 
 
 
-  <link rel="canonical" href="http://niuoo.github.io/2017/05/05/Anomaly-Detection-反常检测/"/>
+  <link rel="canonical" href="http://niuoo.github.io/2017/05/11/无监督式学习之Dimensionality-Reduction/"/>
 
-  <title> Anomaly Detection 反常检测 | niuoo </title>
+  <title> 无监督式学习之Dimensionality-Reduction | niuoo </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -237,7 +256,7 @@
             
             
               
-                Anomaly Detection 反常检测
+                无监督式学习之Dimensionality-Reduction
               
             
           </h1>
@@ -249,8 +268,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2017-05-05T23:03:49+08:00" content="May 5 2017">
-              May 5 2017
+            <time itemprop="dateCreated" datetime="2017-05-11T18:09:11+08:00" content="May 11 2017">
+              May 11 2017
             </time>
           </span>
 
@@ -277,7 +296,18 @@
       
 
       
-        
+        <p>使用Dimensionality Reduction-维数约减，一般是为了数据压缩，减少内存和硬盘空间存储，并且提高算法速度。</p>
+<ul>
+<li>在实际应用中，我们会得到很多特征向量，有的特征向量之间是有关系的，比如预测房价的时候，得到的房子长度inches英寸和cm厘米，它们两个是线性相关的，所以有一个是冗余的，就可以去掉一个。又如下图所示，数据集中在一个平面Z附近，所以就可以把3D的数据降维成2D。 <img src="/media/14945865066705.jpg"></li>
+</ul>
+<h1 id="主成分提取principal-component-analysis-problem-formulation">主成分提取(Principal Component Analysis problem formulation)</h1>
+<p>对于降维问题，目前最流行的，最常用的算法就是PCA主成分分析法。 PCA做的就是，寻找一条直线，或者面，或者诸如此类，比起特征向量低维的空间，对数据进行投影，并且最小化投影距离，也就是数据点和投影后的点之间的距离。另外，在寻找vectors时，对于所有的数据集和特征向量，都是同等对待的。 <img src="/media/14946121526774.jpg"></p>
+<p>关于上图的左边，注意区别PCA和线性回归，两个截然不同的概念。 <img src="/media/14946125078718.jpg"></p>
+<p>在使用PCA之前，我们通常会有一个数据预处理的过程，就是对数据进行均值归一化。 <img src="/media/14946138068434.jpg"></p>
+<div class="figure">
+<img src="/media/14946151502195.jpg">
+
+</div>
 
       
     </div>
@@ -303,17 +333,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/05/05/无监督式学习/" rel="next" title="无监督式学习之K-means">
-                <i class="fa fa-chevron-left"></i> 无监督式学习之K-means
+              <a href="/2017/05/05/Anomaly-Detection-反常检测/" rel="next" title="Anomaly Detection 反常检测">
+                <i class="fa fa-chevron-left"></i> Anomaly Detection 反常检测
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/05/11/无监督式学习之Dimensionality-Reduction/" rel="prev" title="无监督式学习之Dimensionality-Reduction">
-                无监督式学习之Dimensionality-Reduction <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -427,7 +453,7 @@
               
             
             
-              <p class="post-toc-empty">This post does not have a Table of Contents</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#主成分提取principal-component-analysis-problem-formulation"><span class="nav-number">1.</span> <span class="nav-text">主成分提取(Principal Component Analysis problem formulation)</span></a></li></ol></div>
             
           </div>
         </section>

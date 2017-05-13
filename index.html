@@ -240,6 +240,111 @@
             
               
                 
+                <a class="post-title-link" href="/2017/05/11/无监督式学习之Dimensionality-Reduction/" itemprop="url">
+                  无监督式学习之Dimensionality-Reduction
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2017-05-11T18:09:11+08:00" content="May 11 2017">
+              May 11 2017
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>使用Dimensionality Reduction-维数约减，一般是为了数据压缩，减少内存和硬盘空间存储，并且提高算法速度。</p>
+<ul>
+<li>在实际应用中，我们会得到很多特征向量，有的特征向量之间是有关系的，比如预测房价的时候，得到的房子长度inches英寸和cm厘米，它们两个是线性相关的，所以有一个是冗余的，就可以去掉一个。又如下图所示，数据集中在一个平面Z附近，所以就可以把3D的数据降维成2D。 <img src="/media/14945865066705.jpg"></li>
+</ul>
+<h1 id="主成分提取principal-component-analysis-problem-formulation">主成分提取(Principal Component Analysis problem formulation)</h1>
+<p>对于降维问题，目前最流行的，最常用的算法就是PCA主成分分析法。 PCA做的就是，寻找一条直线，或者面，或者诸如此类，比起特征向量低维的空间，对数据进行投影，并且最小化投影距离，也就是数据点和投影后的点之间的距离。另外，在寻找vectors时，对于所有的数据集和特征向量，都是同等对待的。 <img src="/media/14946121526774.jpg"></p>
+<p>关于上图的左边，注意区别PCA和线性回归，两个截然不同的概念。 <img src="/media/14946125078718.jpg"></p>
+<p>在使用PCA之前，我们通常会有一个数据预处理的过程，就是对数据进行均值归一化。 <img src="/media/14946138068434.jpg"></p>
+<div class="figure">
+<img src="/media/14946151502195.jpg">
+
+</div>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2017/05/05/Anomaly-Detection-反常检测/" itemprop="url">
                   Anomaly Detection 反常检测
                 </a>
@@ -401,10 +506,10 @@
 <p>另外，局部最优解是可能产生的，有时候2个聚类中心会在一起，卡在了局部最优。如下图所示，右下角的2个函数图像，表示了2种不同的局部最优。 <img src="/media/14944905514428.jpg"> #### 解决局部最优 为了让K-means方法找到较好的局部最优解或者全局最优解，我们可以尝试多次随机的初始化来保证我们最终能得到一个足够好的结果，而不仅仅初始化一次K-means，就希望得到很好的结果。特别是K处于2到10之间的话，聚类数相对较小的体系里，多次随机初始化效果会非常好，会有较大的影响。但是如果K的值几百上千的话，很可能初次随机初始化就得到很好的结果，多次随机初始化也许会得到稍微好一点的结果，但是不会好太多。 <img src="/media/14944862061717.jpg"></p>
 <p>看下图的右边，是一个市场细分的例子，根据数据，将市场分为3个部分，然后区别对待三类不同的顾客群体，更好的适应他们不同的需求，为大中小号3种聚类的用户，设计更合身的S,M,L尺码的衣服。 <img src="/media/14944871641347.jpg"></p>
 <h4 id="关于聚类数目k的选取">关于聚类数目K的选取</h4>
-<p>关于K应该取什么值，这个问题没有非常标准的解答，或者能自动解决他的方法。目前用来决定聚类数目最常用的方法仍然是通过看可视化的图，或者看聚类算法的输出结果，或者通过其他一切东西来手动选择聚类的数目。</p>
+<p>关于K应该取什么值，这个问题没有非常标准的解答，或者能自动解决他的方法。目前用来决定聚类数目最常用的方法仍然是通过看可视化的图，或者看聚类算法的输出结果，或者通过其他一切东西来手动选择聚类的数目。嘿嘿，就通过洞察力决定呗。 一般情况下使用肘部法则，但是不用期待表现很好。更多情况下，选择聚类数目的更好方法是，去问一下运行K-means是为了什么目的，然后想想聚类的数目是多少，才适合K-means聚类的后续目的。</p>
 <ol style="list-style-type: decimal">
 <li><p>肘部法则(Elbow method) 在选择聚类数目K的时候，我们可以使用下肘部方法，如果图像如下图左边的曲线，折点非常明显，那么选择肘点K是个很好的方式，但是如果图像如下图右边所示，那么选取哪个数目，则看起来非常困难。肘部方式，我们可以使用，但是很多时候，往往得不到左图那种有个明显的折点的情况，所以此方式值得尝试，但是我们也不要太期待。 <img src="/media/14944940159311.jpg"></p></li>
-<li><p>看不同的聚类数量能为后续下游的目的提供多好的结果。</p></li>
+<li><p>看不同的聚类数量能为后续下游的目的提供多好的结果。从生意的角度来选择聚类数量，如下图，生产5种大小的T恤可以更加适合顾客，但是3种T恤的话，公司也可以降低成本，更便宜的卖给更多的顾客，因此T恤销售业务的观点，可能会提供一个决定采用3个类还是5个类的方法。 <img src="/media/14944958853442.jpg"></p></li>
 </ol>
 
           
@@ -1266,103 +1371,6 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/07/23/Number/" itemprop="url">
-                  LeetCode 179 Largest Number
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-07-23T11:42:52+08:00" content="Jul 23 2016">
-              Jul 23 2016
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Given a list of non negative integers, arrange them such that they form the largest number. For example, given [3, 30, 34, 5, 9], the largest formed number is 9534330. Note: The result may be very large, so you need to return a string instead of an integer. 思路：比较两个数连接后的大小进行排序。 Runtime: 125 ms  beats 88.37%</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">largestNumber</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</div><div class="line">	String[] s = <span class="keyword">new</span> String[nums.length];</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length; i++) s[i] = String.valueOf(nums[i]);</div><div class="line">	Arrays.sort(s, (b, a) -&gt; (a.concat(b).compareTo(b.concat(a))));</div><div class="line">	StringBuffer result = <span class="keyword">new</span> StringBuffer(<span class="string">""</span>);</div><div class="line">	<span class="keyword">for</span> (String num : s) result.append(num);</div><div class="line">	<span class="keyword">return</span> result.substring(<span class="number">0</span>, <span class="number">1</span>).equals(<span class="string">"0"</span>) ? <span class="string">"0"</span> : result.toString();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>使用java8的特性： Runtime: 153 ms beats 10.23%</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> String <span class="title">largestNumber2</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</div><div class="line">	String result = Arrays</div><div class="line">			.stream(nums)</div><div class="line">			.mapToObj(Integer::toString)</div><div class="line">			.sorted((b, a) -&gt; (a.concat(b).compareTo(b.concat(a))))</div><div class="line">			.collect(Collectors.joining());</div><div class="line">	<span class="keyword">return</span> result.charAt(<span class="number">0</span>) == <span class="string">'0'</span> ? <span class="string">"0"</span> : result;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1408,7 +1416,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">12</span>
+              <span class="site-state-item-count">13</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
