@@ -73,6 +73,8 @@
 
 
 
+  
+
 
   <link rel="alternate" href="/atom.xml" title="niuoo" type="application/atom+xml" />
 
@@ -86,13 +88,30 @@
 
 
 
+<meta name="description" content="使用Dimensionality Reduction-维数约减，一般是为了数据压缩，减少内存和硬盘空间存储，并且提高算法速度。
+在实际应用中，我们会得到很多特征向量，有的特征向量之间是有关系的，比如预测房价的时候，得到的房子长度inches英寸和cm厘米，它们两个是线性相关的，所以有一个是冗余的，就可以去掉一个。又如下图所示，数据集中在一个平面Z附近，所以就可以把3D的数据降维成2D。 
+主成分提">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Anomaly Detection 反常检测">
-<meta property="og:url" content="http://niuoo.github.io/2017/05/05/Anomaly-Detection-反常检测/index.html">
+<meta property="og:title" content="Dimensionality-Reduction-维度约减-PCA">
+<meta property="og:url" content="http://niuoo.github.io/2017/05/14/Dimensionality-Reduction-维度约减/index.html">
 <meta property="og:site_name" content="niuoo">
-<meta property="og:updated_time" content="2017-05-05T15:03:49.000Z">
+<meta property="og:description" content="使用Dimensionality Reduction-维数约减，一般是为了数据压缩，减少内存和硬盘空间存储，并且提高算法速度。
+在实际应用中，我们会得到很多特征向量，有的特征向量之间是有关系的，比如预测房价的时候，得到的房子长度inches英寸和cm厘米，它们两个是线性相关的，所以有一个是冗余的，就可以去掉一个。又如下图所示，数据集中在一个平面Z附近，所以就可以把3D的数据降维成2D。 
+主成分提">
+<meta property="og:image" content="http://niuoo.github.io/media/14945865066705.jpg">
+<meta property="og:image" content="http://niuoo.github.io/media/14946121526774.jpg">
+<meta property="og:image" content="http://niuoo.github.io/media/14946125078718.jpg">
+<meta property="og:image" content="http://niuoo.github.io/media/14946138068434.jpg">
+<meta property="og:image" content="http://niuoo.github.io/media/14946971878921.png">
+<meta property="og:image" content="http://niuoo.github.io/media/14946981115876.jpg">
+<meta property="og:image" content="http://niuoo.github.io/media/14946983615287.jpg">
+<meta property="og:updated_time" content="2017-05-13T18:18:07.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Anomaly Detection 反常检测">
+<meta name="twitter:title" content="Dimensionality-Reduction-维度约减-PCA">
+<meta name="twitter:description" content="使用Dimensionality Reduction-维数约减，一般是为了数据压缩，减少内存和硬盘空间存储，并且提高算法速度。
+在实际应用中，我们会得到很多特征向量，有的特征向量之间是有关系的，比如预测房价的时候，得到的房子长度inches英寸和cm厘米，它们两个是线性相关的，所以有一个是冗余的，就可以去掉一个。又如下图所示，数据集中在一个平面Z附近，所以就可以把3D的数据降维成2D。 
+主成分提">
+<meta name="twitter:image" content="http://niuoo.github.io/media/14945865066705.jpg">
 
 
 
@@ -113,9 +132,9 @@
 
 
 
-  <link rel="canonical" href="http://niuoo.github.io/2017/05/05/Anomaly-Detection-反常检测/"/>
+  <link rel="canonical" href="http://niuoo.github.io/2017/05/14/Dimensionality-Reduction-维度约减/"/>
 
-  <title> Anomaly Detection 反常检测 | niuoo </title>
+  <title> Dimensionality-Reduction-维度约减-PCA | niuoo </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -235,7 +254,7 @@
             
             
               
-                Anomaly Detection 反常检测
+                Dimensionality-Reduction-维度约减-PCA
               
             
           </h1>
@@ -247,8 +266,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2017-05-05T23:03:49+08:00" content="May 5 2017">
-              May 5 2017
+            <time itemprop="dateCreated" datetime="2017-05-14T00:30:13+08:00" content="May 14 2017">
+              May 14 2017
             </time>
           </span>
 
@@ -275,7 +294,16 @@
       
 
       
-        
+        <p>使用Dimensionality Reduction-维数约减，一般是为了数据压缩，减少内存和硬盘空间存储，并且提高算法速度。</p>
+<p>在实际应用中，我们会得到很多特征向量，有的特征向量之间是有关系的，比如预测房价的时候，得到的房子长度inches英寸和cm厘米，它们两个是线性相关的，所以有一个是冗余的，就可以去掉一个。又如下图所示，数据集中在一个平面Z附近，所以就可以把3D的数据降维成2D。 <img src="/media/14945865066705.jpg"></p>
+<h1 id="主成分提取principal-component-analysis-problem-formulation">主成分提取(Principal Component Analysis problem formulation)</h1>
+<p>对于降维问题，目前最流行的，最常用的算法就是PCA主成分分析法。 PCA做的就是，寻找一条直线，或者面，或者诸如此类，比起特征向量低维的空间，对数据进行投影，并且最小化投影距离，也就是数据点和投影后的点之间的距离。另外，在寻找vectors时，对于所有的数据集和特征向量，都是同等对待的。一般用投影的数据，当做被降维的数据使用。 <img src="/media/14946121526774.jpg"></p>
+<p>关于上图的左边，注意区别PCA和线性回归，两个截然不同的概念。 <img src="/media/14946125078718.jpg"></p>
+<h3 id="数据预处理-data-preprocessing">数据预处理 Data preprocessing</h3>
+<p>在使用PCA之前，我们通常会有一个<strong>数据预处理</strong>的过程，就是对数据进行均值归一化。 <img src="/media/14946138068434.jpg"></p>
+<h2 id="pac算法-principal-component-analysispca-algorithm">PAC算法 Principal Component Analysis(PCA) algorithm</h2>
+<p>首先要做的是计算出∑协方差矩阵。<span class="math">\(∑=\frac{1}{m}\sum^m_{i=1}(x^{(i)})(x^{(i)})^T\)</span>,∑(Sigma)是个n×n的矩阵，因为<span class="math">\(x^{(i)}\)</span>是个n×1的向量，<span class="math">\((x^{(i)})^T\)</span>是个1×n的向量，两个向量相乘就是n×n的矩阵了。另外，协方差均值∑(Sigma)总满足一个数学性质，称为对称正定(symmetric positive definite)。这块线性代数的知识不懂，不过不必介意，反正就是这么求的，代码也不长。记得线性代数课中曾经讲到如何求特征向量什么的，现在用到了吧，忘了吧？呵呵^_^<br>svd(singular value decomposition)表示奇异值分解，svd(matlab奇异值分界的库函数,eig(Sigma)也有同样功能)将输出三个矩阵，分别是U、S、V，真正需要的是U矩阵，U矩阵也是个n×n矩阵。如果我们想将数据降维到k-dimensions的话，我们只需提取前k列向量，也就是用来投影数据的k个方向。 <img src="/media/14946971878921.png"> <span class="math">\(U_{reduce}\)</span>指U取前k列得到的n×k矩阵，X是训练集中的样本或者交叉训练集中的样本或者是测试集样本，然后Z矩阵的表达，是使用Z=<span class="math">\(U_{reduce}^TX\)</span>，也就是k×n矩阵和n×1矩阵相乘，所以Z就是k维的向量。 <img src="/media/14946981115876.jpg"></p>
+<p>总结一下PAC的全过程，如下图所示。 <img src="/media/14946983615287.jpg"></p>
 
       
     </div>
@@ -301,17 +329,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/05/05/无监督式学习/" rel="next" title="无监督式学习之K-means">
-                <i class="fa fa-chevron-left"></i> 无监督式学习之K-means
+              <a href="/2017/05/05/Anomaly-Detection-反常检测/" rel="next" title="Anomaly Detection 反常检测">
+                <i class="fa fa-chevron-left"></i> Anomaly Detection 反常检测
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/05/14/Dimensionality-Reduction-维度约减/" rel="prev" title="Dimensionality-Reduction-维度约减-PCA">
-                Dimensionality-Reduction-维度约减-PCA <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -425,7 +449,7 @@
               
             
             
-              <p class="post-toc-empty">This post does not have a Table of Contents</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#主成分提取principal-component-analysis-problem-formulation"><span class="nav-number">1.</span> <span class="nav-text">主成分提取(Principal Component Analysis problem formulation)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据预处理-data-preprocessing"><span class="nav-number">1.0.1.</span> <span class="nav-text">数据预处理 Data preprocessing</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pac算法-principal-component-analysispca-algorithm"><span class="nav-number">1.1.</span> <span class="nav-text">PAC算法 Principal Component Analysis(PCA) algorithm</span></a></li></ol></li></ol></div>
             
           </div>
         </section>
