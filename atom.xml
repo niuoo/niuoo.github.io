@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://niuoo.github.io/"/>
-  <updated>2017-05-13T18:18:07.000Z</updated>
+  <updated>2017-05-13T18:45:23.000Z</updated>
   <id>http://niuoo.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://niuoo.github.io/2017/05/14/Dimensionality-Reduction-%E7%BB%B4%E5%BA%A6%E7%BA%A6%E5%87%8F/"/>
     <id>http://niuoo.github.io/2017/05/14/Dimensionality-Reduction-维度约减/</id>
     <published>2017-05-13T16:30:13.000Z</published>
-    <updated>2017-05-13T18:18:07.000Z</updated>
+    <updated>2017-05-13T18:45:23.000Z</updated>
     
     <content type="html"><![CDATA[<p>使用Dimensionality Reduction-维数约减，一般是为了数据压缩，减少内存和硬盘空间存储，并且提高算法速度。</p>
 <p>在实际应用中，我们会得到很多特征向量，有的特征向量之间是有关系的，比如预测房价的时候，得到的房子长度inches英寸和cm厘米，它们两个是线性相关的，所以有一个是冗余的，就可以去掉一个。又如下图所示，数据集中在一个平面Z附近，所以就可以把3D的数据降维成2D。 <img src="/media/14945865066705.jpg"></p>
@@ -32,6 +32,9 @@
 <h2 id="pac算法-principal-component-analysispca-algorithm">PAC算法 Principal Component Analysis(PCA) algorithm</h2>
 <p>首先要做的是计算出∑协方差矩阵。<span class="math">\(∑=\frac{1}{m}\sum^m_{i=1}(x^{(i)})(x^{(i)})^T\)</span>,∑(Sigma)是个n×n的矩阵，因为<span class="math">\(x^{(i)}\)</span>是个n×1的向量，<span class="math">\((x^{(i)})^T\)</span>是个1×n的向量，两个向量相乘就是n×n的矩阵了。另外，协方差均值∑(Sigma)总满足一个数学性质，称为对称正定(symmetric positive definite)。这块线性代数的知识不懂，不过不必介意，反正就是这么求的，代码也不长。记得线性代数课中曾经讲到如何求特征向量什么的，现在用到了吧，忘了吧？呵呵^_^<br>svd(singular value decomposition)表示奇异值分解，svd(matlab奇异值分界的库函数,eig(Sigma)也有同样功能)将输出三个矩阵，分别是U、S、V，真正需要的是U矩阵，U矩阵也是个n×n矩阵。如果我们想将数据降维到k-dimensions的话，我们只需提取前k列向量，也就是用来投影数据的k个方向。 <img src="/media/14946971878921.png"> <span class="math">\(U_{reduce}\)</span>指U取前k列得到的n×k矩阵，X是训练集中的样本或者交叉训练集中的样本或者是测试集样本，然后Z矩阵的表达，是使用Z=<span class="math">\(U_{reduce}^TX\)</span>，也就是k×n矩阵和n×1矩阵相乘，所以Z就是k维的向量。 <img src="/media/14946981115876.jpg"></p>
 <p>总结一下PAC的全过程，如下图所示。 <img src="/media/14946983615287.jpg"></p>
+<h1 id="还原压缩数据">还原压缩数据</h1>
+<p>压缩数据时，我们也许会把一千维的数据压缩到只有一百个维度，既然我们可以用算法如此压缩数据，那么也应该有办法，可以从压缩过的数据，近似地回到原始高维度的数据。假设有一个已经被压缩过的<span class="math">\(z^{(i)}\)</span>，它有100维度，怎样使它回到其最初的表示<span class="math">\(x^{(i)}\)</span>，也就是压缩前的1000维的数据呢？</p>
+<p>呵呵，这一块先不写了。以后再补上。</p>
 ]]></content>
     
     <summary type="html">
