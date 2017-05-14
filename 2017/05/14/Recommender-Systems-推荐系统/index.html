@@ -86,19 +86,18 @@
 
 
 
-<meta name="description" content="Given a collection of candidate numbers (C) and a target number (T), find all unique combinations in C where the candidate numbers sums to T.
-Each number in C may only be used once in the combination.">
+<meta name="description" content="推荐系统是机器学习的一个重要应用。很多团队都致力于建立更好的推荐系统，比如亚马逊、Netflix、eBay或者苹果公司的iTunes Genius做的事情，有很多网站或者系统试图向用户推荐新产品，比如亚马逊向你推荐新书，Netflix想你推荐新电影，诸如此类。而这些推进系统可能会看看你以前购买过什么书，或者以前你给哪些电影进行过评分，这些系统贡献了现今亚马逊收入的相当大一部分，而Netflix，他">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode 40 Combination Sum II">
-<meta property="og:url" content="http://niuoo.github.io/2017/01/22/LeetCode-40-Combination-Sum-II/index.html">
+<meta property="og:title" content="Recommender Systems 推荐系统">
+<meta property="og:url" content="http://niuoo.github.io/2017/05/14/Recommender-Systems-推荐系统/index.html">
 <meta property="og:site_name" content="niuoo">
-<meta property="og:description" content="Given a collection of candidate numbers (C) and a target number (T), find all unique combinations in C where the candidate numbers sums to T.
-Each number in C may only be used once in the combination.">
-<meta property="og:updated_time" content="2017-01-22T12:38:15.000Z">
+<meta property="og:description" content="推荐系统是机器学习的一个重要应用。很多团队都致力于建立更好的推荐系统，比如亚马逊、Netflix、eBay或者苹果公司的iTunes Genius做的事情，有很多网站或者系统试图向用户推荐新产品，比如亚马逊向你推荐新书，Netflix想你推荐新电影，诸如此类。而这些推进系统可能会看看你以前购买过什么书，或者以前你给哪些电影进行过评分，这些系统贡献了现今亚马逊收入的相当大一部分，而Netflix，他">
+<meta property="og:image" content="http://niuoo.github.io/media/14947442269252.jpg">
+<meta property="og:updated_time" content="2017-05-14T06:59:03.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LeetCode 40 Combination Sum II">
-<meta name="twitter:description" content="Given a collection of candidate numbers (C) and a target number (T), find all unique combinations in C where the candidate numbers sums to T.
-Each number in C may only be used once in the combination.">
+<meta name="twitter:title" content="Recommender Systems 推荐系统">
+<meta name="twitter:description" content="推荐系统是机器学习的一个重要应用。很多团队都致力于建立更好的推荐系统，比如亚马逊、Netflix、eBay或者苹果公司的iTunes Genius做的事情，有很多网站或者系统试图向用户推荐新产品，比如亚马逊向你推荐新书，Netflix想你推荐新电影，诸如此类。而这些推进系统可能会看看你以前购买过什么书，或者以前你给哪些电影进行过评分，这些系统贡献了现今亚马逊收入的相当大一部分，而Netflix，他">
+<meta name="twitter:image" content="http://niuoo.github.io/media/14947442269252.jpg">
 
 
 
@@ -119,9 +118,9 @@ Each number in C may only be used once in the combination.">
 
 
 
-  <link rel="canonical" href="http://niuoo.github.io/2017/01/22/LeetCode-40-Combination-Sum-II/"/>
+  <link rel="canonical" href="http://niuoo.github.io/2017/05/14/Recommender-Systems-推荐系统/"/>
 
-  <title> LeetCode 40 Combination Sum II | niuoo </title>
+  <title> Recommender Systems 推荐系统 | niuoo </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -241,7 +240,7 @@ Each number in C may only be used once in the combination.">
             
             
               
-                LeetCode 40 Combination Sum II
+                Recommender Systems 推荐系统
               
             
           </h1>
@@ -253,8 +252,8 @@ Each number in C may only be used once in the combination.">
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2017-01-22T20:35:06+08:00" content="Jan 22 2017">
-              Jan 22 2017
+            <time itemprop="dateCreated" datetime="2017-05-14T13:06:31+08:00" content="May 14 2017">
+              May 14 2017
             </time>
           </span>
 
@@ -281,11 +280,7 @@ Each number in C may only be used once in the combination.">
       
 
       
-        <p>Given a collection of candidate numbers (C) and a target number (T), find all unique combinations in C where the candidate numbers sums to T.</p>
-<p>Each number in C may only be used once in the combination.</p>
-<p>Note: All numbers (including target) will be positive integers. The solution set must not contain duplicate combinations. For example, given candidate set [10, 1, 2, 7, 6, 1, 5] and target 8, A solution set is: <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">[</div><div class="line">  [1, 7],</div><div class="line">  [1, 2, 5],</div><div class="line">  [2, 6],</div><div class="line">  [1, 1, 6]</div><div class="line">]</div></pre></td></tr></table></figure></p>
-<p><strong>Runtime: 17 ms runtime beats 94.63% of java submissions.</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> List&lt;List&lt;Integer&gt;&gt; combinationSum2(<span class="keyword">int</span>[] candidates, <span class="keyword">int</span> target) &#123;</div><div class="line">	Arrays.sort(candidates);</div><div class="line">	List&lt;List&lt;Integer&gt;&gt; result = <span class="keyword">new</span> LinkedList&lt;List&lt;Integer&gt;&gt;();</div><div class="line">	List&lt;Integer&gt; tmp = <span class="keyword">new</span> ArrayList&lt;Integer&gt;();</div><div class="line">	dfs(<span class="number">0</span>, candidates, target, tmp, result);</div><div class="line">	<span class="keyword">return</span> result;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> begin, <span class="keyword">int</span>[] candidates, <span class="keyword">int</span> rest, List&lt;Integer&gt; tmp,</span></span></div><div class="line">				 List&lt;List&lt;Integer&gt;&gt; result) &#123;</div><div class="line">	<span class="keyword">if</span> (rest == <span class="number">0</span>)</div><div class="line">		result.add(<span class="keyword">new</span> ArrayList&lt;Integer&gt;(tmp));<span class="comment">//tmp是变动的,所以此处需要new一个</span></div><div class="line">	<span class="comment">/*分别从candidates[i]开始往下深搜*/</span></div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = begin; i &lt; candidates.length &amp;&amp; candidates[i] &lt;= rest; i++) &#123;</div><div class="line">		<span class="keyword">if</span> (i &gt; begin &amp;&amp; candidates[i] == candidates[i - <span class="number">1</span>]) <span class="keyword">continue</span>;</div><div class="line">		tmp.add(candidates[i]);</div><div class="line">		dfs(i + <span class="number">1</span>, candidates, rest - candidates[i], tmp, result);<span class="comment">//搜索下个数字</span></div><div class="line">		tmp.remove(tmp.size() - <span class="number">1</span>);<span class="comment">//回溯</span></div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+        <p>推荐系统是机器学习的一个重要应用。很多团队都致力于建立更好的推荐系统，比如亚马逊、Netflix、eBay或者苹果公司的iTunes Genius做的事情，有很多网站或者系统试图向用户推荐新产品，比如亚马逊向你推荐新书，Netflix想你推荐新电影，诸如此类。而这些推进系统可能会看看你以前购买过什么书，或者以前你给哪些电影进行过评分，这些系统贡献了现今亚马逊收入的相当大一部分，而Netflix，他们向用户推荐的电影占了用户观看电影的大部分。推荐系统，其表现的一些改进就能带来显著且即刻产生的影响，这些影响关系到许多公司的最终业绩。<br>在机器学习中，特征量是重要的，选择的特征对学习算法的表现有很大影响。在机器学习领域，有这么一个宏大的想法，就是对于一些问题，可能不是所有问题，但是对于一些问题而言，存在一些算法，能试图自动地学习到一组优良的特征量，而不用人为动手设计或者手动编写特征。<br>有些情况，或许能够采用一种算法，来学习到使用什么特征量，而推荐系统，就是这种情形的一个例子，当然还有其他很多例子，通过学习推荐系统，我们能够对这种学习特征量的想法有一点了解，我们至少可以通过这个例子，来了解机器学习中的这种big idea。<br># 推荐系统算法 ### 推荐系统在做什么 如下图所示，给定这些r(i,j)和y(i,j)数据，然后浏览全部数据，关注所有没有电影评分的地方，并试图预测这些带问号的地方，应该是什么数值。如下图，前三部电影可能是浪漫爱情电影，后两部是动作片，然后Alice和Bob看起来喜欢爱情片，我们预测Alice也许会给电影Cute puppies of love打分5，Bob给电影Romance forever打分4.5，推荐系统就是通过填充这些数值，然后推测用户更喜欢什么电影，并进行相应推荐。有一些电影，还有一些用户，用户给一些电影进行了评价打分，推荐系统所做的事情就是，通过这些评分，预测用户会怎样给还没看过的电影打分。 <img src="/media/14947442269252.jpg"> ### 基于内容的推荐</p>
 
       
     </div>
@@ -311,17 +306,13 @@ Each number in C may only be used once in the combination.">
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/07/26/IV/" rel="next" title="LeetCode 377 Combination Sum IV">
-                <i class="fa fa-chevron-left"></i> LeetCode 377 Combination Sum IV
+              <a href="/2017/05/14/Dimensionality-Reduction-维度约减/" rel="next" title="Dimensionality Reduction 主成分分析PCA">
+                <i class="fa fa-chevron-left"></i> Dimensionality Reduction 主成分分析PCA
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/01/22/LeetCode-416-Partition-Equal-Subset-Sum/" rel="prev" title="LeetCode 416 Partition Equal Subset Sum">
-                LeetCode 416 Partition Equal Subset Sum <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>

@@ -240,8 +240,102 @@
             
               
                 
+                <a class="post-title-link" href="/2017/05/14/Recommender-Systems-推荐系统/" itemprop="url">
+                  Recommender Systems 推荐系统
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2017-05-14T13:06:31+08:00" content="May 14 2017">
+              May 14 2017
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>推荐系统是机器学习的一个重要应用。很多团队都致力于建立更好的推荐系统，比如亚马逊、Netflix、eBay或者苹果公司的iTunes Genius做的事情，有很多网站或者系统试图向用户推荐新产品，比如亚马逊向你推荐新书，Netflix想你推荐新电影，诸如此类。而这些推进系统可能会看看你以前购买过什么书，或者以前你给哪些电影进行过评分，这些系统贡献了现今亚马逊收入的相当大一部分，而Netflix，他们向用户推荐的电影占了用户观看电影的大部分。推荐系统，其表现的一些改进就能带来显著且即刻产生的影响，这些影响关系到许多公司的最终业绩。<br>在机器学习中，特征量是重要的，选择的特征对学习算法的表现有很大影响。在机器学习领域，有这么一个宏大的想法，就是对于一些问题，可能不是所有问题，但是对于一些问题而言，存在一些算法，能试图自动地学习到一组优良的特征量，而不用人为动手设计或者手动编写特征。<br>有些情况，或许能够采用一种算法，来学习到使用什么特征量，而推荐系统，就是这种情形的一个例子，当然还有其他很多例子，通过学习推荐系统，我们能够对这种学习特征量的想法有一点了解，我们至少可以通过这个例子，来了解机器学习中的这种big idea。<br># 推荐系统算法 ### 推荐系统在做什么 如下图所示，给定这些r(i,j)和y(i,j)数据，然后浏览全部数据，关注所有没有电影评分的地方，并试图预测这些带问号的地方，应该是什么数值。如下图，前三部电影可能是浪漫爱情电影，后两部是动作片，然后Alice和Bob看起来喜欢爱情片，我们预测Alice也许会给电影Cute puppies of love打分5，Bob给电影Romance forever打分4.5，推荐系统就是通过填充这些数值，然后推测用户更喜欢什么电影，并进行相应推荐。有一些电影，还有一些用户，用户给一些电影进行了评价打分，推荐系统所做的事情就是，通过这些评分，预测用户会怎样给还没看过的电影打分。 <img src="/media/14947442269252.jpg"> ### 基于内容的推荐</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2017/05/14/Dimensionality-Reduction-维度约减/" itemprop="url">
-                  Dimensionality Reduction 维度约减-PCA
+                  Dimensionality Reduction 主成分分析PCA
                 </a>
               
             
@@ -284,14 +378,13 @@
       
         
           
-            <p>使用Dimensionality Reduction-维数约减，一般是为了数据压缩，减少内存和硬盘空间存储，并且提高算法速度。</p>
-<p>在实际应用中，我们会得到很多特征向量，有的特征向量之间是有关系的，比如预测房价的时候，得到的房子长度inches英寸和cm厘米，它们两个是线性相关的，所以有一个是冗余的，就可以去掉一个。又如下图所示，数据集中在一个平面Z附近，所以就可以把3D的数据降维成2D。 <img src="/media/14945865066705.jpg"></p>
+            <p>使用Dimensionality Reduction-维数约减，一般是为了数据压缩，减少内存和硬盘空间存储，并且提高算法速度。 在实际应用中，我们会得到很多特征向量，有的特征向量之间是有关系的，比如预测房价的时候，得到的房子长度inches英寸和cm厘米，它们两个是线性相关的，所以有一个是冗余的，就可以去掉一个。又如下图所示，数据集中在一个平面Z附近，所以就可以把3D的数据降维成2D。 <img src="/media/14945865066705.jpg"></p>
 <h1 id="主成分提取principal-component-analysis-problem-formulation">主成分提取(Principal Component Analysis problem formulation)</h1>
 <p>对于降维问题，目前最流行的，最常用的算法就是PCA主成分分析法。 PCA做的就是，寻找一条直线，或者面，或者诸如此类，比起特征向量低维的空间，对数据进行投影，并且最小化投影距离，也就是数据点和投影后的点之间的距离。另外，在寻找vectors时，对于所有的数据集和特征向量，都是同等对待的。一般用投影的数据，当做被降维的数据使用。 <img src="/media/14946121526774.jpg"></p>
 <p>关于上图的左边，注意区别PCA和线性回归，两个截然不同的概念。 <img src="/media/14946125078718.jpg"></p>
 <h3 id="数据预处理-data-preprocessing">数据预处理 Data preprocessing</h3>
 <p>在使用PCA之前，我们通常会有一个<strong>数据预处理</strong>的过程，就是对数据进行均值归一化。 <img src="/media/14946138068434.jpg"></p>
-<h2 id="pac算法-principal-component-analysispca-algorithm">PAC算法 Principal Component Analysis(PCA) algorithm</h2>
+<h3 id="pac算法-principal-component-analysispca-algorithm">PAC算法 Principal Component Analysis(PCA) algorithm</h3>
 <p>首先要做的是计算出∑协方差矩阵。<span class="math">\(∑=\frac{1}{m}\sum^m_{i=1}(x^{(i)})(x^{(i)})^T\)</span>,∑(Sigma)是个n×n的矩阵，因为<span class="math">\(x^{(i)}\)</span>是个n×1的向量，<span class="math">\((x^{(i)})^T\)</span>是个1×n的向量，两个向量相乘就是n×n的矩阵了。另外，协方差均值∑(Sigma)总满足一个数学性质，称为对称正定(symmetric positive definite)。这块线性代数的知识不懂，不过不必介意，反正就是这么求的，代码也不长。记得线性代数课中曾经讲到如何求特征向量什么的，现在用到了吧，忘了吧？呵呵^_^<br>svd(singular value decomposition)表示奇异值分解，svd(matlab奇异值分界的库函数,eig(Sigma)也有同样功能)将输出三个矩阵，分别是U、S、V，真正需要的是U矩阵，U矩阵也是个n×n矩阵。如果我们想将数据降维到k-dimensions的话，我们只需提取前k列向量，也就是用来投影数据的k个方向。 <img src="/media/14946971878921.png"> <span class="math">\(U_{reduce}\)</span>指U取前k列得到的n×k矩阵，X是训练集中的样本或者交叉训练集中的样本或者是测试集样本，然后Z矩阵的表达，是使用Z=<span class="math">\(U_{reduce}^TX\)</span>，也就是k×n矩阵和n×1矩阵相乘，所以Z就是k维的向量。 <img src="/media/14946981115876.jpg"></p>
 <p>总结一下PAC的全过程，如下图所示。 <img src="/media/14946983615287.jpg"></p>
 <h1 id="还原压缩数据">还原压缩数据</h1>
@@ -1272,106 +1365,6 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/07/26/IV/" itemprop="url">
-                  LeetCode 377 Combination Sum IV
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-07-26T14:55:15+08:00" content="Jul 26 2016">
-              Jul 26 2016
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Given an integer array with all positive numbers and no duplicates, find the number of possible combinations that add up to a positive integer target. Example: nums = [1, 2, 3] target = 4</p>
-<p>The possible combination ways are: (1, 1, 1, 1) (1, 1, 2) (1, 2, 1) (1, 3) (2, 1, 1) (2, 2) (3, 1)</p>
-<p>Note that different sequences are counted as different combinations. Therefore the output is 7.</p>
-<p>刚开始写了个递归，就去提交了。Time Limit Exceeded.</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/***这是错误的代码！***/</span></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">combinationSum4</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target)</span> </span>&#123;</div><div class="line">		<span class="keyword">int</span> len = nums.length;</div><div class="line">		Arrays.sort(nums);</div><div class="line">		<span class="keyword">int</span> sum = <span class="number">0</span>;</div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len; i++) &#123;</div><div class="line">			<span class="keyword">if</span> (target - nums[i] == <span class="number">0</span>) sum += <span class="number">1</span>;</div><div class="line">			<span class="keyword">if</span> (target - nums[i] &gt; <span class="number">0</span>) sum += combinationSum4(nums, target - nums[i]);</div><div class="line">			<span class="keyword">if</span> (target - nums[i] &lt; <span class="number">0</span>) <span class="keyword">break</span>;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">return</span> sum;</div><div class="line">	&#125;</div></pre></td></tr></table></figure>
-<p>以上解法，毫无疑问，Time Limit Exceeded了，因为很多步骤都是重复的，如 [1,50]的nums，targe 为200，所以根据这错的方法我们就会重复多计算比200小的target，导致超时，所以，我们要提前把小于 target的数，都先计算出来，防止递归的时候，重复计算，导致超时。 正确的解法：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">combinationSum4</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target)</span> </span>&#123;</div><div class="line">	Arrays.sort(nums);</div><div class="line">	<span class="keyword">int</span>[] sum = <span class="keyword">new</span> <span class="keyword">int</span>[target + <span class="number">1</span>];</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= target; i++) &#123;<span class="comment">//提前计算出所有小的target有几种组合数</span></div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> num : nums) &#123;</div><div class="line">			<span class="keyword">if</span> (i == num) sum[i] += <span class="number">1</span>;</div><div class="line">			<span class="keyword">if</span> (i &gt; num) sum[i] += sum[i - num];</div><div class="line">			<span class="keyword">if</span> (i &lt; num) <span class="keyword">break</span>;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> sum[target];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1417,7 +1410,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">13</span>
+              <span class="site-state-item-count">14</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
