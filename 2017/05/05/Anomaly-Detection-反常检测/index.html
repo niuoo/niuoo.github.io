@@ -86,13 +86,27 @@
 
 
 
+<meta name="description" content="异常检测最常用的应用是欺诈检测。系统的用户都在从事不同的活动，可以对不同的用户活动计算特征变量，然后可以建立一个模型，用来表示用户表现出各种行为的可能性，也就是用户行为对应的特征向量出现的频率。#### 异常检测例子
+
+某个用户在网站上行为的特征变量，也许\(x_1\)是用户登陆的频率，\(x_2\)是用户访问某个页面的次数或者交易次数，\(x_3\)是用户在论坛上发帖的次数，\(x_4\)是用户">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Anomaly Detection 反常检测">
 <meta property="og:url" content="http://niuoo.github.io/2017/05/05/Anomaly-Detection-反常检测/index.html">
 <meta property="og:site_name" content="niuoo">
-<meta property="og:updated_time" content="2017-05-05T15:03:49.000Z">
+<meta property="og:description" content="异常检测最常用的应用是欺诈检测。系统的用户都在从事不同的活动，可以对不同的用户活动计算特征变量，然后可以建立一个模型，用来表示用户表现出各种行为的可能性，也就是用户行为对应的特征向量出现的频率。#### 异常检测例子
+
+某个用户在网站上行为的特征变量，也许\(x_1\)是用户登陆的频率，\(x_2\)是用户访问某个页面的次数或者交易次数，\(x_3\)是用户在论坛上发帖的次数，\(x_4\)是用户">
+<meta property="og:image" content="http://niuoo.github.io/media/14948382044224.jpg">
+<meta property="og:image" content="http://niuoo.github.io/media/14948391530737.jpg">
+<meta property="og:image" content="http://niuoo.github.io/media/14948397775893.jpg">
+<meta property="og:image" content="http://niuoo.github.io/media/14948406033181.jpg">
+<meta property="og:updated_time" content="2017-05-15T09:41:04.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Anomaly Detection 反常检测">
+<meta name="twitter:description" content="异常检测最常用的应用是欺诈检测。系统的用户都在从事不同的活动，可以对不同的用户活动计算特征变量，然后可以建立一个模型，用来表示用户表现出各种行为的可能性，也就是用户行为对应的特征向量出现的频率。#### 异常检测例子
+
+某个用户在网站上行为的特征变量，也许\(x_1\)是用户登陆的频率，\(x_2\)是用户访问某个页面的次数或者交易次数，\(x_3\)是用户在论坛上发帖的次数，\(x_4\)是用户">
+<meta name="twitter:image" content="http://niuoo.github.io/media/14948382044224.jpg">
 
 
 
@@ -275,7 +289,15 @@
       
 
       
-        
+        <p>异常检测最常用的应用是欺诈检测。系统的用户都在从事不同的活动，可以对不同的用户活动计算特征变量，然后可以建立一个模型，用来表示用户表现出各种行为的可能性，也就是用户行为对应的特征向量出现的频率。<br>#### 异常检测例子</p>
+<ul>
+<li>某个用户在网站上行为的特征变量，也许<span class="math">\(x_1\)</span>是用户登陆的频率，<span class="math">\(x_2\)</span>是用户访问某个页面的次数或者交易次数，<span class="math">\(x_3\)</span>是用户在论坛上发帖的次数，<span class="math">\(x_4\)</span>是用户的打字次数，有些网站是可以记录用户每秒打了多少个字母的，因此可以根据这些数据建一个模型p(x)，可以用它来发现网站上行为奇怪的用户，只需要看哪些用户的p(x)概率小于ε，接下来，你拿来这些用户的档案，做进一步的筛选，或者要求这些用户，验证他们的身份，从而让网站可防御异常行为或者欺诈行为。这样的过程，可以找到行为不正常的用户，而不只是有欺诈行为的用户，也不只是那些被盗号的用户或者有行为比较搞笑的用户，而是行为不寻常的用户。这就是许多在线购物网站，常用来识别异常用户的技术。这些用户行为奇怪，可能表示他们有欺诈行为，或者是被盗号。</li>
+<li>工业生产领域，发现异常的产品，然后要求进一步细查这些产品的质量。比如飞机引擎异常检测。</li>
+<li>数据中心的计算机监控。假如，管理一个计算机集群，或者一个数据中心，其中有许多计算机，那么我们可以为每台计算机计算特征变量，也许某些特征衡量计算机的内存消耗，或者硬盘访问量，CPU负载，或者更加复杂的特征，比如CPU负载于网络流量的比值。建立p(x)模型，找到异常情况不正常工作的计算机，也许它即将停机，因此可以有求系统管理员查看其工作状况。目前这种技术实际正在被各大数据中心使用，用来检测大量计算机可能发生的异常。 <img src="/media/14948382044224.jpg"></li>
+</ul>
+<h3 id="高斯分布-gaussian-normal-distribution">高斯分布 Gaussian (Normal) Distribution</h3>
+<p>高斯分布也称为正态分布。μ是均值，代表钟形曲线的对称轴，σ标准差确定了高斯分布概率密度函数的宽度，<span class="math">\(σ^2\)</span>表示方差。 <img src="/media/14948391530737.jpg"></p>
+<p>高斯分布的例子，曲线的阴影部分面积是1，这是概率密度函数的特性。注意看高度和宽度和对称轴。 <img src="/media/14948397775893.jpg"> 参数估计问题。其实这里也是极大似然估计。 注意看下图中对μ和<span class="math">\(σ^2\)</span>的确定。 <img src="/media/14948406033181.jpg"> ### 异常检测算法 这里运用高斯分布开发异常检测算法，</p>
 
       
     </div>
@@ -425,7 +447,7 @@
               
             
             
-              <p class="post-toc-empty">This post does not have a Table of Contents</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#高斯分布-gaussian-normal-distribution"><span class="nav-number">1.</span> <span class="nav-text">高斯分布 Gaussian (Normal) Distribution</span></a></li></ol></div>
             
           </div>
         </section>
