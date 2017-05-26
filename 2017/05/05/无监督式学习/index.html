@@ -117,7 +117,7 @@
 <meta property="og:image" content="http://niuoo.github.io/media/14944871641347.jpg">
 <meta property="og:image" content="http://niuoo.github.io/media/14944940159311.jpg">
 <meta property="og:image" content="http://niuoo.github.io/media/14944958853442.jpg">
-<meta property="og:updated_time" content="2017-05-13T18:48:40.000Z">
+<meta property="og:updated_time" content="2017-05-20T07:59:58.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="无监督式学习之K-means">
 <meta name="twitter:description" content="无监督学习算法，就是从未标记的数据中进行学习。 
@@ -326,7 +326,7 @@
 <li><p>随机初始化K个簇中心，分别是<span class="math">\(μ_1,μ_2,…,μ_K ∈ R^n\)</span>(n是特征向量的纬度)。 <img src="/media/14944860345126.jpg"></p></li>
 <li>不断重复一下步骤：
 <ol style="list-style-type: decimal">
-<li>找出数据<span class="math">\(x^(i)离哪个簇中心最近，用c^(i)记录簇中心的索引，c^(i)= min_k||x^(i)-μ^(k)||^2\)</span>。m是训练数据的总个数。<span class="math">\(c^(i)\)</span> = index of cluster(1,2,…,k) to which example <span class="math">\(x^(i)\)</span>is currently assigned。这一步就是把m个<span class="math">\(x^(i)\)</span>划分给各自所属的聚类中心。</li>
+<li>找出数据<span class="math">\(x^{(i)}离哪个簇中心最近，用c^{(i)}记录簇中心的索引，c^{(i)}= min_k||x^{(i)}-μ^{(k)}||^2\)</span>。m是训练数据的总个数。<span class="math">\(c^{(i)}\)</span> = index of cluster(1,2,…,k) to which example <span class="math">\(x^{(i)}\)</span>is currently assigned。这一步就是把m个<span class="math">\(x^{(i)}\)</span>划分给各自所属的聚类中心。</li>
 <li>根据当前分开的簇，再重新计算每个簇的簇中心。例如 <span class="math">\(c^{(1)}=2,c^{(5)}=2,c^{(6)}=2,c^{(10)}=2\)</span>，那么<span class="math">\(μ_2=\frac{1}{4}[x^{(1)}+x^{(5)}+x^{(6)}+x^{(10)}]\)</span>。如果某个簇里面没有分配任何1个点，那么就把这个簇中心移除掉，或者重新随机找一个聚类中心，但是直接移除是更为常见的方法。</li>
 <li>我们优化的目标是找到最好的<span class="math">\(μ_1,…μ_K\)</span>,使得<span class="math">\(J(c^{(1)},…,c^{(m)},μ_1,…μ_K)=\frac{1}{m}\sum_{i=1}^m||x^{(i)}-μ_{c^{(i)}}||^2\)</span>取得最小值，同时J是一直收敛的。 <img src="/media/14944823083506.jpg"></li>
 </ol></li>
@@ -443,7 +443,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">14</span>
+              <span class="site-state-item-count">16</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
