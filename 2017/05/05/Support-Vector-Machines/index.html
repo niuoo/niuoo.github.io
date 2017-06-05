@@ -106,7 +106,7 @@ SVM线性核函数，就是SVM不使用核函数。其实是在逻辑回归的�
 <meta property="og:image" content="http://niuoo.github.io/media/14943200907676.jpg">
 <meta property="og:image" content="http://niuoo.github.io/media/14943202565702.jpg">
 <meta property="og:image" content="http://niuoo.github.io/media/14943205457069.jpg">
-<meta property="og:updated_time" content="2017-05-26T16:47:14.000Z">
+<meta property="og:updated_time" content="2017-05-30T06:37:31.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Support Vector Machines">
 <meta name="twitter:description" content="关于支持向量机，这里有一个比较有意思的讲解，还有这里一个小视频。SVM是数据挖掘里面很重要的算法，我们有时会把SVM看做是一个大间距分类器Large Magin Intuition。SVM Decision Boundary具有鲁棒性，因为它努力用一个最大间距，来分离样本。有个小的知识点，向量内积以及证明
@@ -301,7 +301,7 @@ SVM线性核函数，就是SVM不使用核函数。其实是在逻辑回归的�
 <p>使用SVM软件包来确定参数θ的时候，我们需要指定常数C，C值如果太大，那么就会过拟合，效果不好。如以下示图，注意看左下角那个红叉叉，如果C太大的时候，决策边界就会是斜着的那条很线，这样并不好: <img src="/media/14943142227688.jpg"></p>
 <h1 id="kernels">Kernels</h1>
 <p>构造非线性复杂的分类器，我们用“Kernels函数”来达到此目的。<br>先来看一张图，如果决策分界是曲线的时候，那么就会有多项式特征变量的出现，如果不进行变化，就直接去求解，那么运算量是非常大的，有太多的高阶项需要被计算，所以我们需要通过其他方式来构造特征变量，来嵌入到假设函数中：<br><img src="/media/14943156955239.jpg"></p>
-<p>Kernels核函数有很多，我们用的最多的是高斯核函数(Gaussian kernel)，$ f_i=exp{ }$ 其中 <span class="math">\(l^(i) =x^(i) ，x^(i)\)</span>表示m个训练数据的第i个样本，高斯核函数描述了某个样本和其他样本的距离程度。这个函数类似高斯分布，因此称为高斯核函数。 <img src="/media/14943147936462.jpg"></p>
+<p>Kernels核函数有很多，我们用的最多的是高斯核函数(Gaussian kernel)，$ f_i=exp{ }$ 其中 <span class="math">\(l^(i) =x^(i) ，x^(i)\)</span>表示m个训练数据的第i个样本，高斯核函数描述了某个样本和其他样本的距离程度。这个函数类似高斯分布，因此称为高斯核函数。也叫做径向基函数(Radial Basis Function 简称RBF)。它能够把原始特征映射到无穷维。 <img src="/media/14943147936462.jpg"></p>
 <p>看下面这张图，可以更加理解高斯核函数的作用，注意看图中的红色大圈，如果<span class="math">\(f_1≈1,f_2≈0,f_3≈0\)</span>，那么证明这个点离<span class="math">\(l^(1)\)</span>很近，y=1。图中训练出的θ值，表明了红圈内是预测y=1，红圈外是y=0，即离点<span class="math">\(l^(1),l^(2)\)</span>都很远。这就是我们如何通过标记点以及核函数，来训练出非常复杂的非线性决策边界的方法。</p>
 <div class="figure">
 <img src="/media/14943222658500.jpg">
