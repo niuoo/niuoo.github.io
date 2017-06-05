@@ -2,9 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://niuoo.github.io/2017/05/19/%E5%81%9A%E4%B8%AA%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0Python%E8%B0%83%E5%8C%85%E4%BE%A0/</loc>
+    
+    <lastmod>2017-06-05T10:04:49.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://niuoo.github.io/2017/05/14/Recommender-Systems-%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F/</loc>
+    
+    <lastmod>2017-06-05T10:04:45.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://niuoo.github.io/2017/05/14/Dimensionality-Reduction-%E7%BB%B4%E5%BA%A6%E7%BA%A6%E5%87%8F/</loc>
     
-    <lastmod>2017-06-05T09:48:37.000Z</lastmod>
+    <lastmod>2017-06-05T10:04:42.000Z</lastmod>
     
   </url>
   
@@ -16,30 +30,9 @@
   </url>
   
   <url>
-    <loc>http://niuoo.github.io/2017/05/19/%E5%81%9A%E4%B8%AA%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0Python%E8%B0%83%E5%8C%85%E4%BE%A0/</loc>
-    
-    <lastmod>2017-06-05T02:37:42.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://niuoo.github.io/2017/05/05/Support-Vector-Machines/</loc>
     
     <lastmod>2017-05-30T06:37:31.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://niuoo.github.io/2017/05/14/Recommender-Systems-%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F/</loc>
-    
-    <lastmod>2017-05-26T17:28:11.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://niuoo.github.io/2017/05/27/%E6%BC%AB%E6%BC%AB%E9%95%BF%E5%A4%9C/</loc>
-    
-    <lastmod>2017-05-26T17:15:11.000Z</lastmod>
     
   </url>
   

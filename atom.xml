@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://niuoo.github.io/"/>
-  <updated>2017-05-26T17:15:11.000Z</updated>
+  <updated>2017-06-05T10:04:49.000Z</updated>
   <id>http://niuoo.github.io/</id>
   
   <author>
@@ -16,30 +16,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>漫漫长夜</title>
-    <link href="http://niuoo.github.io/2017/05/27/%E6%BC%AB%E6%BC%AB%E9%95%BF%E5%A4%9C/"/>
-    <id>http://niuoo.github.io/2017/05/27/漫漫长夜/</id>
-    <published>2017-05-26T16:47:46.000Z</published>
-    <updated>2017-05-26T17:15:11.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>凌晨Sat May 27 00:49:20 CST 2017，我坐在书桌前，抒发心情。 最近工作上毫无意义的琐事消耗了太多时间。突然想着要不要去学校读个博什么的，可是会不会被很多无聊的事情烦扰，比如批改那些本科生的作业，监考之类的，貌似这些是硕士的事情，但是博士到底都做什么呢，必然也有一堆枯燥的事情吧。另外，批改作业这种的，机器学习能解决吗，是不是可以搞个自动批改各种各样作业的系统呢？<br>关于Python的机器学习，已经停滞一段时间了，最近实在太荒废。人生大部分时间就是这么荒废过去的。荒唐。<br>蒙特卡洛树搜索的算法也没有看，本来打算好好看完，写一篇文章的。<br>总之就是太无聊了，最近，工作上的事情，对我简直是折磨，眼见那些破事一点点吞噬我的时间。<br>不废话了，沉下心来，好好学习，然后教机器学习，让机器学会做起简单的事情来。这真是一件有意义的事情。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;凌晨Sat May 27 00:49:20 CST 2017，我坐在书桌前，抒发心情。 最近工作上毫无意义的琐事消耗了太多时间。突然想着要不要去学校读个博什么的，可是会不会被很多无聊的事情烦扰，比如批改那些本科生的作业，监考之类的，貌似这些是硕士的事情，但是博士到底都做什么
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
     <title>做个机器学习Python调包侠</title>
     <link href="http://niuoo.github.io/2017/05/19/%E5%81%9A%E4%B8%AA%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0Python%E8%B0%83%E5%8C%85%E4%BE%A0/"/>
     <id>http://niuoo.github.io/2017/05/19/做个机器学习Python调包侠/</id>
     <published>2017-05-19T06:39:55.000Z</published>
-    <updated>2017-06-05T02:37:42.000Z</updated>
+    <updated>2017-06-05T10:04:49.000Z</updated>
     
     <content type="html"><![CDATA[
 ]]></content>
@@ -59,7 +40,7 @@
     <link href="http://niuoo.github.io/2017/05/14/Recommender-Systems-%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F/"/>
     <id>http://niuoo.github.io/2017/05/14/Recommender-Systems-推荐系统/</id>
     <published>2017-05-14T05:06:31.000Z</published>
-    <updated>2017-05-26T17:28:11.000Z</updated>
+    <updated>2017-06-05T10:04:45.000Z</updated>
     
     <content type="html"><![CDATA[<p>推荐系统是机器学习的一个重要应用。很多团队都致力于建立更好的推荐系统，比如亚马逊、Netflix、eBay或者苹果公司的iTunes Genius做的事情，有很多网站或者系统试图向用户推荐新产品，亚马逊向你推荐新书，Netflix想你推荐新电影，诸如此类。而这些推进系统可能会看看你以前购买过什么书，或者以前你给哪些电影进行过评分，这些系统贡献了现今亚马逊收入的相当大一部分，而Netflix，他们向用户推荐的电影占了用户观看电影的大部分。推荐系统，其表现的一些改进就能带来显著且即刻产生的影响，这些影响关系到许多公司的最终业绩。<br>在机器学习中，特征量是重要的，选择的特征对学习算法的表现有很大影响。在机器学习领域，有这么一个宏大的想法，就是对于一些问题，可能不是所有问题，但是对于一些问题而言，存在一些算法，能试图自动地学习到一组优良的特征量，而不用人为动手设计或者手动编写特征。<br>有些情况，或许能够采用一种算法，来学习到使用什么特征量，而推荐系统，就是这种情形的一个例子，当然还有其他很多例子。通过学习推荐系统，我们能够对这种学习特征量的想法有一点了解，我们至少可以通过这个例子，来了解机器学习中的这种big idea。</p>
 <h1 id="推荐系统算法">推荐系统算法</h1>
@@ -105,7 +86,7 @@
     <link href="http://niuoo.github.io/2017/05/14/Dimensionality-Reduction-%E7%BB%B4%E5%BA%A6%E7%BA%A6%E5%87%8F/"/>
     <id>http://niuoo.github.io/2017/05/14/Dimensionality-Reduction-维度约减/</id>
     <published>2017-05-13T16:30:13.000Z</published>
-    <updated>2017-06-05T09:48:37.000Z</updated>
+    <updated>2017-06-05T10:04:42.000Z</updated>
     
     <content type="html"><![CDATA[<p>使用Dimensionality Reduction-维数约减，一般是为了数据压缩，减少内存和硬盘空间存储，并提高算法速度。在特征降维的方法中，PCA(Principle Component Analysis)是最为经典和实用的特征降维技术，特别是在辅助图像识别方面有突出表现。 特征降维是无监督学习的另一个应用。降维/压缩问题是选取数据具有代表性的特征，在保持数据多样性(Variance)的基础上，规避掉大量的特征冗余和噪声，不过这个过程也很有可能会损失一些有用的模式信息。经过大量的实践证明，相较于损失的少部分模型性能，维度压缩可节省大量用于模型训练的时间，使得模型综合效率变得更高。</p>
 <p>在实际项目中，我们会得到特征维度非常高的训练样本，有的特征向量之间是有关系的，比如预测房价的时候，得到的房子长度inches英寸和cm厘米，它们两个是线性相关的，所以有一个信息是冗余的，就可以去掉一个。又如下图所示，数据集中在一个平面Z附近，所以就可以把3D的数据降维成2D。 <img src="/media/14945865066705.jpg"></p>
