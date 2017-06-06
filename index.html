@@ -240,6 +240,100 @@
             
               
                 
+                <a class="post-title-link" href="/2017/06/06/林轩田机器学习基石笔记/" itemprop="url">
+                  林轩田机器学习基石笔记
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2017-06-06T16:36:53+08:00" content="Jun 6 2017">
+              Jun 6 2017
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><img src="/media/14966834620659.jpg"> <a href="https://www.douban.com/note/319669984/" target="_blank" rel="external">PLA(Perceptron Learning Algorithm)感知机算法证明过程</a></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2017/05/19/做个机器学习Python调包侠/" itemprop="url">
                   做个机器学习Python调包侠
                 </a>
@@ -284,10 +378,7 @@
       
         
           
-            <div class="figure">
-<img src="/media/14966834620659.jpg">
-
-</div>
+            <p>算法</p>
 
           
         
@@ -1318,114 +1409,6 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/01/22/LeetCode-416-Partition-Equal-Subset-Sum/" itemprop="url">
-                  LeetCode 416 Partition Equal Subset Sum
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2017-01-22T20:40:07+08:00" content="Jan 22 2017">
-              Jan 22 2017
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <div class="figure">
-<img src="/media/14939711433257.jpg">
-
-</div>
-<p>Given a non-empty array containing only positive integers, find if the array can be partitioned into two subsets such that the sum of elements in both subsets is equal.</p>
-<p>Note: 1. Each of the array element will not exceed 100. 2. The array size will not exceed 200. Example 1:</p>
-<p>Input: [1, 5, 11, 5]</p>
-<p>Output: true</p>
-<p>Explanation: The array can be partitioned as [1, 5, 5] and [11]. Example 2:</p>
-<p>Input: [1, 2, 3, 5]</p>
-<p>Output: false</p>
-<p>Explanation: The array cannot be partitioned into equal sum subsets.</p>
-<p><strong>这个题目的思路是先算出数组的总和，然后取总和的一半，如果数组存在总和等于sum/2的子序列，那么数组就可以被分成两组总和和相等的子序列。 主要问题是如何确定数组是否存在总和等于sum/2的子序列，就是做深搜了。 关于求数组子序列总和等于target的所有子序列集合，可以看向这里<a href="http://niuoo.me/2017/01/22/LeetCode-40-Combination-Sum-II/" target="_blank" rel="external">LeetCode 40 Combination Sum II</a></strong></p>
-<p><strong>Runtime: 11 ms runtime beats 99.63% of java submissions.</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">canPartition</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</div><div class="line">	<span class="keyword">int</span> sum = <span class="number">0</span>;</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> num : nums) &#123;</div><div class="line">		sum += num;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">if</span> (sum % <span class="number">2</span> != <span class="number">0</span>) <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">	sum = sum / <span class="number">2</span>;</div><div class="line">	Arrays.sort(nums);</div><div class="line">	<span class="keyword">return</span> dfsPartition(<span class="number">0</span>, nums, sum);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">boolean</span> <span class="title">dfsPartition</span><span class="params">(<span class="keyword">int</span> begin, <span class="keyword">int</span>[] nums, <span class="keyword">int</span> rest)</span> </span>&#123;</div><div class="line">	<span class="keyword">if</span> (rest == <span class="number">0</span>) <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">	<span class="comment">/**分别从nums[i]开始往下深搜*/</span></div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = begin; i &lt; nums.length &amp;&amp; nums[i] &lt;= rest; i++) &#123;</div><div class="line">		<span class="keyword">if</span> (i &gt; begin &amp;&amp; nums[i] == nums[i - <span class="number">1</span>]) <span class="keyword">continue</span>;</div><div class="line">		<span class="keyword">if</span> (dfsPartition(i + <span class="number">1</span>, nums, rest - nums[i])) <span class="keyword">return</span> <span class="keyword">true</span>;<span class="comment">//搜索下个数字</span></div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1471,7 +1454,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">15</span>
+              <span class="site-state-item-count">16</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>

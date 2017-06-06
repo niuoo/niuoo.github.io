@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://niuoo.github.io/"/>
-  <updated>2017-06-05T17:24:22.000Z</updated>
+  <updated>2017-06-06T08:45:06.000Z</updated>
   <id>http://niuoo.github.io/</id>
   
   <author>
@@ -16,24 +16,37 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>做个机器学习Python调包侠</title>
-    <link href="http://niuoo.github.io/2017/05/19/%E5%81%9A%E4%B8%AA%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0Python%E8%B0%83%E5%8C%85%E4%BE%A0/"/>
-    <id>http://niuoo.github.io/2017/05/19/做个机器学习Python调包侠/</id>
-    <published>2017-05-19T06:39:55.000Z</published>
-    <updated>2017-06-05T17:24:22.000Z</updated>
+    <title>林轩田机器学习基石笔记</title>
+    <link href="http://niuoo.github.io/2017/06/06/%E6%9E%97%E8%BD%A9%E7%94%B0%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B0/"/>
+    <id>http://niuoo.github.io/2017/06/06/林轩田机器学习基石笔记/</id>
+    <published>2017-06-06T08:36:53.000Z</published>
+    <updated>2017-06-06T08:45:06.000Z</updated>
     
-    <content type="html"><![CDATA[<div class="figure">
-<img src="/media/14966834620659.jpg">
-
-</div>
+    <content type="html"><![CDATA[<p><img src="/media/14966834620659.jpg"> <a href="https://www.douban.com/note/319669984/" target="_blank" rel="external">PLA(Perceptron Learning Algorithm)感知机算法证明过程</a></p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;div class=&quot;figure&quot;&gt;
-&lt;img src=&quot;/media/14966834620659.jpg&quot;&gt;
-
-&lt;/div&gt;
+      &lt;p&gt;&lt;img src=&quot;/media/14966834620659.jpg&quot;&gt; &lt;a href=&quot;https://www.douban.com/note/319669984/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;PLA(Perceptron Lear
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>做个机器学习Python调包侠</title>
+    <link href="http://niuoo.github.io/2017/05/19/%E5%81%9A%E4%B8%AA%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0Python%E8%B0%83%E5%8C%85%E4%BE%A0/"/>
+    <id>http://niuoo.github.io/2017/05/19/做个机器学习Python调包侠/</id>
+    <published>2017-05-19T06:39:55.000Z</published>
+    <updated>2017-06-06T08:45:14.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>算法</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;算法&lt;/p&gt;
 
     
     </summary>
