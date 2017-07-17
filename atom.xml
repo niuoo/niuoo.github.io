@@ -40,10 +40,15 @@
     <link href="http://niuoo.github.io/2017/06/06/%E6%9E%97%E8%BD%A9%E7%94%B0%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B0/"/>
     <id>http://niuoo.github.io/2017/06/06/林轩田机器学习基石笔记/</id>
     <published>2017-06-06T08:36:53.000Z</published>
-    <updated>2017-07-12T14:05:58.000Z</updated>
+    <updated>2017-07-17T07:17:33.000Z</updated>
     
     <content type="html"><![CDATA[<p><img src="/media/14966834620659.jpg"> 知错能改，善莫大焉！:-)</p>
 <p><img src="/media/14998352577521.jpg"> <a href="https://www.douban.com/note/319669984/" target="_blank" rel="external">PLA(Perceptron Learning Algorithm)感知机算法有效性证明过程</a>PLA不断进行错误修正的算法，是可以停下来的。可是这个算法有个很大的缺点，因为此算法必须建立在假设线性可分的基础上。如果假设不成立的话，PLA根本跑得停不下来。一开始我们是不会知道PLA能不能停下来的，这个时候可采用Pocket Algorithm，做得还不错。 <img src="/media/14998653580014.jpg"></p>
+<div class="figure">
+<img src="/media/14999565852705.jpg">
+
+</div>
+<p><img src="/media/15002612963279.jpg"> 看到这一点的时候颇为迷惑，B(3,3)=7，B(4,3)是通过复制B(3,3)的一部分得来的。那么为什么α(复制的部分)需要no shatter any 2，其实想想假如 α shatter 2了，也就是B(3,2)，那么复制后，加上<span class="math">\(x_4\)</span>总共8种情形，必然是shatter 3 了。 所以，得到：B(4,3) = 2*a + b &lt;= B(3,3) + B(3,2). 对于任意N &gt; k, 利用上述思路，可以证明 B(N,k) &lt;= B(N-1, k) + B(N-1,k-1). 有了递推不等式，通过数学归纳法，可证明下面的Bounding Function (N &gt; k) : <img src="/media/15002711060448.jpg"></p>
 ]]></content>
     
     <summary type="html">
