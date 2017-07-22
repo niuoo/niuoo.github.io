@@ -40,9 +40,10 @@
     <link href="http://niuoo.github.io/2017/06/06/%E6%9E%97%E8%BD%A9%E7%94%B0%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B0/"/>
     <id>http://niuoo.github.io/2017/06/06/林轩田机器学习基石笔记/</id>
     <published>2017-06-06T08:36:53.000Z</published>
-    <updated>2017-07-22T07:33:48.000Z</updated>
+    <updated>2017-07-22T07:37:37.000Z</updated>
     
-    <content type="html"><![CDATA[<p><a href="**我的课程作业源码github地址**">https://github.com/niuoo/machine-learning-foundations/tree/master/foundations</a> <a href="https://www.douban.com/doulist/3381853/" target="_blank" rel="external">这位同学的笔记做的很好</a> <img src="/media/14966834620659.jpg"> 知错能改，善莫大焉！:-)</p>
+    <content type="html"><![CDATA[<p><a href="https://github.com/niuoo/machine-learning-foundations/tree/master/foundations" target="_blank" rel="external"><strong>我的课程作业源码github地址</strong></a></p>
+<p><a href="https://www.douban.com/doulist/3381853/" target="_blank" rel="external">这位同学的笔记做的很好</a> <img src="/media/14966834620659.jpg"> 知错能改，善莫大焉！:-)</p>
 <p><img src="/media/14998352577521.jpg"> <a href="https://www.douban.com/note/319669984/" target="_blank" rel="external">PLA(Perceptron Learning Algorithm)感知机算法有效性证明过程</a>PLA不断进行错误修正的算法，是可以停下来的。可是这个算法有个很大的缺点，因为此算法必须建立在假设线性可分的基础上。如果假设不成立的话，PLA根本跑得停不下来。一开始我们是不会知道PLA能不能停下来的，这个时候可采用Pocket Algorithm，做得还不错。 <img src="/media/14998653580014.jpg"></p>
 <div class="figure">
 <img src="/media/14999565852705.jpg">
@@ -56,7 +57,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;&lt;a href=&quot;**我的课程作业源码github地址**&quot;&gt;https://github.com/niuoo/machine-learning-foundations/tree/master/foundations&lt;/a&gt; &lt;a href=&quot;https://www.dou
+      &lt;p&gt;&lt;a href=&quot;https://github.com/niuoo/machine-learning-foundations/tree/master/foundations&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;strong&gt;我的课程作业源码gi
     
     </summary>
     
