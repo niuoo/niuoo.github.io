@@ -40,21 +40,23 @@
     <link href="http://niuoo.github.io/2017/06/06/%E6%9E%97%E8%BD%A9%E7%94%B0%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3%E7%AC%94%E8%AE%B0/"/>
     <id>http://niuoo.github.io/2017/06/06/林轩田机器学习基石笔记/</id>
     <published>2017-06-06T08:36:53.000Z</published>
-    <updated>2017-07-17T07:17:33.000Z</updated>
+    <updated>2017-07-22T07:33:48.000Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="/media/14966834620659.jpg"> 知错能改，善莫大焉！:-)</p>
+    <content type="html"><![CDATA[<p><a href="**我的课程作业源码github地址**">https://github.com/niuoo/machine-learning-foundations/tree/master/foundations</a> <a href="https://www.douban.com/doulist/3381853/" target="_blank" rel="external">这位同学的笔记做的很好</a> <img src="/media/14966834620659.jpg"> 知错能改，善莫大焉！:-)</p>
 <p><img src="/media/14998352577521.jpg"> <a href="https://www.douban.com/note/319669984/" target="_blank" rel="external">PLA(Perceptron Learning Algorithm)感知机算法有效性证明过程</a>PLA不断进行错误修正的算法，是可以停下来的。可是这个算法有个很大的缺点，因为此算法必须建立在假设线性可分的基础上。如果假设不成立的话，PLA根本跑得停不下来。一开始我们是不会知道PLA能不能停下来的，这个时候可采用Pocket Algorithm，做得还不错。 <img src="/media/14998653580014.jpg"></p>
 <div class="figure">
 <img src="/media/14999565852705.jpg">
 
 </div>
-<p><img src="/media/15002612963279.jpg"> 看到这一点的时候颇为迷惑，B(3,3)=7，B(4,3)是通过复制B(3,3)的一部分得来的。那么为什么α(复制的部分)需要no shatter any 2，其实想想假如 α shatter 2了，也就是B(3,2)，那么复制后，加上<span class="math">\(x_4\)</span>总共8种情形，必然是shatter 3 了。 所以，得到：B(4,3) = 2*a + b &lt;= B(3,3) + B(3,2). 对于任意N &gt; k, 利用上述思路，可以证明 B(N,k) &lt;= B(N-1, k) + B(N-1,k-1). 有了递推不等式，通过数学归纳法，可证明下面的Bounding Function (N &gt; k) : <img src="/media/15002711060448.jpg"></p>
+<p>Hoeffding’s inequality Hoeffding不等式 <img src="/media/15002855220854.jpg"></p>
+<p><img src="/media/15002612963279.jpg"> 看到这一点的时候颇为迷惑，B(3,3)=7，B(4,3)是通过复制B(3,3)的一部分得来的。那么为什么α(复制的部分)需要no shatter any 2，其实想想假如 α shatter 2了，也就是B(3,2)，那么复制后，加上<span class="math">\(x_4\)</span>总共8种情形，必然是shatter 3 了，因为<span class="math">\(8 = 2^3\)</span>。 所以，得到：B(4,3) = 2*a + b &lt;= B(3,3) + B(3,2). 对于任意N &gt; k, 利用上述思路，可以证明 B(N,k) &lt;= B(N-1, k) + B(N-1,k-1). 有了递推不等式，通过数学归纳法，可证明下面的Bounding Function (N &gt; k) : <img src="/media/15002711060448.jpg"></p>
+<p>归纳法证明过程如下： <img src="/media/15002882090009.jpg"></p>
+<p>为什么机器学习是有效的？ <img src="/media/15002851562508.jpg"></p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;&lt;img src=&quot;/media/14966834620659.jpg&quot;&gt; 知错能改，善莫大焉！:-)&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/media/14998352577521.jpg&quot;&gt; &lt;a href=&quot;https://www.douban.com/note/319
+      &lt;p&gt;&lt;a href=&quot;**我的课程作业源码github地址**&quot;&gt;https://github.com/niuoo/machine-learning-foundations/tree/master/foundations&lt;/a&gt; &lt;a href=&quot;https://www.dou
     
     </summary>
     
