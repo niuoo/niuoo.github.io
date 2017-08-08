@@ -86,16 +86,22 @@
 
 
 
+<meta name="description" content="数据介绍
+符号定义： S：提供的商品全集； P：候选的商品子集（JData_Product.csv），P是S的子集； U：用户集合； A：用户对S的行为数据集合； C：S的评价数据。
+训练数据部分： 提供2016-02-01到2016-04-15日用户集合U中的用户，对商品集合S中部分商品的行为、评价、用户数据；提供部分候选商品的数据P。 选手从数据中自行组成特征和数据格式，自由组合训练测试数据比">
 <meta property="og:type" content="article">
-<meta property="og:title" content="召回率">
-<meta property="og:url" content="http://niuoo.github.io/2017/07/12/召回率/index.html">
+<meta property="og:title" content="Jdata特征工程分析">
+<meta property="og:url" content="http://niuoo.github.io/2017/07/30/Jdata特征工程分析/index.html">
 <meta property="og:site_name" content="niuoo">
-<meta property="og:image" content="http://niuoo.github.io/media/14998682171580.jpg">
-<meta property="og:image" content="http://niuoo.github.io/media/14998682636712.jpg">
-<meta property="og:updated_time" content="2017-07-12T14:05:59.000Z">
+<meta property="og:description" content="数据介绍
+符号定义： S：提供的商品全集； P：候选的商品子集（JData_Product.csv），P是S的子集； U：用户集合； A：用户对S的行为数据集合； C：S的评价数据。
+训练数据部分： 提供2016-02-01到2016-04-15日用户集合U中的用户，对商品集合S中部分商品的行为、评价、用户数据；提供部分候选商品的数据P。 选手从数据中自行组成特征和数据格式，自由组合训练测试数据比">
+<meta property="og:updated_time" content="2017-07-31T13:27:06.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="召回率">
-<meta name="twitter:image" content="http://niuoo.github.io/media/14998682171580.jpg">
+<meta name="twitter:title" content="Jdata特征工程分析">
+<meta name="twitter:description" content="数据介绍
+符号定义： S：提供的商品全集； P：候选的商品子集（JData_Product.csv），P是S的子集； U：用户集合； A：用户对S的行为数据集合； C：S的评价数据。
+训练数据部分： 提供2016-02-01到2016-04-15日用户集合U中的用户，对商品集合S中部分商品的行为、评价、用户数据；提供部分候选商品的数据P。 选手从数据中自行组成特征和数据格式，自由组合训练测试数据比">
 
 
 
@@ -116,9 +122,9 @@
 
 
 
-  <link rel="canonical" href="http://niuoo.github.io/2017/07/12/召回率/"/>
+  <link rel="canonical" href="http://niuoo.github.io/2017/07/30/Jdata特征工程分析/"/>
 
-  <title> 召回率 | niuoo </title>
+  <title> Jdata特征工程分析 | niuoo </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -238,7 +244,7 @@
             
             
               
-                召回率
+                Jdata特征工程分析
               
             
           </h1>
@@ -250,8 +256,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2017-07-12T22:01:59+08:00" content="Jul 12 2017">
-              Jul 12 2017
+            <time itemprop="dateCreated" datetime="2017-07-30T00:15:05+08:00" content="Jul 30 2017">
+              Jul 30 2017
             </time>
           </span>
 
@@ -278,7 +284,22 @@
       
 
       
-        <p><img src="/media/14998682171580.jpg"> <img src="/media/14998682636712.jpg"></p>
+        <h1 id="数据介绍">数据介绍</h1>
+<p>符号定义： S：提供的商品全集； P：候选的商品子集（JData_Product.csv），P是S的子集； U：用户集合； A：用户对S的行为数据集合； C：S的评价数据。</p>
+<p>训练数据部分： 提供2016-02-01到2016-04-15日用户集合U中的用户，对商品集合S中部分商品的行为、评价、用户数据；提供部分候选商品的数据P。 选手从数据中自行组成特征和数据格式，自由组合训练测试数据比例。</p>
+<p>预测数据部分： 2016-04-16到2016-04-20用户是否下单P中的商品，每个用户只会下单一个商品；抽取部分下单用户数据，A榜使用50%的测试数据来计算分数；B榜使用另外50%的数据计算分数(计算准确率时剔除用户提交结果中user_Id与A榜的交集部分)。</p>
+<p>为保护用户的隐私和数据安全，所有数据均已进行了采样和脱敏。 数据中部分列存在空值或NULL，请参赛者自行处理。</p>
+<ol style="list-style-type: decimal">
+<li><p>用户数据 user_id 用户ID 脱敏 age 年龄段 -1表示未知 sex 性别 0表示男，1表示女，2表示保密 user_lv_cd 用户等级 有顺序的级别枚举，越高级别数字越大 user_reg_tm 用户注册日期 粒度到天</p></li>
+<li><p>商品数据 sku_id 商品编号 脱敏 a1 属性1 枚举，-1表示未知 a2 属性2 枚举，-1表示未知 a3 属性3 枚举，-1表示未知 cate 品类ID 脱敏 brand 品牌ID 脱敏</p></li>
+<li><p>评价数据 dt 截止到时间 粒度到天 sku_id 商品编号 脱敏 comment_num 累计评论数分段 0表示无评论，1表示有1条评论， 2表示有2-10条评论， 3表示有11-50条评论， 4表示大于50条评论 has_bad_comment 是否有差评 0表示无，1表示有 bad_comment_rate 差评率 差评数占总评论数的比重</p></li>
+<li><p>行为数据 user_id 用户编号 脱敏 sku_id 商品编号 脱敏 time 行为时间<br> model_id 点击模块编号，如果是点击 脱敏 type 1.浏览（指浏览商品详情页）； 2.加入购物车；3.购物车删除；4.下单；5.关注；6.点击</p></li>
+</ol>
+<p>cate 品类ID 脱敏 brand 品牌ID 脱敏 登录并报名参赛后方可在“数据下载”页面下载数据。</p>
+<p>任务描述： 参赛者需要使用京东多个品类下商品的历史销售数据，构建算法模型，预测用户在未来5天内，对某个目标品类下商品的购买意向。对于训练集中出现的每一个用户，参赛者的模型需要预测该用户在未来5天内是否购买目标品类下的商品以及所购买商品的SKU_ID。评测算法将针对参赛者提交的预测结果，计算加权得分。</p>
+<h1 id="section">。。。</h1>
+<p>用于预测 2016-4-11&lt;=time1&lt;=2016-04-15 用于训练数据确定标签的值 2016-4-06&lt;=time2&lt;2016-04-11 用户构建特征 time3&lt;2016-04-06 features &lt;– ‘select user_id, sum(case when type=2 then 1 else 0 end) as add from JData_Action where time&lt;2016-4-06 group by user_id’</p>
+<p>-Xms1024M -Xmx4096M -XX:PermSize=1024M -XX:MaxNewSize=2048M -XX:MaxPermSize=4096M -Xss8192M -XX:StackShadowPages=50</p>
 
       
     </div>
@@ -304,17 +325,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/06/06/林轩田机器学习基石笔记/" rel="next" title="林轩田机器学习基石笔记">
-                <i class="fa fa-chevron-left"></i> 林轩田机器学习基石笔记
+              <a href="/2017/07/25/2017-07-25/" rel="next" title="">
+                <i class="fa fa-chevron-left"></i> 
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/07/25/2017-07-25/" rel="prev" title="">
-                 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -428,7 +445,7 @@
               
             
             
-              <p class="post-toc-empty">This post does not have a Table of Contents</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#数据介绍"><span class="nav-number">1.</span> <span class="nav-text">数据介绍</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#section"><span class="nav-number">2.</span> <span class="nav-text">。。。</span></a></li></ol></div>
             
           </div>
         </section>
