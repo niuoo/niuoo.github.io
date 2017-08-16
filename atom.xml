@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://niuoo.github.io/"/>
-  <updated>2017-07-31T13:27:06.000Z</updated>
+  <updated>2017-08-16T03:27:54.000Z</updated>
   <id>http://niuoo.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://niuoo.github.io/2017/07/30/Jdata%E7%89%B9%E5%BE%81%E5%B7%A5%E7%A8%8B%E5%88%86%E6%9E%90/"/>
     <id>http://niuoo.github.io/2017/07/30/Jdata特征工程分析/</id>
     <published>2017-07-29T16:15:05.000Z</published>
-    <updated>2017-07-31T13:27:06.000Z</updated>
+    <updated>2017-08-16T03:27:54.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="数据介绍">数据介绍</h1>
 <p>符号定义： S：提供的商品全集； P：候选的商品子集（JData_Product.csv），P是S的子集； U：用户集合； A：用户对S的行为数据集合； C：S的评价数据。</p>
@@ -45,121 +45,6 @@
       &lt;h1 id=&quot;数据介绍&quot;&gt;数据介绍&lt;/h1&gt;
 &lt;p&gt;符号定义： S：提供的商品全集； P：候选的商品子集（JData_Product.csv），P是S的子集； U：用户集合； A：用户对S的行为数据集合； C：S的评价数据。&lt;/p&gt;
 &lt;p&gt;训练数据部分： 提供2016-02-0
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title></title>
-    <link href="http://niuoo.github.io/2017/07/25/2017-07-25/"/>
-    <id>http://niuoo.github.io/2017/07/25/2017-07-25/</id>
-    <published>2017-07-25T09:24:33.000Z</published>
-    <updated>2017-07-25T09:24:59.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>支持向量机(Support Vector Machine)是Cortes和Vapnik于1995年首先提出的，它在解决小样本、非线性及高维模式识别中表现出许多特有的优势，并能够推广应用到函数拟合等其他机器学习问题中。</p>
-<p>一、数学部分 1.1二维空间</p>
-<p>支持向量机的典型应用是分类，用于解决这样的问题：有一些事物是可以被分类的，但是具体怎么分类的我们又说不清楚，比如说下图中三角的就是C1类，圆圈的就是C2类，这都是已知的，好，又来了一个方块，这个方块是属于C1呢还是属于C2呢，说不清楚。SVM算法就是试着帮您把这件事情说清楚的。</p>
-<p>1在二维空间里（这时候样本有两个参照属性），SVM就是在C1和C2中间划一条线g(x)=0，线儿上边的属于C1类，线儿下边的属于C2类，这时候方块再来，咱就有章程了。</p>
-<p>2</p>
-<p>关于g(x) = 0得再啰嗦几句，g(x)里边的x不是横坐标，而是一个向量，clip_image002[4]也不是解析几何里边的斜率，也是向量。clip_image004是一个向量积。比如在解析几何意义上的直线y = -x-b,换成向量表示法就是clip_image002[12] ，这里w就是那个clip_image008，x就是那个clip_image010。</p>
-<p>对C1类中的点：g(x) &gt; 0；对于 C2类中的点：g(x) &lt; 0 ;</p>
-<p>如果我们用y来表示类型，+1代表C1类，-1代表C2类。</p>
-<p>那么对于所有训练样本而言，都有：clip_image012，那么g(x) = 0 就能够正确分割所有训练样本的那条线，只要把g(x) = 0这条线给找出来就能凑合用了。</p>
-<p>这也就只能凑合用，因为满足这个条件的g(x) = 0 太多了，追求完美的我们要的是最优的那条线。怎么才是最优的呢？直觉告诉我们g(x) = 0这条线不偏向C1那边，也不偏向C2那边，就应该是最优的了吧。对，学名叫分类间隔，下图红线的长度就是分类间隔。</p>
-<p>3</p>
-<p>在二维空间中，求分类间隔，可以转化为求点到线的距离，点到线的距离可以表示为clip_image002<a href="向量表示">6</a>。为简单计，把整个二维空间归一化(等比放大或缩小)，使得对于所有的样本，都有|g(x)|&gt;=1，也就是让C1和C2类中离g(x)=0最近的训练样本的|g(x)|=1，这时分类间隔就是clip_image004[4]，这个间隔越大越好，那么|clip_image006[8]|越小越好。</p>
-<p>1.2多维空间</p>
-<p>现在我们已经在2维空间中抽象出一个数学问题，求满足如下条件的g(x)=0：</p>
-<p>clip_image008[4]，即在满足clip_image010[4]条件下能使clip_image012[4]取最小值的那个w。在二维空间中，w可以近似的理解为斜率，在样本确定，斜率确定的情况下，clip_image014中的那个b也是可以确定的，整个clip_image016 = 0也就确定了。</p>
-<p>现在我们讨论的只是二维空间，但是我们惊喜的发现，在二维空间中的结论可以很容易的推广到多维空间。比如说：</p>
-<p>我们仍然可以把多维空间中的分割面(超平面)表示为clip_image018。</p>
-<p>多维空间中点到面的距离仍然可以表示为clip_image002[7]。如下图，平面表示为clip_image018[1]，x是clip_image020在面上的投影，r是x到面的距离，简单推导如下：</p>
-<p>w向量垂直于平面clip_image022，有：clip_image024，把上式带入clip_image018[2]中得到clip_image026，化简得到clip_image028，所以clip_image030，向量x到平面clip_image018[3]的距离clip_image032，这和二维空间中结论也是一致的。</p>
-<p>clip_image034</p>
-<p>现在我们把SVM从2维空间推广到多维空间，即求满足如下条件的g(x)=0：</p>
-<p>clip_image036。</p>
-<p>1.3拉格朗日因子</p>
-<p>这是一个典型的带约束条件的求极值问题，目标函数是clip_image006[9]的二次函数，约束函数是clip_image006[10]的线性函数：二次规划问题。求解二次规划问题的一般性方法就是添加拉格朗日乘子，构造拉格朗日函数(理论上这儿应该还有一些额外的数学条件，拉格朗日法才是可用，就略过了)。</p>
-<p>具体求解步骤如下：</p>
-<p>1、构造拉格朗日函数</p>
-<pre><code>     clip_image038</code></pre>
-<p>其中clip_image006[11]和b是未知量。</p>
-<p>2、对clip_image006[“雨声潺潺，像住在溪边。宁愿天天下雨，以为你是因为下雨不来。”这应该是张爱玲写《小团圆》时最偏爱的一句话吧，在这本书中前后出现了两次。这句话将等待这件事描述得充满诗意，但却极为苦涩。]和b求偏导数，令偏导数为0。</p>
-<p>clip_image040, 即clip_image042</p>
-<p>clip_image044</p>
-<p>3、把上式带回拉格朗日函数，得到拉格朗日对偶问题，把问题转化为求解clip_image046</p>
-<p>clip_image048</p>
-<p>4、最后把问题转化为求解满足下列等式的clip_image046[1]</p>
-<p>clip_image050</p>
-<p>1.4线性化</p>
-<p>好，现在我们再来梳理一下svm的分类逻辑，在空间中找一个分割面（线）把样本点分开，分割面（线）的最优条件就是分类间隔最大化，分类间隔是基于点到平面（直线）的距离来计算的。问题是所有的分割面都是平面，所有的分割线都是直线吗？显然不是。</p>
-<p>比如特征是房子的面积x，这里的x是实数，结果y是房子的价格。假设我们从样本点的分布中看到x和y符合3次曲线，那么我们希望使用x的三次多项式来逼近这些样本点。</p>
-<p>在二维空间中这是非线性的，这样我们前面的推理都没法用了——点到曲线的距离？不知道怎么算。但是如果把x映射到3维空间clip_image052，那么对于clip_image054来说，clip_image056就是线性的，也就是说，对于低维空间中非线性的线(面)，在映射到高维空间中时，就能变成线性的。于是我们还需要把问题做一个小小的修正，我们面临的问题是求解：</p>
-<p>clip_image050[1]，这里面引入了一个Kernel，核函数，用于样本空间的线性化。</p>
-<p>1.5松弛变量</p>
-<pre><code>  上面就是一个比较完整的推导过程，但是经验表明把上述条件丢给计算机进行求解，基本上是无解的，因为条件太苛刻了。实际上，最经常出现的情况如下图红色部分，在分类过程中会出现噪声，如果对噪声零容忍那么很有可能导致分类无解。</code></pre>
-<p>5</p>
-<p>为了解决这个问题又引入了松弛变量。把原始问题修正为：</p>
-<p>clip_image002[10]</p>
-<p>按照拉格朗日法引入拉格朗日因子：</p>
-<p>clip_image004[6]</p>
-<p>对上式分别求clip_image006[18]的导数得到：</p>
-<p>clip_image008[6], 即clip_image010[6]</p>
-<p>clip_image012[6]</p>
-<p>clip_image014[4]</p>
-<p>带回clip_image016[4]得到拉格朗日的对偶问题：</p>
-<p>clip_image018[10]</p>
-<p>另外当目标函数取极值时，约束条件一定是位于约束边界(KKT条件)，也就是说：</p>
-<p>clip_image020[4]</p>
-<p>clip_image022[4]</p>
-<p>分析上面式子可以得出以下结论：</p>
-<p>clip_image024[4]时：clip_image026[4]可以不为零，就是说该点到分割面的距离小于clip_image028[4]，是误分点。</p>
-<p>clip_image030[4]时：clip_image026[5]为零，clip_image032[4]大于零：表示该点到分割面的距离大于clip_image028[5]是正确分类点。</p>
-<p>clip_image034时：clip_image026[6]为零，clip_image036[4]，该点就是支持向量。</p>
-<p>再用数学语言提炼一下：</p>
-<p>令clip_image038[4]，其对clip_image040[4]的偏导数为：</p>
-<p>clip_image042[4]。</p>
-<p>KKT条件可以表示为：</p>
-<p>clip_image044[4]</p>
-<p>用clip_image046[6]表示该KKT条件就是：</p>
-<p>clip_image048[9]</p>
-<p>若clip_image050[6]，则</p>
-<p>所有的clip_image052[4] 大于所有的clip_image054[4]。这里b作为中间数被忽略了，因为b是可以由clip_image056[4]推导得到的。</p>
-<p>二、算法部分 对于样本数量比较多的时候（几千个），SVM所需要的内存是计算机所不能承受的。目前，对于这个问题的解决方法主要有两种：块算法和分解算法。这里，libSVM采用的是分解算法中的SMO(串行最小化)方法，其每次训练都只选择两个样本。基本流程如下：</p>
-<p>image</p>
-<p>这里有两个重要的算法，一个是clip_image060的选择，另一个是clip_image060[1]的更新。</p>
-<p>2.1clip_image062的选择算法</p>
-<p>选择两个和KKT条件违背的最严重的两个clip_image056[5]，包含两层循环：</p>
-<p>外层循环：优先选择遍历非边界样本，因为非边界样本更有可能需要调整，而边界样本常常不能得到进一步调整而留在边界上。在遍历过程中找出clip_image064的所有样本中clip_image066值最大的那个(这个样本是最有可能不满足clip_image068条件的样本。</p>
-<p>内层循环：对于外层循环中选定的那个样本clip_image056[6]，找到这样的样本clip_image070，使得：</p>
-<p>clip_image072</p>
-<p>clip_image074最大，上式是更新clip_image060[2]中的一个算式，表示的是在选定clip_image056[7]，clip_image070[1]最为更新算子的情况下，clip_image076最大。</p>
-<p>如果选择clip_image060[3]的过程中发现KKT条件已经满足了，那么算法结束。</p>
-<p>2.2clip_image062[1]的更新算法</p>
-<p>由于SMO每次都只选择2个样本，那么等式约束可以转化为直线约束：</p>
-<p>clip_image078</p>
-<p>转化为图形表示为：</p>
-<p>clip_image079</p>
-<p>那么clip_image081的取值范围是：</p>
-<p>clip_image083</p>
-<p>把clip_image085带入clip_image087中，得到一个一元二次方程，求极值得到：</p>
-<p>clip_image089</p>
-<p>最终：</p>
-<p>clip_image091</p>
-<p>2.3其他</p>
-<p>上面说到SVM用到的内存巨大，另一个缺陷就是计算速度，因为数据大了，计算量也就大，很显然计算速度就会下降。因此，一个好的方式就是在计算过程中逐步去掉不参与计算的数据。因为，实践证明，在训练过程中，clip_image095一旦达到边界(clip_image095[1]=0或者clip_image095[2]=C)，clip_image095[3]的值就不会变，随着训练的进行，参与运算的样本会越来越少，SVM最终结果的支持向量（0&lt;clip_image095[4]</p>
-<p>LibSVM采用的策略是在计算过程中，检测active_size中的clip_image095[5]值，如果clip_image095[6]到了边界，那么就应该把相应的样本去掉（变成inactived），并放到栈的尾部，从而逐步缩小active_size的大小。</p>
-<p>b的计算 ，基本计算公式为：clip_image097</p>
-<p>理论上，b的值是不定的。当程序达到最优后，只要用任意一个标准支持向量机（0&lt;clip_image095[7]&lt;C）的样本带入上式，得到的b值都是可以的。目前，求b的方法也有很多种。在libSVM中，分别对y=+1和y=-1的两类所有支持向量求b，然后取平均值。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;支持向量机(Support Vector Machine)是Cortes和Vapnik于1995年首先提出的，它在解决小样本、非线性及高维模式识别中表现出许多特有的优势，并能够推广应用到函数拟合等其他机器学习问题中。&lt;/p&gt;
-&lt;p&gt;一、数学部分 1.1二维空间&lt;/p&gt;
-&lt;p
     
     </summary>
     
@@ -537,13 +422,13 @@
     <link href="http://niuoo.github.io/2017/05/02/%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92%E5%92%8C%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92/"/>
     <id>http://niuoo.github.io/2017/05/02/线性回归和逻辑回归/</id>
     <published>2017-05-02T07:25:46.000Z</published>
-    <updated>2017-05-10T10:09:58.000Z</updated>
+    <updated>2017-08-16T03:26:17.000Z</updated>
     
     <content type="html"><![CDATA[<p>回归一词指的是我们根据之前的数据，预测出一个准确的输出值。 <img src="/media/14938262502932.jpg"></p>
 <h1 id="线性回归">线性回归</h1>
 <p>线性回归是统计学领域的方法，特征和结果的关系满足线性，即不大于1次方，如<span class="math">\(θ_{1}x_{1}+θ_2x_{2}+θ_3x_{3}=y\)</span>。都使用向量vector表示，<span class="math">\(θ^T =[θ_1,θ_2,θ_3],X^T= [x_1,x_2,x_3]\)</span>，假设函数为<span class="math">\(h_\theta(x)=θ^TX\)</span>。我们的目的是为了求出最恰当的θ，即<span class="math">\(θ_1,θ_2,θ_3\)</span>三者的值，使得损失函数<span class="math">\(J(θ)=\frac{1}{2m}\sum_{i=1}^{m}(h_θ(x^{(i)})−y^{(i)})^2\)</span>的值最小。</p>
 <h3 id="什么是梯度gradient">什么是梯度(Gradient)？</h3>
-<p>简单来说，梯度就是损失函数关于权值θ的倒数，也就是关于θ的变化率(导数即变化率吧)。</p>
+<p>简单来说，梯度就是损失函数关于权值θ的导数，也就是关于θ的变化率(导数即变化率吧)。</p>
 <h3 id="梯度下降算法gradient-descent">梯度下降算法(Gradient descent)</h3>
 <p>我们得到的一般是个局部最优解。如果是个碗状或者叫做倒钟型的函数，那局部最优也是全局最优解。<br>The gradient descent algorithm is:<br>repeat until convergence:<br><span class="math">\(θ_j:=θ_j−α\frac∂{∂θ_j}J(θ_1,θ_2,θ_3)\)</span><br>where j=1,2,3represents the feature index number.<br><a href="https://d3c33hcgiwev3.cloudfront.net/_ec21cea314b2ac7d9e627706501b5baa_Lecture2.pdf?Expires=1493856000&amp;Signature=GSAbIM5AmG64UdFqdjCCWIn5hN~JZ8IheTVb6mliIEMdfhHgTrecl9toRVElelfaWZGY3vPkI33K7uOHicFc52EldArFxSunmfh4Mr4yjiEpZBbSF8-Tl9cWVTy2pAixsdpkmlL37Lku8VGax-LoenwwvR0i055g8j2wKJCGOrQ_&amp;Key-Pair-Id=APKAJLTNE6QMUY6HBC5A" target="_blank" rel="external">斯坦福课程线性回归教案拉到三分之二处看</a><br><a href="http://m.blog.csdn.net/article/details?id=51188876" target="_blank" rel="external">几种梯度下降方法</a><br><a href="http://blog.csdn.net/qq_34206952/article/details/54316285" target="_blank" rel="external">求导公式证明</a><br>α我们称之为learning rate步长，如果太大，那么损失函数不能收敛，如果太小，会收敛过慢。</p>
 <p>另外需要注意特征缩放(feature scaling)，确保不同特征的取值在相近的范围内，这样梯度下降法就能更快的收敛。因为如果不做这个，J(θ)在θ1和θ2轴上的投影将会非常的瘦长，收敛的过程需要走很多步，才能到达最小值，做特征缩放，就是为了让偏移没那么严重，投影看起来更圆一些。进行特征缩放时，将特征的取值约束到−1≤x(i)≤1或者−0.5≤x(i)≤0.5。<br><span class="math">\(x_i:=\frac{x_i−μ_i}{s_i}\)</span> μi表示feature(i)的平均值，si是feature(i)值的范围(max - min),或者是标准差。<br>For example, if xi represents housing prices with a range of 100 to 2000 and a mean value of 1000, then, <span class="math">\(xi:=\frac{price−1000}{1900}\)</span>.<br>说句题外话，这个特征缩放也很像将一般的正态分布转化成标准正态分布的过程:p</p>
@@ -607,7 +492,7 @@
     <link href="http://niuoo.github.io/2017/05/02/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%8F%AF%E4%BB%A5%E5%81%9A%E4%BB%80%E4%B9%88/"/>
     <id>http://niuoo.github.io/2017/05/02/机器学习可以做什么/</id>
     <published>2017-05-02T02:26:03.000Z</published>
-    <updated>2017-06-08T09:38:46.000Z</updated>
+    <updated>2017-08-16T03:27:09.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="先开个玩笑">先开个玩笑</h2>
 <div class="figure">
