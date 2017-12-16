@@ -240,6 +240,267 @@
             
               
                 
+                <a class="post-title-link" href="/2017/05/05/Support-Vector-Machines/" itemprop="url">
+                  Support Vector Machines
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2017-05-05T23:02:21+08:00" content="May 5 2017">
+              May 5 2017
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><strong><a href="http://blog.csdn.net/sealyao/article/details/6442403" target="_blank" rel="external">SVM中的数学和算法</a></strong> 关于支持向量机，这里有<a href="https://www.zhihu.com/question/21094489" target="_blank" rel="external">一个比较有意思的讲解</a>，还有这里<a href="https://www.youtube.com/watch?v=3liCbRZPrZA" target="_blank" rel="external">一个小视频</a>。<br>SVM是数据挖掘里面很重要的算法，我们有时会把SVM看做是一个大间距分类器Large Magin Intuition。SVM Decision Boundary具有鲁棒性，因为它努力用一个最大间距，来分离样本。<br>有个小的知识点，向量内积以及<a href="http://www.cnblogs.com/vive/p/4563803.html" target="_blank" rel="external">证明</a></p>
+<h1 id="线性核函数">线性核函数</h1>
+<p>SVM线性核函数，就是SVM不使用核函数。其实是在逻辑回归的基础上进行稍微变化而成的。<br><img src="/media/14943143749438.jpg"></p>
+<p>使用SVM软件包来确定参数θ的时候，我们需要指定常数C，C值如果太大，那么就会过拟合，效果不好。如以下示图，注意看左下角那个红叉叉，如果C太大的时候，决策边界就会是斜着的那条很线，这样并不好: <img src="/media/14943142227688.jpg"></p>
+<h1 id="kernels">Kernels</h1>
+<p>构造非线性复杂的分类器，我们用“Kernels函数”来达到此目的。<br>先来看一张图，如果决策分界是曲线的时候，那么就会有多项式特征变量的出现，如果不进行变化，就直接去求解，那么运算量是非常大的，有太多的高阶项需要被计算，所以我们需要通过其他方式来构造特征变量，来嵌入到假设函数中：<br><img src="/media/14943156955239.jpg"></p>
+<p>Kernels核函数有很多，我们用的最多的是高斯核函数(Gaussian kernel)，$ f_i=exp{ }$ 其中 <span class="math">\(l^(i) =x^(i) ，x^(i)\)</span>表示m个训练数据的第i个样本，高斯核函数描述了某个样本和其他样本的距离程度。这个函数类似高斯分布，因此称为高斯核函数。也叫做径向基函数(Radial Basis Function 简称RBF)。它能够把原始特征映射到无穷维。 <img src="/media/14943147936462.jpg"></p>
+<p>看下面这张图，可以更加理解高斯核函数的作用，注意看图中的红色大圈，如果<span class="math">\(f_1≈1,f_2≈0,f_3≈0\)</span>，那么证明这个点离<span class="math">\(l^(1)\)</span>很近，y=1。图中训练出的θ值，表明了红圈内是预测y=1，红圈外是y=0，即离点<span class="math">\(l^(1),l^(2)\)</span>都很远。这就是我们如何通过标记点以及核函数，来训练出非常复杂的非线性决策边界的方法。</p>
+<div class="figure">
+<img src="/media/14943222658500.jpg">
+
+</div>
+<p>高斯核函数的损失函数如下图所示，不过这些我们自己平时直接使用优化好的SVM包，并不需要关心这些细节，这些都是内部优化好的，不需要来定义。 <img src="/media/14943195312828.jpg"></p>
+<p>在使用高斯核函数的时候，我们需要选择<span class="math">\(σ^2\)</span>，如果<span class="math">\(σ^2\)</span>偏大我们就会得到一个较大误差较低方差的分类器，高斯核函数返回的是(0,1)区间的实数。另外，在使用核函数的时候，进行数据归一化也是很必要的，因为如果不进行归一化，那么值比较大的特征向量会占据很大的地位，弱化其他特征向量的影响，这是不公平的。 <img src="/media/14943198501799.jpg"></p>
+<p>支持向量机算法的核函数必须满足莫塞尔定理“Mercer’s Theorem”。对于其他的核函数，此处不做过多介绍。这里有个<a href="http://www.cnblogs.com/jerrylead/archive/2011/03/18/1988406.html" target="_blank" rel="external">核函数的介绍</a></p>
+<h1 id="如何选择使用何种算法呢">如何选择使用何种算法呢</h1>
+<ol style="list-style-type: decimal">
+<li>如果特征向量的个数很大,而训练集很小时，我们通常使用逻辑回归，或者使用SVM线性核函数。因为没有足够的数据来拟合非常复杂的非线性函数。</li>
+<li>如果特征向量很小，而训练数据量是中等大小，那么核函数表现就可以很好。<br></li>
+<li>如果如果特征向量很小，而训练数据量巨大，那么高斯核函数就会运行很慢，这种情况下，可以尝试手动建立更多的特征变量，然后使用逻辑回归或者SVM线性核函数。</li>
+</ol>
+<div class="figure">
+<img src="/media/14943200907676.jpg">
+
+</div>
+<p>以上，第2种，例如，特征向量为1000左右，训练集是10,000的情况下，高斯函数的支持向量机会表现的非常突出。另外第1种和第3种情况，其实使用逻辑回归和SVM线性核函数效果都差不多。<br>SVM是凸优化的，所以局部最优，就是全局最优了。</p>
+<p>在使用SVM软件包的时候，需要我们自己按照需求，配置以下参数：<br><img src="/media/14943202565702.jpg"></p>
+<p>多种分类时：<br><img src="/media/14943205457069.jpg"></p>
+<p>其实呢这课，我没怎么看懂，向量内积怎么使用我也不知道，SVM算法怎么使用倒是有个模糊的印象，但是具体内部的算法原理，没搞太明白，不知道最后的决策边界怎么产生的最大边距。这篇SVM我写的好吃力啊，重新刷斯坦福视频的时候居然看不懂了，真是……，不过还好最后看的自己觉得明白了，就先记录下来。吃力。</p>
+<p>练习题中，垃圾邮件分类器，采用SVM线性核函数。通过训练集，训练出字典表中每个单词的权重(就是θ参数)。进行垃圾邮件分类时，是需要对邮件内容进行预处理的，比如网址啊，钱啊，之类的，都会用一个单词或者符号代替，出现的哪些单词(当然最后都向量化数字处理了，类似于x = [ 0 0 0 0 1 0 0 0 … 0 0 0 0 1 … 0 0 0 1 0 ..]，x的长度是字典长度，数据1表示出现了这个单词)，最后带入我们的式子<span class="math">\(θ^TX\)</span>里面，可进行是否垃圾邮件的预测，如果大于等于0，就是垃圾邮件，小于0，是正常邮件。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/05/04/神经网络初探/" itemprop="url">
+                  神经网络初探
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2017-05-04T14:14:20+08:00" content="May 4 2017">
+              May 4 2017
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>神经网络是当今最强大的学习算法之一，自动驾驶对周围景物的识别，就用到了神经网络。<br>我们以下讲述，神经网络在分类问题中的应用，在给定训练集下，为神经网络拟合参数的学习方法。<br><span class="math">\(\begin{align*} a_1^{(2)} = g(\Theta_{10}^{(1)}x_0 + \Theta_{11}^{(1)}x_1 + \Theta_{12}^{(1)}x_2 + \Theta_{13}^{(1)}x_3) \newline a_2^{(2)} = g(\Theta_{20}^{(1)}x_0 + \Theta_{21}^{(1)}x_1 + \Theta_{22}^{(1)}x_2 + \Theta_{23}^{(1)}x_3) \newline a_3^{(2)} = g(\Theta_{30}^{(1)}x_0 + \Theta_{31}^{(1)}x_1 + \Theta_{32}^{(1)}x_2 + \Theta_{33}^{(1)}x_3) \newline h_\Theta(x) = a_1^{(3)} = g(\Theta_{10}^{(2)}a_0^{(2)} + \Theta_{11}^{(2)}a_1^{(2)} + \Theta_{12}^{(2)}a_2^{(2)} + \Theta_{13}^{(2)}a_3^{(2)}) \newline \end{align*}\)</span><br>在整个神经网络算法过程中，我们的最终目标是找到最佳的Θ矩阵中的权值。<br><img src="/media/14943440970717.jpg"></p>
+<h1 id="神经网络的损失函数">神经网络的损失函数</h1>
+<p>其中逻辑回归的损失函数为：<br><span class="math">\(J(\theta) = - \frac{1}{m} \sum_{i=1}^m [ y^{(i)}\ \log (h_\theta (x^{(i)})) + (1 - y^{(i)})\ \log (1 - h_\theta(x^{(i)}))] + \frac{\lambda}{2m}\sum_{j=1}^n \theta_j^2\)</span><br>神经网络的损失函数在逻辑回归的基础上，稍微复杂了一点儿：<br><span class="math">\(\begin{gather*} J(\Theta) = - \frac{1}{m} \sum_{i=1}^m \sum_{k=1}^K \left[y^{(i)}_k \log ((h_\Theta (x^{(i)}))_k) + (1 - y^{(i)}_k)\log (1 - (h_\Theta(x^{(i)}))_k)\right] + \frac{\lambda}{2m}\sum_{l=1}^{L-1} \sum_{i=1}^{s_l} \sum_{j=1}^{s_{l+1}} ( \Theta_{j,i}^{(l)})^2\end{gather*}\)</span></p>
+<ul>
+<li>L = 神经网络的层数。<br></li>
+<li><span class="math">\(s_l\)</span> = 在第l层，神经单元的个数(不包括偏移量单元)</li>
+<li>K = 神经网络输出层的单元个数。就是分类的类别总数。数字识别的话就是10.</li>
+</ul>
+<p>在Θ矩阵中，列代表当前层的单元个数，包括偏移单元；行代表下一层的神经元个数，不包含偏移单元。</p>
+<p>注意：</p>
+<ul>
+<li>双和嵌套，只是简单的把输出层每个分类的逻辑回归损失加在一起了。m代表训练集的个数。</li>
+<li>三个和嵌套的，是把神经网络里面，所有Θ矩阵的元素平方加在一起了。</li>
+<li>i在三和嵌套中，代表的不是训练样本个数，而是代表当前层的神经元个数。</li>
+</ul>
+<h1 id="反向传播算法-backpropagation-algorithm">反向传播算法 Backpropagation Algorithm</h1>
+<p>Back propagation的本质就是复合函数求导（following the chain rule）链式法则，本可以对这个网络里的每一个参数分别求偏导，但何苦呢，因为计算过程中的很多项都是重复的。为了不重复运算把把后层算好的导数传回前层，因为前层一定用得到。<br>关于反向传播算法，这里有个<a href="https://www.zhihu.com/question/27239198?rf=24827633" target="_blank" rel="external">浅显易懂的描述</a>。这里请看<a href="http://www.cnblogs.com/dengdan890730/p/5537451.html" target="_blank" rel="external">反向传播算法的推导过程</a>和<a href="http://blog.csdn.net/u014403897/article/details/46347351" target="_blank" rel="external">这里最后一层的求导</a>,这几个地方写的都不错。Andrew Ng老师的公开课对反向传播算法没有做过多的介绍，讲的也不够清晰。反向传播算法，就是为了计算损失函数的导数。<br>先贴个图片留作记号，便于下面Δ计算的理解</p>
+<div class="figure">
+<img src="/media/14939758124978.jpg">
+
+</div>
+<h2 id="反向传播算法的使用过程">反向传播算法的使用过程：</h2>
+<ol style="list-style-type: decimal">
+<li>Set <span class="math">\(a^{(1)} := x^{(t)}\)</span></li>
+<li><p>正向计算每层的每个节点的<span class="math">\(a^{(l)}\)</span>for l=2,3,…,L</p>
+<div class="figure">
+<img src="/media/14939747131225.jpg">
+
+</div></li>
+<li>使用<span class="math">\(y^{(t)}，计算出\delta^{(L)} = a^{(L)} - y^{(t)}\)</span>，最后输出层的错误率。</li>
+<li><p>使用<span class="math">\(\delta^{(l)} = ((\Theta^{(l)})^T \delta^{(l+1)})\ .*\ a^{(l)}\ .*\ (1 - a^{(l)})\)</span>，计算出<span class="math">\(\delta^{(L-1)}, \delta^{(L-2)},\dots,\delta^{(2)}\)</span>。<br> 其中$g’(z^{(l)}) = a^{(l)} .* (1 - a^{(l)})；_j^{(l)} =  cost(t)； $</p></li>
+</ol>
+<p><span class="math">\(cost(t) =y^{(t)} \ \log (h_\Theta (x^{(t)})) + (1 - y^{(t)})\ \log (1 - h_\Theta(x^{(t)}))\)</span></p>
+<ol start="5" style="list-style-type: decimal">
+<li><span class="math">\(\Delta^{(l)}_{i,j} := \Delta^{(l)}_{i,j} + a_j^{(l)} \delta_i^{(l+1)}，或者向量化一下，\Delta^{(l)} := \Delta^{(l)} + \delta^{(l+1)}(a^{(l)})^T\)</span>(Δ的初始化为0)<br> 至此，我们更新的权值累加器矩阵的为new Δ matrix，其中<span class="math">\(\frac \partial {\partial \Theta_{ij}^{(l)}} J(\Theta)=D_{ij}^{(l)}\)</span>
+<ul>
+<li><p><span class="math">\(D^{(l)}_{i,j} := \dfrac{1}{m}\left(\Delta^{(l)}_{i,j} + \lambda\Theta^{(l)}_{i,j}\right)\)</span> if j≠0.</p></li>
+<li><p><span class="math">\(D^{(l)}_{i,j} := \dfrac{1}{m}\Delta^{(l)}_{i,j}\)</span> If j=0</p></li>
+</ul></li>
+</ol>
+<h3 id="梯度检验">梯度检验</h3>
+<p>在神经网络中使用反向传播算法的时候，因为有很多细节，会导致各种各样小bug，即使J看起来每次都是下降的，但是，最终结果的误差却很大。因此梯度检验也是需要的过程，它减少这种错误的概率。在其他比较复杂的模型中使用梯度算法的时候，进行这种检查也是有意义的，这么做，将会对模型更加自信，确信模型是100%正确。<br><span class="math">\(\dfrac{\partial}{\partial\Theta_j}J(\Theta) \approx \dfrac{J(\Theta_1, \dots, \Theta_j + \epsilon, \dots, \Theta_n) - J(\Theta_1, \dots, \Theta_j - \epsilon, \dots, \Theta_n)}{2\epsilon}\)</span></p>
+<p>在确定算法无误后，真正执行学习算法前，一定要关掉梯度检验，否则会很慢的哟。</p>
+<h3 id="θ的初始化">Θ的初始化</h3>
+<p>Θ初始化在逻辑回归的时候是可以为0的，但是在神经网络中不可以全部为0的。因为都为0的时候，隐藏层的结果都是一样的，这样做，隐藏层就完全是冗余的，神经网络就没作用了，完全就是个逻辑回归。所以我们需要打破对称，随机初始化。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2017/05/02/线性回归和逻辑回归/" itemprop="url">
                   线性回归和逻辑回归
                 </a>
@@ -1139,7 +1400,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">18</span>
+              <span class="site-state-item-count">20</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>

@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="leetcode," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -86,19 +86,15 @@
 
 
 
-<meta name="description" content="Given a list, rotate the list to the right by k places, where k is non-negative. For example: Given 1-&amp;gt;2-&amp;gt;3-&amp;gt;4-&amp;gt;5-&amp;gt;NULL and k = 2, return 4-&amp;gt;5-&amp;gt;1-&amp;gt;2-&amp;gt;3-&amp;gt;NULL.
-题意：给定列表 和一个">
-<meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode 61 Rotate List">
-<meta property="og:url" content="http://niuoo.github.io/2016/07/18/My-New-Post/index.html">
+<meta name="description" content="It is my Blog!">
+<meta property="og:type" content="website">
+<meta property="og:title" content="niuoo">
+<meta property="og:url" content="http://niuoo.github.io/archives/2017/09/index.html">
 <meta property="og:site_name" content="niuoo">
-<meta property="og:description" content="Given a list, rotate the list to the right by k places, where k is non-negative. For example: Given 1-&amp;gt;2-&amp;gt;3-&amp;gt;4-&amp;gt;5-&amp;gt;NULL and k = 2, return 4-&amp;gt;5-&amp;gt;1-&amp;gt;2-&amp;gt;3-&amp;gt;NULL.
-题意：给定列表 和一个">
-<meta property="og:updated_time" content="2017-06-05T10:08:07.000Z">
+<meta property="og:description" content="It is my Blog!">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LeetCode 61 Rotate List">
-<meta name="twitter:description" content="Given a list, rotate the list to the right by k places, where k is non-negative. For example: Given 1-&amp;gt;2-&amp;gt;3-&amp;gt;4-&amp;gt;5-&amp;gt;NULL and k = 2, return 4-&amp;gt;5-&amp;gt;1-&amp;gt;2-&amp;gt;3-&amp;gt;NULL.
-题意：给定列表 和一个">
+<meta name="twitter:title" content="niuoo">
+<meta name="twitter:description" content="It is my Blog!">
 
 
 
@@ -119,9 +115,9 @@
 
 
 
-  <link rel="canonical" href="http://niuoo.github.io/2016/07/18/My-New-Post/"/>
+  <link rel="canonical" href="http://niuoo.github.io/archives/2017/09/"/>
 
-  <title> LeetCode 61 Rotate List | niuoo </title>
+  <title> Archive | niuoo </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -142,7 +138,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left page-post-detail ">
+  <div class="container one-collumn sidebar-position-left  page-archive  ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -220,129 +216,66 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-expand">
+  <section id="posts" class="posts-collapse">
+    <span class="archive-move-on"></span>
+
+    <span class="archive-page-counter">
+      
+      
+      
+        
+      
+      Um..! 20 posts in total. Keep on posting.
+    </span>
+
     
 
-  
-  
+      
+      
+      
 
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
+      
         
+        <div class="collection-title">
+          <h2 class="archive-year motion-element" id="archive-year-2017">2017</h2>
+        </div>
+      
+      
+
+      
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h1 class="post-title">
         
-          <h1 class="post-title" itemprop="name headline">
-            
-            
+            <a class="post-title-link" href="/2017/09/11/2017-09-11/" itemprop="url">
               
-                LeetCode 61 Rotate List
+                <span itemprop="name">Untitled</span>
               
-            
-          </h1>
+            </a>
         
+      </h1>
 
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-07-18T22:08:17+08:00" content="Jul 18 2016">
-              Jul 18 2016
-            </time>
-          </span>
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2017-09-11T10:24:25+08:00"
+              content="Sep 11 2017" >
+          09-11
+        </time>
+      </div>
 
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        <p>Given a list, rotate the list to the right by k places, where k is non-negative. For example: Given 1-&gt;2-&gt;3-&gt;4-&gt;5-&gt;NULL and k = 2, return 4-&gt;5-&gt;1-&gt;2-&gt;3-&gt;NULL.</p>
-<p>题意：给定列表 和一个整数 k ，旋转列表最后 k 个元素至列表最前面。 思路：</p>
-<ol style="list-style-type: decimal">
-<li>先找到最后元素 lastOne ，并计算链表长度，同时最后一个元素指向头节点，形成一个环。</li>
-<li>从head节点开始，往后走到第 len - k % len，即走到了旋转后列表新的最后元素 newLastOne，新的环链表在newLastOne之后断开。</li>
-<li>断开的链表即是反转后的新链表。</li>
-</ol>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> ListNode <span class="title">rotateRight</span><span class="params">(ListNode head,<span class="keyword">int</span> k)</span> </span>&#123;</div><div class="line">  <span class="keyword">if</span> (head == <span class="keyword">null</span> || k == <span class="number">0</span>) <span class="keyword">return</span> head;</div><div class="line">  ListNode p = head;</div><div class="line">  <span class="keyword">int</span> len = <span class="number">1</span>;</div><div class="line">  <span class="keyword">while</span> (p.next != <span class="keyword">null</span>) &#123;</div><div class="line">    len++;</div><div class="line">	  p = p.next;</div><div class="line">  &#125;</div><div class="line">  p.next = head;<span class="comment">//form a circle </span></div><div class="line">  <span class="keyword">for</span> (k = len - k % len; k &gt; <span class="number">0</span>; k--) p = p.next;</div><div class="line">  head = p.next;<span class="comment">//break the circle at the(len - k % len)th ListNode </span></div><div class="line">  p.next = <span class="keyword">null</span>;</div><div class="line">  <span class="keyword">return</span> head;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    <div>
-      
-        
-
-      
-    </div>
-
-    <div>
-      
-        
-
-      
-    </div>
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/leetcode/" rel="tag">#leetcode</a>
-          
-        </div>
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-          </div>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/07/22/Array/" rel="prev" title="LeetCode 215 Kth Largest Element in an Array">
-                LeetCode 215 Kth Largest Element in an Array <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
+    </header>
   </article>
 
 
 
-    <div class="post-spread">
-      
-    </div>
-  </div>
+    
+
+  </section>
+
+  
+
 
 
           </div>
@@ -350,10 +283,6 @@
 
 
           
-  <div class="comments" id="comments">
-    
-  </div>
-
 
         </div>
         
@@ -373,17 +302,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            Table of Contents
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            Overview
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel ">
+      <section class="site-overview sidebar-panel  sidebar-panel-active ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -433,17 +353,6 @@
 
       </section>
 
-      
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-            
-              
-            
-            
-              <p class="post-toc-empty">This post does not have a Table of Contents</p>
-            
-          </div>
-        </section>
       
 
     </div>
@@ -540,9 +449,11 @@
   
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
-
+  
+    <script type="text/javascript" id="motion.page.archive">
+      $('.archive-year').velocity('transition.slideLeftIn');
+    </script>
+  
 
 
   

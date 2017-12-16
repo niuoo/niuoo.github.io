@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="leetcode," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -86,19 +86,25 @@
 
 
 
-<meta name="description" content="Given a list, rotate the list to the right by k places, where k is non-negative. For example: Given 1-&amp;gt;2-&amp;gt;3-&amp;gt;4-&amp;gt;5-&amp;gt;NULL and k = 2, return 4-&amp;gt;5-&amp;gt;1-&amp;gt;2-&amp;gt;3-&amp;gt;NULL.
-题意：给定列表 和一个">
+<meta name="description" content="2017-12-16安排
+14:00~17:00 看fast.ai 3个小时 17:00~17:30 玩儿半个小时 17:30~20:00 看之EM算法。顺便看Hinton和Jordan理解的EM算法
+20:00~22:00 看2小时 22:00~23:00 看1个小时，进入梦乡
+每做好一步，过来打勾勾哦O 加油，小宝贝！">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode 61 Rotate List">
-<meta property="og:url" content="http://niuoo.github.io/2016/07/18/My-New-Post/index.html">
+<meta property="og:title" content="niuoo">
+<meta property="og:url" content="http://niuoo.github.io/2017/12/16/2017-12-16/index.html">
 <meta property="og:site_name" content="niuoo">
-<meta property="og:description" content="Given a list, rotate the list to the right by k places, where k is non-negative. For example: Given 1-&amp;gt;2-&amp;gt;3-&amp;gt;4-&amp;gt;5-&amp;gt;NULL and k = 2, return 4-&amp;gt;5-&amp;gt;1-&amp;gt;2-&amp;gt;3-&amp;gt;NULL.
-题意：给定列表 和一个">
-<meta property="og:updated_time" content="2017-06-05T10:08:07.000Z">
+<meta property="og:description" content="2017-12-16安排
+14:00~17:00 看fast.ai 3个小时 17:00~17:30 玩儿半个小时 17:30~20:00 看之EM算法。顺便看Hinton和Jordan理解的EM算法
+20:00~22:00 看2小时 22:00~23:00 看1个小时，进入梦乡
+每做好一步，过来打勾勾哦O 加油，小宝贝！">
+<meta property="og:updated_time" content="2017-12-16T05:59:59.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LeetCode 61 Rotate List">
-<meta name="twitter:description" content="Given a list, rotate the list to the right by k places, where k is non-negative. For example: Given 1-&amp;gt;2-&amp;gt;3-&amp;gt;4-&amp;gt;5-&amp;gt;NULL and k = 2, return 4-&amp;gt;5-&amp;gt;1-&amp;gt;2-&amp;gt;3-&amp;gt;NULL.
-题意：给定列表 和一个">
+<meta name="twitter:title" content="niuoo">
+<meta name="twitter:description" content="2017-12-16安排
+14:00~17:00 看fast.ai 3个小时 17:00~17:30 玩儿半个小时 17:30~20:00 看之EM算法。顺便看Hinton和Jordan理解的EM算法
+20:00~22:00 看2小时 22:00~23:00 看1个小时，进入梦乡
+每做好一步，过来打勾勾哦O 加油，小宝贝！">
 
 
 
@@ -119,9 +125,9 @@
 
 
 
-  <link rel="canonical" href="http://niuoo.github.io/2016/07/18/My-New-Post/"/>
+  <link rel="canonical" href="http://niuoo.github.io/2017/12/16/2017-12-16/"/>
 
-  <title> LeetCode 61 Rotate List | niuoo </title>
+  <title>  | niuoo </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -241,7 +247,7 @@
             
             
               
-                LeetCode 61 Rotate List
+                
               
             
           </h1>
@@ -253,8 +259,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-07-18T22:08:17+08:00" content="Jul 18 2016">
-              Jul 18 2016
+            <time itemprop="dateCreated" datetime="2017-12-16T13:54:21+08:00" content="Dec 16 2017">
+              Dec 16 2017
             </time>
           </span>
 
@@ -281,14 +287,10 @@
       
 
       
-        <p>Given a list, rotate the list to the right by k places, where k is non-negative. For example: Given 1-&gt;2-&gt;3-&gt;4-&gt;5-&gt;NULL and k = 2, return 4-&gt;5-&gt;1-&gt;2-&gt;3-&gt;NULL.</p>
-<p>题意：给定列表 和一个整数 k ，旋转列表最后 k 个元素至列表最前面。 思路：</p>
-<ol style="list-style-type: decimal">
-<li>先找到最后元素 lastOne ，并计算链表长度，同时最后一个元素指向头节点，形成一个环。</li>
-<li>从head节点开始，往后走到第 len - k % len，即走到了旋转后列表新的最后元素 newLastOne，新的环链表在newLastOne之后断开。</li>
-<li>断开的链表即是反转后的新链表。</li>
-</ol>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> ListNode <span class="title">rotateRight</span><span class="params">(ListNode head,<span class="keyword">int</span> k)</span> </span>&#123;</div><div class="line">  <span class="keyword">if</span> (head == <span class="keyword">null</span> || k == <span class="number">0</span>) <span class="keyword">return</span> head;</div><div class="line">  ListNode p = head;</div><div class="line">  <span class="keyword">int</span> len = <span class="number">1</span>;</div><div class="line">  <span class="keyword">while</span> (p.next != <span class="keyword">null</span>) &#123;</div><div class="line">    len++;</div><div class="line">	  p = p.next;</div><div class="line">  &#125;</div><div class="line">  p.next = head;<span class="comment">//form a circle </span></div><div class="line">  <span class="keyword">for</span> (k = len - k % len; k &gt; <span class="number">0</span>; k--) p = p.next;</div><div class="line">  head = p.next;<span class="comment">//break the circle at the(len - k % len)th ListNode </span></div><div class="line">  p.next = <span class="keyword">null</span>;</div><div class="line">  <span class="keyword">return</span> head;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+        <h1 id="安排">2017-12-16安排</h1>
+<p>14:00~17:00 看fast.ai 3个小时 17:00~17:30 玩儿半个小时 17:30~20:00 看<周志华机器学习>之EM算法。顺便看<a href="https://mp.weixin.qq.com/s?__biz=MzIzMjU1NTg3Ng==&amp;mid=2247486415&amp;idx=1&amp;sn=b50f4cc8ef9cd4d4d34cbdb0d30b4afc&amp;chksm=e8925fc4dfe5d6d217d46bca560eb7030232c14183cf0b791aa9af7da5671ac536f8a45693f5&amp;mpshare=1&amp;scene=1&amp;srcid=1213nA8yTjxK7pw2LxnuSRGu&amp;key=da103cb67940783e381102fb14674ebd0d039d798c7b1932fa1ce5f48d91ad89962437c729f7545312a6ce1fa03df0a1640dbb145e25544cd7300fea7763d40720cd1adc84907bd0a8c3c52bc836bfe7&amp;ascene=0&amp;uin=MTA2MTM3MjcwNA%3D%3D&amp;devicetype=iMac+MacBookPro11%2C1+OSX+OSX+10.11.6+build(15G1510)&amp;version=12020810&amp;nettype=WIFI&amp;lang=zh_CN&amp;fontScale=100&amp;pass_ticket=2%2B82FeLMFDTNJse7id71tUxAiI0JCuIWakI%2FV%2FKqOK8Veq9r%2FRy%2Bbxvfzgt2E1Cw" target="_blank" rel="external">Hinton和Jordan理解的EM算法</a></周志华机器学习></p>
+<p>20:00~22:00 <深度学习>看2小时 22:00~23:00 <普林斯顿微积分>看1个小时，进入梦乡</普林斯顿微积分></深度学习></p>
+<p>每做好一步，过来打勾勾哦<sup>O</sup> 加油，小宝贝！</p>
 
       
     </div>
@@ -309,24 +311,18 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/leetcode/" rel="tag">#leetcode</a>
-          
-        </div>
-      
 
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2017/09/11/2017-09-11/" rel="next" title="">
+                <i class="fa fa-chevron-left"></i> 
+              </a>
+            
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/07/22/Array/" rel="prev" title="LeetCode 215 Kth Largest Element in an Array">
-                LeetCode 215 Kth Largest Element in an Array <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -440,7 +436,7 @@
               
             
             
-              <p class="post-toc-empty">This post does not have a Table of Contents</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#安排"><span class="nav-number">1.</span> <span class="nav-text">2017-12-16安排</span></a></li></ol></div>
             
           </div>
         </section>
