@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://niuoo.github.io/"/>
-  <updated>2017-12-17T04:18:11.000Z</updated>
+  <updated>2017-12-17T05:19:31.000Z</updated>
   <id>http://niuoo.github.io/</id>
   
   <author>
@@ -16,11 +16,31 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>2017-12-17日记</title>
+    <link href="http://niuoo.github.io/2017/12/17/2017-12-17%E6%97%A5%E8%AE%B0/"/>
+    <id>http://niuoo.github.io/2017/12/17/2017-12-17日记/</id>
+    <published>2017-12-17T05:08:26.000Z</published>
+    <updated>2017-12-17T05:19:31.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>14:00~17:00 看贝叶斯和论文<what is="" the="" expectation="" maximization="" algorithm?=""> 18:00~21:00 fast.ai 第二课看完。 加油！小宝贝</what></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;14:00~17:00 看贝叶斯和论文&lt;what is=&quot;&quot; the=&quot;&quot; expectation=&quot;&quot; maximization=&quot;&quot; algorithm?=&quot;&quot;&gt; 18:00~21:00 fast.ai 第二课看完。 加油！小宝贝&lt;/what&gt;&lt;/p&gt;
+
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>2017-12-16日记</title>
     <link href="http://niuoo.github.io/2017/12/17/2017-12-16%E6%97%A5%E8%AE%B0-1/"/>
     <id>http://niuoo.github.io/2017/12/17/2017-12-16日记-1/</id>
     <published>2017-12-16T20:21:53.000Z</published>
-    <updated>2017-12-17T04:18:11.000Z</updated>
+    <updated>2017-12-17T05:20:15.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="安排">2017-12-16安排</h1>
 <p>14:00~17:00 看fast.ai 3个小时 我了个擦擦的，气死啦。搞了一下午的固定IP绑定之类的，最后也没搞好，还是用dns登录的。算了算了。明天继续看课程。√</p>
