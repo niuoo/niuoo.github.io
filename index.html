@@ -378,12 +378,33 @@
       
         
           
-            <p>本来打算用一下tmux呢，后来发现还是mac OS下面还是直接iTerm方便，不过切到Linux的时候，估计还是要用tmux吧。 tmux使用也比较简单。先把脑海中的记录一下，防止以后忘记。感觉和vim的使用体验好像啊。我挺不喜欢这种设定。 ## tmux安装 <code>brew install tmux</code> ## 新建一个tmux session <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">tmux new -s myname  		           启动一个session</div><div class="line">tmux a # (or at, or attach)            恢复到已经存在的session number</div><div class="line">tmux a -t myname	                   恢复到某个会话</div><div class="line">tmux ls                                列出当前会话 list sessions </div><div class="line">tmux kill-session -t myname	           终止一个session。 Kill session</div></pre></td></tr></table></figure></p>
+            本来打算用一下tmux呢，后来发现还是mac OS下面还是直接iTerm方便，不过切到Linux的时候，估计还是要用tmux吧。 tmux使用也比较简单。先把脑海中的记录一下，防止以后忘记。感觉和vim的使用体验好像啊。我挺不喜欢这种设定。 ## tmux安装 <code>brew install tmux</code> ## 新建一个tmux session
+<pre>
+tmux new -s myname                     启动一个session
+tmux a # (or at, or attach)            恢复到已经存在的session number
+tmux a -t myname                       恢复到某个会话
+tmux ls                                列出当前会话 list sessions 
+tmux kill-session -t myname            终止一个session。 Kill session
+</pre>
 <h2 id="切窗口-split-panes">切窗口 split panes</h2>
 <p>Ctrl+b 等于是切到命令模式</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Ctrl+b %        水平分割窗口  </div><div class="line">Ctrl+b &quot;        垂直分割窗口</div><div class="line">Ctrl+b x        kill一个小窗口</div><div class="line">Ctrl+b o        移动光标到不同的一个小窗口 Swap panes</div></pre></td></tr></table></figure>
+<pre>
+Ctrl+b %        水平分割窗口  
+Ctrl+b "        垂直分割窗口
+Ctrl+b x        kill一个小窗口
+Ctrl+b o        移动光标到不同的一个小窗口 Swap panes
+ctrl+b d        跳出当前的tmux
+</pre>
 <h2 id="管理session">管理session</h2>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">Ctrl+B c      Create window</div><div class="line">Ctrl+B w      List Windows</div><div class="line">Ctrl+B n      Next window</div><div class="line">Ctrl+B p      Previous window</div><div class="line">Ctrl+B f      Find window</div><div class="line">Ctrl+B ,      Name window</div><div class="line">Ctrl+B &amp;      Kill window</div></pre></td></tr></table></figure>
+<pre>
+Ctrl+B c      Create window
+Ctrl+B w      List Windows
+Ctrl+B n      Next window
+Ctrl+B p      Previous window
+Ctrl+B f      Find window
+Ctrl+B ,      Name window
+Ctrl+B &      Kill window
+</pre>
 
           
         
