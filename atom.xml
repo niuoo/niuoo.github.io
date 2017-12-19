@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://niuoo.github.io/"/>
-  <updated>2017-12-17T05:43:59.000Z</updated>
+  <updated>2017-12-19T08:10:16.000Z</updated>
   <id>http://niuoo.github.io/</id>
   
   <author>
@@ -14,6 +14,50 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>iTerm 快捷键 shortcuts</title>
+    <link href="http://niuoo.github.io/2017/12/19/iTerm-%E5%BF%AB%E6%8D%B7%E9%94%AE-shortcuts/"/>
+    <id>http://niuoo.github.io/2017/12/19/iTerm-快捷键-shortcuts/</id>
+    <published>2017-12-19T08:10:16.000Z</published>
+    <updated>2017-12-19T08:10:16.000Z</updated>
+    
+    <content type="html"><![CDATA[
+]]></content>
+    
+    <summary type="html">
+    
+      
+
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>tmux 快捷键 shortcuts</title>
+    <link href="http://niuoo.github.io/2017/12/19/tmux-%E5%BF%AB%E6%8D%B7%E9%94%AE-shortcuts/"/>
+    <id>http://niuoo.github.io/2017/12/19/tmux-快捷键-shortcuts/</id>
+    <published>2017-12-19T08:09:41.000Z</published>
+    <updated>2017-12-19T08:13:10.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>本来打算用一下tmux呢，后来发现还是mac OS下面还是直接iTerm方便，不过切到Linux的时候，估计还是要用tmux吧。 tmux使用也比较简单。先把脑海中的记录一下，防止以后忘记。感觉和vim的使用体验好像啊。我挺不喜欢这种设定。 ## tmux安装 <code>brew install tmux</code> ## 新建一个tmux session <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">tmux new -s myname  		           启动一个session</div><div class="line">tmux a # (or at, or attach)            恢复到已经存在的session number</div><div class="line">tmux a -t myname	                   恢复到某个会话</div><div class="line">tmux ls                                列出当前会话 list sessions </div><div class="line">tmux kill-session -t myname	           终止一个session。 Kill session</div></pre></td></tr></table></figure></p>
+<h2 id="切窗口-split-panes">切窗口 split panes</h2>
+<p>Ctrl+b 等于是切到命令模式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Ctrl+b %        水平分割窗口  </div><div class="line">Ctrl+b &quot;        垂直分割窗口</div><div class="line">Ctrl+b x        kill一个小窗口</div><div class="line">Ctrl+b o        移动光标到不同的一个小窗口 Swap panes</div></pre></td></tr></table></figure>
+<h2 id="管理session">管理session</h2>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">Ctrl+B c      Create window</div><div class="line">Ctrl+B w      List Windows</div><div class="line">Ctrl+B n      Next window</div><div class="line">Ctrl+B p      Previous window</div><div class="line">Ctrl+B f      Find window</div><div class="line">Ctrl+B ,      Name window</div><div class="line">Ctrl+B &amp;      Kill window</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;本来打算用一下tmux呢，后来发现还是mac OS下面还是直接iTerm方便，不过切到Linux的时候，估计还是要用tmux吧。 tmux使用也比较简单。先把脑海中的记录一下，防止以后忘记。感觉和vim的使用体验好像啊。我挺不喜欢这种设定。 ## tmux安装 &lt;code&gt;
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>2017-12-17日记</title>
@@ -41,7 +85,7 @@
     <link href="http://niuoo.github.io/2017/12/17/2017-12-16%E6%97%A5%E8%AE%B0-1/"/>
     <id>http://niuoo.github.io/2017/12/17/2017-12-16日记-1/</id>
     <published>2017-12-16T20:21:53.000Z</published>
-    <updated>2017-12-17T13:09:21.000Z</updated>
+    <updated>2017-12-19T08:15:40.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="安排">2017-12-16安排</h1>
 <p>14:00~17:00 看fast.ai 3个小时 我了个擦擦的，气死啦。搞了一下午的固定IP绑定之类的，最后也没搞好，还是用dns登录的。算了算了。明天继续看课程。√</p>
@@ -60,13 +104,11 @@
 <p>这张照片好成熟。望接下来的时光，可以恢复活力。有心情，可以post自己的照片，记录下时间的流逝。希望自己以后的时光，可以身体健康，杨柳细腰，体态轻盈。期待岁月对我的温柔。 <img src="/media/15134233580413.jpg"></p>
 <p>另外远离各类社交网络。社交网络固然人才济济，可是仅仅做个观众，可是有点傻兮兮的。参与进去，又会浪费很多时间。</p>
 <p>慢慢丰富自己的生活，可以钻研深度学习，也可以学自己感兴趣的东西，学个乐器啊，舞蹈之类什么的都可以。当然了，慢慢跑起来啦，运动还是需要的啦。</p>
-<p>关于爱情，婚姻，我只是想有个有意思的小伙伴和我同行而已。一起看风景，能够给对方爱和温暖。</p>
-<p>前段时间，我没处理好自己的思想，以前觉得自己会坦然处之，对于感情。后来发现，自己毫无缚鸡之力，就雄赳赳气昂昂去了角斗场，现在想来，自己真是傻乎乎的可爱，只不过最终，还是血淋淋的受伤了。</p>
+<p>前段时间，我没处理好自己的思想，以前觉得自己会坦然处之。后来发现，自己毫无缚鸡之力，就雄赳赳气昂昂去了角斗场，现在想来，自己真是傻乎乎的可爱，只不过最终，还是血淋淋的受伤了。</p>
 <p>写诗，是个逻辑思维的过程，找出合理的词汇，表达一定的意思，用理智分析情感，即可得。</p>
 <p>我能做的，就是把自己做好了，打理好了，有些许魅力特征，讨人喜欢，就够了。</p>
-<p>我是个有福气的人嘛，所以呢，我相信那个人，不会让我等不到的。</p>
-<p>自己把自己过得开心，快乐，就够了，做自己喜欢的事情，就可以了。</p>
-<p>另外，关于工作上的事情，前段时间，搞的回购客预测的二分类问题，最后使用了特征化成了woe，进入LR模型，然后理论上，最终权值应该都是正的。因为sogmoid是个单调递增函数，特征的值的woe如果是负的，那么证明这个特征值会造成负影响，不利于结果变成正的，那么应该拉低结果值，如果是正的，理想上，是应该提升结果，所以权值系数应该全部为正数。但是我们模型最终的结果，却很多都是负数，经过我的思考，我认为是因为我们的最终结果本身就是非常非常差的，当然不会理想的系数都是正数。很多特征，为了使结果尽可能的好，都被迫，系数被拉成负的了。周一上班了，看看，筛选一下系数绝对值大的，或是只看正的特征，再做做实验看看。。</p>
+<p>自己要过得开心，快乐，做自己喜欢的事情。</p>
+<p>另外，关于工作上的事情，前段时间，搞的回购客预测的二分类问题，最后使用了特征化成了woe，进入LR模型，然后理论上，最终权值应该都是正的。因为sogmoid是个单调递增函数，特征的值的woe如果是负的，那么证明这个特征值会造成负影响，不利于结果变成正的，那么应该拉低结果值，如果是正的，理想上，是应该提升结果，所以权值系数应该全部为正数。但是我们模型最终的结果，却很多都是负数，经过我的思考，我认为是因为我们的最终结果本身就是非常非常差的，当然不会理想的系数都是正数。很多特征，为了使结果尽可能的好，都被迫，系数被拉成负的了。。网上说，可能是出现了多重共线性，对于多重共线性怎么检验判断和解决，我暂时不知道。周一上班了，看看，筛选一下系数绝对值大的，或是只看正的特征，再做做实验看看。。</p>
 <p>如果系数不能都为理想的正数，恰恰说明了一个问题，因为我们的数据，本身就不是线性的啊，不能很好的拟合成我们理想的线性，只能自己freestyle了。无奈啊。</p>
 <p>人生也好无奈啊。我最近好无奈啊。</p>
 <p>我的外形，我的工作，我的学识，我的斗志，都是人生谷底啊，谷底啊。我还能爬出来吗，我要的可不是梯度下降啊，目标不是最小值啊。</p>
@@ -716,65 +758,6 @@
     
     </summary>
     
-    
-  </entry>
-  
-  <entry>
-    <title>LeetCode 215 Kth Largest Element in an Array</title>
-    <link href="http://niuoo.github.io/2016/07/22/Array/"/>
-    <id>http://niuoo.github.io/2016/07/22/Array/</id>
-    <published>2016-07-22T14:08:48.000Z</published>
-    <updated>2016-07-22T14:32:09.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>Find the kth largest element in an unsorted array. Note that it is the kth largest element in the sorted order, not the kth distinct element. For example, Given [3,2,1,5,6,4] and k = 2, return 5. Note:  You may assume k is always valid, 1 ≤ k ≤ array’s length. 思路：</p>
-<ol style="list-style-type: decimal">
-<li>选取数组合适的element作为pivot （提高效率）</li>
-<li>使用partition，elements&lt;=pivot的放到pivot前，elements&gt;=pivot的elements放到pivot后，pivot就放到了正确位置position。</li>
-<li>缩小下次partition查找的范围。如果pivot的position比target大，那么扔掉pivot之后的elements，继续在pivot之前的elements里面找。反之，pivot的position小于target，扔掉pivot之前的elements，再pivot之后的elements里继续partition。这样不断缩小，一直到不能再缩小。</li>
-<li>nums[target] 就是 the kth distinct element。</li>
-</ol>
-<p>1ms Java solution beats 99.1%.</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">findKthLargest</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> k)</span> </span>&#123;</div><div class="line">	<span class="keyword">int</span> n = nums.length, target = n - k;</div><div class="line">	quicksort(nums, <span class="number">0</span>, n - <span class="number">1</span>, target);</div><div class="line">	<span class="keyword">return</span> nums[n - k]; <span class="comment">//nums[n - k]就是the kth largest element</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">quicksort</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> start, <span class="keyword">int</span> end, <span class="keyword">int</span> target)</span> </span>&#123;</div><div class="line">	<span class="keyword">if</span> (start &gt;= end) <span class="keyword">return</span>;</div><div class="line">	<span class="keyword">int</span> mid = start + (end - start) / <span class="number">2</span>;</div><div class="line">	<span class="keyword">int</span> pivot = choosePivot(nums[mid], nums[start], nums[end]);</div><div class="line">	<span class="keyword">int</span> i = start, j = end;</div><div class="line">	<span class="keyword">while</span> (i &lt;= j) &#123;</div><div class="line">		<span class="keyword">while</span> (nums[i] &lt; pivot) i++;</div><div class="line">		<span class="keyword">while</span> (nums[j] &gt; pivot) j--;</div><div class="line">		<span class="keyword">if</span> (i &lt;= j) &#123;</div><div class="line">			<span class="keyword">if</span> (nums[i] != nums[j]) swap(nums, i, j);</div><div class="line">			i++;</div><div class="line">			j--;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">if</span> (target &lt;= i - <span class="number">1</span>) quicksort(nums, start, i - <span class="number">1</span>, target);</div><div class="line">	<span class="keyword">else</span> quicksort(nums, i, end, target);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">/**选取a,b,c三者的中位数*/</span></div><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">int</span> <span class="title">choosePivot</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b, <span class="keyword">int</span> c)</span> </span>&#123;</div><div class="line">	<span class="keyword">int</span> min = Math.min(a, Math.min(b, c));</div><div class="line">	<span class="keyword">int</span> max = Math.max(a, Math.max(b, c));</div><div class="line">	<span class="keyword">return</span> a - max + b - min + c;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> i, <span class="keyword">int</span> j)</span> </span>&#123;</div><div class="line">	<span class="keyword">int</span> tmp = nums[i];</div><div class="line">	nums[i] = nums[j];</div><div class="line">	nums[j] = tmp;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>思路： 使用优先队列，维护size为k的小顶堆，堆顶的元素就是第k大的元素，而其余元素都比这个元素大。 9ms Java solution beats 66.46%.</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">findKthLargest2</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> k)</span> </span>&#123;</div><div class="line">	PriorityQueue&lt;Integer&gt; pq = <span class="keyword">new</span> PriorityQueue&lt;Integer&gt;(k);</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length; i++) &#123;</div><div class="line">		<span class="keyword">if</span> (pq.size() &lt; k) pq.offer(nums[i]);</div><div class="line">		<span class="keyword">else</span> <span class="keyword">if</span> (nums[i] &gt; pq.peek()) &#123;</div><div class="line">			pq.poll();</div><div class="line">			pq.offer(nums[i]);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> pq.peek();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Find the kth largest element in an unsorted array. Note that it is the kth largest element in the sorted order, not the kth distinct elem
-    
-    </summary>
-    
-    
-      <category term="LeetCode" scheme="http://niuoo.github.io/tags/LeetCode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>LeetCode 61 Rotate List</title>
-    <link href="http://niuoo.github.io/2016/07/18/My-New-Post/"/>
-    <id>http://niuoo.github.io/2016/07/18/My-New-Post/</id>
-    <published>2016-07-18T14:08:17.000Z</published>
-    <updated>2017-06-05T10:08:07.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>Given a list, rotate the list to the right by k places, where k is non-negative. For example: Given 1-&gt;2-&gt;3-&gt;4-&gt;5-&gt;NULL and k = 2, return 4-&gt;5-&gt;1-&gt;2-&gt;3-&gt;NULL.</p>
-<p>题意：给定列表 和一个整数 k ，旋转列表最后 k 个元素至列表最前面。 思路：</p>
-<ol style="list-style-type: decimal">
-<li>先找到最后元素 lastOne ，并计算链表长度，同时最后一个元素指向头节点，形成一个环。</li>
-<li>从head节点开始，往后走到第 len - k % len，即走到了旋转后列表新的最后元素 newLastOne，新的环链表在newLastOne之后断开。</li>
-<li>断开的链表即是反转后的新链表。</li>
-</ol>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> ListNode <span class="title">rotateRight</span><span class="params">(ListNode head,<span class="keyword">int</span> k)</span> </span>&#123;</div><div class="line">  <span class="keyword">if</span> (head == <span class="keyword">null</span> || k == <span class="number">0</span>) <span class="keyword">return</span> head;</div><div class="line">  ListNode p = head;</div><div class="line">  <span class="keyword">int</span> len = <span class="number">1</span>;</div><div class="line">  <span class="keyword">while</span> (p.next != <span class="keyword">null</span>) &#123;</div><div class="line">    len++;</div><div class="line">	  p = p.next;</div><div class="line">  &#125;</div><div class="line">  p.next = head;<span class="comment">//form a circle </span></div><div class="line">  <span class="keyword">for</span> (k = len - k % len; k &gt; <span class="number">0</span>; k--) p = p.next;</div><div class="line">  head = p.next;<span class="comment">//break the circle at the(len - k % len)th ListNode </span></div><div class="line">  p.next = <span class="keyword">null</span>;</div><div class="line">  <span class="keyword">return</span> head;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Given a list, rotate the list to the right by k places, where k is non-negative. For example: Given 1-&amp;gt;2-&amp;gt;3-&amp;gt;4-&amp;gt;5-&amp;gt;NULL an
-    
-    </summary>
-    
-    
-      <category term="leetcode" scheme="http://niuoo.github.io/tags/leetcode/"/>
     
   </entry>
   
