@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://niuoo.github.io/"/>
-  <updated>2017-12-19T08:10:16.000Z</updated>
+  <updated>2017-12-19T17:06:41.000Z</updated>
   <id>http://niuoo.github.io/</id>
   
   <author>
@@ -16,19 +16,66 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>iTerm 快捷键 shortcuts</title>
-    <link href="http://niuoo.github.io/2017/12/19/iTerm-%E5%BF%AB%E6%8D%B7%E9%94%AE-shortcuts/"/>
-    <id>http://niuoo.github.io/2017/12/19/iTerm-快捷键-shortcuts/</id>
-    <published>2017-12-19T08:10:16.000Z</published>
-    <updated>2017-12-19T08:10:16.000Z</updated>
+    <title>fast.ai 环境配置</title>
+    <link href="http://niuoo.github.io/2017/12/19/fast-ai-%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
+    <id>http://niuoo.github.io/2017/12/19/fast-ai-环境配置/</id>
+    <published>2017-12-19T15:52:23.000Z</published>
+    <updated>2017-12-19T17:06:41.000Z</updated>
     
-    <content type="html"><![CDATA[
+    <content type="html"><![CDATA[<p>我最最讨厌的就是做如下的事情。缺个男朋友帮我做这些事情。求老天鹅赐我男友一枚，能帮我配环境的那种。</p>
+<h2 id="申请工单">申请工单</h2>
+<p>首先要注册一个aws帐号，申请工单的过程请看 <a href="http://course.fast.ai/lessons/aws.html" target="_blank" rel="external">AWS Lesson</a>，根据视频要求填写，填写申请描述的时候，根据视频填写fast-ai-course，这个貌似是人家搞好的，所以填写完相关信息，提交后就不用管了，可以进行后续操作了。注意一点，我们申请的是<strong>p2</strong>的实例，貌似中国没有，所以选区域的时候，最好填写<strong>us-west-2 俄勒冈</strong>。 ## 生成密钥对 key-pair 生成密钥对，如下图所示，点进去后，就可以create了，密钥对名称最好叫做aws-key-fast-ai，因为脚本里面是这么写的嘛，密钥对创建后，会被自动下载到本地，下载完，请手动copy到目录~/.ssh/aws-key-fast-ai.pem <img src="/media/15136997192930.jpg"></p>
+<h2 id="执行setup_p2.sh脚本">执行setup_p2.sh脚本</h2>
+<p>首先，执行 git clone https://github.com/fastai/courses.git ，获取相关的执行脚本，所有环境脚本在相对目录courses/setup下面。</p>
+<p>aws-alias.sh 这个脚本是一个alias命令脚本，给命令起别名，以简化命令。这个脚本执行完，alias的命令只能在当前目录下生效，若想在iTerm全局生效，还要添加到环境变量，在文件.zshrc里面添加<code>source ~/deeplearning/courses/setup/aws-alias.sh</code>，当然了，这是我自己的路径，此处请酌情换成你自己的路径，我的系统是mac OS X。</p>
+<p>如果出现aws命令不识别的情况，那么请先敲命令<code>pip install awscli</code></p>
+<p>由于前面密钥对生成完了，我们就可以执行setup_p2.sh脚本，这个脚本会让AWS创建一个实例，并且启动实例。</p>
+<p>启动完，可以使用<code>aws-get-p2</code>，获取实例名称，如果创建好实例，会出现『i-0cfc671a9e32fb6a4』之类的实例ID。<code>aws-ip</code>可以获取弹性ip。这些aws相关的命令，可以通过<code>cat aws-alias.sh</code>进行查看。</p>
+<p>aws configure 可以查看aws的相关配置信息，自己不要输入修改了，这个是干嘛的，我也不知道，其实相关的信息我也进行了修改，but没什么用啊，如果谁知道，联系我喔。</p>
+<p>最后，直接通过aws-ssh，就可以登录AWS的ubuntu啦！出现如下界面，代表着陆成功。 <img src="/media/15137016427663.jpg"> 那么问题来了，今天下午15点的时候，谁登录了我的ip，这里到底是怎么回事，Last login是谁搞得，反正不是我。如果谁知道这个地方怎么回事，请联系我。</p>
+<p><code>aws-start</code> 启动实例。<code>aws-stop</code> 关闭实例。 另外，很多命令也可以在文件<code>fast-ai-commands.txt</code>里面查看。如果需要删除相关的按照内容，那么依然执行当前courses/setup目录下的<code>fast-ai-remove.sh</code>脚本。</p>
+<p>另外t2的实例是免费的。调代码的时候，最好使用t2实例。p2是每小时0.9美元的价格。使用aws每个月还有固定硬盘的费用，以及绑定固定IP的费用。反正我也不知道，糊里糊涂的每个月200元没了。需要男朋友帮我理这些东西啊。飙泪……以后用习惯了，尝试AWS的竞价模式。</p>
+<p>t2的安装也根据相应的指示来，目录下有t2的安装脚本。</p>
+<p>如果换了一台电脑，那么把原来的密钥对aws-key-fast-ai.pem文件copy到对应目录下面。setup_p2.sh脚本就不用执行了，直接执行一下aws-alias，就可以了。然后通过aws的命令进行登录。</p>
+<p>其实我真的讨厌、害怕做这些事情的。但是没人帮我做。等我有钱了，认识会做的人，让人家帮我做。 太TMD浪费本仙女的青春了。 最近，我的情绪好暴躁啊。</p>
 ]]></content>
     
     <summary type="html">
     
-      
-
+      &lt;p&gt;我最最讨厌的就是做如下的事情。缺个男朋友帮我做这些事情。求老天鹅赐我男友一枚，能帮我配环境的那种。&lt;/p&gt;
+&lt;h2 id=&quot;申请工单&quot;&gt;申请工单&lt;/h2&gt;
+&lt;p&gt;首先要注册一个aws帐号，申请工单的过程请看 &lt;a href=&quot;http://course.fast.ai/le
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>iTerm 快捷键 shortcuts</title>
+    <link href="http://niuoo.github.io/2017/12/19/iTerm-%E5%BF%AB%E6%8D%B7%E9%94%AE-shortcuts/"/>
+    <id>http://niuoo.github.io/2017/12/19/iTerm-快捷键-shortcuts/</id>
+    <published>2017-12-19T08:10:16.000Z</published>
+    <updated>2017-12-19T11:48:27.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>iTerm的快捷键，还是记录一下为好</p>
+<h2 id="文本控制">文本控制</h2>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">⌘ + shift + h      列出剪切板历史</div><div class="line">⌘ + ;              输入前缀几个字母，列出相关输入过的命令</div><div class="line">ctrl +u            清除当前行，无论光标在什么位置</div><div class="line">ctrl + w           删除光标前的单词</div><div class="line">ctrl + k           删除到文本末尾</div><div class="line">ctrl + f/b         前进后退，相当于左右方向键</div><div class="line">ctrl + p           上一条命令，相当于方向键上</div><div class="line">ctrl + r           搜索命令历史</div><div class="line">ctrl + h           删除之前的字符</div><div class="line">ctrl + t           交换光标处文本</div><div class="line">⌘ + —/+/0         调整字体大小，0是恢复默认大小</div><div class="line">⌘ + r              清屏，其实是滚到新的一屏，并没有清空。</div><div class="line">ctrl + l           同上</div><div class="line">⌘+/                高亮当前鼠标的位置</div></pre></td></tr></table></figure>
+<h2 id="窗口切分">窗口切分</h2>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">shift + ⌘ + d    水平方向分割</div><div class="line">⌘ + d            垂直方向分割</div><div class="line">⌘ +`             前一个窗口</div><div class="line">⌘ + ~            后一个窗口</div></pre></td></tr></table></figure>
+<h2 id="回放功能">回放功能</h2>
+<p>即时回放 使用Command + Opt + b 打开即时回放，按Esc退出。即时回放可以记录终端输出的状态，让你“穿越时间”查看终端内容。默认每个会话最多储存4MB的内容，可以在设置中更改（Preferences -&gt; Genernal -&gt; Instant Replay）。这只能回放本次打开的iTerm信息。</p>
+<h2 id="保存窗口状态">保存窗口状态</h2>
+<p>通过 Window -&gt; Save Window Arrangement 可以保存当前窗口状态的快照，包括打开的窗口，标签页和面板。通过 Window -&gt; Restore Window Arrangement 还原。还可以在 Preferences -&gt; General -&gt; Open saved window arrangement 中设置在启动iTerm2时自动恢复窗口状态</p>
+<h2 id="选取文本">选取文本</h2>
+<p>Command + Option 可以用鼠标画出一个矩形，用类似截图的方式选取文本</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;iTerm的快捷键，还是记录一下为好&lt;/p&gt;
+&lt;h2 id=&quot;文本控制&quot;&gt;文本控制&lt;/h2&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/di
     
     </summary>
     
@@ -40,9 +87,9 @@
     <link href="http://niuoo.github.io/2017/12/19/tmux-%E5%BF%AB%E6%8D%B7%E9%94%AE-shortcuts/"/>
     <id>http://niuoo.github.io/2017/12/19/tmux-快捷键-shortcuts/</id>
     <published>2017-12-19T08:09:41.000Z</published>
-    <updated>2017-12-19T10:03:17.000Z</updated>
+    <updated>2017-12-19T11:44:29.000Z</updated>
     
-    <content type="html"><![CDATA[<p>本来打算用一下tmux呢，后来发现还是mac OS下面还是直接iTerm方便，不过切到Linux的时候，估计还是要用tmux吧。 tmux使用也比较简单。先把脑海中的记录一下，防止以后忘记。感觉和vim的使用体验好像啊。我挺不喜欢这种设定。</p>
+    <content type="html"><![CDATA[<p>本来打算用一下tmux呢，后来发现还是mac OS下面还是直接iTerm方便，不过切到Linux的时候，估计还是要用tmux吧。 tmux使用也比较简单。先把脑海中的记录一下，防止以后忘记。感觉和vim的使用体验好像喔。我挺不喜欢这种设定。</p>
 <h2 id="tmux安装">tmux安装</h2>
 <p><code>brew install tmux</code></p>
 <h2 id="新建一个tmux-session">新建一个tmux session</h2>
@@ -81,9 +128,11 @@
 <pre>
 Ctrl+b %        水平分割窗口  
 Ctrl+b "        垂直分割窗口
-Ctrl+b x        kill一个小窗口
+Ctrl+b x        kill pane
 Ctrl+b o        移动光标到不同的一个小窗口 Swap panes
 ctrl+b d        跳出当前的tmux
+Ctrl+B $        Name session
+Ctrl+B s        list session
 </pre>
 <h2 id="管理session">管理session</h2>
 <pre>
@@ -101,7 +150,7 @@ Ctrl+B &      Kill window
     
     <summary type="html">
     
-      &lt;p&gt;本来打算用一下tmux呢，后来发现还是mac OS下面还是直接iTerm方便，不过切到Linux的时候，估计还是要用tmux吧。 tmux使用也比较简单。先把脑海中的记录一下，防止以后忘记。感觉和vim的使用体验好像啊。我挺不喜欢这种设定。&lt;/p&gt;
+      &lt;p&gt;本来打算用一下tmux呢，后来发现还是mac OS下面还是直接iTerm方便，不过切到Linux的时候，估计还是要用tmux吧。 tmux使用也比较简单。先把脑海中的记录一下，防止以后忘记。感觉和vim的使用体验好像喔。我挺不喜欢这种设定。&lt;/p&gt;
 &lt;h2 id=&quot;tmux
     
     </summary>
@@ -786,28 +835,6 @@ Ctrl+B &      Kill window
     
     
       <category term="LeetCode 377 Combination Sum IV" scheme="http://niuoo.github.io/tags/LeetCode-377-Combination-Sum-IV/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>LeetCode 179 Largest Number</title>
-    <link href="http://niuoo.github.io/2016/07/23/Number/"/>
-    <id>http://niuoo.github.io/2016/07/23/Number/</id>
-    <published>2016-07-23T03:42:52.000Z</published>
-    <updated>2016-07-23T03:54:34.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>Given a list of non negative integers, arrange them such that they form the largest number. For example, given [3, 30, 34, 5, 9], the largest formed number is 9534330. Note: The result may be very large, so you need to return a string instead of an integer. 思路：比较两个数连接后的大小进行排序。 Runtime: 125 ms  beats 88.37%</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">largestNumber</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</div><div class="line">	String[] s = <span class="keyword">new</span> String[nums.length];</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length; i++) s[i] = String.valueOf(nums[i]);</div><div class="line">	Arrays.sort(s, (b, a) -&gt; (a.concat(b).compareTo(b.concat(a))));</div><div class="line">	StringBuffer result = <span class="keyword">new</span> StringBuffer(<span class="string">""</span>);</div><div class="line">	<span class="keyword">for</span> (String num : s) result.append(num);</div><div class="line">	<span class="keyword">return</span> result.substring(<span class="number">0</span>, <span class="number">1</span>).equals(<span class="string">"0"</span>) ? <span class="string">"0"</span> : result.toString();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>使用java8的特性： Runtime: 153 ms beats 10.23%</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> String <span class="title">largestNumber2</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</div><div class="line">	String result = Arrays</div><div class="line">			.stream(nums)</div><div class="line">			.mapToObj(Integer::toString)</div><div class="line">			.sorted((b, a) -&gt; (a.concat(b).compareTo(b.concat(a))))</div><div class="line">			.collect(Collectors.joining());</div><div class="line">	<span class="keyword">return</span> result.charAt(<span class="number">0</span>) == <span class="string">'0'</span> ? <span class="string">"0"</span> : result;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Given a list of non negative integers, arrange them such that they form the largest number. For example, given [3, 30, 34, 5, 9], the lar
-    
-    </summary>
-    
     
   </entry>
   

@@ -240,6 +240,103 @@
             
               
                 
+                <a class="post-title-link" href="/2016/07/23/Number/" itemprop="url">
+                  LeetCode 179 Largest Number
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-07-23T11:42:52+08:00" content="Jul 23 2016">
+              Jul 23 2016
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Given a list of non negative integers, arrange them such that they form the largest number. For example, given [3, 30, 34, 5, 9], the largest formed number is 9534330. Note: The result may be very large, so you need to return a string instead of an integer. 思路：比较两个数连接后的大小进行排序。 Runtime: 125 ms  beats 88.37%</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">largestNumber</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</div><div class="line">	String[] s = <span class="keyword">new</span> String[nums.length];</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length; i++) s[i] = String.valueOf(nums[i]);</div><div class="line">	Arrays.sort(s, (b, a) -&gt; (a.concat(b).compareTo(b.concat(a))));</div><div class="line">	StringBuffer result = <span class="keyword">new</span> StringBuffer(<span class="string">""</span>);</div><div class="line">	<span class="keyword">for</span> (String num : s) result.append(num);</div><div class="line">	<span class="keyword">return</span> result.substring(<span class="number">0</span>, <span class="number">1</span>).equals(<span class="string">"0"</span>) ? <span class="string">"0"</span> : result.toString();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>使用java8的特性： Runtime: 153 ms beats 10.23%</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> String <span class="title">largestNumber2</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</div><div class="line">	String result = Arrays</div><div class="line">			.stream(nums)</div><div class="line">			.mapToObj(Integer::toString)</div><div class="line">			.sorted((b, a) -&gt; (a.concat(b).compareTo(b.concat(a))))</div><div class="line">			.collect(Collectors.joining());</div><div class="line">	<span class="keyword">return</span> result.charAt(<span class="number">0</span>) == <span class="string">'0'</span> ? <span class="string">"0"</span> : result;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/07/22/Array/" itemprop="url">
                   LeetCode 215 Kth Largest Element in an Array
                 </a>
@@ -469,7 +566,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">22</span>
+              <span class="site-state-item-count">23</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
