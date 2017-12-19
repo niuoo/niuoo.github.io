@@ -40,7 +40,7 @@
     <link href="http://niuoo.github.io/2017/12/19/tmux-%E5%BF%AB%E6%8D%B7%E9%94%AE-shortcuts/"/>
     <id>http://niuoo.github.io/2017/12/19/tmux-快捷键-shortcuts/</id>
     <published>2017-12-19T08:09:41.000Z</published>
-    <updated>2017-12-19T09:59:17.000Z</updated>
+    <updated>2017-12-19T10:03:17.000Z</updated>
     
     <content type="html"><![CDATA[<p>本来打算用一下tmux呢，后来发现还是mac OS下面还是直接iTerm方便，不过切到Linux的时候，估计还是要用tmux吧。 tmux使用也比较简单。先把脑海中的记录一下，防止以后忘记。感觉和vim的使用体验好像啊。我挺不喜欢这种设定。</p>
 <h2 id="tmux安装">tmux安装</h2>
