@@ -382,13 +382,36 @@
 <h2 id="tmux安装">tmux安装</h2>
 <p><code>brew install tmux</code></p>
 <h2 id="新建一个tmux-session">新建一个tmux session</h2>
-<pre>
-tmux new -s myname                     启动一个session
-tmux a # (or at, or attach)            恢复到已经存在的session number
-tmux a -t myname                       恢复到某个会话
-tmux ls                                列出当前会话 list sessions 
-tmux kill-session -t myname            终止一个session。 Kill session
-</pre>
+<table>
+<thead>
+<tr class="header">
+<th align="left">命令</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">tmux new -s myname</td>
+<td align="left">启动一个session</td>
+</tr>
+<tr class="even">
+<td align="left">tmux a # (or at, or attach)</td>
+<td align="left">恢复到已经存在的session number</td>
+</tr>
+<tr class="odd">
+<td align="left">tmux a -t myname</td>
+<td align="left">恢复到某个会话</td>
+</tr>
+<tr class="even">
+<td align="left">tmux ls</td>
+<td align="left">列出当前会话 list sessions</td>
+</tr>
+<tr class="odd">
+<td align="left">tmux kill-session -t myname</td>
+<td align="left">终止一个session. Kill session</td>
+</tr>
+</tbody>
+</table>
 <h2 id="切窗口-split-panes">切窗口 split panes</h2>
 <p>Ctrl+b 等于是切到命令模式</p>
 <pre>
@@ -408,6 +431,8 @@ Ctrl+B f      Find window
 Ctrl+B ,      Name window
 Ctrl+B &      Kill window
 </pre>
+<h2 id="关掉tmux">关掉tmux</h2>
+<p><code>tmux kill-server</code></p>
 
           
         

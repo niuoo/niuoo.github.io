@@ -73,6 +73,8 @@
 
 
 
+  
+
 
   <link rel="alternate" href="/atom.xml" title="niuoo" type="application/atom+xml" />
 
@@ -91,7 +93,16 @@ tmux安装
 brew install tmux
 新建一个tmux session
 
-tmux new -s myname">
+
+
+命令
+描述
+
+
+
+
+tmux new -s myname
+启动一个s">
 <meta property="og:type" content="article">
 <meta property="og:title" content="tmux 快捷键 shortcuts">
 <meta property="og:url" content="http://niuoo.github.io/2017/12/19/tmux-快捷键-shortcuts/index.html">
@@ -101,8 +112,17 @@ tmux安装
 brew install tmux
 新建一个tmux session
 
-tmux new -s myname">
-<meta property="og:updated_time" content="2017-12-19T08:27:59.000Z">
+
+
+命令
+描述
+
+
+
+
+tmux new -s myname
+启动一个s">
+<meta property="og:updated_time" content="2017-12-19T09:59:17.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="tmux 快捷键 shortcuts">
 <meta name="twitter:description" content="本来打算用一下tmux呢，后来发现还是mac OS下面还是直接iTerm方便，不过切到Linux的时候，估计还是要用tmux吧。 tmux使用也比较简单。先把脑海中的记录一下，防止以后忘记。感觉和vim的使用体验好像啊。我挺不喜欢这种设定。
@@ -110,7 +130,16 @@ tmux安装
 brew install tmux
 新建一个tmux session
 
-tmux new -s myname">
+
+
+命令
+描述
+
+
+
+
+tmux new -s myname
+启动一个s">
 
 
 
@@ -297,13 +326,36 @@ tmux new -s myname">
 <h2 id="tmux安装">tmux安装</h2>
 <p><code>brew install tmux</code></p>
 <h2 id="新建一个tmux-session">新建一个tmux session</h2>
-<pre>
-tmux new -s myname                     启动一个session
-tmux a # (or at, or attach)            恢复到已经存在的session number
-tmux a -t myname                       恢复到某个会话
-tmux ls                                列出当前会话 list sessions 
-tmux kill-session -t myname            终止一个session。 Kill session
-</pre>
+<table>
+<thead>
+<tr class="header">
+<th align="left">命令</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">tmux new -s myname</td>
+<td align="left">启动一个session</td>
+</tr>
+<tr class="even">
+<td align="left">tmux a # (or at, or attach)</td>
+<td align="left">恢复到已经存在的session number</td>
+</tr>
+<tr class="odd">
+<td align="left">tmux a -t myname</td>
+<td align="left">恢复到某个会话</td>
+</tr>
+<tr class="even">
+<td align="left">tmux ls</td>
+<td align="left">列出当前会话 list sessions</td>
+</tr>
+<tr class="odd">
+<td align="left">tmux kill-session -t myname</td>
+<td align="left">终止一个session. Kill session</td>
+</tr>
+</tbody>
+</table>
 <h2 id="切窗口-split-panes">切窗口 split panes</h2>
 <p>Ctrl+b 等于是切到命令模式</p>
 <pre>
@@ -323,6 +375,8 @@ Ctrl+B f      Find window
 Ctrl+B ,      Name window
 Ctrl+B &      Kill window
 </pre>
+<h2 id="关掉tmux">关掉tmux</h2>
+<p><code>tmux kill-server</code></p>
 
       
     </div>
@@ -472,7 +526,7 @@ Ctrl+B &      Kill window
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#tmux安装"><span class="nav-number">1.</span> <span class="nav-text">tmux安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#新建一个tmux-session"><span class="nav-number">2.</span> <span class="nav-text">新建一个tmux session</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#切窗口-split-panes"><span class="nav-number">3.</span> <span class="nav-text">切窗口 split panes</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#管理session"><span class="nav-number">4.</span> <span class="nav-text">管理session</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#tmux安装"><span class="nav-number">1.</span> <span class="nav-text">tmux安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#新建一个tmux-session"><span class="nav-number">2.</span> <span class="nav-text">新建一个tmux session</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#切窗口-split-panes"><span class="nav-number">3.</span> <span class="nav-text">切窗口 split panes</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#管理session"><span class="nav-number">4.</span> <span class="nav-text">管理session</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关掉tmux"><span class="nav-number">5.</span> <span class="nav-text">关掉tmux</span></a></li></ol></div>
             
           </div>
         </section>
