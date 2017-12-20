@@ -289,15 +289,21 @@
 <p>首先要注册一个aws帐号，申请工单的过程请看 <a href="http://course.fast.ai/lessons/aws.html" target="_blank" rel="external">AWS Lesson</a>，根据视频要求填写，填写申请描述的时候，根据视频填写fast-ai-course，这个貌似是人家搞好的，所以填写完相关信息，提交后就不用管了，可以进行后续操作了。注意一点，我们申请的是<strong>p2</strong>的实例，貌似中国没有，所以选区域的时候，最好填写<strong>us-west-2 俄勒冈</strong>。</p>
 <h1 id="生成密钥对-key-pair">生成密钥对 key-pair</h1>
 <p>生成密钥对，如下图所示，点进去后，就可以create了，密钥对名称最好叫做aws-key-fast-ai，因为脚本里面是这么写的嘛，密钥对创建后，会被自动下载到本地，下载完，请手动copy到目录~/.ssh/aws-key-fast-ai.pem <img src="/media/15136997192930.jpg"></p>
-<h1 id="执行setup_p2.sh脚本">执行setup_p2.sh脚本</h1>
-<p>首先，执行 git clone https://github.com/fastai/courses.git ，获取相关的执行脚本，所有环境脚本在相对目录courses/setup下面。</p>
+<h1 id="获取安装脚本">获取安装脚本</h1>
+<p>执行 git clone https://github.com/fastai/courses.git ，获取相关的执行脚本，所有环境脚本在相对目录courses/setup下面。</p>
+<h1 id="执行alias脚本">执行alias脚本</h1>
 <p>aws-alias.sh 这个脚本是一个alias命令脚本，给命令起别名，以简化命令。这个脚本执行完，alias的命令只能在当前目录下生效，若想在iTerm全局生效，还要添加到环境变量，在文件.zshrc里面添加<code>source ~/deeplearning/courses/setup/aws-alias.sh</code>，当然了，这是我自己的路径，此处请酌情换成你自己的路径，我的系统是mac OS X。</p>
 <p>如果出现aws命令不识别的情况，那么请先敲命令<code>pip install awscli</code></p>
-<p>由于前面密钥对生成完了，我们就可以执行setup_p2.sh脚本，这个脚本会让AWS创建一个实例，并且启动实例。</p>
+<h1 id="执行setup_p2.sh脚本">执行setup_p2.sh脚本</h1>
+<p>前面密钥对生成完了，我们就可以执行setup_p2.sh脚本，这个脚本会让AWS创建一个实例，并且启动实例。必须有密钥对，本步骤才可以执行喔。就是要有<code>~/.ssh/aws-key-fast-ai.pem</code>这个文件</p>
 <p>启动完，可以使用<code>aws-get-p2</code>，获取实例名称，如果创建好实例，会出现『i-0cfc671a9e32fb6a4』之类的实例ID。<code>aws-ip</code>可以获取弹性ip。这些aws相关的命令，可以通过<code>cat aws-alias.sh</code>进行查看。</p>
 <p>aws configure 可以查看aws的相关配置信息，自己不要输入修改了，这个是干嘛的，我也不知道，其实相关的信息我也进行了修改，but没什么用啊，如果谁知道，联系我喔。</p>
+<h1 id="登录">登录</h1>
 <p>最后，直接通过aws-ssh，就可以登录AWS的ubuntu啦！出现如下界面，代表着陆成功。 <img src="/media/15137016427663.jpg"> 那么问题来了，今天下午15点的时候，谁登录了我的ip，这里到底是怎么回事，Last login是谁搞得，反正不是我。如果谁知道这个地方怎么回事，请联系我。</p>
-<p><code>aws-start</code> 启动实例。<code>aws-stop</code> 关闭实例。 另外，很多命令也可以在文件<code>fast-ai-commands.txt</code>里面查看。如果需要删除相关的按照内容，那么执行当前courses/setup目录下的<code>fast-ai-remove.sh</code>脚本。</p>
+<h1 id="从此以后如何启动关闭实例">从此以后，如何启动关闭实例</h1>
+<p><code>aws-start</code> 启动实例。<code>aws-stop</code> 关闭实例。</p>
+<p>另外，很多命令也可以在文件<code>fast-ai-commands.txt</code>里面查看。如果需要删除相关的按照内容，那么执行当前courses/setup目录下的<code>fast-ai-remove.sh</code>脚本。</p>
+<h1 id="其他">其他</h1>
 <p>另外t2的实例是免费的。调代码的时候，最好使用t2实例。p2是每小时0.9美元的价格。使用aws每个月还有固定硬盘的费用，以及绑定固定IP的费用。反正我也不知道，糊里糊涂的每个月200元没了。需要男朋友帮我理这些东西啊。飙泪……以后用习惯了，尝试AWS的竞价模式。</p>
 <p>t2的安装也根据相应的指示来，目录下有t2的安装脚本。</p>
 <p>如果换了一台电脑，那么把原来的密钥对aws-key-fast-ai.pem文件copy到对应目录下面。setup_p2.sh脚本就不用执行了，直接执行一下aws-alias，就可以了。然后通过aws的命令进行登录。</p>
