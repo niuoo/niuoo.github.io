@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://niuoo.github.io/"/>
-  <updated>2017-12-20T09:37:24.000Z</updated>
+  <updated>2017-12-20T18:35:01.000Z</updated>
   <id>http://niuoo.github.io/</id>
   
   <author>
@@ -20,9 +20,9 @@
     <link href="http://niuoo.github.io/2017/12/19/fast-ai-%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
     <id>http://niuoo.github.io/2017/12/19/fast-ai-环境配置/</id>
     <published>2017-12-19T15:52:23.000Z</published>
-    <updated>2017-12-20T09:37:24.000Z</updated>
+    <updated>2017-12-20T18:35:01.000Z</updated>
     
-    <content type="html"><![CDATA[<p>我最最讨厌的就是做如下的事情。缺个男朋友帮我做这些事情。求老天鹅赐我男友一枚，能帮我配环境的那种。</p>
+    <content type="html"><![CDATA[<p>我最最讨厌的就是做如下的事情。求老天鹅赐男友一枚，能帮我配环境的那种。</p>
 <h1 id="申请工单">申请工单</h1>
 <p>首先要注册一个aws帐号，申请工单的过程请看 <a href="http://course.fast.ai/lessons/aws.html" target="_blank" rel="external">AWS Lesson</a>，根据视频要求填写，填写申请描述的时候，根据视频填写fast-ai-course，这个貌似是人家搞好的，所以填写完相关信息，提交后就不用管了，可以进行后续操作了。注意一点，我们申请的是<strong>p2</strong>的实例，貌似中国没有，所以选区域的时候，最好填写<strong>us-west-2 俄勒冈</strong>。</p>
 <h1 id="生成密钥对-key-pair">生成密钥对 key-pair</h1>
@@ -37,22 +37,23 @@
 <p>启动完，可以使用<code>aws-get-p2</code>，获取实例名称，如果创建好实例，会出现『i-0cfc671a9e32fb6a4』之类的实例ID。<code>aws-ip</code>可以获取弹性ip。这些aws相关的命令，可以通过<code>cat aws-alias.sh</code>进行查看。</p>
 <p>aws configure 可以查看aws的相关配置信息，自己不要输入修改了，这个是干嘛的，我也不知道，其实相关的信息我也进行了修改，but没什么用啊，如果谁知道，联系我喔。</p>
 <h1 id="登录">登录</h1>
-<p>最后，直接通过aws-ssh，就可以登录AWS的ubuntu啦！出现如下界面，代表着陆成功。 <img src="/media/15137016427663.jpg"> 那么问题来了，今天下午15点的时候，谁登录了我的ip，这里到底是怎么回事，Last login是谁搞得，反正不是我。如果谁知道这个地方怎么回事，请联系我。</p>
+<p>最后，直接通过aws-ssh，就可以登录AWS的ubuntu啦！出现如下界面，代表着陆成功。 <img src="/media/15137016427663.jpg"></p>
+<p>那么问题来了，今天下午15点的时候，谁登录了我的ip，这里到底是怎么回事，Last login是谁搞得，反正不是我。如果谁知道这个地方怎么回事，请联系我。</p>
 <h1 id="从此以后如何启动关闭实例">从此以后，如何启动关闭实例</h1>
 <p><code>aws-start</code> 启动实例。<code>aws-stop</code> 关闭实例。</p>
 <p>另外，很多命令也可以在文件<code>fast-ai-commands.txt</code>里面查看。如果需要删除相关的按照内容，那么执行当前courses/setup目录下的<code>fast-ai-remove.sh</code>脚本。</p>
 <h1 id="其他">其他</h1>
-<p>另外t2的实例是免费的。调代码的时候，最好使用t2实例。p2是每小时0.9美元的价格。使用aws每个月还有固定硬盘的费用，以及绑定固定IP的费用。反正我也不知道，糊里糊涂的每个月200元没了。需要男朋友帮我理这些东西啊。飙泪……以后用习惯了，尝试AWS的竞价模式。</p>
+<p>t2的实例是免费的。调代码的时候，最好使用t2实例。p2是每小时0.9美元的价格。使用aws每个月还有固定硬盘的费用，以及绑定固定IP的费用。反正我也不知道，糊里糊涂的每个月200元没了。飙泪……以后用习惯了，尝试AWS的竞价模式。</p>
 <p>t2的安装也根据相应的指示来，目录下有t2的安装脚本。</p>
 <p>如果换了一台电脑，那么把原来的密钥对aws-key-fast-ai.pem文件copy到对应目录下面。setup_p2.sh脚本就不用执行了，直接执行一下aws-alias，就可以了。然后通过aws的命令进行登录。</p>
-<p>其实我真的讨厌、害怕做这些事情的。但是没人帮我做。等我有钱了，认识会做的人，花钱让人家帮我做。 太TMD浪费本仙女的青春了。最近，我的情绪好暴躁啊。</p>
+<p>其实我真的讨厌、害怕做这些事情的。但是没人帮我做。等我有钱了，认识会做的人，花钱让人家帮我做。 太浪费本仙女的青春了。最近，我的情绪好暴躁啊。</p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;我最最讨厌的就是做如下的事情。缺个男朋友帮我做这些事情。求老天鹅赐我男友一枚，能帮我配环境的那种。&lt;/p&gt;
+      &lt;p&gt;我最最讨厌的就是做如下的事情。求老天鹅赐男友一枚，能帮我配环境的那种。&lt;/p&gt;
 &lt;h1 id=&quot;申请工单&quot;&gt;申请工单&lt;/h1&gt;
-&lt;p&gt;首先要注册一个aws帐号，申请工单的过程请看 &lt;a href=&quot;http://course.fast.ai/le
+&lt;p&gt;首先要注册一个aws帐号，申请工单的过程请看 &lt;a href=&quot;http://course.fast.ai/lessons/aws.html
     
     </summary>
     
