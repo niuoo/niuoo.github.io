@@ -240,6 +240,329 @@
             
               
                 
+                <a class="post-title-link" href="/2017/12/31/keras-修改-backend/" itemprop="url">
+                  keras 修改 backend
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2017-12-31T21:32:07+08:00" content="Dec 31 2017">
+              Dec 31 2017
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="keras后端">Keras后端</h2>
+<p>什么是“后端” Keras是一个模型级的库，提供了快速构建深度学习网络的模块。Keras并不处理如张量乘法、卷积等底层操作。这些操作依赖于某种特定的、优化良好的张量操作库。Keras依赖于处理张量的库就称为“后端引擎”。Keras提供了三种后端引擎Theano/Tensorflow/CNTK，并将其函数统一封装，使得用户可以以同一个接口调用不同后端引擎的函数</p>
+<p>CNTK是微软家的。</p>
+<h2 id="keras修改backend的方法">keras修改backend的方法</h2>
+<p>如果你至少运行过一次Keras，你将在下面的目录下找到Keras的配置文件：</p>
+<p><code>$HOME/.keras/keras.json</code> 如果该目录下没有该文件，你可以手动创建一个</p>
+<p>文件的默认配置如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    &quot;image_data_format&quot;: &quot;channels_last&quot;,</div><div class="line">    &quot;epsilon&quot;: 1e-07,</div><div class="line">    &quot;floatx&quot;: &quot;float32&quot;,</div><div class="line">    &quot;backend&quot;: &quot;tensorflow&quot;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>将backend字段的值改写为你需要使用的后端：theano或tensorflow或者CNTK，即可完成后端的切换</p>
+<p>我们也可以通过定义环境变量KERAS_BACKEND来覆盖上面配置文件中定义的后端：</p>
+<p><code>KERAS_BACKEND=tensorflow python -c &quot;from keras import backend;&quot;</code></p>
+<h2 id="using-tensorflow-backend.">Using TensorFlow backend.</h2>
+<p>keras.json 细节</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    &quot;image_data_format&quot;: &quot;channels_last&quot;,</div><div class="line">    &quot;epsilon&quot;: 1e-07,</div><div class="line">    &quot;floatx&quot;: &quot;float32&quot;,</div><div class="line">    &quot;backend&quot;: &quot;tensorflow&quot;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>或者</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    &quot;image_dim_ordering&quot;: &quot;tf&quot;, </div><div class="line">    &quot;epsilon&quot;: 1e-07, </div><div class="line">    &quot;floatx&quot;: &quot;float32&quot;, </div><div class="line">    &quot;backend&quot;: &quot;tensorflow&quot;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="using-theano-backend.">Using Theano backend.</h2>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    &quot;image_dim_ordering&quot;: &quot;th&quot;, </div><div class="line">    &quot;epsilon&quot;: 1e-07, </div><div class="line">    &quot;floatx&quot;: &quot;float32&quot;, </div><div class="line">    &quot;backend&quot;: &quot;theano&quot;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>但是上面这种方式有一个弊端就是每次当你想切换backend的时候都需要手动修改这个文件，所以有一种能够动态修改的方式不是更好吗？请看下面的方法：</p>
+<h2 id="代码载入backend">代码载入backend</h2>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> os</div><div class="line">os.environ[<span class="string">'KERAS_BACKEND'</span>] = <span class="string">'tensorflow'</span></div><div class="line"><span class="keyword">import</span> keras.backend <span class="keyword">as</span> K</div><div class="line">K.set_image_dim_ordering(<span class="string">'tf'</span>)</div></pre></td></tr></table></figure>
+<p>首先载入os库，将keras的backend修改为tensorflow，再将keras的backend加载，设置order为tensorflow格式。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/12/27/推荐系统/" itemprop="url">
+                  推荐系统
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2017-12-27T11:36:23+08:00" content="Dec 27 2017">
+              Dec 27 2017
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="svd">SVD++</h1>
+<p>关于SVD++，看这篇博客 <a href="https://plushunter.github.io/2017/03/07/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AE%97%E6%B3%95%E7%B3%BB%E5%88%97%EF%BC%8813%EF%BC%89%EF%BC%9A%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F%EF%BC%883%EF%BC%89%E2%80%94%E2%80%94%E7%9F%A9%E9%98%B5%E5%88%86%E8%A7%A3%E6%8A%80%E6%9C%AF/" target="_blank" rel="external">矩阵分解技术</a></p>
+<h1 id="word2vec">Word2Vec</h1>
+<p><a href="https://www.cnblogs.com/peizhe123/p/7447164.html" target="_blank" rel="external">58同城的推荐</a> 深度学习正逐渐被各大公司应用于推荐系统中，我们也正在进行尝试。目前，我们已将FNN（Factorisation machine supported neuralnetwork）模型应用在我们的推荐排序中，相比单机器学习模型，FNN有较稳定的效果提升，但比融合模型效果要稍差，目前我们正在进行深度模型的调优，并在尝试引入Wide&amp;Deep等其他深度模型。</p>
+<p>网易考拉的这篇是对用户的历史购买订单使用FNN，然后对用户的实时浏览点击网页使用RNN<a href="https://arxiv.org/pdf/1706.10231.pdf" target="_blank" rel="external">网易考拉推荐系统</a></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/12/27/2017-12-27/" itemprop="url">
+                  Untitled
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2017-12-27T10:57:15+08:00" content="Dec 27 2017">
+              Dec 27 2017
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="section"></h1>
+<p>Simon Funk在博客上公开发表了一个只考虑已有评分记录的矩阵分解方法，称为Funk-SCD，也就是被Yehuda Koren称为隐语义模型的矩阵分解方法。</p>
+<p>它的出发点为，既然将一个矩阵做SVD分解成3个矩阵很耗时，同时还面临稀疏的问题，那么我们能不能避开稀疏问题，同时只分解成两个矩阵呢？也就是说，现在期望我们的矩阵M这样进行分解：<span class="math">\[M_{m\times n}=P^T_{m\times k}Q_{k\times n}\]</span>我们知道SVD分解已经很成熟了，但是Funk-SVD如何将矩阵M分解成为P和Q呢？这里采用了线性回归的思想。我们的目标是让用户的评分和用矩阵乘积得到的评分残差尽可能的小，也就是说，可以用均方差作为损失函数，来寻找最终的P和Q。</p>
+<p>对于某一个用户评分<span class="math">\(m_{ij}\)</span>如果用Funk-SVD进行矩阵分解，则对应的表示为<span class="math">\(q_j^Tp_i\)</span>，采用均方差作为损失函数，则我们期望<span class="math">\((m_{ij}-q_j^Tp_i)^2\)</span>尽可能的小，如果考虑所有的物品和样本的组合，则我们期望最小化下式：<span class="math">\[\sum_{i，j}(m_{ij}-q^T_jp_i)^2\]</span>只要我们能够最小化上面的式子，并求出极值所对应的<span class="math">\(p_i,q_j\)</span>，则我们最终可以得到矩阵P和Q，那么对于任意矩阵M任意一个空白评分的位置，我们可以通过<span class="math">\(q_j^Tp_i\)</span>计算预测评分，很漂亮的方法！</p>
+<p>当然，在实际应用中，为了防止过拟合，会加入一个<span class="math">\(L_2\)</span>的正则化项，因此正是的Funk-SVD的优化目标函数<span class="math">\(J(p,q)\)</span>是这样的：<span class="math">\[arg \underset {p_jq_j}{min}\sum_{(i,j)\in K}(m_{ij}-q_j^Tp_i)^2+\lambda (||p_i||^2_2+||q_j||^2_2)\]</span>其中<span class="math">\(K\)</span>为已有评分记录的<span class="math">\((i,j)\)</span>对集合，<span class="math">\(m_{ij}\)</span>为用户<span class="math">\(i\)</span>对物品<span class="math">\($j\)</span>的真实评分，<span class="math">\(\lambda\)</span>是正则化系数，需要调参。假设输入评分矩阵为M，它是<span class="math">\(M \times N\)</span>维矩阵，通过直接优化以上损失函数得到用户特征矩阵<span class="math">\(P(M\times N)\)</span>和物品特征矩阵<span class="math">\(Q(K\times N)\)</span>,其中<span class="math">\(K&lt;&lt;M，N\)</span>。对于这个优化问题，一般通过梯度下降法来进行优化得到结果。</p>
+<p>将上式分别对<span class="math">\(p_i,q_j\)</span>求导我们得到：<span class="math">\[\frac{∂J}{∂p_i}=-2(m_{ij}-q_j^Tp_i)q_j+2\lambda p_i\]</span><span class="math">\[\frac{∂J}{∂q_j}=-2(m_{ij}-q_j^Tp_i)p_i+2\lambda q_j\]</span>在梯度下降法迭代时，<span class="math">\(p_i,q_j\)</span>的迭代公式为：<span class="math">\[p_i=p_i=\alpha [(m_{ij}-q_j^Tp_i)q_j-\lambda p_i]\]</span><span class="math">\[q_j=q_j+\alpha [(m_{ij}-q_j^Tp_i)p_i-\lambda q_j ]\]</span> 通过迭代我们最终可以得到P和Q，进而用于推荐。Funk-SVD算法虽然思想很简单，但在实际应用中效果非常好，这真是验证了大道至简。</p>
+<p>三、Bias-SVD 在Funk-SVD算法火爆之后，出现了很多Funk-SVD的改进版算法。其中Bias算是改进的比较成功的一种算法。</p>
+<p>Funk-SVD方法通过学习用户和物品的特征向量进行预测，即用户和物品的交互信息。用户的特征向量代表了用户的兴趣，物品的特征向量代表了物品的特点，且每一个维度相互对应，两个向量的内积表示用户对该物品的喜好程度。但是我们观测到的评分数据大部分都是都是和用户或物品无关的因素产生的效果，即有很大一部分因素是和用户对物品的喜好无关而只取决于用户或物品本身特性的。例如，对于乐观的用户来说，它的评分行为普遍偏高，而对批判性用户来说，他的评分记录普遍偏低，即使他们对同一物品的评分相同，但是他们对该物品的喜好程度却并不一样。同理，对物品来说，以电影为例，受大众欢迎的电影得到的评分普遍偏高，而一些烂片的评分普遍偏低，这些因素都是独立于用户或产品的因素，而和用户对产品的的喜好无关。</p>
+<p>我们把这些独立于用户或独立于物品的因素称为偏置(Bias)部分，将用户和物品的交互即用户对物品的喜好部分称为个性化部分。事实上，在矩阵分解模型中偏好部分对提高评分预测准确率起的作用要大大高于个性化部分所起的作用，以Netflix Prize推荐比赛数据集为例为例，Yehuda Koren仅使用偏置部分可以将评分误差降低32%，而加入个性化部分能降低42%，也就是说只有10%是个性化部分起到的作用，这也充分说明了偏置部分所起的重要性，剩下的58%的误差Yehuda Koren将称之为模型不可解释部分，包括数据噪音等因素。</p>
+<p>偏置部分主要由三个子部分组成，分别是</p>
+<p>训练集中所有评分记录的全局平均数<span class="math">\(\mu\)</span>，表示了训练数据的总体评分情况，对于固定的数据集，它是一个常数。 用户偏置<span class="math">\(b_i\)</span>，独立于物品特征的因素，表示某一特定用户的打分习惯。例如，对于批判性用户对于自己的评分比较苛刻，倾向于打低分；而乐观型用户则打分比较保守，总体打分要偏高。 物品偏置<span class="math">\(b_j\)</span>，特立于用户兴趣的因素，表示某一特定物品得到的打分情况。以电影为例，好片获得的总体评分偏高，而烂片获得的评分普遍偏低，物品偏置捕获的就是这样的特征。 则偏置部分表示为<span class="math">\[b_{ij}=\mu+b_i+b_j\]</span>则加入了偏置项以后的优化目标函数<span class="math">\(J(p,q)\)</span>是这样<span class="math">\[arg \underset {p_jq_j}{min}\sum_{(i,j)\in K}(m_{ij}-\mu-b_i-b_j-q_j^Tp_i)^2+\lambda (||p_i||^2_2+||q_j||^2_2+||b_i||_2^2+||b_j||_2^2)\]</span>这个优化目标也可以采用梯度下降法求解。和Funk-SVD不同的是，此时我们多了两个偏置项<span class="math">\(b_i,b_j\)</span>,<span class="math">\(p_i,p_j\)</span>的迭代公式和<span class="math">\(Funk-SVD\)</span>类似，只是每一步的梯度导数稍有不同而已。而<span class="math">\(b_i,b_j\)</span>一般可以初始设置为0向量，然后参与迭代。<span class="math">\[b_i=b_i+α(m_{ij}−μ−b_i−b_j−q^T_jp_i−λb_i)\]</span><span class="math">\[b_j=b_j+α(m_{ij}−μ−b_i−b_j−q^T_jp_i−λb_j)\]</span>通过迭代我们最终可以得到<span class="math">\(P\)</span>和<span class="math">\(Q\)</span>，进而用于推荐。Bias-SVD增加了一些额外因素的考虑，因此在某些场景会比FunkSVD表现好。</p>
+<p>四、SVD++ SVD++算法在Bias-SVD算法上进一步做了增强，这里它增加考虑用户的隐式反馈。</p>
+<p>对于某一个用户<span class="math">\(i\)</span>，它提供了隐式反馈的物品集合定义为<span class="math">\(N(i)\)</span>，这个用户对某个物品<span class="math">\(j\)</span>对应的隐式反馈修正的评分值为<span class="math">\(c_{ij}\)</span>，那么该用户所有的评分修正值为<span class="math">\(\sum_{s\in N(i)} c_{sj}\)</span>，一般我们将它们表示为用<span class="math">\(q_j^Ty_s\)</span>形式，则加入了隐式反馈以后的优化目标函数<span class="math">\(J(p,q)\)</span>是这样的：<span class="math">\[arg \underset {p_jq_j}{min}\sum_{(i,j)\in K}(m_{ij}-\mu-b_i-b_j-q_j^Tp_i-q_j^T|N(i)|^{-1/2}\Sigma_{s\in N(i)} y_s)^2+\lambda (||p_i||^2_2+||q_j||^2_2+||b_i||_2^2+||b_j||_2^2+\Sigma_{s\in N(i)}||y_s||^2)\]</span>其中，引入<span class="math">\(|N(i)|^{-1/2}\)</span>是为了消除不同<span class="math">\(|N(i)|\)</span>个数引起的差异。如果需要考虑用户的隐式反馈时，使用SVD++是个不错的选择。</p>
+<p>五、矩阵分解的优缺点 矩阵分解方法将高维User-Item评分矩阵映射为两个低维用户和物品矩阵，解决了数据稀疏性问题。</p>
+<p>使用矩阵分解具有以下优点：</p>
+<p>比较容易编程实现，随机梯度下降方法依次迭代即可训练出模型。比较低的时间和空间复杂度，高维矩阵映射为两个低维矩阵节省了存储空间，训练过程比较费时，但是可以离线完成；评分预测一般在线计算，直接使用离线训练得到的参数，可以实时推荐。 预测的精度比较高，预测准确率要高于基于领域的协同过滤以及内容过滤等方法。 非常好的扩展性，很方便在用户特征向量和物品特征向量中添加其它因素，例如添加隐性反馈因素的SVD++，此方法的详细实现参见文献《Koren Y. Factorization meets the neighborhood: a multifaceted collaborative filtering model》；添加时间动态time SVD++，此方法将偏置部分和用户兴趣都表示成一个关于时间的函数，可以很好的捕捉到用户的兴趣漂移，欲知详细实现请阅读文献《Koren Y. Collaborative filtering with temporal dynamics》。 矩阵分解的不足主要有：</p>
+<p>模型训练比较费时。 推荐结果不具有很好的可解释性，分解出来的用户和物品矩阵的每个维度* 无法和现实生活中的概念来解释，无法用现实概念给每个维度命名，只能理解为潜在语义空间。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2017/12/22/2017-12-23日记/" itemprop="url">
                   2017-12-23日记
                 </a>
@@ -1016,302 +1339,6 @@ Ctrl+B &      Kill window
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/07/12/召回率/" itemprop="url">
-                  召回率
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2017-07-12T22:01:59+08:00" content="Jul 12 2017">
-              Jul 12 2017
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><img src="/media/14998682171580.jpg"> <img src="/media/14998682636712.jpg"></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/06/06/林轩田机器学习基石笔记/" itemprop="url">
-                  林轩田机器学习基石笔记
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2017-06-06T16:36:53+08:00" content="Jun 6 2017">
-              Jun 6 2017
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><a href="https://github.com/niuoo/machine-learning-foundations/tree/master/foundations" target="_blank" rel="external"><strong>我的课程作业源码github地址</strong></a></p>
-<p><a href="https://www.douban.com/doulist/3381853/" target="_blank" rel="external">这位同学的笔记做的很好</a> <img src="/media/14966834620659.jpg"> 知错能改，善莫大焉！:-)</p>
-<p><img src="/media/14998352577521.jpg"> <a href="https://www.douban.com/note/319669984/" target="_blank" rel="external">PLA(Perceptron Learning Algorithm)感知机算法有效性证明过程</a>PLA不断进行错误修正的算法，是可以停下来的。可是这个算法有个很大的缺点，因为此算法必须建立在假设线性可分的基础上。如果假设不成立的话，PLA根本跑得停不下来。一开始我们是不会知道PLA能不能停下来的，这个时候可采用Pocket Algorithm，做得还不错。 <img src="/media/14998653580014.jpg"></p>
-<div class="figure">
-<img src="/media/14999565852705.jpg">
-
-</div>
-<p>Hoeffding’s inequality Hoeffding不等式 <img src="/media/15002855220854.jpg"></p>
-<p><img src="/media/15002612963279.jpg"> 看到这一点的时候颇为迷惑，B(3,3)=7，B(4,3)是通过复制B(3,3)的一部分得来的。那么为什么α(复制的部分)需要no shatter any 2，其实想想假如 α shatter 2了，也就是B(3,2)，那么复制后，加上<span class="math">\(x_4\)</span>总共8种情形，必然是shatter 3 了，因为<span class="math">\(8 = 2^3\)</span>。 所以，得到：B(4,3) = 2*a + b &lt;= B(3,3) + B(3,2). 对于任意N &gt; k, 利用上述思路，可以证明 B(N,k) &lt;= B(N-1, k) + B(N-1,k-1). 有了递推不等式，通过数学归纳法，可证明下面的Bounding Function (N &gt; k) : <img src="/media/15002711060448.jpg"></p>
-<p>归纳法证明过程如下： <img src="/media/15002882090009.jpg"></p>
-<p>为什么机器学习是有效的？ <img src="/media/15002851562508.jpg"></p>
-<div class="figure">
-<img src="/media/15008820248463.jpg">
-
-</div>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/05/19/做个机器学习Python调包侠/" itemprop="url">
-                  做个机器学习Python调包侠
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2017-05-19T14:39:55+08:00" content="May 19 2017">
-              May 19 2017
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>算法</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1357,7 +1384,7 @@ Ctrl+B &      Kill window
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">24</span>
+              <span class="site-state-item-count">27</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
