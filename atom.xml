@@ -97,7 +97,7 @@
     <link href="http://niuoo.github.io/2017/12/31/keras-%E4%BF%AE%E6%94%B9-backend/"/>
     <id>http://niuoo.github.io/2017/12/31/keras-修改-backend/</id>
     <published>2017-12-31T13:32:07.000Z</published>
-    <updated>2018-01-29T02:32:27.000Z</updated>
+    <updated>2018-02-04T15:06:08.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="keras后端">Keras后端</h2>
 <p>什么是“后端” Keras是一个模型级的库，提供了快速构建深度学习网络的模块。Keras并不处理如张量乘法、卷积等底层操作。这些操作依赖于某种特定的、优化良好的张量操作库。Keras依赖于处理张量的库就称为“后端引擎”。Keras提供了三种后端引擎Theano/Tensorflow/CNTK，并将其函数统一封装，使得用户可以以同一个接口调用不同后端引擎的函数</p>
@@ -117,10 +117,6 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    &quot;image_dim_ordering&quot;: &quot;tf&quot;, </div><div class="line">    &quot;epsilon&quot;: 1e-07, </div><div class="line">    &quot;floatx&quot;: &quot;float32&quot;, </div><div class="line">    &quot;backend&quot;: &quot;tensorflow&quot;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h2 id="using-theano-backend.">Using Theano backend.</h2>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    &quot;image_dim_ordering&quot;: &quot;th&quot;, </div><div class="line">    &quot;epsilon&quot;: 1e-07, </div><div class="line">    &quot;floatx&quot;: &quot;float32&quot;, </div><div class="line">    &quot;backend&quot;: &quot;theano&quot;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<div class="figure">
-<img src="/media/15150431198255.jpg">
-
-</div>
 <p>但是上面这种方式有一个弊端就是每次当你想切换backend的时候都需要手动修改这个文件，所以有一种能够动态修改的方式不是更好吗？请看下面的方法：</p>
 <h2 id="代码载入backend">代码载入backend</h2>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> os</div><div class="line">os.environ[<span class="string">'KERAS_BACKEND'</span>] = <span class="string">'tensorflow'</span></div><div class="line"><span class="keyword">import</span> keras.backend <span class="keyword">as</span> K</div><div class="line">K.set_image_dim_ordering(<span class="string">'tf'</span>)</div></pre></td></tr></table></figure>
@@ -169,7 +165,7 @@
     <link href="http://niuoo.github.io/2017/12/19/fast-ai-%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
     <id>http://niuoo.github.io/2017/12/19/fast-ai-环境配置/</id>
     <published>2017-12-19T15:52:23.000Z</published>
-    <updated>2018-01-29T02:32:35.000Z</updated>
+    <updated>2018-02-04T15:06:54.000Z</updated>
     
     <content type="html"><![CDATA[<p>我最最讨厌的就是做如下的事情。求老天鹅赐男友一枚，能帮我配环境的那种。</p>
 <h1 id="申请工单">申请工单</h1>
@@ -195,7 +191,7 @@
 <p>t2的实例是免费的。调代码的时候，最好使用t2实例。p2是每小时0.9美元的价格。使用aws每个月还有固定硬盘的费用，以及绑定固定IP的费用。反正我也不知道，糊里糊涂的每个月200元没了。飙泪……以后用习惯了，尝试AWS的竞价模式。</p>
 <p>t2的安装也根据相应的指示来，目录下有t2的安装脚本。</p>
 <p>如果换了一台电脑，那么把原来的密钥对aws-key-fast-ai.pem文件copy到对应目录下面。setup_p2.sh脚本就不用执行了，直接执行一下aws-alias，就可以了。然后通过aws的命令进行登录。</p>
-<p>其实我真的讨厌、害怕做这些事情的。但是没人帮我做。等我有钱了，认识会做的人，花钱让人家帮我做。 太浪费本仙女的青春了。最近，我的情绪好暴躁啊。</p>
+<p>最近，我的情绪好暴躁啊。</p>
 ]]></content>
     
     <summary type="html">
@@ -350,10 +346,10 @@ Ctrl+B &      Kill window
     <link href="http://niuoo.github.io/2017/12/17/2017-12-16%E6%97%A5%E8%AE%B0-1/"/>
     <id>http://niuoo.github.io/2017/12/17/2017-12-16日记-1/</id>
     <published>2017-12-16T20:21:53.000Z</published>
-    <updated>2018-01-29T02:33:26.000Z</updated>
+    <updated>2018-02-04T15:08:38.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="安排">2017-12-16安排</h1>
-<p>14:00~17:00 看fast.ai 3个小时 我了个擦擦的，气死啦。搞了一下午的固定IP绑定之类的，最后也没搞好，还是用dns登录的。算了算了。明天继续看课程。√</p>
+<p>14:00~17:00 我了个擦擦的，气死啦。</p>
 <p>17:00~17:30 玩儿半个小时。吃了羊肉抓饭。买的烤鸡翅，送来的是羊肉串。√</p>
 <p>17:30~20:00 看<a href="https://mp.weixin.qq.com/s?__biz=MzIzMjU1NTg3Ng==&amp;mid=2247486415&amp;idx=1&amp;sn=b50f4cc8ef9cd4d4d34cbdb0d30b4afc&amp;chksm=e8925fc4dfe5d6d217d46bca560eb7030232c14183cf0b791aa9af7da5671ac536f8a45693f5&amp;mpshare=1&amp;scene=1&amp;srcid=1213nA8yTjxK7pw2LxnuSRGu&amp;key=da103cb67940783e381102fb14674ebd0d039d798c7b1932fa1ce5f48d91ad89962437c729f7545312a6ce1fa03df0a1640dbb145e25544cd7300fea7763d40720cd1adc84907bd0a8c3c52bc836bfe7&amp;ascene=0&amp;uin=MTA2MTM3MjcwNA%3D%3D&amp;devicetype=iMac+MacBookPro11%2C1+OSX+OSX+10.11.6+build(15G1510)&amp;version=12020810&amp;nettype=WIFI&amp;lang=zh_CN&amp;fontScale=100&amp;pass_ticket=2%2B82FeLMFDTNJse7id71tUxAiI0JCuIWakI%2FV%2FKqOK8Veq9r%2FRy%2Bbxvfzgt2E1Cw" target="_blank" rel="external">Hinton和Jordan理解的EM算法</a></p>
 <p>这篇文章我居然没读通，明天把不懂的地方请教下小伙伴。根据文章的引导，我想看看Daphne Koller的神书“Probabilistic Graphical Models: Principles and Techniques”，其中的第8章：The Exponential Family 和第19章 Partially Observed Data。 这两章几乎是Hinton对VBEM算法研究的高度浓缩。结果，我看全是英文作罢了。根据我看EM的过程，发现补理论知识，实在旷日持久。概率图模型，有机会成为下一个深度学习的理论之一。配套的视频，<a href="https://www.coursera.org/specializations/probabilistic-graphical-models" class="uri" target="_blank" rel="external">https://www.coursera.org/specializations/probabilistic-graphical-models</a></p>
@@ -383,8 +379,9 @@ Ctrl+B &      Kill window
     <summary type="html">
     
       &lt;h1 id=&quot;安排&quot;&gt;2017-12-16安排&lt;/h1&gt;
-&lt;p&gt;14:00~17:00 看fast.ai 3个小时 我了个擦擦的，气死啦。搞了一下午的固定IP绑定之类的，最后也没搞好，还是用dns登录的。算了算了。明天继续看课程。√&lt;/p&gt;
-&lt;p&gt;17:00~17:30 玩儿半
+&lt;p&gt;14:00~17:00 我了个擦擦的，气死啦。&lt;/p&gt;
+&lt;p&gt;17:00~17:30 玩儿半个小时。吃了羊肉抓饭。买的烤鸡翅，送来的是羊肉串。√&lt;/p&gt;
+&lt;p&gt;17:30~20:00 看&lt;a href=&quot;https
     
     </summary>
     

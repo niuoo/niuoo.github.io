@@ -96,14 +96,12 @@ CNTK是微软家的。">
 <meta property="og:description" content="Keras后端
 什么是“后端” Keras是一个模型级的库，提供了快速构建深度学习网络的模块。Keras并不处理如张量乘法、卷积等底层操作。这些操作依赖于某种特定的、优化良好的张量操作库。Keras依赖于处理张量的库就称为“后端引擎”。Keras提供了三种后端引擎Theano/Tensorflow/CNTK，并将其函数统一封装，使得用户可以以同一个接口调用不同后端引擎的函数
 CNTK是微软家的。">
-<meta property="og:image" content="http://niuoo.github.io/media/15150431198255.jpg">
-<meta property="og:updated_time" content="2018-01-29T02:32:27.000Z">
+<meta property="og:updated_time" content="2018-02-04T15:06:08.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="keras 修改 backend">
 <meta name="twitter:description" content="Keras后端
 什么是“后端” Keras是一个模型级的库，提供了快速构建深度学习网络的模块。Keras并不处理如张量乘法、卷积等底层操作。这些操作依赖于某种特定的、优化良好的张量操作库。Keras依赖于处理张量的库就称为“后端引擎”。Keras提供了三种后端引擎Theano/Tensorflow/CNTK，并将其函数统一封装，使得用户可以以同一个接口调用不同后端引擎的函数
 CNTK是微软家的。">
-<meta name="twitter:image" content="http://niuoo.github.io/media/15150431198255.jpg">
 
 
 
@@ -333,10 +331,6 @@ CNTK是微软家的。">
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    &quot;image_dim_ordering&quot;: &quot;tf&quot;, </div><div class="line">    &quot;epsilon&quot;: 1e-07, </div><div class="line">    &quot;floatx&quot;: &quot;float32&quot;, </div><div class="line">    &quot;backend&quot;: &quot;tensorflow&quot;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h2 id="using-theano-backend.">Using Theano backend.</h2>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    &quot;image_dim_ordering&quot;: &quot;th&quot;, </div><div class="line">    &quot;epsilon&quot;: 1e-07, </div><div class="line">    &quot;floatx&quot;: &quot;float32&quot;, </div><div class="line">    &quot;backend&quot;: &quot;theano&quot;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<div class="figure">
-<img src="/media/15150431198255.jpg">
-
-</div>
 <p>但是上面这种方式有一个弊端就是每次当你想切换backend的时候都需要手动修改这个文件，所以有一种能够动态修改的方式不是更好吗？请看下面的方法：</p>
 <h2 id="代码载入backend">代码载入backend</h2>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> os</div><div class="line">os.environ[<span class="string">'KERAS_BACKEND'</span>] = <span class="string">'tensorflow'</span></div><div class="line"><span class="keyword">import</span> keras.backend <span class="keyword">as</span> K</div><div class="line">K.set_image_dim_ordering(<span class="string">'tf'</span>)</div></pre></td></tr></table></figure>
