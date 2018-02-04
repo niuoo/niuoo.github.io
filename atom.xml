@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://niuoo.github.io/"/>
-  <updated>2017-12-31T13:54:56.000Z</updated>
+  <updated>2018-02-04T05:02:41.000Z</updated>
   <id>http://niuoo.github.io/</id>
   
   <author>
@@ -16,11 +16,88 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>2018-02-04 把计划变成习惯</title>
+    <link href="http://niuoo.github.io/2018/02/04/2018-02-04-%E6%8A%8A%E8%AE%A1%E5%88%92%E5%8F%98%E6%88%90%E4%B9%A0%E6%83%AF/"/>
+    <id>http://niuoo.github.io/2018/02/04/2018-02-04-把计划变成习惯/</id>
+    <published>2018-02-04T04:56:38.000Z</published>
+    <updated>2018-02-04T05:02:41.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>节奏很重要 适合的节奏才是最好的，一开始跑得快乱了节奏反而不好。节奏不用太快，合适就好。每天把做的事情都定成课程表，到点就做，把节奏编程习惯就好了。这点很有意义，因为人按习惯走非常轻松，按计划走很痛苦，一个折中的方法就是把计划变成习惯，就好了。</p>
+<p>今天周末，昨天晚上3点睡，上午9点多就醒了。白天坚持住，千万不要睡觉了。今天开始好好调节生物钟。</p>
+<p>现在是中午1点开始吃饭，顺便看吐槽大会。2点吃好饭。 2点开始看fastai的第二课。把代码撸一遍，放到aws上面，结合视频看一下。不要急，看多少是多少，坚持到晚上10点睡觉。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;节奏很重要 适合的节奏才是最好的，一开始跑得快乱了节奏反而不好。节奏不用太快，合适就好。每天把做的事情都定成课程表，到点就做，把节奏编程习惯就好了。这点很有意义，因为人按习惯走非常轻松，按计划走很痛苦，一个折中的方法就是把计划变成习惯，就好了。&lt;/p&gt;
+&lt;p&gt;今天周末，昨天
+    
+    </summary>
+    
+      <category term="日记" scheme="http://niuoo.github.io/categories/%E6%97%A5%E8%AE%B0/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>SVM数学原理详解</title>
+    <link href="http://niuoo.github.io/2018/01/18/SVM%E6%95%B0%E5%AD%A6%E5%8E%9F%E7%90%86%E8%AF%A6%E8%A7%A3/"/>
+    <id>http://niuoo.github.io/2018/01/18/SVM数学原理详解/</id>
+    <published>2018-01-18T15:15:31.000Z</published>
+    <updated>2018-01-28T16:10:20.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="准备知识">准备知识</h2>
+<p>余弦定理的证明 如图所示 <img src="/media/15162913744684.jpg"></p>
+<p>在△ABC中，BC=a，AC=b，AB=c，作AD⊥BC于D，则AD=c<em>sinB，DC=a-BD=a-c</em>cosB 在直角△ABD中， b²=AD²+DC²=(c<em>sinB)²+(a-c</em>cosB)² =c²sin²B+a²-2ac<em>cosB+c²cos²B =c²(sin²B+cos²B)+a²-2ac</em>cosB =c²+a²-2ac*cosB</p>
+<ol style="list-style-type: decimal">
+<li><a href="https://www.cnblogs.com/vive/p/4563803.html" target="_blank" rel="external">向量点积(内积)</a></li>
+<li><a href="https://www.cnblogs.com/graphics/archive/2010/07/10/1774809.html" target="_blank" rel="external">点到平面的距离公式</a></li>
+</ol>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;准备知识&quot;&gt;准备知识&lt;/h2&gt;
+&lt;p&gt;余弦定理的证明 如图所示 &lt;img src=&quot;/media/15162913744684.jpg&quot;&gt;&lt;/p&gt;
+&lt;p&gt;在△ABC中，BC=a，AC=b，AB=c，作AD⊥BC于D，则AD=c&lt;em&gt;sinB，DC=a-BD=a-
+    
+    </summary>
+    
+      <category term="SVM" scheme="http://niuoo.github.io/categories/SVM/"/>
+    
+      <category term="零碎知识" scheme="http://niuoo.github.io/categories/SVM/%E9%9B%B6%E7%A2%8E%E7%9F%A5%E8%AF%86/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>2018-01-16日记</title>
+    <link href="http://niuoo.github.io/2018/01/16/2018-01-04%E6%97%A5%E8%AE%B0/"/>
+    <id>http://niuoo.github.io/2018/01/16/2018-01-04日记/</id>
+    <published>2018-01-16T07:22:55.000Z</published>
+    <updated>2018-01-29T02:33:42.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>19:30-21:30 看完 <a href="http://zyy1217.com/2016/10/11/Word2vec%20%E4%B8%AD%E7%9A%84%E6%95%B0%E5%AD%A6%E5%8E%9F%E7%90%86%E8%AF%A6%E8%A7%A3/" target="_blank" rel="external">word2vec数学原理</a> 21:30-23:00 看完 <a href="http://blog.csdn.net/v_july_v/article/details/7624837" target="_blank" rel="external">SVM</a></p>
+<p>小宝贝，一定要做完啊 ，到时候过来打卡。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;19:30-21:30 看完 &lt;a href=&quot;http://zyy1217.com/2016/10/11/Word2vec%20%E4%B8%AD%E7%9A%84%E6%95%B0%E5%AD%A6%E5%8E%9F%E7%90%86%E8%AF%A6%E8%A7%A3
+    
+    </summary>
+    
+      <category term="日记" scheme="http://niuoo.github.io/categories/%E6%97%A5%E8%AE%B0/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>keras 修改 backend</title>
     <link href="http://niuoo.github.io/2017/12/31/keras-%E4%BF%AE%E6%94%B9-backend/"/>
     <id>http://niuoo.github.io/2017/12/31/keras-修改-backend/</id>
     <published>2017-12-31T13:32:07.000Z</published>
-    <updated>2017-12-31T13:54:56.000Z</updated>
+    <updated>2018-01-29T02:32:27.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="keras后端">Keras后端</h2>
 <p>什么是“后端” Keras是一个模型级的库，提供了快速构建深度学习网络的模块。Keras并不处理如张量乘法、卷积等底层操作。这些操作依赖于某种特定的、优化良好的张量操作库。Keras依赖于处理张量的库就称为“后端引擎”。Keras提供了三种后端引擎Theano/Tensorflow/CNTK，并将其函数统一封装，使得用户可以以同一个接口调用不同后端引擎的函数</p>
@@ -40,10 +117,15 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    &quot;image_dim_ordering&quot;: &quot;tf&quot;, </div><div class="line">    &quot;epsilon&quot;: 1e-07, </div><div class="line">    &quot;floatx&quot;: &quot;float32&quot;, </div><div class="line">    &quot;backend&quot;: &quot;tensorflow&quot;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h2 id="using-theano-backend.">Using Theano backend.</h2>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    &quot;image_dim_ordering&quot;: &quot;th&quot;, </div><div class="line">    &quot;epsilon&quot;: 1e-07, </div><div class="line">    &quot;floatx&quot;: &quot;float32&quot;, </div><div class="line">    &quot;backend&quot;: &quot;theano&quot;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<div class="figure">
+<img src="/media/15150431198255.jpg">
+
+</div>
 <p>但是上面这种方式有一个弊端就是每次当你想切换backend的时候都需要手动修改这个文件，所以有一种能够动态修改的方式不是更好吗？请看下面的方法：</p>
 <h2 id="代码载入backend">代码载入backend</h2>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> os</div><div class="line">os.environ[<span class="string">'KERAS_BACKEND'</span>] = <span class="string">'tensorflow'</span></div><div class="line"><span class="keyword">import</span> keras.backend <span class="keyword">as</span> K</div><div class="line">K.set_image_dim_ordering(<span class="string">'tf'</span>)</div></pre></td></tr></table></figure>
 <p>首先载入os库，将keras的backend修改为tensorflow，再将keras的backend加载，设置order为tensorflow格式。</p>
+<p>附： <a href="https://keras-cn.readthedocs.io/en/latest/backend/" target="_blank" rel="external">keras中文文档</a></p>
 ]]></content>
     
     <summary type="html">
@@ -53,6 +135,8 @@
     
     </summary>
     
+      <category term="环境" scheme="http://niuoo.github.io/categories/%E7%8E%AF%E5%A2%83/"/>
+    
     
   </entry>
   
@@ -61,7 +145,7 @@
     <link href="http://niuoo.github.io/2017/12/27/%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F/"/>
     <id>http://niuoo.github.io/2017/12/27/推荐系统/</id>
     <published>2017-12-27T03:36:23.000Z</published>
-    <updated>2017-12-30T15:17:27.000Z</updated>
+    <updated>2018-01-18T16:35:39.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="svd">SVD++</h1>
 <p>关于SVD++，看这篇博客 <a href="https://plushunter.github.io/2017/03/07/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AE%97%E6%B3%95%E7%B3%BB%E5%88%97%EF%BC%8813%EF%BC%89%EF%BC%9A%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F%EF%BC%883%EF%BC%89%E2%80%94%E2%80%94%E7%9F%A9%E9%98%B5%E5%88%86%E8%A7%A3%E6%8A%80%E6%9C%AF/" target="_blank" rel="external">矩阵分解技术</a></p>
@@ -81,77 +165,11 @@
   </entry>
   
   <entry>
-    <title></title>
-    <link href="http://niuoo.github.io/2017/12/27/2017-12-27/"/>
-    <id>http://niuoo.github.io/2017/12/27/2017-12-27/</id>
-    <published>2017-12-27T02:57:15.000Z</published>
-    <updated>2017-12-27T02:57:40.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="section"></h1>
-<p>Simon Funk在博客上公开发表了一个只考虑已有评分记录的矩阵分解方法，称为Funk-SCD，也就是被Yehuda Koren称为隐语义模型的矩阵分解方法。</p>
-<p>它的出发点为，既然将一个矩阵做SVD分解成3个矩阵很耗时，同时还面临稀疏的问题，那么我们能不能避开稀疏问题，同时只分解成两个矩阵呢？也就是说，现在期望我们的矩阵M这样进行分解：<span class="math">\[M_{m\times n}=P^T_{m\times k}Q_{k\times n}\]</span>我们知道SVD分解已经很成熟了，但是Funk-SVD如何将矩阵M分解成为P和Q呢？这里采用了线性回归的思想。我们的目标是让用户的评分和用矩阵乘积得到的评分残差尽可能的小，也就是说，可以用均方差作为损失函数，来寻找最终的P和Q。</p>
-<p>对于某一个用户评分<span class="math">\(m_{ij}\)</span>如果用Funk-SVD进行矩阵分解，则对应的表示为<span class="math">\(q_j^Tp_i\)</span>，采用均方差作为损失函数，则我们期望<span class="math">\((m_{ij}-q_j^Tp_i)^2\)</span>尽可能的小，如果考虑所有的物品和样本的组合，则我们期望最小化下式：<span class="math">\[\sum_{i，j}(m_{ij}-q^T_jp_i)^2\]</span>只要我们能够最小化上面的式子，并求出极值所对应的<span class="math">\(p_i,q_j\)</span>，则我们最终可以得到矩阵P和Q，那么对于任意矩阵M任意一个空白评分的位置，我们可以通过<span class="math">\(q_j^Tp_i\)</span>计算预测评分，很漂亮的方法！</p>
-<p>当然，在实际应用中，为了防止过拟合，会加入一个<span class="math">\(L_2\)</span>的正则化项，因此正是的Funk-SVD的优化目标函数<span class="math">\(J(p,q)\)</span>是这样的：<span class="math">\[arg \underset {p_jq_j}{min}\sum_{(i,j)\in K}(m_{ij}-q_j^Tp_i)^2+\lambda (||p_i||^2_2+||q_j||^2_2)\]</span>其中<span class="math">\(K\)</span>为已有评分记录的<span class="math">\((i,j)\)</span>对集合，<span class="math">\(m_{ij}\)</span>为用户<span class="math">\(i\)</span>对物品<span class="math">\($j\)</span>的真实评分，<span class="math">\(\lambda\)</span>是正则化系数，需要调参。假设输入评分矩阵为M，它是<span class="math">\(M \times N\)</span>维矩阵，通过直接优化以上损失函数得到用户特征矩阵<span class="math">\(P(M\times N)\)</span>和物品特征矩阵<span class="math">\(Q(K\times N)\)</span>,其中<span class="math">\(K&lt;&lt;M，N\)</span>。对于这个优化问题，一般通过梯度下降法来进行优化得到结果。</p>
-<p>将上式分别对<span class="math">\(p_i,q_j\)</span>求导我们得到：<span class="math">\[\frac{∂J}{∂p_i}=-2(m_{ij}-q_j^Tp_i)q_j+2\lambda p_i\]</span><span class="math">\[\frac{∂J}{∂q_j}=-2(m_{ij}-q_j^Tp_i)p_i+2\lambda q_j\]</span>在梯度下降法迭代时，<span class="math">\(p_i,q_j\)</span>的迭代公式为：<span class="math">\[p_i=p_i=\alpha [(m_{ij}-q_j^Tp_i)q_j-\lambda p_i]\]</span><span class="math">\[q_j=q_j+\alpha [(m_{ij}-q_j^Tp_i)p_i-\lambda q_j ]\]</span> 通过迭代我们最终可以得到P和Q，进而用于推荐。Funk-SVD算法虽然思想很简单，但在实际应用中效果非常好，这真是验证了大道至简。</p>
-<p>三、Bias-SVD 在Funk-SVD算法火爆之后，出现了很多Funk-SVD的改进版算法。其中Bias算是改进的比较成功的一种算法。</p>
-<p>Funk-SVD方法通过学习用户和物品的特征向量进行预测，即用户和物品的交互信息。用户的特征向量代表了用户的兴趣，物品的特征向量代表了物品的特点，且每一个维度相互对应，两个向量的内积表示用户对该物品的喜好程度。但是我们观测到的评分数据大部分都是都是和用户或物品无关的因素产生的效果，即有很大一部分因素是和用户对物品的喜好无关而只取决于用户或物品本身特性的。例如，对于乐观的用户来说，它的评分行为普遍偏高，而对批判性用户来说，他的评分记录普遍偏低，即使他们对同一物品的评分相同，但是他们对该物品的喜好程度却并不一样。同理，对物品来说，以电影为例，受大众欢迎的电影得到的评分普遍偏高，而一些烂片的评分普遍偏低，这些因素都是独立于用户或产品的因素，而和用户对产品的的喜好无关。</p>
-<p>我们把这些独立于用户或独立于物品的因素称为偏置(Bias)部分，将用户和物品的交互即用户对物品的喜好部分称为个性化部分。事实上，在矩阵分解模型中偏好部分对提高评分预测准确率起的作用要大大高于个性化部分所起的作用，以Netflix Prize推荐比赛数据集为例为例，Yehuda Koren仅使用偏置部分可以将评分误差降低32%，而加入个性化部分能降低42%，也就是说只有10%是个性化部分起到的作用，这也充分说明了偏置部分所起的重要性，剩下的58%的误差Yehuda Koren将称之为模型不可解释部分，包括数据噪音等因素。</p>
-<p>偏置部分主要由三个子部分组成，分别是</p>
-<p>训练集中所有评分记录的全局平均数<span class="math">\(\mu\)</span>，表示了训练数据的总体评分情况，对于固定的数据集，它是一个常数。 用户偏置<span class="math">\(b_i\)</span>，独立于物品特征的因素，表示某一特定用户的打分习惯。例如，对于批判性用户对于自己的评分比较苛刻，倾向于打低分；而乐观型用户则打分比较保守，总体打分要偏高。 物品偏置<span class="math">\(b_j\)</span>，特立于用户兴趣的因素，表示某一特定物品得到的打分情况。以电影为例，好片获得的总体评分偏高，而烂片获得的评分普遍偏低，物品偏置捕获的就是这样的特征。 则偏置部分表示为<span class="math">\[b_{ij}=\mu+b_i+b_j\]</span>则加入了偏置项以后的优化目标函数<span class="math">\(J(p,q)\)</span>是这样<span class="math">\[arg \underset {p_jq_j}{min}\sum_{(i,j)\in K}(m_{ij}-\mu-b_i-b_j-q_j^Tp_i)^2+\lambda (||p_i||^2_2+||q_j||^2_2+||b_i||_2^2+||b_j||_2^2)\]</span>这个优化目标也可以采用梯度下降法求解。和Funk-SVD不同的是，此时我们多了两个偏置项<span class="math">\(b_i,b_j\)</span>,<span class="math">\(p_i,p_j\)</span>的迭代公式和<span class="math">\(Funk-SVD\)</span>类似，只是每一步的梯度导数稍有不同而已。而<span class="math">\(b_i,b_j\)</span>一般可以初始设置为0向量，然后参与迭代。<span class="math">\[b_i=b_i+α(m_{ij}−μ−b_i−b_j−q^T_jp_i−λb_i)\]</span><span class="math">\[b_j=b_j+α(m_{ij}−μ−b_i−b_j−q^T_jp_i−λb_j)\]</span>通过迭代我们最终可以得到<span class="math">\(P\)</span>和<span class="math">\(Q\)</span>，进而用于推荐。Bias-SVD增加了一些额外因素的考虑，因此在某些场景会比FunkSVD表现好。</p>
-<p>四、SVD++ SVD++算法在Bias-SVD算法上进一步做了增强，这里它增加考虑用户的隐式反馈。</p>
-<p>对于某一个用户<span class="math">\(i\)</span>，它提供了隐式反馈的物品集合定义为<span class="math">\(N(i)\)</span>，这个用户对某个物品<span class="math">\(j\)</span>对应的隐式反馈修正的评分值为<span class="math">\(c_{ij}\)</span>，那么该用户所有的评分修正值为<span class="math">\(\sum_{s\in N(i)} c_{sj}\)</span>，一般我们将它们表示为用<span class="math">\(q_j^Ty_s\)</span>形式，则加入了隐式反馈以后的优化目标函数<span class="math">\(J(p,q)\)</span>是这样的：<span class="math">\[arg \underset {p_jq_j}{min}\sum_{(i,j)\in K}(m_{ij}-\mu-b_i-b_j-q_j^Tp_i-q_j^T|N(i)|^{-1/2}\Sigma_{s\in N(i)} y_s)^2+\lambda (||p_i||^2_2+||q_j||^2_2+||b_i||_2^2+||b_j||_2^2+\Sigma_{s\in N(i)}||y_s||^2)\]</span>其中，引入<span class="math">\(|N(i)|^{-1/2}\)</span>是为了消除不同<span class="math">\(|N(i)|\)</span>个数引起的差异。如果需要考虑用户的隐式反馈时，使用SVD++是个不错的选择。</p>
-<p>五、矩阵分解的优缺点 矩阵分解方法将高维User-Item评分矩阵映射为两个低维用户和物品矩阵，解决了数据稀疏性问题。</p>
-<p>使用矩阵分解具有以下优点：</p>
-<p>比较容易编程实现，随机梯度下降方法依次迭代即可训练出模型。比较低的时间和空间复杂度，高维矩阵映射为两个低维矩阵节省了存储空间，训练过程比较费时，但是可以离线完成；评分预测一般在线计算，直接使用离线训练得到的参数，可以实时推荐。 预测的精度比较高，预测准确率要高于基于领域的协同过滤以及内容过滤等方法。 非常好的扩展性，很方便在用户特征向量和物品特征向量中添加其它因素，例如添加隐性反馈因素的SVD++，此方法的详细实现参见文献《Koren Y. Factorization meets the neighborhood: a multifaceted collaborative filtering model》；添加时间动态time SVD++，此方法将偏置部分和用户兴趣都表示成一个关于时间的函数，可以很好的捕捉到用户的兴趣漂移，欲知详细实现请阅读文献《Koren Y. Collaborative filtering with temporal dynamics》。 矩阵分解的不足主要有：</p>
-<p>模型训练比较费时。 推荐结果不具有很好的可解释性，分解出来的用户和物品矩阵的每个维度* 无法和现实生活中的概念来解释，无法用现实概念给每个维度命名，只能理解为潜在语义空间。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;section&quot;&gt;&lt;/h1&gt;
-&lt;p&gt;Simon Funk在博客上公开发表了一个只考虑已有评分记录的矩阵分解方法，称为Funk-SCD，也就是被Yehuda Koren称为隐语义模型的矩阵分解方法。&lt;/p&gt;
-&lt;p&gt;它的出发点为，既然将一个矩阵做SVD分解成3个矩阵很
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>2017-12-23日记</title>
-    <link href="http://niuoo.github.io/2017/12/22/2017-12-23%E6%97%A5%E8%AE%B0/"/>
-    <id>http://niuoo.github.io/2017/12/22/2017-12-23日记/</id>
-    <published>2017-12-22T14:36:41.000Z</published>
-    <updated>2017-12-27T02:57:14.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>刚刚照了照镜子，发现自己还是漂亮的，我就放心了。加油。会越来越好的。好好锻炼身体，把自己收拾得漂漂亮亮的喔！</p>
-<p>10:00~11:00 起床，洗脸刷牙，化妆，换衣服</p>
-<p>11:00~14:00 出门吃好吃的大餐</p>
-<p>14:00~17:00 好好学习，看时间序列相关内容</p>
-<p>17:00~20:00 吃大餐，可能还会看个好看的电影吧</p>
-<p>20:00~21:00 回家</p>
-<p>21:00~23:00 fast.ai看课程。fast.ai每周至少10小时，但是我用的时间才2小时，这样不好吧？我是不是应该明天全天fast.ai？可是时间序列什么时候看呢？周一就要讲了，准备不充分，我就会很担忧的。</p>
-<p>23:00 睡觉。要铭记，所有的事情都不重要。睡觉最重要。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;刚刚照了照镜子，发现自己还是漂亮的，我就放心了。加油。会越来越好的。好好锻炼身体，把自己收拾得漂漂亮亮的喔！&lt;/p&gt;
-&lt;p&gt;10:00~11:00 起床，洗脸刷牙，化妆，换衣服&lt;/p&gt;
-&lt;p&gt;11:00~14:00 出门吃好吃的大餐&lt;/p&gt;
-&lt;p&gt;14:00~17:00 好
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
     <title>fast.ai 环境配置</title>
     <link href="http://niuoo.github.io/2017/12/19/fast-ai-%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
     <id>http://niuoo.github.io/2017/12/19/fast-ai-环境配置/</id>
     <published>2017-12-19T15:52:23.000Z</published>
-    <updated>2017-12-20T18:35:01.000Z</updated>
+    <updated>2018-01-29T02:32:35.000Z</updated>
     
     <content type="html"><![CDATA[<p>我最最讨厌的就是做如下的事情。求老天鹅赐男友一枚，能帮我配环境的那种。</p>
 <h1 id="申请工单">申请工单</h1>
@@ -188,6 +206,8 @@
     
     </summary>
     
+      <category term="环境" scheme="http://niuoo.github.io/categories/%E7%8E%AF%E5%A2%83/"/>
+    
     
   </entry>
   
@@ -196,7 +216,7 @@
     <link href="http://niuoo.github.io/2017/12/19/iTerm-%E5%BF%AB%E6%8D%B7%E9%94%AE-shortcuts/"/>
     <id>http://niuoo.github.io/2017/12/19/iTerm-快捷键-shortcuts/</id>
     <published>2017-12-19T08:10:16.000Z</published>
-    <updated>2017-12-20T02:39:50.000Z</updated>
+    <updated>2018-01-29T02:32:48.000Z</updated>
     
     <content type="html"><![CDATA[<p>iTerm的快捷键，还是记录一下为好</p>
 <h2 id="文本控制">文本控制</h2>
@@ -219,6 +239,8 @@
     
     </summary>
     
+      <category term="工具使用" scheme="http://niuoo.github.io/categories/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/"/>
+    
     
   </entry>
   
@@ -227,7 +249,7 @@
     <link href="http://niuoo.github.io/2017/12/19/tmux-%E5%BF%AB%E6%8D%B7%E9%94%AE-shortcuts/"/>
     <id>http://niuoo.github.io/2017/12/19/tmux-快捷键-shortcuts/</id>
     <published>2017-12-19T08:09:41.000Z</published>
-    <updated>2017-12-19T11:44:29.000Z</updated>
+    <updated>2018-01-29T02:32:55.000Z</updated>
     
     <content type="html"><![CDATA[<p>本来打算用一下tmux呢，后来发现还是mac OS下面还是直接iTerm方便，不过切到Linux的时候，估计还是要用tmux吧。 tmux使用也比较简单。先把脑海中的记录一下，防止以后忘记。感觉和vim的使用体验好像喔。我挺不喜欢这种设定。</p>
 <h2 id="tmux安装">tmux安装</h2>
@@ -295,6 +317,8 @@ Ctrl+B &      Kill window
     
     </summary>
     
+      <category term="工具使用" scheme="http://niuoo.github.io/categories/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/"/>
+    
     
   </entry>
   
@@ -303,7 +327,7 @@ Ctrl+B &      Kill window
     <link href="http://niuoo.github.io/2017/12/17/2017-12-17%E6%97%A5%E8%AE%B0/"/>
     <id>http://niuoo.github.io/2017/12/17/2017-12-17日记/</id>
     <published>2017-12-17T05:08:26.000Z</published>
-    <updated>2017-12-17T05:43:59.000Z</updated>
+    <updated>2018-01-29T02:33:09.000Z</updated>
     
     <content type="html"><![CDATA[<p>14:00~17:00 看贝叶斯和论文 &lt;<a href="https://pdfs.semanticscholar.org/a5c4/35690c717d04801a68950f14036c38f2a9ab.pdf" target="_blank" rel="external">What is the expectation maximization algorithm?</a>&gt;</p>
 <p>18:00~21:00 fast.ai 第二课看完。</p>
@@ -316,6 +340,8 @@ Ctrl+B &      Kill window
     
     </summary>
     
+      <category term="日记" scheme="http://niuoo.github.io/categories/%E6%97%A5%E8%AE%B0/"/>
+    
     
   </entry>
   
@@ -324,7 +350,7 @@ Ctrl+B &      Kill window
     <link href="http://niuoo.github.io/2017/12/17/2017-12-16%E6%97%A5%E8%AE%B0-1/"/>
     <id>http://niuoo.github.io/2017/12/17/2017-12-16日记-1/</id>
     <published>2017-12-16T20:21:53.000Z</published>
-    <updated>2017-12-25T03:45:22.000Z</updated>
+    <updated>2018-01-29T02:33:26.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="安排">2017-12-16安排</h1>
 <p>14:00~17:00 看fast.ai 3个小时 我了个擦擦的，气死啦。搞了一下午的固定IP绑定之类的，最后也没搞好，还是用dns登录的。算了算了。明天继续看课程。√</p>
@@ -340,7 +366,7 @@ Ctrl+B &      Kill window
 <p>发现自己现在话特别多，话多了，真正思考的时间就没了。但是又需要一定的表达，把想法作为日记写进博客里面，可以帮自己理清楚思路。不过缺点是，博客变得杂乱无章， 毕竟这个博客，最初的想法是作为技术博客的。</p>
 <p>不过嘛，反正是自己的博客，随便DIY了。</p>
 <p>好了，开始废话时间了。</p>
-<p>这张照片居然有一种风韵犹存的半老徐娘之感。望接下来的时光，可以恢复活力。有心情，可以post自己的照片，记录下时间的流逝。希望自己以后的时光，可以身体健康，杨柳细腰，体态轻盈。岁月，请对我的温柔。 <img src="/media/15134233580413.jpg" style="zoom:35%"></p>
+<p>希望自己以后的时光，可以身体健康，杨柳细腰，体态轻盈。岁月，请对我的温柔。</p>
 <p>另外远离各类社交网络。社交网络固然人才济济，可是仅仅做个观众，可是有点傻兮兮的。参与进去，又会浪费很多时间。</p>
 <p>慢慢丰富自己的生活，可以钻研深度学习，也可以学自己感兴趣的东西，学个乐器啊，舞蹈之类什么的都可以。当然了，慢慢跑起来啦，运动还是需要的啦。</p>
 <p>前段时间，我没处理好自己的思想，以前觉得自己会坦然处之。后来发现，自己毫无缚鸡之力，就雄赳赳气昂昂去了角斗场，现在想来，自己真是傻乎乎的可爱，只不过最终，还是血淋淋的受伤了。</p>
@@ -361,6 +387,8 @@ Ctrl+B &      Kill window
 &lt;p&gt;17:00~17:30 玩儿半
     
     </summary>
+    
+      <category term="日记" scheme="http://niuoo.github.io/categories/%E6%97%A5%E8%AE%B0/"/>
     
     
   </entry>
@@ -761,76 +789,6 @@ Ctrl+B &      Kill window
     <summary type="html">
     
       &lt;p&gt;神经网络是当今最强大的学习算法之一，自动驾驶对周围景物的识别，就用到了神经网络。&lt;br&gt;我们以下讲述，神经网络在分类问题中的应用，在给定训练集下，为神经网络拟合参数的学习方法。&lt;br&gt;&lt;span class=&quot;math&quot;&gt;\(\begin{align*} a_1^{(2)}
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>线性回归和逻辑回归</title>
-    <link href="http://niuoo.github.io/2017/05/02/%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92%E5%92%8C%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92/"/>
-    <id>http://niuoo.github.io/2017/05/02/线性回归和逻辑回归/</id>
-    <published>2017-05-02T07:25:46.000Z</published>
-    <updated>2017-12-19T08:55:37.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>回归一词指的是我们根据之前的数据，预测出一个准确的输出值。 <img src="/media/14938262502932.jpg"></p>
-<h1 id="线性回归">线性回归</h1>
-<p>线性回归是统计学领域的方法，特征和结果的关系满足线性，即不大于1次方，如<span class="math">\(θ_{1}x_{1}+θ_2x_{2}+θ_3x_{3}=y\)</span>。都使用向量vector表示，<span class="math">\(θ^T =[θ_1,θ_2,θ_3],X^T= [x_1,x_2,x_3]\)</span>，假设函数为<span class="math">\(h_\theta(x)=θ^TX\)</span>。我们的目的是为了求出最恰当的θ，即<span class="math">\(θ_1,θ_2,θ_3\)</span>三者的值，使得损失函数<span class="math">\(J(θ)=\frac{1}{2m}\sum_{i=1}^{m}(h_θ(x^{(i)})−y^{(i)})^2\)</span>的值最小。</p>
-<h3 id="什么是梯度gradient">什么是梯度(Gradient)？</h3>
-<p>简单来说，梯度就是损失函数关于权值θ的导数，也就是关于θ的变化率(导数即变化率吧)。</p>
-<h3 id="梯度下降算法gradient-descent">梯度下降算法(Gradient descent)</h3>
-<p>我们得到的一般是个局部最优解。如果是个碗状或者叫做倒钟型的函数，那局部最优也是全局最优解。<br>The gradient descent algorithm is:<br>repeat until convergence:<br><span class="math">\(θ_j:=θ_j−α\frac∂{∂θ_j}J(θ_1,θ_2,θ_3)\)</span><br>where j=1,2,3represents the feature index number.<br><a href="https://d3c33hcgiwev3.cloudfront.net/_ec21cea314b2ac7d9e627706501b5baa_Lecture2.pdf?Expires=1493856000&amp;Signature=GSAbIM5AmG64UdFqdjCCWIn5hN~JZ8IheTVb6mliIEMdfhHgTrecl9toRVElelfaWZGY3vPkI33K7uOHicFc52EldArFxSunmfh4Mr4yjiEpZBbSF8-Tl9cWVTy2pAixsdpkmlL37Lku8VGax-LoenwwvR0i055g8j2wKJCGOrQ_&amp;Key-Pair-Id=APKAJLTNE6QMUY6HBC5A" target="_blank" rel="external">斯坦福课程线性回归教案拉到三分之二处看</a><br><a href="http://m.blog.csdn.net/article/details?id=51188876" target="_blank" rel="external">几种梯度下降方法</a><br><a href="http://blog.csdn.net/qq_34206952/article/details/54316285" target="_blank" rel="external">求导公式证明</a><br>α我们称之为learning rate步长，如果太大，那么损失函数不能收敛，如果太小，会收敛过慢。</p>
-<p>另外需要注意特征缩放(feature scaling)，确保不同特征的取值在相近的范围内，这样梯度下降法就能更快的收敛。因为如果不做这个，J(θ)在θ1和θ2轴上的投影将会非常的瘦长，收敛的过程需要走很多步，才能到达最小值，做特征缩放，就是为了让偏移没那么严重，投影看起来更圆一些。进行特征缩放时，将特征的取值约束到−1≤x(i)≤1或者−0.5≤x(i)≤0.5。<br><span class="math">\(x_i:=\frac{x_i−μ_i}{s_i}\)</span> μi表示feature(i)的平均值，si是feature(i)值的范围(max - min),或者是标准差。<br>For example, if xi represents housing prices with a range of 100 to 2000 and a mean value of 1000, then, <span class="math">\(xi:=\frac{price−1000}{1900}\)</span>.<br>说句题外话，这个特征缩放也很像将一般的正态分布转化成标准正态分布的过程:p</p>
-<p>另外还有对应线性回归的，多项式回归(曲线回归)。有时候，线性函数无法合适的进行数据的拟合，这时候也许多项式进行拟合效果更好（曲线曲面等）。</p>
-<h3 id="正规方程法normal-equation">正规方程法(Normal Equation)</h3>
-<p>此乃最小二乘法，<span class="math">\(θ = (X^TX)^{-1}X^Ty\)</span>,不需要进行特征的缩放，不需要选择α，不需要迭代，但梯度下降法在很多特征变量的情况下，也能运行地相当好，即使有上百万的特征变量，通常很有效，时间复杂度为<span class="math">\(O(kn^2)\)</span>;而正规方程法，为了求解参数θ，需要求解<span class="math">\((X^TX)^{-1}\)</span>，其中<span class="math">\(X^TX\)</span>这是个n*n的矩阵，然后求逆矩阵的计算量，大概是矩阵纬度的三次方,<span class="math">\(O(n^3)\)</span>，因此当n很大时，这个方法会非常慢的。n&gt;1W就考虑梯度下降吧。只要特征数目不是很大，用正规方程法是非常好的，对于线性回归的模型。</p>
-<table>
-<thead>
-<tr class="header">
-<th align="left">Gradient Descent</th>
-<th align="left">Normal Equation</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">Need to choose alpha</td>
-<td align="left">No need to choose alpha</td>
-</tr>
-<tr class="even">
-<td align="left">Needs many iterations<span class="Apple-tab-span" style="white-space:pre"></span></td>
-<td align="left">No need to iterate</td>
-</tr>
-<tr class="odd">
-<td align="left"><span class="math">\(O(kn^2)\)</span></td>
-<td align="left"><span class="math">\(O(n^3)\)</span>,need to calculate inverse of <span class="math">\(X^TX\)</span></td>
-</tr>
-<tr class="even">
-<td align="left">Works well when n is large</td>
-<td align="left">Slow if n is very large</td>
-</tr>
-</tbody>
-</table>
-<p>如果<span class="math">\(X^TX\)</span>是不可逆(不可逆的矩阵为奇异或退化矩阵)的时候呢？如果存在两个特征值有线性相关的时候，矩阵不可逆，或者特征向量太多的时候(e.g. m ≤ n)，矩阵或许也不可逆，这种情况就删除重复特征的一个，无须同时保留。一般情况下，算法库也会给我们一个伪逆矩阵或者是逆矩阵的解。<br>注:设A是数域上的一个n阶方阵，若在相同数域上存在另一个n阶矩阵B，使得：AB=BA=E。则我们称B是A的逆矩阵，而A则被称为可逆矩阵。</p>
-<h1 id="逻辑回归logistic-regression">逻辑回归(Logistic Regression)</h1>
-<p>sigmoid可以轻松处理0/1分类问题sigmoid函数，又称逻辑函数Logistic Function，用来进行归一化处理(促使<span class="math">\(y^{(i)}∈(0,1)\)</span>)。逻辑回归的主体还是回归操作：回归对象是sigmoid函数，它将输入映射为处于0到1之间的小数，得到这个小数之后人为将其解读成概率，然后根据事先设定的阈值进行分类。 <span class="math">\(\begin{align*}&amp; h_\theta (x) = g ( \theta^T x ) \newline \newline&amp; z = \theta^T x \newline&amp; g(z) = \dfrac{1}{1 + e^{-z}}\end{align*}\)</span></p>
-<p>sigmoid函数图像如下 <img src="/media/14938277151973.jpg"> <span class="math">\(h_θ(x)\)</span>代表了输出是1的概率为多少。如<span class="math">\(h_θ(x)\)</span>=0.7表示结果有70%的可能性是1。<br><span class="math">\(\begin{align*}&amp; h_\theta(x) = P(y=1 | x ; \theta) = 1 - P(y=0 | x ; \theta) \newline&amp; P(y = 0 | x;\theta) + P(y = 1 | x ; \theta) = 1\end{align*}\)</span><br>因为结果都是离散数值，0或者1，所以当结果大于等于0.5的时候，就认为是1，反之为0.<br><span class="math">\(\begin{align*}&amp; h_\theta(x) \geq 0.5 \rightarrow y = 1 \newline&amp; h_\theta(x) &lt; 0.5 \rightarrow y = 0 \newline\end{align*}\)</span><br>等价于<br><span class="math">\(\begin{align*}&amp; \theta^T x \geq 0 \Rightarrow y = 1 \newline&amp; \theta^T x &lt; 0 \Rightarrow y = 0 \newline\end{align*}\)</span><br>另外<span class="math">\(z = \theta^T x\)</span> 函数也不一定是线性的，例<span class="math">\(z =θ_0+θ_1x^2_1+θ_2x^2_2\)</span>也可以是个圆，或者其他的形状，只要拟合数据就OK。<br>逻辑回归的损失函数如下：<br><span class="math">\(\begin{align*}&amp; J(\theta) = \dfrac{1}{m} \sum_{i=1}^m \mathrm{Cost}(h_\theta(x^{(i)}),y^{(i)}) \newline &amp; \mathrm{Cost}(h_\theta(x),y) = -\log(h_\theta(x)) \; &amp; \text{if y = 1} \newline &amp; \mathrm{Cost}(h_\theta(x),y) = -\log(1-h_\theta(x)) \; &amp; \text{if y = 0}\end{align*}\)</span><br>当y = 1的时候，关于J(θ)和$ h_θ(x)<span class="math">\(的函数\)</span>Cost(h_(x),y) = -(h_(x))$图像如下: <img src="/media/14938660514848.jpg"></p>
-<p><span class="math">\(\begin{align*}&amp; \mathrm{Cost}(h_\theta(x),y) = 0 \text{ if } h_\theta(x) = y \newline &amp; \mathrm{Cost}(h_\theta(x),y) \rightarrow \infty \text{ if } y = 0 \; \mathrm{and} \; h_\theta(x) \rightarrow 1 \newline \end{align*}\)</span></p>
-<p>当y = 0的时候，关于J(θ)和$ h_θ(x)<span class="math">\(的函数\)</span>Cost(h_(x),y) = -(1-h_(x))$图像如下: <img src="/media/14938664062585.jpg"> <span class="math">\(\begin{align*}&amp; \mathrm{Cost}(h_\theta(x),y) = 0 \text{ if } h_\theta(x) = y\newline &amp; \mathrm{Cost}(h_\theta(x),y) \rightarrow \infty \text{ if } y = 1 \; \mathrm{and} \; h_\theta(x) \rightarrow 0 \newline \end{align*}\)</span></p>
-<p>综上，得到损失函数为<span class="math">\(\mathrm{Cost}(h_\theta(x),y) = - y \; \log(h_\theta(x)) - (1 - y) \log(1 - h_\theta(x))\)</span><br>也写成<span class="math">\(J(\theta) = - \frac{1}{m} \displaystyle \sum_{i=1}^m [y^{(i)}\log (h_\theta (x^{(i)})) + (1 - y^{(i)})\log (1 - h_\theta(x^{(i)}))]\)</span><br>向量化可表示成<br><span class="math">\(\begin{align*} &amp; h = g(X\theta)\newline &amp; J(\theta) = \frac{1}{m} \cdot \left(-y^{T}\log(h)-(1-y)^{T}\log(1-h)\right) \end{align*}\)</span><br>梯度下降:<br><span class="math">\(\begin{align*}&amp; Repeat \; \lbrace \newline &amp; \; \theta_j := \theta_j - \alpha \dfrac{\partial}{\partial \theta_j}J(\theta)=\theta_j - \frac{\alpha}{m} \sum_{i=1}^m (h_\theta(x^{(i)}) - y^{(i)}) x_j^{(i)} \newline &amp; \rbrace\end{align*}\)</span><br>向量化表示为:<span class="math">\(\theta := \theta - \frac{\alpha}{m} X^{T} (g(X \theta ) - \vec{y})\)</span></p>
-<h1 id="综述">综述</h1>
-<p><img src="/media/14938678719388.jpg"> 第一个图像是欠拟合的(underfitting),第二个相对合适，第三个过拟合。 欠拟合，一般都是因为h函数太简单，或者是特征向量过少。而过度拟合问题(Overfitting)，往往是因为函数太复杂了，虽然很完美的拟合了输入数据，但是产生了许多不必要的曲线角度，对于往后的测试，其实是不利的。<br>解决过度拟合问题:</p>
-<ol style="list-style-type: decimal">
-<li>减少特征数：手动选择要保留的特征，或者使用模型选择算法</li>
-<li>正则化：保留所有的特征，但是减轻θ的影响。 <span class="math">\(min_\theta\ \dfrac{1}{2m}\  \sum_{i=1}^m (h_\theta(x^{(i)}) - y^{(i)})^2 + \lambda\ \sum_{j=1}^n \theta_j^2\)</span><br>λ太大，就会欠拟合，因为θ会很小，甚至为0；如果λ太小，就会过拟合，因为θ会很大，正则化也失去了相应的作用。<br>线性回归的正则化的梯度下降和最小二乘法，看这里<a href="https://www.coursera.org/learn/machine-learning/supplement/pKAsc/regularized-linear-regression" target="_blank" rel="external">课程资料</a><br>逻辑回归正则化看这里<a href="https://www.coursera.org/learn/machine-learning/supplement/v51eg/regularized-logistic-regression" target="_blank" rel="external">课程资料</a></li>
-</ol>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;回归一词指的是我们根据之前的数据，预测出一个准确的输出值。 &lt;img src=&quot;/media/14938262502932.jpg&quot;&gt;&lt;/p&gt;
-&lt;h1 id=&quot;线性回归&quot;&gt;线性回归&lt;/h1&gt;
-&lt;p&gt;线性回归是统计学领域的方法，特征和结果的关系满足线性，即不大于1次方，如&lt;s
     
     </summary>
     

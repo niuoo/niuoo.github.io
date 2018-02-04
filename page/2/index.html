@@ -182,6 +182,16 @@
         </li>
       
         
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             
@@ -218,6 +228,115 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/07/30/Jdata特征工程分析/" itemprop="url">
+                  Jdata特征工程分析
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2017-07-30T00:15:05+08:00" content="Jul 30 2017">
+              Jul 30 2017
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="数据介绍">数据介绍</h1>
+<p>符号定义： S：提供的商品全集； P：候选的商品子集（JData_Product.csv），P是S的子集； U：用户集合； A：用户对S的行为数据集合； C：S的评价数据。</p>
+<p>训练数据部分： 提供2016-02-01到2016-04-15日用户集合U中的用户，对商品集合S中部分商品的行为、评价、用户数据；提供部分候选商品的数据P。 选手从数据中自行组成特征和数据格式，自由组合训练测试数据比例。</p>
+<p>预测数据部分： 2016-04-16到2016-04-20用户是否下单P中的商品，每个用户只会下单一个商品；抽取部分下单用户数据，A榜使用50%的测试数据来计算分数；B榜使用另外50%的数据计算分数(计算准确率时剔除用户提交结果中user_Id与A榜的交集部分)。</p>
+<p>为保护用户的隐私和数据安全，所有数据均已进行了采样和脱敏。 数据中部分列存在空值或NULL，请参赛者自行处理。</p>
+<ol style="list-style-type: decimal">
+<li><p>用户数据 user_id 用户ID 脱敏 age 年龄段 -1表示未知 sex 性别 0表示男，1表示女，2表示保密 user_lv_cd 用户等级 有顺序的级别枚举，越高级别数字越大 user_reg_tm 用户注册日期 粒度到天</p></li>
+<li><p>商品数据 sku_id 商品编号 脱敏 a1 属性1 枚举，-1表示未知 a2 属性2 枚举，-1表示未知 a3 属性3 枚举，-1表示未知 cate 品类ID 脱敏 brand 品牌ID 脱敏</p></li>
+<li><p>评价数据 dt 截止到时间 粒度到天 sku_id 商品编号 脱敏 comment_num 累计评论数分段 0表示无评论，1表示有1条评论， 2表示有2-10条评论， 3表示有11-50条评论， 4表示大于50条评论 has_bad_comment 是否有差评 0表示无，1表示有 bad_comment_rate 差评率 差评数占总评论数的比重</p></li>
+<li><p>行为数据 user_id 用户编号 脱敏 sku_id 商品编号 脱敏 time 行为时间<br> model_id 点击模块编号，如果是点击 脱敏 type 1.浏览（指浏览商品详情页）； 2.加入购物车；3.购物车删除；4.下单；5.关注；6.点击</p></li>
+</ol>
+<p>cate 品类ID 脱敏 brand 品牌ID 脱敏 登录并报名参赛后方可在“数据下载”页面下载数据。</p>
+<p>任务描述： 参赛者需要使用京东多个品类下商品的历史销售数据，构建算法模型，预测用户在未来5天内，对某个目标品类下商品的购买意向。对于训练集中出现的每一个用户，参赛者的模型需要预测该用户在未来5天内是否购买目标品类下的商品以及所购买商品的SKU_ID。评测算法将针对参赛者提交的预测结果，计算加权得分。</p>
+<h1 id="section">。。。</h1>
+<p>用于预测 2016-4-11&lt;=time1&lt;=2016-04-15 用于训练数据确定标签的值 2016-4-06&lt;=time2&lt;2016-04-11 用户构建特征 time3&lt;2016-04-06 features &lt;– ‘select user_id, sum(case when type=2 then 1 else 0 end) as add from JData_Action where time&lt;2016-4-06 group by user_id’</p>
+<p>-Xms1024M -Xmx4096M -XX:PermSize=1024M -XX:MaxNewSize=2048M -XX:MaxPermSize=4096M -Xss8192M -XX:StackShadowPages=50</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
     
       
 
@@ -1252,149 +1371,6 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/05/02/线性回归和逻辑回归/" itemprop="url">
-                  线性回归和逻辑回归
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2017-05-02T15:25:46+08:00" content="May 2 2017">
-              May 2 2017
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>回归一词指的是我们根据之前的数据，预测出一个准确的输出值。 <img src="/media/14938262502932.jpg"></p>
-<h1 id="线性回归">线性回归</h1>
-<p>线性回归是统计学领域的方法，特征和结果的关系满足线性，即不大于1次方，如<span class="math">\(θ_{1}x_{1}+θ_2x_{2}+θ_3x_{3}=y\)</span>。都使用向量vector表示，<span class="math">\(θ^T =[θ_1,θ_2,θ_3],X^T= [x_1,x_2,x_3]\)</span>，假设函数为<span class="math">\(h_\theta(x)=θ^TX\)</span>。我们的目的是为了求出最恰当的θ，即<span class="math">\(θ_1,θ_2,θ_3\)</span>三者的值，使得损失函数<span class="math">\(J(θ)=\frac{1}{2m}\sum_{i=1}^{m}(h_θ(x^{(i)})−y^{(i)})^2\)</span>的值最小。</p>
-<h3 id="什么是梯度gradient">什么是梯度(Gradient)？</h3>
-<p>简单来说，梯度就是损失函数关于权值θ的导数，也就是关于θ的变化率(导数即变化率吧)。</p>
-<h3 id="梯度下降算法gradient-descent">梯度下降算法(Gradient descent)</h3>
-<p>我们得到的一般是个局部最优解。如果是个碗状或者叫做倒钟型的函数，那局部最优也是全局最优解。<br>The gradient descent algorithm is:<br>repeat until convergence:<br><span class="math">\(θ_j:=θ_j−α\frac∂{∂θ_j}J(θ_1,θ_2,θ_3)\)</span><br>where j=1,2,3represents the feature index number.<br><a href="https://d3c33hcgiwev3.cloudfront.net/_ec21cea314b2ac7d9e627706501b5baa_Lecture2.pdf?Expires=1493856000&amp;Signature=GSAbIM5AmG64UdFqdjCCWIn5hN~JZ8IheTVb6mliIEMdfhHgTrecl9toRVElelfaWZGY3vPkI33K7uOHicFc52EldArFxSunmfh4Mr4yjiEpZBbSF8-Tl9cWVTy2pAixsdpkmlL37Lku8VGax-LoenwwvR0i055g8j2wKJCGOrQ_&amp;Key-Pair-Id=APKAJLTNE6QMUY6HBC5A" target="_blank" rel="external">斯坦福课程线性回归教案拉到三分之二处看</a><br><a href="http://m.blog.csdn.net/article/details?id=51188876" target="_blank" rel="external">几种梯度下降方法</a><br><a href="http://blog.csdn.net/qq_34206952/article/details/54316285" target="_blank" rel="external">求导公式证明</a><br>α我们称之为learning rate步长，如果太大，那么损失函数不能收敛，如果太小，会收敛过慢。</p>
-<p>另外需要注意特征缩放(feature scaling)，确保不同特征的取值在相近的范围内，这样梯度下降法就能更快的收敛。因为如果不做这个，J(θ)在θ1和θ2轴上的投影将会非常的瘦长，收敛的过程需要走很多步，才能到达最小值，做特征缩放，就是为了让偏移没那么严重，投影看起来更圆一些。进行特征缩放时，将特征的取值约束到−1≤x(i)≤1或者−0.5≤x(i)≤0.5。<br><span class="math">\(x_i:=\frac{x_i−μ_i}{s_i}\)</span> μi表示feature(i)的平均值，si是feature(i)值的范围(max - min),或者是标准差。<br>For example, if xi represents housing prices with a range of 100 to 2000 and a mean value of 1000, then, <span class="math">\(xi:=\frac{price−1000}{1900}\)</span>.<br>说句题外话，这个特征缩放也很像将一般的正态分布转化成标准正态分布的过程:p</p>
-<p>另外还有对应线性回归的，多项式回归(曲线回归)。有时候，线性函数无法合适的进行数据的拟合，这时候也许多项式进行拟合效果更好（曲线曲面等）。</p>
-<h3 id="正规方程法normal-equation">正规方程法(Normal Equation)</h3>
-<p>此乃最小二乘法，<span class="math">\(θ = (X^TX)^{-1}X^Ty\)</span>,不需要进行特征的缩放，不需要选择α，不需要迭代，但梯度下降法在很多特征变量的情况下，也能运行地相当好，即使有上百万的特征变量，通常很有效，时间复杂度为<span class="math">\(O(kn^2)\)</span>;而正规方程法，为了求解参数θ，需要求解<span class="math">\((X^TX)^{-1}\)</span>，其中<span class="math">\(X^TX\)</span>这是个n*n的矩阵，然后求逆矩阵的计算量，大概是矩阵纬度的三次方,<span class="math">\(O(n^3)\)</span>，因此当n很大时，这个方法会非常慢的。n&gt;1W就考虑梯度下降吧。只要特征数目不是很大，用正规方程法是非常好的，对于线性回归的模型。</p>
-<table>
-<thead>
-<tr class="header">
-<th align="left">Gradient Descent</th>
-<th align="left">Normal Equation</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">Need to choose alpha</td>
-<td align="left">No need to choose alpha</td>
-</tr>
-<tr class="even">
-<td align="left">Needs many iterations<span class="Apple-tab-span" style="white-space:pre"></span></td>
-<td align="left">No need to iterate</td>
-</tr>
-<tr class="odd">
-<td align="left"><span class="math">\(O(kn^2)\)</span></td>
-<td align="left"><span class="math">\(O(n^3)\)</span>,need to calculate inverse of <span class="math">\(X^TX\)</span></td>
-</tr>
-<tr class="even">
-<td align="left">Works well when n is large</td>
-<td align="left">Slow if n is very large</td>
-</tr>
-</tbody>
-</table>
-<p>如果<span class="math">\(X^TX\)</span>是不可逆(不可逆的矩阵为奇异或退化矩阵)的时候呢？如果存在两个特征值有线性相关的时候，矩阵不可逆，或者特征向量太多的时候(e.g. m ≤ n)，矩阵或许也不可逆，这种情况就删除重复特征的一个，无须同时保留。一般情况下，算法库也会给我们一个伪逆矩阵或者是逆矩阵的解。<br>注:设A是数域上的一个n阶方阵，若在相同数域上存在另一个n阶矩阵B，使得：AB=BA=E。则我们称B是A的逆矩阵，而A则被称为可逆矩阵。</p>
-<h1 id="逻辑回归logistic-regression">逻辑回归(Logistic Regression)</h1>
-<p>sigmoid可以轻松处理0/1分类问题sigmoid函数，又称逻辑函数Logistic Function，用来进行归一化处理(促使<span class="math">\(y^{(i)}∈(0,1)\)</span>)。逻辑回归的主体还是回归操作：回归对象是sigmoid函数，它将输入映射为处于0到1之间的小数，得到这个小数之后人为将其解读成概率，然后根据事先设定的阈值进行分类。 <span class="math">\(\begin{align*}&amp; h_\theta (x) = g ( \theta^T x ) \newline \newline&amp; z = \theta^T x \newline&amp; g(z) = \dfrac{1}{1 + e^{-z}}\end{align*}\)</span></p>
-<p>sigmoid函数图像如下 <img src="/media/14938277151973.jpg"> <span class="math">\(h_θ(x)\)</span>代表了输出是1的概率为多少。如<span class="math">\(h_θ(x)\)</span>=0.7表示结果有70%的可能性是1。<br><span class="math">\(\begin{align*}&amp; h_\theta(x) = P(y=1 | x ; \theta) = 1 - P(y=0 | x ; \theta) \newline&amp; P(y = 0 | x;\theta) + P(y = 1 | x ; \theta) = 1\end{align*}\)</span><br>因为结果都是离散数值，0或者1，所以当结果大于等于0.5的时候，就认为是1，反之为0.<br><span class="math">\(\begin{align*}&amp; h_\theta(x) \geq 0.5 \rightarrow y = 1 \newline&amp; h_\theta(x) &lt; 0.5 \rightarrow y = 0 \newline\end{align*}\)</span><br>等价于<br><span class="math">\(\begin{align*}&amp; \theta^T x \geq 0 \Rightarrow y = 1 \newline&amp; \theta^T x &lt; 0 \Rightarrow y = 0 \newline\end{align*}\)</span><br>另外<span class="math">\(z = \theta^T x\)</span> 函数也不一定是线性的，例<span class="math">\(z =θ_0+θ_1x^2_1+θ_2x^2_2\)</span>也可以是个圆，或者其他的形状，只要拟合数据就OK。<br>逻辑回归的损失函数如下：<br><span class="math">\(\begin{align*}&amp; J(\theta) = \dfrac{1}{m} \sum_{i=1}^m \mathrm{Cost}(h_\theta(x^{(i)}),y^{(i)}) \newline &amp; \mathrm{Cost}(h_\theta(x),y) = -\log(h_\theta(x)) \; &amp; \text{if y = 1} \newline &amp; \mathrm{Cost}(h_\theta(x),y) = -\log(1-h_\theta(x)) \; &amp; \text{if y = 0}\end{align*}\)</span><br>当y = 1的时候，关于J(θ)和$ h_θ(x)<span class="math">\(的函数\)</span>Cost(h_(x),y) = -(h_(x))$图像如下: <img src="/media/14938660514848.jpg"></p>
-<p><span class="math">\(\begin{align*}&amp; \mathrm{Cost}(h_\theta(x),y) = 0 \text{ if } h_\theta(x) = y \newline &amp; \mathrm{Cost}(h_\theta(x),y) \rightarrow \infty \text{ if } y = 0 \; \mathrm{and} \; h_\theta(x) \rightarrow 1 \newline \end{align*}\)</span></p>
-<p>当y = 0的时候，关于J(θ)和$ h_θ(x)<span class="math">\(的函数\)</span>Cost(h_(x),y) = -(1-h_(x))$图像如下: <img src="/media/14938664062585.jpg"> <span class="math">\(\begin{align*}&amp; \mathrm{Cost}(h_\theta(x),y) = 0 \text{ if } h_\theta(x) = y\newline &amp; \mathrm{Cost}(h_\theta(x),y) \rightarrow \infty \text{ if } y = 1 \; \mathrm{and} \; h_\theta(x) \rightarrow 0 \newline \end{align*}\)</span></p>
-<p>综上，得到损失函数为<span class="math">\(\mathrm{Cost}(h_\theta(x),y) = - y \; \log(h_\theta(x)) - (1 - y) \log(1 - h_\theta(x))\)</span><br>也写成<span class="math">\(J(\theta) = - \frac{1}{m} \displaystyle \sum_{i=1}^m [y^{(i)}\log (h_\theta (x^{(i)})) + (1 - y^{(i)})\log (1 - h_\theta(x^{(i)}))]\)</span><br>向量化可表示成<br><span class="math">\(\begin{align*} &amp; h = g(X\theta)\newline &amp; J(\theta) = \frac{1}{m} \cdot \left(-y^{T}\log(h)-(1-y)^{T}\log(1-h)\right) \end{align*}\)</span><br>梯度下降:<br><span class="math">\(\begin{align*}&amp; Repeat \; \lbrace \newline &amp; \; \theta_j := \theta_j - \alpha \dfrac{\partial}{\partial \theta_j}J(\theta)=\theta_j - \frac{\alpha}{m} \sum_{i=1}^m (h_\theta(x^{(i)}) - y^{(i)}) x_j^{(i)} \newline &amp; \rbrace\end{align*}\)</span><br>向量化表示为:<span class="math">\(\theta := \theta - \frac{\alpha}{m} X^{T} (g(X \theta ) - \vec{y})\)</span></p>
-<h1 id="综述">综述</h1>
-<p><img src="/media/14938678719388.jpg"> 第一个图像是欠拟合的(underfitting),第二个相对合适，第三个过拟合。 欠拟合，一般都是因为h函数太简单，或者是特征向量过少。而过度拟合问题(Overfitting)，往往是因为函数太复杂了，虽然很完美的拟合了输入数据，但是产生了许多不必要的曲线角度，对于往后的测试，其实是不利的。<br>解决过度拟合问题:</p>
-<ol style="list-style-type: decimal">
-<li>减少特征数：手动选择要保留的特征，或者使用模型选择算法</li>
-<li>正则化：保留所有的特征，但是减轻θ的影响。 <span class="math">\(min_\theta\ \dfrac{1}{2m}\  \sum_{i=1}^m (h_\theta(x^{(i)}) - y^{(i)})^2 + \lambda\ \sum_{j=1}^n \theta_j^2\)</span><br>λ太大，就会欠拟合，因为θ会很小，甚至为0；如果λ太小，就会过拟合，因为θ会很大，正则化也失去了相应的作用。<br>线性回归的正则化的梯度下降和最小二乘法，看这里<a href="https://www.coursera.org/learn/machine-learning/supplement/pKAsc/regularized-linear-regression" target="_blank" rel="external">课程资料</a><br>逻辑回归正则化看这里<a href="https://www.coursera.org/learn/machine-learning/supplement/v51eg/regularized-logistic-regression" target="_blank" rel="external">课程资料</a></li>
-</ol>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1440,11 +1416,18 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">27</span>
+              <span class="site-state-item-count">28</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
 
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">categories</span>
+              </a>
+            </div>
           
 
           
@@ -1494,7 +1477,7 @@
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2017</span>
+  <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
