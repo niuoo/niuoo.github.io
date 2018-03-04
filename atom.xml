@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://niuoo.github.io/"/>
-  <updated>2018-02-09T08:54:46.000Z</updated>
+  <updated>2018-03-04T10:51:27.000Z</updated>
   <id>http://niuoo.github.io/</id>
   
   <author>
@@ -14,6 +14,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>余弦定理证明</title>
+    <link href="http://niuoo.github.io/2018/03/04/%E4%BD%99%E5%BC%A6%E5%AE%9A%E7%90%86%E8%AF%81%E6%98%8E/"/>
+    <id>http://niuoo.github.io/2018/03/04/余弦定理证明/</id>
+    <published>2018-03-04T10:51:27.000Z</published>
+    <updated>2018-03-04T10:51:27.000Z</updated>
+    
+    <content type="html"><![CDATA[
+]]></content>
+    
+    <summary type="html">
+    
+      
+
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>2018-02-04 把计划变成习惯</title>
@@ -44,7 +64,7 @@
     <link href="http://niuoo.github.io/2018/01/18/SVM%E6%95%B0%E5%AD%A6%E5%8E%9F%E7%90%86%E8%AF%A6%E8%A7%A3/"/>
     <id>http://niuoo.github.io/2018/01/18/SVM数学原理详解/</id>
     <published>2018-01-18T15:15:31.000Z</published>
-    <updated>2018-02-09T03:43:57.000Z</updated>
+    <updated>2018-03-04T10:54:34.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="准备知识">准备知识</h2>
 <p>余弦定理的证明 如图所示 <img src="/media/15162913744684.jpg"></p>
@@ -75,10 +95,10 @@
     <link href="http://niuoo.github.io/2018/01/16/2018-01-04%E6%97%A5%E8%AE%B0/"/>
     <id>http://niuoo.github.io/2018/01/16/2018-01-04日记/</id>
     <published>2018-01-16T07:22:55.000Z</published>
-    <updated>2018-01-29T02:33:42.000Z</updated>
+    <updated>2018-02-28T16:57:03.000Z</updated>
     
     <content type="html"><![CDATA[<p>19:30-21:30 看完 <a href="http://zyy1217.com/2016/10/11/Word2vec%20%E4%B8%AD%E7%9A%84%E6%95%B0%E5%AD%A6%E5%8E%9F%E7%90%86%E8%AF%A6%E8%A7%A3/" target="_blank" rel="external">word2vec数学原理</a> 21:30-23:00 看完 <a href="http://blog.csdn.net/v_july_v/article/details/7624837" target="_blank" rel="external">SVM</a></p>
-<p>小宝贝，一定要做完啊 ，到时候过来打卡。</p>
+<p>一定要做完啊 ，到时候过来打卡。</p>
 ]]></content>
     
     <summary type="html">
@@ -141,13 +161,13 @@
     <link href="http://niuoo.github.io/2017/12/27/%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F/"/>
     <id>http://niuoo.github.io/2017/12/27/推荐系统/</id>
     <published>2017-12-27T03:36:23.000Z</published>
-    <updated>2018-01-18T16:35:39.000Z</updated>
+    <updated>2018-02-28T16:56:47.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="svd">SVD++</h1>
 <p>关于SVD++，看这篇博客 <a href="https://plushunter.github.io/2017/03/07/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AE%97%E6%B3%95%E7%B3%BB%E5%88%97%EF%BC%8813%EF%BC%89%EF%BC%9A%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F%EF%BC%883%EF%BC%89%E2%80%94%E2%80%94%E7%9F%A9%E9%98%B5%E5%88%86%E8%A7%A3%E6%8A%80%E6%9C%AF/" target="_blank" rel="external">矩阵分解技术</a></p>
 <h1 id="word2vec">Word2Vec</h1>
-<p><a href="https://www.cnblogs.com/peizhe123/p/7447164.html" target="_blank" rel="external">58同城的推荐</a> 深度学习正逐渐被各大公司应用于推荐系统中，我们也正在进行尝试。目前，我们已将FNN（Factorisation machine supported neuralnetwork）模型应用在我们的推荐排序中，相比单机器学习模型，FNN有较稳定的效果提升，但比融合模型效果要稍差，目前我们正在进行深度模型的调优，并在尝试引入Wide&amp;Deep等其他深度模型。</p>
-<p>网易考拉的这篇是对用户的历史购买订单使用FNN，然后对用户的实时浏览点击网页使用RNN<a href="https://arxiv.org/pdf/1706.10231.pdf" target="_blank" rel="external">网易考拉推荐系统</a></p>
+<p><a href="https://www.cnblogs.com/peizhe123/p/7447164.html" target="_blank" rel="external">58同城的推荐</a> 深度学习正逐渐被各大公司应用于推荐系统中，我们也正在进行尝试。目前，FNN（Factorisation machine supported neuralnetwork）模型应用，相比单机器学习模型，FNN有较稳定的效果提升，但比融合模型效果要稍差，目前正在进行深度模型的调优，并在尝试引入Wide&amp;Deep等其他深度模型。</p>
+<p>网易考拉的这篇论文是对用户的历史购买订单使用FNN，然后对用户的实时浏览点击网页使用RNN<a href="https://arxiv.org/pdf/1706.10231.pdf" target="_blank" rel="external">网易考拉推荐系统</a></p>
 ]]></content>
     
     <summary type="html">
@@ -165,7 +185,7 @@
     <link href="http://niuoo.github.io/2017/12/19/fast-ai-%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
     <id>http://niuoo.github.io/2017/12/19/fast-ai-环境配置/</id>
     <published>2017-12-19T15:52:23.000Z</published>
-    <updated>2018-02-04T15:06:54.000Z</updated>
+    <updated>2018-03-04T10:52:51.000Z</updated>
     
     <content type="html"><![CDATA[<p>我最最讨厌的就是做如下的事情。求老天鹅赐男友一枚，能帮我配环境的那种。</p>
 <h1 id="申请工单">申请工单</h1>
@@ -188,7 +208,7 @@
 <p><code>aws-start</code> 启动实例。<code>aws-stop</code> 关闭实例。</p>
 <p>另外，很多命令也可以在文件<code>fast-ai-commands.txt</code>里面查看。如果需要删除相关的按照内容，那么执行当前courses/setup目录下的<code>fast-ai-remove.sh</code>脚本。</p>
 <h1 id="其他">其他</h1>
-<p>t2的实例是免费的。调代码的时候，最好使用t2实例。p2是每小时0.9美元的价格。使用aws每个月还有固定硬盘的费用，以及绑定固定IP的费用。反正我也不知道，糊里糊涂的每个月200元没了。飙泪……以后用习惯了，尝试AWS的竞价模式。</p>
+<p>t2的实例是免费的。调代码的时候，最好使用t2实例。p2是每小时0.9美元的价格。使用aws每个月还有固定硬盘的费用，以及绑定固定IP的费用。每个月大约200元左右。飙泪……以后用习惯了，尝试AWS的竞价模式。</p>
 <p>t2的安装也根据相应的指示来，目录下有t2的安装脚本。</p>
 <p>如果换了一台电脑，那么把原来的密钥对aws-key-fast-ai.pem文件copy到对应目录下面。setup_p2.sh脚本就不用执行了，直接执行一下aws-alias，就可以了。然后通过aws的命令进行登录。</p>
 <p>最近，我的情绪好暴躁啊。</p>
@@ -323,11 +343,10 @@ Ctrl+B &      Kill window
     <link href="http://niuoo.github.io/2017/12/17/2017-12-17%E6%97%A5%E8%AE%B0/"/>
     <id>http://niuoo.github.io/2017/12/17/2017-12-17日记/</id>
     <published>2017-12-17T05:08:26.000Z</published>
-    <updated>2018-01-29T02:33:09.000Z</updated>
+    <updated>2018-02-28T16:55:53.000Z</updated>
     
     <content type="html"><![CDATA[<p>14:00~17:00 看贝叶斯和论文 &lt;<a href="https://pdfs.semanticscholar.org/a5c4/35690c717d04801a68950f14036c38f2a9ab.pdf" target="_blank" rel="external">What is the expectation maximization algorithm?</a>&gt;</p>
 <p>18:00~21:00 fast.ai 第二课看完。</p>
-<p>加油！小宝贝</p>
 ]]></content>
     
     <summary type="html">
@@ -346,11 +365,9 @@ Ctrl+B &      Kill window
     <link href="http://niuoo.github.io/2017/12/17/2017-12-16%E6%97%A5%E8%AE%B0-1/"/>
     <id>http://niuoo.github.io/2017/12/17/2017-12-16日记-1/</id>
     <published>2017-12-16T20:21:53.000Z</published>
-    <updated>2018-02-08T03:04:43.000Z</updated>
+    <updated>2018-03-04T10:53:39.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="安排">2017-12-16安排</h1>
-<p>14:00~17:00 我了个擦擦的，气死啦。</p>
-<p>17:00~17:30 玩儿半个小时。吃了羊肉抓饭。买的烤鸡翅，送来的是羊肉串。√</p>
 <p>17:30~20:00 看<a href="https://mp.weixin.qq.com/s?__biz=MzIzMjU1NTg3Ng==&amp;mid=2247486415&amp;idx=1&amp;sn=b50f4cc8ef9cd4d4d34cbdb0d30b4afc&amp;chksm=e8925fc4dfe5d6d217d46bca560eb7030232c14183cf0b791aa9af7da5671ac536f8a45693f5&amp;mpshare=1&amp;scene=1&amp;srcid=1213nA8yTjxK7pw2LxnuSRGu&amp;key=da103cb67940783e381102fb14674ebd0d039d798c7b1932fa1ce5f48d91ad89962437c729f7545312a6ce1fa03df0a1640dbb145e25544cd7300fea7763d40720cd1adc84907bd0a8c3c52bc836bfe7&amp;ascene=0&amp;uin=MTA2MTM3MjcwNA%3D%3D&amp;devicetype=iMac+MacBookPro11%2C1+OSX+OSX+10.11.6+build(15G1510)&amp;version=12020810&amp;nettype=WIFI&amp;lang=zh_CN&amp;fontScale=100&amp;pass_ticket=2%2B82FeLMFDTNJse7id71tUxAiI0JCuIWakI%2FV%2FKqOK8Veq9r%2FRy%2Bbxvfzgt2E1Cw" target="_blank" rel="external">Hinton和Jordan理解的EM算法</a></p>
 <p>这篇文章我居然没读通，明天把不懂的地方请教下小伙伴。根据文章的引导，我想看看Daphne Koller的神书“Probabilistic Graphical Models: Principles and Techniques”，其中的第8章：The Exponential Family 和第19章 Partially Observed Data。 这两章几乎是Hinton对VBEM算法研究的高度浓缩。结果，我看全是英文作罢了。根据我看EM的过程，发现补理论知识，实在旷日持久。概率图模型，有机会成为下一个深度学习的理论之一。配套的视频，<a href="https://www.coursera.org/specializations/probabilistic-graphical-models" class="uri" target="_blank" rel="external">https://www.coursera.org/specializations/probabilistic-graphical-models</a></p>
 <p>于是我做出个重大的决定，先不管理论了。直接fast.ai继续。硬着头皮把第一阶段的课程看完。然后再看看吴恩达deeplearning.ai课程。以后肯定会用到各种算法，到时候再慢慢理解。需要什么看什么。当然，拔苗助长也不好，但是可以先来一个成长周期短一点的种子，先果腹一下，别饿死最重要。</p>
@@ -358,7 +375,6 @@ Ctrl+B &      Kill window
 <p>20:00~22:00 <深度学习>看2小时。时间安排出问题了，这件事情没做。呵呵哒。</深度学习></p>
 <p>22:00~23:00 <普林斯顿微积分>看1个小时，进入梦乡。也呵呵哒。</普林斯顿微积分></p>
 <p>每做好一步，过来打勾勾哦!</p>
-<p>加油，小宝贝！</p>
 <p>发现自己现在话特别多，话多了，真正思考的时间就没了。但是又需要一定的表达，把想法作为日记写进博客里面，可以帮自己理清楚思路。不过缺点是，博客变得杂乱无章， 毕竟这个博客，最初的想法是作为技术博客的。</p>
 <p>不过嘛，反正是自己的博客，随便DIY了。</p>
 <p>好了，开始废话时间了。</p>
@@ -379,49 +395,11 @@ Ctrl+B &      Kill window
     <summary type="html">
     
       &lt;h1 id=&quot;安排&quot;&gt;2017-12-16安排&lt;/h1&gt;
-&lt;p&gt;14:00~17:00 我了个擦擦的，气死啦。&lt;/p&gt;
-&lt;p&gt;17:00~17:30 玩儿半个小时。吃了羊肉抓饭。买的烤鸡翅，送来的是羊肉串。√&lt;/p&gt;
-&lt;p&gt;17:30~20:00 看&lt;a href=&quot;https
+&lt;p&gt;17:30~20:00 看&lt;a href=&quot;https://mp.weixin.qq.com/s?__biz=MzIzMjU1NTg3Ng==&amp;amp;mid=2247486415&amp;amp;idx=1&amp;amp;sn
     
     </summary>
     
       <category term="日记" scheme="http://niuoo.github.io/categories/%E6%97%A5%E8%AE%B0/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Jdata特征工程分析</title>
-    <link href="http://niuoo.github.io/2017/07/30/Jdata%E7%89%B9%E5%BE%81%E5%B7%A5%E7%A8%8B%E5%88%86%E6%9E%90/"/>
-    <id>http://niuoo.github.io/2017/07/30/Jdata特征工程分析/</id>
-    <published>2017-07-29T16:15:05.000Z</published>
-    <updated>2017-08-16T03:27:54.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="数据介绍">数据介绍</h1>
-<p>符号定义： S：提供的商品全集； P：候选的商品子集（JData_Product.csv），P是S的子集； U：用户集合； A：用户对S的行为数据集合； C：S的评价数据。</p>
-<p>训练数据部分： 提供2016-02-01到2016-04-15日用户集合U中的用户，对商品集合S中部分商品的行为、评价、用户数据；提供部分候选商品的数据P。 选手从数据中自行组成特征和数据格式，自由组合训练测试数据比例。</p>
-<p>预测数据部分： 2016-04-16到2016-04-20用户是否下单P中的商品，每个用户只会下单一个商品；抽取部分下单用户数据，A榜使用50%的测试数据来计算分数；B榜使用另外50%的数据计算分数(计算准确率时剔除用户提交结果中user_Id与A榜的交集部分)。</p>
-<p>为保护用户的隐私和数据安全，所有数据均已进行了采样和脱敏。 数据中部分列存在空值或NULL，请参赛者自行处理。</p>
-<ol style="list-style-type: decimal">
-<li><p>用户数据 user_id 用户ID 脱敏 age 年龄段 -1表示未知 sex 性别 0表示男，1表示女，2表示保密 user_lv_cd 用户等级 有顺序的级别枚举，越高级别数字越大 user_reg_tm 用户注册日期 粒度到天</p></li>
-<li><p>商品数据 sku_id 商品编号 脱敏 a1 属性1 枚举，-1表示未知 a2 属性2 枚举，-1表示未知 a3 属性3 枚举，-1表示未知 cate 品类ID 脱敏 brand 品牌ID 脱敏</p></li>
-<li><p>评价数据 dt 截止到时间 粒度到天 sku_id 商品编号 脱敏 comment_num 累计评论数分段 0表示无评论，1表示有1条评论， 2表示有2-10条评论， 3表示有11-50条评论， 4表示大于50条评论 has_bad_comment 是否有差评 0表示无，1表示有 bad_comment_rate 差评率 差评数占总评论数的比重</p></li>
-<li><p>行为数据 user_id 用户编号 脱敏 sku_id 商品编号 脱敏 time 行为时间<br> model_id 点击模块编号，如果是点击 脱敏 type 1.浏览（指浏览商品详情页）； 2.加入购物车；3.购物车删除；4.下单；5.关注；6.点击</p></li>
-</ol>
-<p>cate 品类ID 脱敏 brand 品牌ID 脱敏 登录并报名参赛后方可在“数据下载”页面下载数据。</p>
-<p>任务描述： 参赛者需要使用京东多个品类下商品的历史销售数据，构建算法模型，预测用户在未来5天内，对某个目标品类下商品的购买意向。对于训练集中出现的每一个用户，参赛者的模型需要预测该用户在未来5天内是否购买目标品类下的商品以及所购买商品的SKU_ID。评测算法将针对参赛者提交的预测结果，计算加权得分。</p>
-<h1 id="section">。。。</h1>
-<p>用于预测 2016-4-11&lt;=time1&lt;=2016-04-15 用于训练数据确定标签的值 2016-4-06&lt;=time2&lt;2016-04-11 用户构建特征 time3&lt;2016-04-06 features &lt;– ‘select user_id, sum(case when type=2 then 1 else 0 end) as add from JData_Action where time&lt;2016-4-06 group by user_id’</p>
-<p>-Xms1024M -Xmx4096M -XX:PermSize=1024M -XX:MaxNewSize=2048M -XX:MaxPermSize=4096M -Xss8192M -XX:StackShadowPages=50</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;数据介绍&quot;&gt;数据介绍&lt;/h1&gt;
-&lt;p&gt;符号定义： S：提供的商品全集； P：候选的商品子集（JData_Product.csv），P是S的子集； U：用户集合； A：用户对S的行为数据集合； C：S的评价数据。&lt;/p&gt;
-&lt;p&gt;训练数据部分： 提供2016-02-0
-    
-    </summary>
     
     
   </entry>
