@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://niuoo.github.io/"/>
-  <updated>2018-03-15T04:33:53.000Z</updated>
+  <updated>2018-03-15T04:41:41.000Z</updated>
   <id>http://niuoo.github.io/</id>
   
   <author>
@@ -20,16 +20,24 @@
     <link href="http://niuoo.github.io/2018/03/04/%E4%BD%99%E5%BC%A6%E5%AE%9A%E7%90%86%E8%AF%81%E6%98%8E/"/>
     <id>http://niuoo.github.io/2018/03/04/余弦定理证明/</id>
     <published>2018-03-04T10:51:27.000Z</published>
-    <updated>2018-03-15T04:33:53.000Z</updated>
+    <updated>2018-03-15T04:41:41.000Z</updated>
     
     <content type="html"><![CDATA[<p>余弦定理的证明的一种方式： 如图所示 <img src="/media/15162913744684.jpg"></p>
-<p>在△ABC中，BC=a，AC=b，AB=c，作AD⊥BC于D，则AD=c<em>sinB，DC=a-BD=a-c</em>cosB 在直角△ABD中， b²=AD²+DC²=(c<em>sinB)²+(a-c</em>cosB)² =c²sin²B+a²-2ac<em>cosB+c²cos²B =c²(sin²B+cos²B)+a²-2ac</em>cosB =c²+a²-2ac*cosB</p>
+在△ABC中，BC=a，AC=b，AB=c，作AD⊥BC于D，则AD=c<em>sinB，DC=a-BD=a-c</em>cosB 在直角△ABD中，
+<pre>
+b²=AD²+DC²
+  =(c*sinB)²+(a-c*cosB)²
+  =c²sin²B+a²-2ac*cosB+c²cos²B
+  =c²(sin²B+cos²B)+a²-2ac*cosB
+  =c²+a²-2ac*cosB
+</pre>
 ]]></content>
     
     <summary type="html">
     
       &lt;p&gt;余弦定理的证明的一种方式： 如图所示 &lt;img src=&quot;/media/15162913744684.jpg&quot;&gt;&lt;/p&gt;
-&lt;p&gt;在△ABC中，BC=a，AC=b，AB=c，作AD⊥BC于D，则AD=c&lt;em&gt;sinB，DC=a-BD=a-c&lt;/em&gt;cosB 在直角△ABD
+在△ABC中，BC=a，AC=b，AB=c，作AD⊥BC于D，则AD=c&lt;em&gt;sinB，DC=a-BD=a-c&lt;/em&gt;cosB 在直角△ABD中，
+
     
     </summary>
     
@@ -39,11 +47,11 @@
   </entry>
   
   <entry>
-    <title>2018-02-04 把计划变成习惯</title>
+    <title>把计划变成习惯</title>
     <link href="http://niuoo.github.io/2018/02/04/2018-02-04-%E6%8A%8A%E8%AE%A1%E5%88%92%E5%8F%98%E6%88%90%E4%B9%A0%E6%83%AF/"/>
     <id>http://niuoo.github.io/2018/02/04/2018-02-04-把计划变成习惯/</id>
     <published>2018-02-04T04:56:38.000Z</published>
-    <updated>2018-03-15T04:37:48.000Z</updated>
+    <updated>2018-03-15T04:43:32.000Z</updated>
     
     <content type="html"><![CDATA[<p>节奏很重要。适合的节奏才是最好的，一开始跑得快乱了节奏反而不好。节奏不用太快，合适就好。每天把做的事情都定成课程表，到点就做，把节奏变成习惯就好了。这点很有意义，因为人按习惯走非常轻松，按计划走很痛苦，一个折中的方法就是把计划变成习惯，就好了。</p>
 ]]></content>
@@ -65,10 +73,11 @@
     <link href="http://niuoo.github.io/2018/01/18/SVM%E6%95%B0%E5%AD%A6%E5%8E%9F%E7%90%86%E8%AF%A6%E8%A7%A3/"/>
     <id>http://niuoo.github.io/2018/01/18/SVM数学原理详解/</id>
     <published>2018-01-18T15:15:31.000Z</published>
-    <updated>2018-03-15T04:32:17.000Z</updated>
+    <updated>2018-03-15T04:43:09.000Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="准备知识">准备知识</h2>
+    <content type="html"><![CDATA[<h4 id="准备知识">准备知识</h4>
 <ol style="list-style-type: decimal">
+<li><a href="https://niuoo.me/2018/03/04/%E4%BD%99%E5%BC%A6%E5%AE%9A%E7%90%86%E8%AF%81%E6%98%8E/" target="_blank" rel="external">余弦定理证明</a></li>
 <li><a href="https://www.cnblogs.com/vive/p/4563803.html" target="_blank" rel="external">向量点积(内积)</a></li>
 <li><a href="https://www.cnblogs.com/graphics/archive/2010/07/10/1774809.html" target="_blank" rel="external">点到平面的距离公式</a></li>
 </ol>
@@ -76,9 +85,9 @@
     
     <summary type="html">
     
-      &lt;h2 id=&quot;准备知识&quot;&gt;准备知识&lt;/h2&gt;
+      &lt;h4 id=&quot;准备知识&quot;&gt;准备知识&lt;/h4&gt;
 &lt;ol style=&quot;list-style-type: decimal&quot;&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.cnblogs.com/vive/p/4563803.html&quot; target=&quot;_blank&quot; rel=
+&lt;li&gt;&lt;a href=&quot;https://niuoo.me/2018/03/04/%E4%BD%99%E5%BC%A6%E5%AE%9A%E7%90%86%
     
     </summary>
     
@@ -90,19 +99,18 @@
   </entry>
   
   <entry>
-    <title>2018-01-16日记</title>
+    <title>Tue Jan 16 2018 00:00:00 GMT+0800 (CST)</title>
     <link href="http://niuoo.github.io/2018/01/16/2018-01-04%E6%97%A5%E8%AE%B0/"/>
     <id>http://niuoo.github.io/2018/01/16/2018-01-04日记/</id>
     <published>2018-01-16T07:22:55.000Z</published>
-    <updated>2018-03-04T10:57:40.000Z</updated>
+    <updated>2018-03-15T04:45:39.000Z</updated>
     
-    <content type="html"><![CDATA[<p>19:30-21:30 看完 <a href="http://zyy1217.com/2016/10/11/Word2vec%20%E4%B8%AD%E7%9A%84%E6%95%B0%E5%AD%A6%E5%8E%9F%E7%90%86%E8%AF%A6%E8%A7%A3/" target="_blank" rel="external">word2vec数学原理</a> 21:30-23:00 看完 <a href="http://blog.csdn.net/v_july_v/article/details/7624837" target="_blank" rel="external">SVM</a></p>
-<p>一定要做完啊 ，到时候过来打卡。</p>
+    <content type="html"><![CDATA[<p>19:30-21:30 看<a href="http://suanfazu.com/t/word2vec-zhong-de-shu-xue-yuan-li-xiang-jie-duo-tu-wifixia-yue-du/178" target="_blank" rel="external">word2vec数学原理</a> 21:30-23:00 看<a href="http://blog.csdn.net/v_july_v/article/details/7624837" target="_blank" rel="external">SVM</a></p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;19:30-21:30 看完 &lt;a href=&quot;http://zyy1217.com/2016/10/11/Word2vec%20%E4%B8%AD%E7%9A%84%E6%95%B0%E5%AD%A6%E5%8E%9F%E7%90%86%E8%AF%A6%E8%A7%A3
+      &lt;p&gt;19:30-21:30 看&lt;a href=&quot;http://suanfazu.com/t/word2vec-zhong-de-shu-xue-yuan-li-xiang-jie-duo-tu-wifixia-yue-du/178&quot; target=&quot;_blank&quot; rel=&quot;e
     
     </summary>
     
@@ -527,7 +535,7 @@ Ctrl+B &      Kill window
     <link href="http://niuoo.github.io/2017/05/14/Dimensionality-Reduction-%E7%BB%B4%E5%BA%A6%E7%BA%A6%E5%87%8F/"/>
     <id>http://niuoo.github.io/2017/05/14/Dimensionality-Reduction-维度约减/</id>
     <published>2017-05-13T16:30:13.000Z</published>
-    <updated>2017-06-05T10:04:42.000Z</updated>
+    <updated>2018-03-15T04:46:06.000Z</updated>
     
     <content type="html"><![CDATA[<p>使用Dimensionality Reduction-维数约减，一般是为了数据压缩，减少内存和硬盘空间存储，并提高算法速度。在特征降维的方法中，PCA(Principle Component Analysis)是最为经典和实用的特征降维技术，特别是在辅助图像识别方面有突出表现。 特征降维是无监督学习的另一个应用。降维/压缩问题是选取数据具有代表性的特征，在保持数据多样性(Variance)的基础上，规避掉大量的特征冗余和噪声，不过这个过程也很有可能会损失一些有用的模式信息。经过大量的实践证明，相较于损失的少部分模型性能，维度压缩可节省大量用于模型训练的时间，使得模型综合效率变得更高。</p>
 <p>在实际项目中，我们会得到特征维度非常高的训练样本，有的特征向量之间是有关系的，比如预测房价的时候，得到的房子长度inches英寸和cm厘米，它们两个是线性相关的，所以有一个信息是冗余的，就可以去掉一个。又如下图所示，数据集中在一个平面Z附近，所以就可以把3D的数据降维成2D。 <img src="/media/14945865066705.jpg"></p>
