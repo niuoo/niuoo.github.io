@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://niuoo.github.io/"/>
-  <updated>2018-03-05T08:24:42.000Z</updated>
+  <updated>2018-03-15T04:33:53.000Z</updated>
   <id>http://niuoo.github.io/</id>
   
   <author>
@@ -14,84 +14,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title></title>
-    <link href="http://niuoo.github.io/2018/03/04/2018-03-04/"/>
-    <id>http://niuoo.github.io/2018/03/04/2018-03-04/</id>
-    <published>2018-03-04T11:39:02.000Z</published>
-    <updated>2018-03-05T08:24:42.000Z</updated>
-    
-    <content type="html"><![CDATA[<h4 id="牛媛媛">牛媛媛</h4>
-<p>电话: 17002186000 邮箱: niuooo@yeah.net 个人网站: <a href="https://niuoo.me" class="uri" target="_blank" rel="external">https://niuoo.me</a> #### 个人简介 最初从事Java后端开发工作，业余时间喜欢刷Leetcode，写小算法的过程很有成就感。在学习了吴恩达老师的机器学习课程后，发现机器学习可以把数学和编程进行结合，决定往机器学习的方向转，于是进一步学习，在公司内部顺利转部门，开始从事机器学习相关的工作。希望未来，可以给自己建立起机器学习相关的数学知识体系，完善技能树，成为这个行业优秀的人才。</p>
-<h4 id="技能分布">技能分布</h4>
-<p>ML Python Spark Flask Java MySQL AWS Docker</p>
-<h4 id="工作经历">工作经历</h4>
-<p>2015.05 — 2018.03 杭州数云信息技术有限公司 算法工程师/Java开发工程师 2014.07 — 2015.05 银视通信息技术有限公司 软件工程师 2012.09 — 2013.08 中国银联 实习软件工程师 #### 教育经历 2011 — 2014 西安交通大学 软件工程 硕士 2007 — 2011 郑州大学 计算机科学与技术 本科 #### 项目经历 #### 个性化商品推荐 2017.10 - 现在 <strong>项目业务描述：</strong>对不同的买家，进行个性化商品推荐</p>
-<ol style="list-style-type: decimal">
-<li>接入数据，查看数据量的大小，并根据用户商品矩阵的稀疏情况，判断是否适合进行商品个性化推荐,目前只有订单数据和商品数据，并无购物车和浏览数据;</li>
-<li>微信端的数据，使用item-based、user-based、fp-growth等算法进行融合;</li>
-<li>淘宝端的数据量比较大，使用了SVD++算法，但是由于最终预测的商品覆盖面特别小，并且训练效率过低，改用了word2vec算法进行商品推荐。</li>
-</ol>
-<p>相关技术：Python Scala Spark Word2Vec ALS SVD++</p>
-<h4 id="客户回购预测-2017.07---2017.09">客户回购预测 2017.07 - 2017.09</h4>
-<p><strong>项目业务描述：</strong>分析用户历史购买行为，进行潜在回购用户的预测，进行国庆节、元旦、春节的营销</p>
-<ol style="list-style-type: decimal">
-<li>特征工程：工作包括数据接入、目标定义、特征的加工、探索、清洗、选择，用户数据再次融合了数据平台的其他消费数据，其中使用了WOE和IV、方差选择、共线性去除等方式筛选特征,并使用xgboost进 行特征的衍生,并根据相应的公式再次进行特征选择；</li>
-<li>进行时间窗口滑动，扩大数据集，负样本过大，使用向下采样方式，使得正负样本均衡；</li>
-<li>考虑一次客和复购客的差异，尝试对二者分开建模，但是效果不明显；</li>
-<li>使用SVM、xgboost、RF、LR模型进行融合；</li>
-<li>算法使用准确率和召回率进行评估</li>
-</ol>
-<p>相关技术：Python postgreSQL ML tableau</p>
-<h4 id="用户画像-2017.04---2017.06">用户画像 2017.04 - 2017.06</h4>
-<p><strong>项目业务描述：</strong>分析用户信息和历史购买行为，对用户进行聚类</p>
-<ol style="list-style-type: decimal">
-<li>特征工程：融合DMP平台的用户标签，覆盖率约有70%，特征加工探索归一化等；</li>
-<li>使用k-means++算法进行聚类；</li>
-<li>算法使用轮廓系数进行评估。</li>
-</ol>
-<p>相关技术：Python postgreSQL ML tableau</p>
-<h4 id="时间序列2017.01---2017.03">时间序列2017.01 - 2017.03</h4>
-<p><strong>项目业务描述：</strong> 对卖家的来年销量和销售额进行预测</p>
-<ol style="list-style-type: decimal">
-<li>探索了时间序列的集中模型；</li>
-<li>使用了Facebook的prophet开源工具包进行时间序列预测；</li>
-<li>算法使用MSE进行评估。</li>
-</ol>
-<p>相关技术：Python prophet ML tableau</p>
-<h4 id="数据赢家-2015.05--2016.12">数据赢家 2015.05 -2016.12</h4>
-<p><strong>项目业务描述：</strong>数据赢家主要帮助淘宝大卖家更好的管理买家信息，分析其购买行为，进行精准营销</p>
-<ul>
-<li><p>老版本使用Java平台开发，通过Apache Karaf的OSGi框架来实现模块儿化开发部署，使用Spring MVC提供基于JSON的接口，数据层使用Spring Data JPA、MyBatis开发；</p></li>
-<li><p>新版项目基于Docker化的微服务架构，基于Dropwizard实现RESTful服务，通过Spring集成MyBatis来完成事物的托管和Bean的管理。</p></li>
-</ul>
-<p>相关技术：Java Restful Docker Etcd Mesos 持续化交付</p>
-<h4 id="第三方支付清算平台-2014.07--2015.05">第三方支付清算平台 2014.07 -2015.05</h4>
-<p><strong>项目业务描述：</strong>清算平台主要包括增值清算、差错调账、商户机构信息维护三大部分</p>
-<ul>
-<li>负责流水勾兑、手续费分润计算、差错处理、调账处理、商户信息维护、业务报表生成等功能升级和维护。</li>
-</ul>
-<p>相关技术：ASP.NET VB C++ Java</p>
-<h4 id="多渠道平台离线仿真-2012.09--2013.08">多渠道平台离线仿真 2012.09 -2013.08</h4>
-<p><strong>项目业务描述：</strong>模拟多渠道接收交易和发送应答的处理，及时满足第三方机构入网测试需求</p>
-<ol style="list-style-type: decimal">
-<li>解析8583报文和Xml报文，对数据进行加解密处理；</li>
-<li>使用Spring和MyBtis进行数据管理；</li>
-<li>使用Mina框架进行通讯层的开发。</li>
-</ol>
-<p>相关技术：JAVA Spring Mina RAP</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h4 id=&quot;牛媛媛&quot;&gt;牛媛媛&lt;/h4&gt;
-&lt;p&gt;电话: 17002186000 邮箱: niuooo@yeah.net 个人网站: &lt;a href=&quot;https://niuoo.me&quot; class=&quot;uri&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;htt
-    
-    </summary>
-    
-    
-  </entry>
   
   <entry>
     <title>余弦定理证明</title>
@@ -121,17 +43,15 @@
     <link href="http://niuoo.github.io/2018/02/04/2018-02-04-%E6%8A%8A%E8%AE%A1%E5%88%92%E5%8F%98%E6%88%90%E4%B9%A0%E6%83%AF/"/>
     <id>http://niuoo.github.io/2018/02/04/2018-02-04-把计划变成习惯/</id>
     <published>2018-02-04T04:56:38.000Z</published>
-    <updated>2018-02-09T08:54:46.000Z</updated>
+    <updated>2018-03-15T04:37:48.000Z</updated>
     
     <content type="html"><![CDATA[<p>节奏很重要。适合的节奏才是最好的，一开始跑得快乱了节奏反而不好。节奏不用太快，合适就好。每天把做的事情都定成课程表，到点就做，把节奏变成习惯就好了。这点很有意义，因为人按习惯走非常轻松，按计划走很痛苦，一个折中的方法就是把计划变成习惯，就好了。</p>
-<p>今天周末，昨天晚上3点睡，上午9点多就醒了。白天坚持住，千万不要睡觉了。今天开始好好调节生物钟。</p>
-<p>现在是中午1点开始吃饭，顺便看吐槽大会。2点吃好饭。 2点开始看fastai的第二课。把代码撸一遍，放到aws上面，结合视频看一下。不要急，看多少是多少，坚持到晚上10点睡觉。</p>
 ]]></content>
     
     <summary type="html">
     
       &lt;p&gt;节奏很重要。适合的节奏才是最好的，一开始跑得快乱了节奏反而不好。节奏不用太快，合适就好。每天把做的事情都定成课程表，到点就做，把节奏变成习惯就好了。这点很有意义，因为人按习惯走非常轻松，按计划走很痛苦，一个折中的方法就是把计划变成习惯，就好了。&lt;/p&gt;
-&lt;p&gt;今天周末，昨天
+
     
     </summary>
     
@@ -780,6 +700,69 @@ Ctrl+B &      Kill window
     <summary type="html">
     
       &lt;p&gt;&lt;strong&gt;&lt;a href=&quot;http://blog.csdn.net/sealyao/article/details/6442403&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;SVM中的数学和算法&lt;/a&gt;&lt;/strong&gt; 关于支持向量机，这里有
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>神经网络初探</title>
+    <link href="http://niuoo.github.io/2017/05/04/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%88%9D%E6%8E%A2/"/>
+    <id>http://niuoo.github.io/2017/05/04/神经网络初探/</id>
+    <published>2017-05-04T06:14:20.000Z</published>
+    <updated>2017-08-08T13:37:18.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>神经网络是当今最强大的学习算法之一，自动驾驶对周围景物的识别，就用到了神经网络。<br>我们以下讲述，神经网络在分类问题中的应用，在给定训练集下，为神经网络拟合参数的学习方法。<br><span class="math">\(\begin{align*} a_1^{(2)} = g(\Theta_{10}^{(1)}x_0 + \Theta_{11}^{(1)}x_1 + \Theta_{12}^{(1)}x_2 + \Theta_{13}^{(1)}x_3) \newline a_2^{(2)} = g(\Theta_{20}^{(1)}x_0 + \Theta_{21}^{(1)}x_1 + \Theta_{22}^{(1)}x_2 + \Theta_{23}^{(1)}x_3) \newline a_3^{(2)} = g(\Theta_{30}^{(1)}x_0 + \Theta_{31}^{(1)}x_1 + \Theta_{32}^{(1)}x_2 + \Theta_{33}^{(1)}x_3) \newline h_\Theta(x) = a_1^{(3)} = g(\Theta_{10}^{(2)}a_0^{(2)} + \Theta_{11}^{(2)}a_1^{(2)} + \Theta_{12}^{(2)}a_2^{(2)} + \Theta_{13}^{(2)}a_3^{(2)}) \newline \end{align*}\)</span><br>在整个神经网络算法过程中，我们的最终目标是找到最佳的Θ矩阵中的权值。<br><img src="/media/14943440970717.jpg"></p>
+<h1 id="神经网络的损失函数">神经网络的损失函数</h1>
+<p>其中逻辑回归的损失函数为：<br><span class="math">\(J(\theta) = - \frac{1}{m} \sum_{i=1}^m [ y^{(i)}\ \log (h_\theta (x^{(i)})) + (1 - y^{(i)})\ \log (1 - h_\theta(x^{(i)}))] + \frac{\lambda}{2m}\sum_{j=1}^n \theta_j^2\)</span><br>神经网络的损失函数在逻辑回归的基础上，稍微复杂了一点儿：<br><span class="math">\(\begin{gather*} J(\Theta) = - \frac{1}{m} \sum_{i=1}^m \sum_{k=1}^K \left[y^{(i)}_k \log ((h_\Theta (x^{(i)}))_k) + (1 - y^{(i)}_k)\log (1 - (h_\Theta(x^{(i)}))_k)\right] + \frac{\lambda}{2m}\sum_{l=1}^{L-1} \sum_{i=1}^{s_l} \sum_{j=1}^{s_{l+1}} ( \Theta_{j,i}^{(l)})^2\end{gather*}\)</span></p>
+<ul>
+<li>L = 神经网络的层数。<br></li>
+<li><span class="math">\(s_l\)</span> = 在第l层，神经单元的个数(不包括偏移量单元)</li>
+<li>K = 神经网络输出层的单元个数。就是分类的类别总数。数字识别的话就是10.</li>
+</ul>
+<p>在Θ矩阵中，列代表当前层的单元个数，包括偏移单元；行代表下一层的神经元个数，不包含偏移单元。</p>
+<p>注意：</p>
+<ul>
+<li>双和嵌套，只是简单的把输出层每个分类的逻辑回归损失加在一起了。m代表训练集的个数。</li>
+<li>三个和嵌套的，是把神经网络里面，所有Θ矩阵的元素平方加在一起了。</li>
+<li>i在三和嵌套中，代表的不是训练样本个数，而是代表当前层的神经元个数。</li>
+</ul>
+<h1 id="反向传播算法-backpropagation-algorithm">反向传播算法 Backpropagation Algorithm</h1>
+<p>Back propagation的本质就是复合函数求导（following the chain rule）链式法则，本可以对这个网络里的每一个参数分别求偏导，但何苦呢，因为计算过程中的很多项都是重复的。为了不重复运算把把后层算好的导数传回前层，因为前层一定用得到。<br>关于反向传播算法，这里有个<a href="https://www.zhihu.com/question/27239198?rf=24827633" target="_blank" rel="external">浅显易懂的描述</a>。这里请看<a href="http://www.cnblogs.com/dengdan890730/p/5537451.html" target="_blank" rel="external">反向传播算法的推导过程</a>和<a href="http://blog.csdn.net/u014403897/article/details/46347351" target="_blank" rel="external">这里最后一层的求导</a>,这几个地方写的都不错。Andrew Ng老师的公开课对反向传播算法没有做过多的介绍，讲的也不够清晰。反向传播算法，就是为了计算损失函数的导数。<br>先贴个图片留作记号，便于下面Δ计算的理解</p>
+<div class="figure">
+<img src="/media/14939758124978.jpg">
+
+</div>
+<h2 id="反向传播算法的使用过程">反向传播算法的使用过程：</h2>
+<ol style="list-style-type: decimal">
+<li>Set <span class="math">\(a^{(1)} := x^{(t)}\)</span></li>
+<li><p>正向计算每层的每个节点的<span class="math">\(a^{(l)}\)</span>for l=2,3,…,L</p>
+<div class="figure">
+<img src="/media/14939747131225.jpg">
+
+</div></li>
+<li>使用<span class="math">\(y^{(t)}，计算出\delta^{(L)} = a^{(L)} - y^{(t)}\)</span>，最后输出层的错误率。</li>
+<li><p>使用<span class="math">\(\delta^{(l)} = ((\Theta^{(l)})^T \delta^{(l+1)})\ .*\ a^{(l)}\ .*\ (1 - a^{(l)})\)</span>，计算出<span class="math">\(\delta^{(L-1)}, \delta^{(L-2)},\dots,\delta^{(2)}\)</span>。<br> 其中$g’(z^{(l)}) = a^{(l)} .* (1 - a^{(l)})；_j^{(l)} =  cost(t)； $</p></li>
+</ol>
+<p><span class="math">\(cost(t) =y^{(t)} \ \log (h_\Theta (x^{(t)})) + (1 - y^{(t)})\ \log (1 - h_\Theta(x^{(t)}))\)</span></p>
+<ol start="5" style="list-style-type: decimal">
+<li><span class="math">\(\Delta^{(l)}_{i,j} := \Delta^{(l)}_{i,j} + a_j^{(l)} \delta_i^{(l+1)}，或者向量化一下，\Delta^{(l)} := \Delta^{(l)} + \delta^{(l+1)}(a^{(l)})^T\)</span>(Δ的初始化为0)<br> 至此，我们更新的权值累加器矩阵的为new Δ matrix，其中<span class="math">\(\frac \partial {\partial \Theta_{ij}^{(l)}} J(\Theta)=D_{ij}^{(l)}\)</span>
+<ul>
+<li><p><span class="math">\(D^{(l)}_{i,j} := \dfrac{1}{m}\left(\Delta^{(l)}_{i,j} + \lambda\Theta^{(l)}_{i,j}\right)\)</span> if j≠0.</p></li>
+<li><p><span class="math">\(D^{(l)}_{i,j} := \dfrac{1}{m}\Delta^{(l)}_{i,j}\)</span> If j=0</p></li>
+</ul></li>
+</ol>
+<h3 id="梯度检验">梯度检验</h3>
+<p>在神经网络中使用反向传播算法的时候，因为有很多细节，会导致各种各样小bug，即使J看起来每次都是下降的，但是，最终结果的误差却很大。因此梯度检验也是需要的过程，它减少这种错误的概率。在其他比较复杂的模型中使用梯度算法的时候，进行这种检查也是有意义的，这么做，将会对模型更加自信，确信模型是100%正确。<br><span class="math">\(\dfrac{\partial}{\partial\Theta_j}J(\Theta) \approx \dfrac{J(\Theta_1, \dots, \Theta_j + \epsilon, \dots, \Theta_n) - J(\Theta_1, \dots, \Theta_j - \epsilon, \dots, \Theta_n)}{2\epsilon}\)</span></p>
+<p>在确定算法无误后，真正执行学习算法前，一定要关掉梯度检验，否则会很慢的哟。</p>
+<h3 id="θ的初始化">Θ的初始化</h3>
+<p>Θ初始化在逻辑回归的时候是可以为0的，但是在神经网络中不可以全部为0的。因为都为0的时候，隐藏层的结果都是一样的，这样做，隐藏层就完全是冗余的，神经网络就没作用了，完全就是个逻辑回归。所以我们需要打破对称，随机初始化。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;神经网络是当今最强大的学习算法之一，自动驾驶对周围景物的识别，就用到了神经网络。&lt;br&gt;我们以下讲述，神经网络在分类问题中的应用，在给定训练集下，为神经网络拟合参数的学习方法。&lt;br&gt;&lt;span class=&quot;math&quot;&gt;\(\begin{align*} a_1^{(2)}
     
     </summary>
     
