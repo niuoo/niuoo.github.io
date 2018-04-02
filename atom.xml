@@ -372,7 +372,7 @@ Ctrl+B &      Kill window
     <link href="http://niuoo.github.io/2017/12/17/2017-12-16%E6%97%A5%E8%AE%B0-1/"/>
     <id>http://niuoo.github.io/2017/12/17/2017-12-16日记-1/</id>
     <published>2017-12-16T20:21:53.000Z</published>
-    <updated>2018-03-04T10:53:39.000Z</updated>
+    <updated>2018-04-02T02:12:50.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="安排">2017-12-16安排</h1>
 <p>17:30~20:00 看<a href="https://mp.weixin.qq.com/s?__biz=MzIzMjU1NTg3Ng==&amp;mid=2247486415&amp;idx=1&amp;sn=b50f4cc8ef9cd4d4d34cbdb0d30b4afc&amp;chksm=e8925fc4dfe5d6d217d46bca560eb7030232c14183cf0b791aa9af7da5671ac536f8a45693f5&amp;mpshare=1&amp;scene=1&amp;srcid=1213nA8yTjxK7pw2LxnuSRGu&amp;key=da103cb67940783e381102fb14674ebd0d039d798c7b1932fa1ce5f48d91ad89962437c729f7545312a6ce1fa03df0a1640dbb145e25544cd7300fea7763d40720cd1adc84907bd0a8c3c52bc836bfe7&amp;ascene=0&amp;uin=MTA2MTM3MjcwNA%3D%3D&amp;devicetype=iMac+MacBookPro11%2C1+OSX+OSX+10.11.6+build(15G1510)&amp;version=12020810&amp;nettype=WIFI&amp;lang=zh_CN&amp;fontScale=100&amp;pass_ticket=2%2B82FeLMFDTNJse7id71tUxAiI0JCuIWakI%2FV%2FKqOK8Veq9r%2FRy%2Bbxvfzgt2E1Cw" target="_blank" rel="external">Hinton和Jordan理解的EM算法</a></p>
@@ -719,9 +719,9 @@ Ctrl+B &      Kill window
     <link href="http://niuoo.github.io/2017/05/04/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%88%9D%E6%8E%A2/"/>
     <id>http://niuoo.github.io/2017/05/04/神经网络初探/</id>
     <published>2017-05-04T06:14:20.000Z</published>
-    <updated>2017-08-08T13:37:18.000Z</updated>
+    <updated>2018-03-18T04:07:39.000Z</updated>
     
-    <content type="html"><![CDATA[<p>神经网络是当今最强大的学习算法之一，自动驾驶对周围景物的识别，就用到了神经网络。<br>我们以下讲述，神经网络在分类问题中的应用，在给定训练集下，为神经网络拟合参数的学习方法。<br><span class="math">\(\begin{align*} a_1^{(2)} = g(\Theta_{10}^{(1)}x_0 + \Theta_{11}^{(1)}x_1 + \Theta_{12}^{(1)}x_2 + \Theta_{13}^{(1)}x_3) \newline a_2^{(2)} = g(\Theta_{20}^{(1)}x_0 + \Theta_{21}^{(1)}x_1 + \Theta_{22}^{(1)}x_2 + \Theta_{23}^{(1)}x_3) \newline a_3^{(2)} = g(\Theta_{30}^{(1)}x_0 + \Theta_{31}^{(1)}x_1 + \Theta_{32}^{(1)}x_2 + \Theta_{33}^{(1)}x_3) \newline h_\Theta(x) = a_1^{(3)} = g(\Theta_{10}^{(2)}a_0^{(2)} + \Theta_{11}^{(2)}a_1^{(2)} + \Theta_{12}^{(2)}a_2^{(2)} + \Theta_{13}^{(2)}a_3^{(2)}) \newline \end{align*}\)</span><br>在整个神经网络算法过程中，我们的最终目标是找到最佳的Θ矩阵中的权值。<br><img src="/media/14943440970717.jpg"></p>
+    <content type="html"><![CDATA[<p><a href="http://blog.csdn.net/Chenyukuai6625/article/details/74304992" target="_blank" rel="external">反向传播公式证明</a> 神经网络是当今最强大的学习算法之一，自动驾驶对周围景物的识别，就用到了神经网络。<br>我们以下讲述，神经网络在分类问题中的应用，在给定训练集下，为神经网络拟合参数的学习方法。<br><span class="math">\(\begin{align*} a_1^{(2)} = g(\Theta_{10}^{(1)}x_0 + \Theta_{11}^{(1)}x_1 + \Theta_{12}^{(1)}x_2 + \Theta_{13}^{(1)}x_3) \newline a_2^{(2)} = g(\Theta_{20}^{(1)}x_0 + \Theta_{21}^{(1)}x_1 + \Theta_{22}^{(1)}x_2 + \Theta_{23}^{(1)}x_3) \newline a_3^{(2)} = g(\Theta_{30}^{(1)}x_0 + \Theta_{31}^{(1)}x_1 + \Theta_{32}^{(1)}x_2 + \Theta_{33}^{(1)}x_3) \newline h_\Theta(x) = a_1^{(3)} = g(\Theta_{10}^{(2)}a_0^{(2)} + \Theta_{11}^{(2)}a_1^{(2)} + \Theta_{12}^{(2)}a_2^{(2)} + \Theta_{13}^{(2)}a_3^{(2)}) \newline \end{align*}\)</span><br>在整个神经网络算法过程中，我们的最终目标是找到最佳的Θ矩阵中的权值。<br><img src="/media/14943440970717.jpg"></p>
 <h1 id="神经网络的损失函数">神经网络的损失函数</h1>
 <p>其中逻辑回归的损失函数为：<br><span class="math">\(J(\theta) = - \frac{1}{m} \sum_{i=1}^m [ y^{(i)}\ \log (h_\theta (x^{(i)})) + (1 - y^{(i)})\ \log (1 - h_\theta(x^{(i)}))] + \frac{\lambda}{2m}\sum_{j=1}^n \theta_j^2\)</span><br>神经网络的损失函数在逻辑回归的基础上，稍微复杂了一点儿：<br><span class="math">\(\begin{gather*} J(\Theta) = - \frac{1}{m} \sum_{i=1}^m \sum_{k=1}^K \left[y^{(i)}_k \log ((h_\Theta (x^{(i)}))_k) + (1 - y^{(i)}_k)\log (1 - (h_\Theta(x^{(i)}))_k)\right] + \frac{\lambda}{2m}\sum_{l=1}^{L-1} \sum_{i=1}^{s_l} \sum_{j=1}^{s_{l+1}} ( \Theta_{j,i}^{(l)})^2\end{gather*}\)</span></p>
 <ul>
@@ -770,7 +770,7 @@ Ctrl+B &      Kill window
     
     <summary type="html">
     
-      &lt;p&gt;神经网络是当今最强大的学习算法之一，自动驾驶对周围景物的识别，就用到了神经网络。&lt;br&gt;我们以下讲述，神经网络在分类问题中的应用，在给定训练集下，为神经网络拟合参数的学习方法。&lt;br&gt;&lt;span class=&quot;math&quot;&gt;\(\begin{align*} a_1^{(2)}
+      &lt;p&gt;&lt;a href=&quot;http://blog.csdn.net/Chenyukuai6625/article/details/74304992&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;反向传播公式证明&lt;/a&gt; 神经网络是当今最强大的学习算法之一，自动驾驶
     
     </summary>
     
